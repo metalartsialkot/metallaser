@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium Islamic metal wall art by Metal Art Sialkot. Handcrafted stainless steel calligraphy.">
+  <title>Metal Art Sialkot | Premium Islamic Metal Wall Art</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root { --gold: #C4A265; --gold-light: #D4B87A; }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FAF7F2;
+      color: #2C2824;
+      scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, .font-elegant {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+    
+    .btn-luxury {
+      background: linear-gradient(135deg, #C4A265, #D4B87A);
+      color: white;
+      padding: 14px 35px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    
+    .btn-luxury:hover {
+      box-shadow: 0 10px 30px rgba(196, 162, 101, 0.4);
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      padding: 14px 35px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    
+    .btn-outline:hover {
+      background: var(--gold);
+      color: white;
+    }
+    
+    .glass-nav {
+      background: rgba(250, 247, 242, 0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(196, 162, 101, 0.2);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    .card-luxury {
+      background: white;
+      border: 1px solid rgba(196, 162, 101, 0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.4s;
+    }
+    
+    .card-luxury:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(196, 162, 101, 0.2);
+      border-color: var(--gold);
+    }
+    
+    .gold-text {
+      background: linear-gradient(135deg, #C4A265, #D4B87A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal.active { display: flex; }
+    
+    .tab-btn {
+      padding: 10px 25px;
+      border-radius: 50px;
+      border: 2px solid var(--gold);
+      background: white;
+      color: var(--gold);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .tab-btn.active {
+      background: var(--gold);
+      color: white;
+    }
+    
+    /* Image container */
+    .img-container {
+      position: relative;
+      overflow: hidden;
+      background: #F5F0E8;
+    }
+    
+    .img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .img-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      background: linear-gradient(135deg, #F5F0E8, #E8E0D5);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .img-container img.error + .img-fallback {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="glass-nav">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; align-items: center; justify-content: space-between;">
+      <!-- LOGO -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 50px; height: 50px; overflow: hidden; border-radius: 10px; background: #F5F0E8;">
+          <img src="images/logo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain;"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center; font-size: 24px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; font-weight: bold;">
+            M
+          </div>
+        </div>
+        <span class="gold-text" style="font-size: 22px; font-family: 'Cormorant Garamond', serif; font-weight: 600;">Metal Art Sialkot</span>
+      </div>
+      
+      <nav style="display: flex; gap: 30px; font-size: 13px; font-weight: 500; letter-spacing: 1px;">
+        <a href="#home" style="color: #2C2824; text-decoration: none;">HOME</a>
+        <a href="#about" style="color: #2C2824; text-decoration: none;">ABOUT</a>
+        <a href="#shop" style="color: #2C2824; text-decoration: none;">SHOP</a>
+        <a href="#contact" style="color: #2C2824; text-decoration: none;">CONTACT</a>
+      </nav>
+      
+      <a href="https://wa.me/923099915777" target="_blank" style="background: #25D366; color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 14px;">
+        💬 WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" style="min-height: 100vh; position: relative; overflow: hidden;">
+    <!-- Hero Background -->
+    <div style="position: absolute; inset: 0;">
+      <img src="images/hero.jpg" alt="Islamic Wall Art" style="width: 100%; height: 100%; object-fit: cover;"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <div style="display: none; width: 100%; height: 100%; background: linear-gradient(135deg, #1A1815, #2C2824);"></div>
+      <div style="position: absolute; inset: 0; background: rgba(26, 24, 21, 0.7);"></div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 20px;">
+      <div style="max-width: 700px;">
+        <p style="color: #D4B87A; letter-spacing: 4px; font-size: 13px; margin-bottom: 20px;">PREMIUM ISLAMIC DÉCOR</p>
+        <h1 style="font-size: 55px; color: #F5F0E8; font-family: 'Cormorant Garamond', serif; line-height: 1.2; margin-bottom: 20px;">
+          Premium Islamic<br/><span class="gold-text">Metal Wall Art</span>
+        </h1>
+        <p style="color: #D4C5B2; font-size: 17px; margin-bottom: 35px;">
+          Handcrafted stainless steel Islamic calligraphy with precision laser cutting and luxurious golden finishes.
+        </p>
+        <a href="#shop" class="btn-luxury" style="margin-right: 15px;">Explore Collection</a>
+        <a href="https://wa.me/923099915777" target="_blank" class="btn-outline">WhatsApp Inquiry</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" style="padding: 100px 20px; max-width: 1100px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+      <div class="img-container" style="height: 450px; border-radius: 20px;">
+        <img src="images/about.jpg" alt="Craftsmanship"
+             onerror="this.classList.add('error');">
+        <div class="img-fallback">🕌</div>
+      </div>
+      <div>
+        <p style="color: #C4A265; letter-spacing: 3px; font-size: 13px;">OUR STORY</p>
+        <h2 style="font-size: 42px; font-family: 'Cormorant Garamond', serif; color: #1A1815; margin: 15px 0;">Crafted in Steel, Inspired by Faith</h2>
+        <p style="color: #4A4743; line-height: 1.8; font-size: 15px; margin-bottom: 25px;">
+          Welcome to Metal Art Sialkot. We transform premium stainless steel into breathtaking Islamic calligraphy for modern homes.
+        </p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px;">
+          <div>🏅 Premium Stainless Steel</div>
+          <div>📏 0.8mm Thickness</div>
+          <div>✨ Golden Mirror Finish</div>
+          <div>🛡️ Rust Resistant</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP SECTION -->
+  <section id="shop" style="padding: 80px 20px; background: #F5F0E8;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <p style="color: #C4A265; letter-spacing: 3px; font-size: 13px;">OUR COLLECTION</p>
+        <h2 style="font-size: 42px; font-family: 'Cormorant Garamond', serif; color: #1A1815;">Sacred Calligraphy</h2>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap;">
+        <button class="tab-btn active" data-filter="all">All</button>
+        <button class="tab-btn" data-filter="calligraphy">Calligraphy</button>
+        <button class="tab-btn" data-filter="ayat">Ayat ul Kursi</button>
+        <button class="tab-btn" data-filter="kalima">Kalima</button>
+        <button class="tab-btn" data-filter="bismillah">Bismillah</button>
+      </div>
+      
+      <!-- Product Grid -->
+      <div id="productGrid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
+        <!-- JS renders here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST SELLERS -->
+  <section style="padding: 80px 20px; max-width: 1100px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 50px;">
+      <p style="color: #C4A265; letter-spacing: 3px;">BEST SELLERS</p>
+      <h2 style="font-size: 42px; font-family: 'Cormorant Garamond', serif; color: #1A1815;">Most Popular</h2>
+    </div>
+    <div id="bestSellersGrid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
+      <!-- JS renders here -->
+    </div>
+  </section>
+
+  <!-- PROMISE SECTION -->
+  <section style="padding: 80px 20px; background: #F5F0E8;">
+    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+      <div>
+        <h3 style="font-size: 28px; margin-bottom: 20px;">Customer Reviews</h3>
+        <div class="card-luxury" style="padding: 25px; margin-bottom: 15px;">
+          <div style="color: #C4A265; font-size: 20px;">★★★★★</div>
+          <p style="margin: 8px 0;">"Absolutely stunning! The golden finish is beautiful."</p>
+          <strong style="color: #C4A265;">— Ahmed, Lahore</strong>
+        </div>
+        <div class="card-luxury" style="padding: 25px;">
+          <div style="color: #C4A265; font-size: 20px;">★★★★★</div>
+          <p style="margin: 8px 0;">"Great quality and fast delivery. Highly recommended!"</p>
+          <strong style="color: #C4A265;">— Fatima, Islamabad</strong>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 28px; margin-bottom: 20px;">Our Promise</h3>
+        <div class="card-luxury" style="padding: 25px;">
+          <div class="img-container" style="height: 200px; border-radius: 15px; margin-bottom: 20px;">
+            <img src="images/promise.jpg" alt="Quality Promise"
+                 onerror="this.classList.add('error');">
+            <div class="img-fallback" style="font-size: 4rem;">✅</div>
+          </div>
+          <div style="font-size: 15px; line-height: 2;">
+            <div>✓ Premium Craftsmanship</div>
+            <div>✓ Quality Inspection</div>
+            <div>✓ Fast & Secure Delivery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding: 80px 20px; text-align: center;">
+    <h2 style="font-size: 42px; font-family: 'Cormorant Garamond', serif; color: #1A1815; margin-bottom: 40px;">Contact Us</h2>
+    <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 30px; flex-wrap: wrap;">
+      <a href="https://wa.me/923099915777" class="card-luxury" style="padding: 25px 35px; text-decoration: none; color: #2C2824;">
+        <div style="font-size: 40px;">💬</div>
+        <strong>+92 309 9915777</strong>
+      </a>
+      <a href="mailto:metalartsialkot@gmail.com" class="card-luxury" style="padding: 25px 35px; text-decoration: none; color: #2C2824;">
+        <div style="font-size: 40px;">📧</div>
+        <strong>metalartsialkot@gmail.com</strong>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1A1815; color: #D4C5B2; padding: 50px 20px; text-align: center;">
+    <h3 class="gold-text" style="font-size: 28px; font-family: 'Cormorant Garamond', serif;">Metal Art Sialkot</h3>
+    <p>Crafted in Steel, Inspired by Faith</p>
+    <p style="margin-top: 20px; font-size: 13px; color: #8B7355;">© 2025 Metal Art Sialkot. Sialkot, Pakistan.</p>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div id="productModal" class="modal">
+    <div style="background: white; border-radius: 20px; padding: 30px; max-width: 750px; width: 95%; position: relative;">
+      <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #C4A265;">✕</span>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+        <div id="modalImgContainer" class="img-container" style="border-radius: 15px; min-height: 350px;">
+          <img src="" alt="Product" style="display: none;">
+          <div class="img-fallback" style="font-size: 8rem;">🕌</div>
+        </div>
+        <div>
+          <h3 id="modalTitle" style="font-size: 30px; font-family: 'Cormorant Garamond', serif; margin-bottom: 8px;"></h3>
+          <div style="color: #C4A265; font-size: 22px; margin-bottom: 10px;">★★★★★</div>
+          <p id="modalPrice" style="font-size: 28px; font-weight: bold; color: #C4A265; margin-bottom: 15px;"></p>
+          <p style="color: #4A4743; margin-bottom: 20px;">Premium stainless steel calligraphy with golden mirror finish.</p>
+          
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <button id="qtyDec" style="width: 35px; height: 35px; border-radius: 50%; border: 1px solid #C4A265; background: white; cursor: pointer; font-size: 18px;">−</button>
+            <span id="qtyValue" style="font-size: 22px; font-weight: 600;">1</span>
+            <button id="qtyInc" style="width: 35px; height: 35px; border-radius: 50%; border: 1px solid #C4A265; background: white; cursor: pointer; font-size: 18px;">+</button>
+          </div>
+          
+          <button id="proceedCheckoutBtn" class="btn-luxury" style="width: 100%;">Proceed To Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkoutModal" class="modal">
+    <div style="background: white; border-radius: 20px; padding: 30px; max-width: 480px; width: 95%; position: relative;">
+      <span id="closeCheckout" style="position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #C4A265;">✕</span>
+      <h3 style="font-size: 28px; font-family: 'Cormorant Garamond', serif; margin-bottom: 20px;">Complete Order</h3>
+      
+      <input type="text" id="cName" placeholder="Full Name *" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 10px; font-size: 14px;"><br>
+      <input type="tel" id="cPhone" placeholder="Phone *" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 10px; font-size: 14px;"><br>
+      <input type="email" id="cEmail" placeholder="Email" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 10px; font-size: 14px;"><br>
+      <textarea id="cAddress" placeholder="Address *" rows="2" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 10px; font-size: 14px;"></textarea><br>
+      
+      <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: bold; padding: 15px 0; border-top: 1px solid #ddd; margin: 15px 0;">
+        <span>Total:</span>
+        <span id="checkoutTotal" style="color: #C4A265;">0</span>
+      </div>
+      
+      <button id="placeOrderBtn" class="btn-luxury" style="width: 100%;">📱 Place Order via WhatsApp</button>
+    </div>
+  </div>
+
+  <script>
+    // ========================================
+    // PRODUCT DATA - Real images + Fallback
+    // ========================================
+    const products = [
+      { id: 1, name: "Masha Allah", category: "calligraphy", price: 6000, rating: 5, image: "images/mashaallah.jpg", bestseller: true },
+      { id: 2, name: "Hasbunallah", category: "calligraphy", price: 6000, rating: 5, image: "images/hasbunallah.jpg", bestseller: true },
+      { id: 3, name: "First Kalma", category: "kalima", price: 6000, rating: 5, image: "images/firstkalma.jpg", bestseller: false },
+      { id: 4, name: "Fabi Ayyi Ala", category: "calligraphy", price: 6000, rating: 5, image: "images/fabi.jpg", bestseller: false },
+      { id: 5, name: "La Ilaha Illa Anta", category: "kalima", price: 6000, rating: 5, image: "images/laillaha.jpg", bestseller: false },
+      { id: 6, name: "Bismillah", category: "bismillah", price: 6000, rating: 5, image: "images/bismillah.jpg", bestseller: false },
+      { id: 7, name: "Fabi Translation", category: "calligraphy", price: 6000, rating: 4, image: "images/fabitr.jpg", bestseller: false },
+      { id: 8, name: "Ayat ul Kursi Round", category: "ayat", price: 7000, rating: 5, image: "images/ayatround.jpg", bestseller: true }
+    ];
+
+    let currentProduct = null;
+    let qty = 1;
+
+    // Render Product Card
+    function productCard(p) {
+      return `
+        <div class="card-luxury" data-id="${p.id}">
+          <div class="img-container" style="height: 280px;">
+            <img src="${p.image}" alt="${p.name}" loading="lazy"
+                 onerror="this.classList.add('error');">
+            <div class="img-fallback" style="font-size: 4rem;">🕌</div>
+          </div>
+          <div style="padding: 20px;">
+            <h3 style="font-size: 22px; font-family: 'Cormorant Garamond', serif; margin-bottom: 5px;">${p.name}</h3>
+            <div style="color: #C4A265; margin-bottom: 8px;">${'★'.repeat(p.rating)}</div>
+            <p style="font-size: 22px; font-weight: bold; color: #C4A265; margin-bottom: 15px;">Rs. ${p.price.toLocaleString()}</p>
+            <div style="display: flex; gap: 8px;">
+              <button class="quick-view-btn btn-outline" style="flex: 1; padding: 10px; font-size: 13px;" data-id="${p.id}">Quick View</button>
+              <button class="buy-now-btn btn-luxury" style="flex: 1; padding: 10px; font-size: 13px;" data-id="${p.id}">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderProducts(filter = "all") {
+      const grid = document.getElementById("productGrid");
+      const filtered = filter === "all" ? products : products.filter(p => p.category === filter);
+      grid.innerHTML = filtered.map(p => productCard(p)).join('');
+    }
+
+    function renderBestSellers() {
+      const grid = document.getElementById("bestSellersGrid");
+      const best = products.filter(p => p.bestseller);
+      grid.innerHTML = best.map(p => `
+        <div class="card-luxury" style="position: relative; padding: 20px;">
+          <span style="position: absolute; top: 15px; left: 15px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 5px 15px; border-radius: 50px; font-size: 11px; font-weight: bold; z-index: 1;">BEST SELLER</span>
+          <div class="img-container" style="height: 200px; border-radius: 10px; margin-bottom: 15px;">
+            <img src="${p.image}" alt="${p.name}" loading="lazy"
+                 onerror="this.classList.add('error');">
+            <div class="img-fallback" style="font-size: 3rem;">🕌</div>
+          </div>
+          <h4 style="font-size: 20px; font-family: 'Cormorant Garamond', serif;">${p.name}</h4>
+          <div style="color: #C4A265;">★★★★★</div>
+          <p style="font-weight: bold; color: #C4A265; margin: 8px 0;">Rs. ${p.price.toLocaleString()}</p>
+          <button class="view-detail-btn btn-outline" style="width: 100%; padding: 10px; font-size: 13px;" data-id="${p.id}">View Details</button>
+        </div>
+      `).join('');
+    }
+
+    // MODALS
+    const productModal = document.getElementById('productModal');
+    const checkoutModal = document.getElementById('checkoutModal');
+    
+    function openProductModal(id) {
+      currentProduct = products.find(p => p.id == id);
+      if (!currentProduct) return;
+      
+      const container = document.getElementById('modalImgContainer');
+      container.innerHTML = `
+        <img src="${currentProduct.image}" alt="${currentProduct.name}" style="width: 100%; height: 100%; object-fit: cover; display: block;"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="img-fallback" style="font-size: 8rem;">🕌</div>
+      `;
+      
+      document.getElementById('modalTitle').textContent = currentProduct.name;
+      document.getElementById('modalPrice').textContent = `Rs. ${currentProduct.price.toLocaleString()}`;
+      qty = 1;
+      document.getElementById('qtyValue').textContent = qty;
+      productModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // EVENT LISTENERS
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('quick-view-btn') || 
+          e.target.classList.contains('buy-now-btn') || 
+          e.target.classList.contains('view-detail-btn')) {
+        e.preventDefault();
+        openProductModal(parseInt(e.target.dataset.id));
+      }
+    });
+
+    document.getElementById('closeModal').onclick = () => { productModal.classList.remove('active'); document.body.style.overflow = ''; };
+    document.getElementById('closeCheckout').onclick = () => { checkoutModal.classList.remove('active'); document.body.style.overflow = ''; };
+    
+    document.getElementById('qtyInc').onclick = () => { qty++; document.getElementById('qtyValue').textContent = qty; };
+    document.getElementById('qtyDec').onclick = () => { if(qty > 1) qty--; document.getElementById('qtyValue').textContent = qty; };
+
+    document.getElementById('proceedCheckoutBtn').onclick = () => {
+      if (!currentProduct) return;
+      productModal.classList.remove('active');
+      document.getElementById('checkoutTotal').textContent = `Rs. ${(currentProduct.price * qty).toLocaleString()}`;
+      checkoutModal.classList.add('active');
+    };
+
+    document.getElementById('placeOrderBtn').onclick = function() {
+      const name = document.getElementById('cName').value.trim();
+      const phone = document.getElementById('cPhone').value.trim();
+      const address = document.getElementById('cAddress').value.trim();
+      
+      if (!name || !phone || !address) { alert('Please fill Name, Phone, Address!'); return; }
+      
+      const total = currentProduct.price * qty;
+      const msg = `Assalam O Alaikum%0A%0A🕌 New Order%0A📦 ${currentProduct.name}%0A💰 Rs.${currentProduct.price} x ${qty}%0A💵 Total: Rs.${total}%0A%0A👤 ${name}%0A📞 ${phone}%0A📍 ${address}`;
+      
+      window.open(`https://wa.me/923099915777?text=${msg}`, '_blank');
+      checkoutModal.classList.remove('active');
+      document.body.style.overflow = '';
+      
+      let orders = JSON.parse(localStorage.getItem('orders') || '[]');
+      orders.push({ product: currentProduct.name, qty, total, date: new Date().toISOString() });
+      localStorage.setItem('orders', JSON.stringify(orders));
+      alert('✅ Order placed!');
+    };
+
+    // FILTER TABS
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.onclick = function() {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        renderProducts(this.dataset.filter);
+      };
+    });
+
+    // INIT
+    renderProducts();
+    renderBestSellers();
+    console.log('✅ Ready! Images folder: images/');
+  </script>
+</body>
+</html>
