@@ -3,27 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ========== SEO META TAGS ========== -->
   <meta name="description" content="Premium Islamic wall art by Metal Art Sialkot. Handcrafted stainless steel calligraphy with golden finish. Ayat ul Kursi, Kalima, Bismillah designs.">
-  <meta name="keywords" content="Islamic Wall Art Pakistan, Islamic Calligraphy Wall Art, Metal Wall Art Pakistan, Golden Stainless Steel Wall Art, Laser Cut Islamic Art">
-  <title>Metal Art Sialkot | Premium Islamic Metal Wall Art Pakistan</title>
+  <meta name="keywords" content="Islamic Wall Art Pakistan, Islamic Calligraphy Wall Art, Metal Wall Art Pakistan, Golden Stainless Steel Wall Art, Laser Cut Islamic Art, Ayat ul Kursi Wall Art, Islamic Home Décor Pakistan, Islamic Decoration Pakistan, Metal Art Sialkot">
+  <meta name="author" content="Metal Art Sialkot">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- ========== GOOGLE SEARCH CONSOLE VERIFICATION ========== -->
   <meta name="google-site-verification" content="jbQAs-JZnPqRKbp5_mY_4yamKdPdAxRf7ec6_amD8wQ" />
   
-  <!-- ========== FAVICON - WEBSITE ICON ========== -->
-  <!-- 1. ICO Format (Best for all browsers) -->
+  <!-- ========== SITEMAP REFERENCE ========== -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  
+  <!-- ========== OPEN GRAPH (FACEBOOK, WHATSAPP) ========== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Metal Art Sialkot | Premium Islamic Metal Wall Art Pakistan">
+  <meta property="og:description" content="Premium Islamic wall art. Handcrafted stainless steel calligraphy with golden finish.">
+  <meta property="og:image" content="https://metalartsialkot.com/images/hero-bg.jpg">
+  <meta property="og:url" content="https://metalartsialkot.com">
+  <meta property="og:site_name" content="Metal Art Sialkot">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- ========== TWITTER CARD ========== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Metal Art Sialkot | Premium Islamic Metal Wall Art">
+  <meta name="twitter:description" content="Premium Islamic wall art. Handcrafted stainless steel calligraphy with golden finish.">
+  <meta name="twitter:image" content="https://metalartsialkot.com/images/hero-bg.jpg">
+  
+  <!-- ========== FAVICON ========== -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-  
-  <!-- 2. PNG Format (Modern browsers) -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  
-  <!-- 3. Apple Touch Icon (iPhone/iPad) -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  
-  <!-- 4. Android Chrome -->
-  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#C4A265">
-  <!-- ========================================= -->
+  <meta name="msapplication-TileColor" content="#C4A265">
+  
+  <title>Metal Art Sialkot | Premium Islamic Metal Wall Art Pakistan</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -143,13 +162,25 @@
       font-size: 20px;
     }
     
+    /* ========== PRODUCT CODE BADGE ========== */
+    .product-code {
+      font-size: 10px;
+      color: #8B7355;
+      letter-spacing: 1px;
+      font-family: 'Courier New', monospace;
+      background: #F5F0E8;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .animate-in { animation: fadeInUp 0.8s ease forwards; }
 
-    /* ========== SUBTLE URGENCY STYLES ========== */
+    /* ========== URGENCY STYLES ========== */
     .stock-indicator {
       display: inline-flex;
       align-items: center;
@@ -558,16 +589,17 @@
       </div>
     </div>
     <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(196, 162, 101, 0.2); font-size: 12px; color: #8B7355;">
-      © 2025 Metal Art Sialkot. All Rights Reserved.
+      © 2025 Metal Art Sialkot. All Rights Reserved. | Product Codes: MAS Series
     </div>
   </footer>
 
-  <!-- ============ LIVE NOTIFICATION ============ -->
+  <!-- ============ LIVE NOTIFICATION WITH PRODUCT CODE ============ -->
   <div class="live-notification" id="liveNotification">
     <span class="green-dot"></span>
     <div>
       <p style="font-size: 11px; color: #8B7355;">Someone just purchased</p>
       <p style="font-weight: 600; font-size: 12px;" id="liveProduct">Ayat ul Kursi Round</p>
+      <p style="font-size: 10px; color: #8B7355;" id="liveProductCode">MAS-AYT-001</p>
       <p style="font-size: 10px; color: #4CAF50;" id="liveTime">2 min ago</p>
     </div>
     <span onclick="document.getElementById('liveNotification').style.display='none'" style="position: absolute; top: 6px; right: 8px; cursor: pointer;">✕</span>
@@ -578,13 +610,14 @@
     <a href="https://wa.me/923099915777" target="_blank" class="btn-whatsapp" style="width: 55px; height: 55px; border-radius: 50%; justify-content: center; padding: 0; font-size: 24px;" title="Chat on WhatsApp">💬</a>
   </div>
 
-  <!-- All Modals same as before -->
+  <!-- Product Modal -->
   <div id="productModal" class="modal">
     <div style="background: white; border-radius: 20px; padding: 30px; max-width: 800px; width: 95%; position: relative; max-height: 90vh; overflow-y: auto;">
       <span onclick="closeProductModal()" style="position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #C4A265;">✕</span>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
         <div id="modalImgContainer" class="img-container" style="border-radius: 15px; min-height: 350px;"></div>
         <div>
+          <span id="modalProductCode" class="product-code" style="margin-bottom: 10px; display: inline-block;">MAS-CLG-001</span>
           <h3 id="modalTitle" style="font-size: 28px; font-family: 'Cormorant Garamond', serif;"></h3>
           <p id="modalPrice" style="font-size: 28px; font-weight: bold; color: #C4A265;"></p>
           <button onclick="buyNowWhatsApp()" class="btn-whatsapp" style="width: 100%; justify-content: center; padding: 14px; margin-top: 20px;">💬 Buy via WhatsApp</button>
@@ -593,26 +626,35 @@
     </div>
   </div>
 
+  <!-- Policy Modal -->
+  <div id="policyModal" class="modal">
+    <div style="background: white; border-radius: 20px; padding: 35px; max-width: 700px; width: 95%; position: relative; max-height: 80vh; overflow-y: auto;">
+      <span onclick="closePolicyModal()" style="position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #C4A265;">✕</span>
+      <div id="policyContent"></div>
+    </div>
+  </div>
+
   <script>
-    // Products data with stock for urgency
+    // ========== PRODUCTS WITH UNIQUE CODES ==========
+    // Format: MAS-XXX-YYY (MAS = Metal Art Sialkot, XXX = Category, YYY = Number)
     const products = [
-      { id: 1, name: "Masha Allah", category: "calligraphy", price: 6000, rating: 5, image: "images/mashaallah.jpg", bestseller: true, stock: 4, sold: 234 },
-      { id: 2, name: "Hasbunallah", category: "calligraphy", price: 6000, rating: 5, image: "images/hasbunallah.jpg", bestseller: true, stock: 2, sold: 189 },
-      { id: 3, name: "First Kalma", category: "kalima", price: 6000, rating: 5, image: "images/firstkalma.jpg", bestseller: false, stock: 8, sold: 156 },
-      { id: 4, name: "Fabi Ayyi Ala", category: "calligraphy", price: 6000, rating: 5, image: "images/fabi.jpg", bestseller: false, stock: 12, sold: 98 },
-      { id: 5, name: "La Ilaha Illa Anta", category: "kalima", price: 6000, rating: 5, image: "images/laillaha.jpg", bestseller: false, stock: 3, sold: 145 },
-      { id: 6, name: "Bismillah", category: "bismillah", price: 6000, rating: 5, image: "images/bismillah.jpg", bestseller: false, stock: 6, sold: 178 },
-      { id: 7, name: "Fabi Translation", category: "calligraphy", price: 6000, rating: 4, image: "images/fabitr.jpg", bestseller: false, stock: 15, sold: 67 },
-      { id: 8, name: "Ayat ul Kursi Round", category: "ayat", price: 7000, rating: 5, image: "images/ayatround.jpg", bestseller: true, stock: 3, sold: 312 }
+      { id: 1, code: "MAS-CLG-001", name: "Masha Allah", category: "calligraphy", price: 6000, rating: 5, image: "images/mashaallah.jpg", bestseller: true, stock: 4, sold: 234 },
+      { id: 2, code: "MAS-CLG-002", name: "Hasbunallah", category: "calligraphy", price: 6000, rating: 5, image: "images/hasbunallah.jpg", bestseller: true, stock: 2, sold: 189 },
+      { id: 3, code: "MAS-KLM-001", name: "First Kalma", category: "kalima", price: 6000, rating: 5, image: "images/firstkalma.jpg", bestseller: false, stock: 8, sold: 156 },
+      { id: 4, code: "MAS-CLG-003", name: "Fabi Ayyi Ala", category: "calligraphy", price: 6000, rating: 5, image: "images/fabi.jpg", bestseller: false, stock: 12, sold: 98 },
+      { id: 5, code: "MAS-KLM-002", name: "La Ilaha Illa Anta", category: "kalima", price: 6000, rating: 5, image: "images/laillaha.jpg", bestseller: false, stock: 3, sold: 145 },
+      { id: 6, code: "MAS-BSM-001", name: "Bismillah", category: "bismillah", price: 6000, rating: 5, image: "images/bismillah.jpg", bestseller: false, stock: 6, sold: 178 },
+      { id: 7, code: "MAS-CLG-004", name: "Fabi Translation", category: "calligraphy", price: 6000, rating: 4, image: "images/fabitr.jpg", bestseller: false, stock: 15, sold: 67 },
+      { id: 8, code: "MAS-AYT-001", name: "Ayat ul Kursi Round", category: "ayat", price: 7000, rating: 5, image: "images/ayatround.jpg", bestseller: true, stock: 3, sold: 312 }
     ];
 
     const reviews = [
-      { name: "Ahmed Khan", location: "Lahore", product: "Ayat ul Kursi Round", rating: 5, text: "Masha Allah! Beautiful craftsmanship. The Ayat ul Kursi round design looks stunning on my living room wall.", days: 2 },
-      { name: "Fatima Hassan", location: "Karachi", product: "Masha Allah", rating: 5, text: "Received my Masha Allah wall art today. Subhan Allah the golden finish is gorgeous! Highly recommended!", days: 5 },
-      { name: "Usman Siddiqui", location: "Islamabad", product: "First Kalma", rating: 5, text: "Excellent quality! The laser cutting is precise and the golden shine is beautiful. Jazak Allah khair!", days: 7 },
-      { name: "Ayesha Ali", location: "Faisalabad", product: "Hasbunallah", rating: 5, text: "Gifted Hasbunallah to my parents. They loved it! Best Islamic décor shop!", days: 3 },
-      { name: "Muhammad Rashid", location: "Multan", product: "Bismillah", rating: 5, text: "Ordered for my office. Perfect finishing, very professional look. Got many compliments.", days: 6 },
-      { name: "Zainab Khalid", location: "Rawalpindi", product: "La Ilaha Illa Anta", rating: 5, text: "Amazing service! Fast delivery and product exactly as shown. 100% recommended!", days: 4 }
+      { name: "Ahmed Khan", location: "Lahore", product: "Ayat ul Kursi Round", code: "MAS-AYT-001", rating: 5, text: "Masha Allah! Beautiful craftsmanship. The Ayat ul Kursi round design looks stunning on my living room wall.", days: 2 },
+      { name: "Fatima Hassan", location: "Karachi", product: "Masha Allah", code: "MAS-CLG-001", rating: 5, text: "Received my Masha Allah wall art today. Subhan Allah the golden finish is gorgeous! Highly recommended!", days: 5 },
+      { name: "Usman Siddiqui", location: "Islamabad", product: "First Kalma", code: "MAS-KLM-001", rating: 5, text: "Excellent quality! The laser cutting is precise and the golden shine is beautiful. Jazak Allah khair!", days: 7 },
+      { name: "Ayesha Ali", location: "Faisalabad", product: "Hasbunallah", code: "MAS-CLG-002", rating: 5, text: "Gifted Hasbunallah to my parents. They loved it! Best Islamic décor shop!", days: 3 },
+      { name: "Muhammad Rashid", location: "Multan", product: "Bismillah", code: "MAS-BSM-001", rating: 5, text: "Ordered for my office. Perfect finishing, very professional look. Got many compliments.", days: 6 },
+      { name: "Zainab Khalid", location: "Rawalpindi", product: "La Ilaha Illa Anta", code: "MAS-KLM-002", rating: 5, text: "Amazing service! Fast delivery and product exactly as shown. 100% recommended!", days: 4 }
     ];
 
     let currentProduct = null;
@@ -624,19 +666,25 @@
       return `
         <div class="card-luxury" data-id="${p.id}" style="position: relative;">
           <div class="img-container">
-            <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.classList.add('error');">
+            <img src="${p.image}" alt="${p.name} - ${p.code}" loading="lazy" onerror="this.classList.add('error');">
             <div class="img-fallback">🕌</div>
+            ${p.bestseller ? '<div style="position: absolute; top: 10px; left: 10px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 4px 10px; border-radius: 50px; font-size: 9px; font-weight: 700; z-index: 1;">BEST SELLER</div>' : ''}
           </div>
           <div style="padding: 18px;">
-            <h3 style="font-size: 18px; font-family: 'Cormorant Garamond', serif;">${p.name}</h3>
+            <span class="product-code">${p.code}</span>
+            <h3 style="font-size: 18px; font-family: 'Cormorant Garamond', serif; margin-top: 6px;">${p.name}</h3>
             <div style="color: #C4A265; font-size: 13px;">${'★'.repeat(p.rating)} <span class="sold-count">(${p.sold}+ sold)</span></div>
-            <p style="font-size: 20px; font-weight: bold; color: #C4A265;">Rs. ${p.price.toLocaleString()}</p>
+            <p style="font-size: 20px; font-weight: bold; color: #C4A265; margin-bottom: 4px;">Rs. ${p.price.toLocaleString()}</p>
             ${stockLow ? `
               <div class="stock-indicator" style="color: ${stockVeryLow ? '#E53935' : '#FF6D00'};">
                 <span class="stock-dot" style="background: ${stockVeryLow ? '#E53935' : '#FF6D00'};"></span>
                 ${stockVeryLow ? `Only ${p.stock} left` : `${p.stock} remaining`}
               </div>
+              <div class="stock-bar">
+                <div class="stock-bar-fill" style="width: ${(p.stock/20)*100}%;"></div>
+              </div>
             ` : ''}
+            ${stockVeryLow ? `<p class="viewer-count" style="margin-top: 4px;">⚡ ${Math.floor(Math.random() * 4) + 2} people viewing now</p>` : ''}
             <div style="display: flex; gap: 6px; margin-top: 12px;">
               <button class="quick-view-btn btn-outline" style="flex: 1; padding: 8px; font-size: 11px;" data-id="${p.id}">Quick View</button>
               <button class="buy-now-btn btn-gold" style="flex: 1; padding: 8px; font-size: 11px;" data-id="${p.id}">Buy Now</button>
@@ -655,14 +703,16 @@
       document.getElementById("bestSellersGrid").innerHTML = products.filter(p => p.bestseller).map(p => `
         <div class="card-luxury" style="position: relative; padding: 20px;">
           <span style="position: absolute; top: 15px; left: 15px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 5px 15px; border-radius: 50px; font-size: 10px; font-weight: bold; z-index: 1;">BEST SELLER</span>
+          ${p.sold > 200 ? '<span class="hot-badge" style="position: absolute; top: 15px; right: 15px;">🔥 Trending</span>' : ''}
           <div class="img-container" style="border-radius: 10px; margin-bottom: 15px;">
             <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.classList.add('error');">
             <div class="img-fallback" style="font-size: 3rem;">🕌</div>
           </div>
-          <h4 style="font-size: 18px; font-family: 'Cormorant Garamond', serif;">${p.name}</h4>
+          <span class="product-code">${p.code}</span>
+          <h4 style="font-size: 18px; font-family: 'Cormorant Garamond', serif; margin-top: 4px;">${p.name}</h4>
           <div style="color: #C4A265;">★★★★★ <span class="sold-count">(${p.sold} reviews)</span></div>
           <p style="font-weight: bold; color: #C4A265;">Rs. ${p.price.toLocaleString()}</p>
-          <button class="view-detail-btn btn-outline" style="width: 100%; padding: 10px; font-size: 12px;" data-id="${p.id}">View Details</button>
+          <button class="view-detail-btn btn-outline" style="width: 100%; padding: 10px; font-size: 12px; margin-top: 8px;" data-id="${p.id}">View Details</button>
         </div>
       `).join('');
     }
@@ -679,23 +729,23 @@
             </div>
           </div>
           <span class="review-star">★★★★★</span>
+          <p style="font-size: 11px; color: #C4A265; margin: 4px 0;">${r.product} <span class="product-code" style="font-size: 9px;">${r.code}</span></p>
           <p style="color: #4A4743; font-size: 13px; margin-top: 8px; line-height: 1.7; font-style: italic;">"${r.text}"</p>
         </div>
       `).join('');
     }
 
-    // Live notification
     const cities = ['Lahore', 'Karachi', 'Islamabad', 'Faisalabad', 'Multan', 'Rawalpindi'];
     function showLiveNotification() {
       const p = products[Math.floor(Math.random() * products.length)];
       const city = cities[Math.floor(Math.random() * cities.length)];
       document.getElementById('liveProduct').textContent = p.name;
+      document.getElementById('liveProductCode').textContent = p.code;
       document.getElementById('liveTime').textContent = `${Math.floor(Math.random() * 12) + 1} min ago`;
       document.getElementById('liveNotification').style.display = 'flex';
       setTimeout(() => document.getElementById('liveNotification').style.display = 'none', 5000);
     }
 
-    // FOMO timer
     function updateFOMOTimer() {
       const now = new Date();
       const end = new Date(); end.setHours(23,59,59,999);
@@ -709,6 +759,7 @@
       currentProduct = products.find(p => p.id == id);
       if (!currentProduct) return;
       document.getElementById('modalImgContainer').innerHTML = `<img src="${currentProduct.image}" alt="${currentProduct.name}" style="width:100%;height:100%;object-fit:cover;">`;
+      document.getElementById('modalProductCode').textContent = currentProduct.code;
       document.getElementById('modalTitle').textContent = currentProduct.name;
       document.getElementById('modalPrice').textContent = `Rs. ${currentProduct.price.toLocaleString()}`;
       document.getElementById('productModal').classList.add('active');
@@ -716,8 +767,22 @@
     function closeProductModal() { document.getElementById('productModal').classList.remove('active'); }
     function buyNowWhatsApp() {
       if (!currentProduct) return;
-      window.open(`https://wa.me/923099915777?text=Assalam%20O%20Alaikum!%20I%20want%20to%20order:%0A🕌%20${encodeURIComponent(currentProduct.name)}%0A💰%20Rs.${currentProduct.price}`, '_blank');
+      const msg = `Assalam O Alaikum! I want to order:%0A%0A🏷️ Code: ${currentProduct.code}%0A🕌 Product: ${currentProduct.name}%0A💰 Price: Rs.${currentProduct.price}%0A%0APlease share details.`;
+      window.open(`https://wa.me/923099915777?text=${msg}`, '_blank');
     }
+
+    const policies = {
+      shipping: { title: '🚚 Shipping Policy', content: '<h3>Shipping Information</h3><p>We deliver across Pakistan with fast and secure shipping.</p><ul><li>Processing: 2-3 business days</li><li>Delivery: 3-7 business days</li><li>Free shipping on all orders</li><li>WhatsApp tracking updates</li></ul>' },
+      returns: { title: '🔄 Return & Refund', content: '<h3>Returns & Refunds</h3><p>7-day return for damaged items. Full refund or replacement.</p>' },
+      privacy: { title: '🔒 Privacy Policy', content: '<h3>Privacy Policy</h3><p>Your data is safe. No third-party sharing.</p>' },
+      terms: { title: '📋 Terms & Conditions', content: '<h3>Terms & Conditions</h3><p>By ordering you agree to our terms.</p>' }
+    };
+    function openPolicyModal(type) {
+      const p = policies[type];
+      document.getElementById('policyContent').innerHTML = `<h2 style="font-size:28px;font-family:'Cormorant Garamond',serif;">${p.title}</h2><div style="line-height:2;">${p.content}</div>`;
+      document.getElementById('policyModal').classList.add('active');
+    }
+    function closePolicyModal() { document.getElementById('policyModal').classList.remove('active'); }
 
     document.addEventListener('click', function(e) {
       if (e.target.classList.contains('quick-view-btn') || e.target.classList.contains('buy-now-btn') || e.target.classList.contains('view-detail-btn')) {
@@ -736,7 +801,7 @@
 
     window.addEventListener('click', function(e) { if (e.target.classList.contains('modal')) { e.target.classList.remove('active'); } });
 
-    // Init
+    // Initialize
     renderProducts();
     renderBestSellers();
     renderReviews();
@@ -744,6 +809,8 @@
     setInterval(updateFOMOTimer, 1000);
     showLiveNotification();
     setInterval(() => setTimeout(showLiveNotification, Math.random()*15000+10000), 25000);
+    
+    console.log('✅ Metal Art Sialkot - Complete with Product Codes!');
   </script>
 </body>
 </html>
