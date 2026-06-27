@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <!-- ========== SEO META TAGS ========== -->
   <meta name="description" content="Premium Islamic wall art by Metal Art Sialkot. Handcrafted stainless steel calligraphy with golden finish. Ayat ul Kursi, Kalima, Bismillah designs.">
@@ -12,20 +12,19 @@
   <meta name="language" content="English">
   <meta name="revisit-after" content="7 days">
   
-  <!-- ========== GOOGLE SEARCH CONSOLE VERIFICATION ========== -->
+  <!-- ========== GOOGLE SEARCH CONSOLE ========== -->
   <meta name="google-site-verification" content="jbQAs-JZnPqRKbp5_mY_4yamKdPdAxRf7ec6_amD8wQ" />
   
-  <!-- ========== SITEMAP REFERENCE ========== -->
+  <!-- ========== SITEMAP ========== -->
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   
-  <!-- ========== OPEN GRAPH (FACEBOOK, WHATSAPP) ========== -->
+  <!-- ========== OPEN GRAPH ========== -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Metal Art Sialkot | Premium Islamic Metal Wall Art Pakistan">
   <meta property="og:description" content="Premium Islamic wall art. Handcrafted stainless steel calligraphy with golden finish.">
   <meta property="og:image" content="https://metalartsialkot.com/images/hero-bg.jpg">
   <meta property="og:url" content="https://metalartsialkot.com">
   <meta property="og:site_name" content="Metal Art Sialkot">
-  <meta property="og:locale" content="en_US">
   
   <!-- ========== TWITTER CARD ========== -->
   <meta name="twitter:card" content="summary_large_image">
@@ -40,12 +39,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <meta name="theme-color" content="#C4A265">
-  <meta name="msapplication-TileColor" content="#C4A265">
   
   <title>Metal Art Sialkot | Premium Islamic Metal Wall Art Pakistan</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     :root { 
@@ -57,23 +56,22 @@
       --royal-green-hover: #145218;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: #FAF7F2; color: #2C2824; scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #FAF7F2; color: #2C2824; scroll-behavior: smooth; overflow-x: hidden; }
     
     h1, h2, h3, .font-elegant { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
-    .font-playfair { font-family: 'Playfair Display', serif; }
     
     .btn-gold {
       background: linear-gradient(135deg, #C4A265, #D4B87A, #B8944A);
       color: white; padding: 14px 35px; border-radius: 50px; border: none;
       cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block;
-      transition: all 0.3s ease; letter-spacing: 0.5px;
+      transition: all 0.3s ease; letter-spacing: 0.5px; text-align: center;
     }
     .btn-gold:hover { box-shadow: 0 15px 35px rgba(196, 162, 101, 0.4); transform: translateY(-3px); }
     
     .btn-outline {
       background: transparent; color: var(--gold); border: 2px solid var(--gold);
       padding: 14px 35px; border-radius: 50px; cursor: pointer; font-weight: 500;
-      text-decoration: none; display: inline-block; transition: all 0.3s ease;
+      text-decoration: none; display: inline-block; transition: all 0.3s ease; text-align: center;
     }
     .btn-outline:hover { background: var(--gold); color: white; }
     
@@ -120,6 +118,7 @@
     .tab-btn {
       padding: 10px 25px; border-radius: 50px; border: 2px solid var(--gold);
       background: white; color: var(--gold); cursor: pointer; transition: 0.3s; font-weight: 500;
+      font-size: 12px;
     }
     .tab-btn.active { background: var(--gold); color: white; }
     
@@ -141,7 +140,7 @@
     .hero-img-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
     
     .logo-container {
-      width: 55px; height: 55px; border-radius: 12px; overflow: hidden;
+      width: 40px; height: 40px; border-radius: 10px; overflow: hidden;
       background: #F5F0E8; flex-shrink: 0;
     }
     .logo-container img { width: 100%; height: 100%; object-fit: contain; display: block; }
@@ -162,16 +161,10 @@
       font-size: 20px;
     }
     
-    /* ========== PRODUCT CODE BADGE ========== */
     .product-code {
-      font-size: 10px;
-      color: #8B7355;
-      letter-spacing: 1px;
-      font-family: 'Courier New', monospace;
-      background: #F5F0E8;
-      padding: 2px 8px;
-      border-radius: 4px;
-      display: inline-block;
+      font-size: 10px; color: #8B7355; letter-spacing: 1px;
+      font-family: 'Courier New', monospace; background: #F5F0E8;
+      padding: 2px 8px; border-radius: 4px; display: inline-block;
     }
     
     @keyframes fadeInUp {
@@ -180,141 +173,129 @@
     }
     .animate-in { animation: fadeInUp 0.8s ease forwards; }
 
-    /* ========== URGENCY STYLES ========== */
-    .stock-indicator {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .stock-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: #E53935;
-      animation: softPulse 2s infinite;
-    }
-    @keyframes softPulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-    .stock-bar {
-      height: 4px;
-      background: #E0E0E0;
-      border-radius: 10px;
-      margin-top: 6px;
-      overflow: hidden;
-    }
-    .stock-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #E53935, #FF6D00);
-      border-radius: 10px;
-    }
-    .hot-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 10px;
-      font-weight: 700;
-      color: #E53935;
-      letter-spacing: 0.5px;
-    }
-    .sold-count {
-      font-size: 11px;
-      color: #8B7355;
-    }
-    .viewer-count {
-      font-size: 11px;
-      color: #E53935;
-      font-weight: 500;
-    }
+    /* ========== STOCK STYLES ========== */
+    .stock-indicator { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; }
+    .stock-dot { width: 6px; height: 6px; border-radius: 50%; background: #E53935; animation: softPulse 2s infinite; }
+    @keyframes softPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .stock-bar { height: 3px; background: #E0E0E0; border-radius: 10px; margin-top: 4px; overflow: hidden; }
+    .stock-bar-fill { height: 100%; background: linear-gradient(90deg, #E53935, #FF6D00); border-radius: 10px; }
+    .sold-count { font-size: 10px; color: #8B7355; }
+    .viewer-count { font-size: 10px; color: #E53935; font-weight: 500; }
     
     .live-notification {
-      position: fixed;
-      bottom: 100px;
-      left: 20px;
-      z-index: 999;
-      background: white;
-      border-radius: 12px;
-      padding: 12px 16px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-      border: 1px solid #E8E0D5;
-      font-size: 12px;
-      display: none;
-      align-items: center;
-      gap: 10px;
-      max-width: 300px;
-      transition: all 0.4s ease;
+      position: fixed; bottom: 100px; left: 10px; z-index: 999;
+      background: white; border-radius: 12px; padding: 10px 14px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1); border: 1px solid #E8E0D5;
+      font-size: 11px; display: none; align-items: center; gap: 8px;
+      max-width: 250px; transition: all 0.4s ease;
     }
-    .live-notification .green-dot {
-      width: 8px; height: 8px;
-      background: #4CAF50;
-      border-radius: 50%;
-      animation: softPulse 2s infinite;
-    }
+    .live-notification .green-dot { width: 7px; height: 7px; background: #4CAF50; border-radius: 50%; animation: softPulse 2s infinite; }
 
-    .review-star {
-      color: #FFB300;
-      letter-spacing: 2px;
-      font-size: 13px;
-    }
-    .verified-tag {
-      background: #E8F5E9;
-      color: #2E7D32;
-      padding: 2px 8px;
-      border-radius: 50px;
-      font-size: 9px;
-      font-weight: 600;
-    }
-
+    .review-star { color: #FFB300; letter-spacing: 1px; font-size: 12px; }
+    .verified-tag { background: #E8F5E9; color: #2E7D32; padding: 2px 6px; border-radius: 50px; font-size: 8px; font-weight: 600; }
     .fomo-bar {
-      background: #FFF8E1;
-      border: 1px solid #FFE082;
-      border-radius: 8px;
-      padding: 10px 20px;
-      font-size: 13px;
-      color: #BF360C;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      background: #FFF8E1; border: 1px solid #FFE082; border-radius: 8px;
+      padding: 8px 15px; font-size: 12px; color: #BF360C; font-weight: 500;
+      display: inline-flex; align-items: center; gap: 6px;
     }
-    .fomo-bar .time {
-      font-weight: 700;
-      background: white;
-      padding: 2px 8px;
-      border-radius: 4px;
+    .fomo-bar .time { font-weight: 700; background: white; padding: 2px 6px; border-radius: 4px; }
+
+    /* ========== MOBILE NAVIGATION ========== */
+    .nav-menu { display: flex; gap: 20px; }
+    .hamburger { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #2C2824; }
+    .mobile-menu { display: none; position: fixed; top: 60px; left: 0; width: 100%; background: rgba(250,247,242,0.99); backdrop-filter: blur(20px); padding: 20px; border-bottom: 1px solid rgba(196,162,101,0.2); z-index: 999; }
+    .mobile-menu.active { display: block; }
+    .mobile-menu a { display: block; padding: 12px 0; color: #2C2824; text-decoration: none; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #E8E0D5; }
+
+    /* ========== RESPONSIVE STYLES ========== */
+    @media (max-width: 1024px) {
+      .desktop-only { display: none !important; }
+      .hamburger { display: block; }
+      
+      /* Navigation */
+      .nav-menu { display: none; }
+      .nav-header { padding: 10px 15px; }
+      .logo-text { font-size: 18px !important; }
+      .logo-container { width: 35px; height: 35px; }
+      
+      /* Hero */
+      .hero-title { font-size: 32px !important; line-height: 1.2 !important; }
+      .hero-subtitle { font-size: 10px !important; letter-spacing: 3px !important; }
+      .hero-desc { font-size: 13px !important; padding: 0 10px !important; }
+      .hero-badges { gap: 20px !important; }
+      .hero-badge-icon { font-size: 25px !important; }
+      .hero-badge-text { font-size: 9px !important; }
+      
+      /* Buttons */
+      .btn-gold, .btn-outline { padding: 12px 25px; font-size: 12px; width: 100%; display: block; }
+      .btn-whatsapp { padding: 10px 20px; font-size: 11px; }
+      .hero-buttons { flex-direction: column; gap: 10px; }
+      
+      /* Grids */
+      .product-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+      .bestseller-grid-3 { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .review-grid-3 { grid-template-columns: 1fr !important; gap: 15px !important; }
+      .features-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+      .policies-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+      .footer-grid-3 { grid-template-columns: 1fr !important; gap: 25px !important; text-align: center; }
+      .contact-grid { flex-direction: column; align-items: center; }
+      .about-grid { grid-template-columns: 1fr !important; gap: 30px !important; }
+      
+      /* About Image */
+      .hero-img-container { height: 300px !important; }
+      
+      /* Sections */
+      section { padding: 50px 15px !important; }
+      .section-title { font-size: 28px !important; }
+      .section-subtitle { font-size: 9px !important; letter-spacing: 3px !important; }
+      
+      /* Cards */
+      .card-luxury:hover { transform: translateY(-5px) !important; }
+      
+      /* Policy cards */
+      .policy-card { padding: 20px !important; }
+      .policy-icon { font-size: 30px !important; }
+      
+      /* Product modal */
+      .modal-grid { grid-template-columns: 1fr !important; }
+      
+      /* Live notification */
+      .live-notification { bottom: 80px; left: 5px; max-width: 220px; font-size: 10px; padding: 8px 10px; }
+      
+      /* Footer */
+      footer { padding: 40px 15px 20px !important; }
     }
 
-    @media (max-width: 768px) {
-      .live-notification {
-        bottom: 90px;
-        left: 10px;
-        max-width: 250px;
-        font-size: 11px;
-      }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 26px !important; }
+      .hero-desc { font-size: 12px !important; }
+      .product-grid-4 { gap: 8px !important; }
+      .card-luxury { border-radius: 12px; }
+      .tab-btn { padding: 8px 15px; font-size: 10px; }
+      .fomo-bar { font-size: 10px; padding: 6px 10px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ============ NAVIGATION ============ -->
+  <!-- ============ NAVIGATION (MOBILE OPTIMIZED) ============ -->
   <header class="glass-nav">
-    <div style="max-width: 1300px; margin: 0 auto; padding: 12px 25px; display: flex; align-items: center; justify-content: space-between;">
+    <div class="nav-header" style="max-width: 1300px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between;">
       
-      <div style="display: flex; align-items: center; gap: 15px;">
+      <a href="#home" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
         <div class="logo-container">
           <img src="images/logo.png" alt="Metal Art Sialkot Logo" 
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; font-size: 22px; font-weight: bold;">M</div>
+          <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; font-size: 18px; font-weight: bold;">M</div>
         </div>
         <div>
-          <span class="gold-text" style="font-size: 24px; font-family: 'Cormorant Garamond', serif; font-weight: 700;">Metal Art Sialkot</span>
-          <p style="font-size: 9px; color: #8B7355; letter-spacing: 2px; text-transform: uppercase;">Crafted in Steel • Inspired by Faith</p>
+          <span class="gold-text logo-text" style="font-size: 20px; font-family: 'Cormorant Garamond', serif; font-weight: 700;">Metal Art Sialkot</span>
+          <p class="desktop-only" style="font-size: 8px; color: #8B7355; letter-spacing: 2px; text-transform: uppercase;">Crafted in Steel • Inspired by Faith</p>
         </div>
-      </div>
+      </a>
       
-      <nav style="display: flex; gap: 25px; font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;">
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" style="gap: 20px; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;">
         <a href="#home" style="color: #2C2824; text-decoration: none;">Home</a>
         <a href="#about" style="color: #2C2824; text-decoration: none;">About</a>
         <a href="#shop" style="color: #2C2824; text-decoration: none;">Shop</a>
@@ -324,87 +305,102 @@
         <a href="#contact" style="color: #2C2824; text-decoration: none;">Contact</a>
       </nav>
       
-      <div style="display: flex; align-items: center; gap: 15px;">
-        <button onclick="openAuthModal()" style="background: none; border: none; cursor: pointer; font-size: 13px; color: #2C2824; font-weight: 500;">👤 Account</button>
-        <a href="https://wa.me/923099915777" target="_blank" class="btn-whatsapp">
-          <span style="font-size: 18px;">💬</span> WhatsApp
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="https://wa.me/923099915777" target="_blank" class="btn-whatsapp desktop-only" style="padding: 10px 18px; font-size: 11px;">
+          <span style="font-size: 16px;">💬</span> WhatsApp
         </a>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home" onclick="toggleMobileMenu()">🏠 Home</a>
+      <a href="#about" onclick="toggleMobileMenu()">ℹ️ About</a>
+      <a href="#shop" onclick="toggleMobileMenu()">🛍️ Shop</a>
+      <a href="#bestsellers" onclick="toggleMobileMenu()">⭐ Best Sellers</a>
+      <a href="#reviews" onclick="toggleMobileMenu()">💬 Reviews</a>
+      <a href="#brand-story" onclick="toggleMobileMenu()">📖 Our Story</a>
+      <a href="#contact" onclick="toggleMobileMenu()">📞 Contact</a>
+      <a href="https://wa.me/923099915777" target="_blank" style="color: #1B5E20; font-weight: 600;">💬 WhatsApp Order</a>
     </div>
   </header>
 
-  <!-- ============ HERO SECTION ============ -->
-  <section id="home" style="min-height: 100vh; background: linear-gradient(135deg, #1A1815 0%, #2C2824 40%, #1A1815 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+  <!-- ============ HERO SECTION (MOBILE OPTIMIZED) ============ -->
+  <section id="home" style="min-height: 100vh; background: linear-gradient(135deg, #1A1815 0%, #2C2824 40%, #1A1815 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 80px 15px 40px;">
     <div style="position: absolute; inset: 0; opacity: 0.25; background-image: url('images/hero-bg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
     <div style="position: absolute; inset: 0; opacity: 0.04; background: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>★</text></svg>') repeat; background-size: 150px;"></div>
     
-    <div style="position: relative; z-index: 1; text-align: center; padding: 20px; max-width: 900px;" class="animate-in">
+    <div style="position: relative; z-index: 1; text-align: center; padding: 10px; max-width: 900px; width: 100%;" class="animate-in">
       
-      <p style="color: #D4B87A; letter-spacing: 6px; font-size: 11px; margin-bottom: 25px; text-transform: uppercase;">Premium Islamic Décor • Made in Pakistan</p>
-      <h1 style="font-size: 70px; color: #F5F0E8; font-family: 'Cormorant Garamond', serif; line-height: 1.1; margin-bottom: 15px;">
+      <p class="hero-subtitle" style="color: #D4B87A; letter-spacing: 5px; font-size: 10px; margin-bottom: 20px; text-transform: uppercase;">Premium Islamic Décor • Made in Pakistan</p>
+      <h1 class="hero-title" style="font-size: 60px; color: #F5F0E8; font-family: 'Cormorant Garamond', serif; line-height: 1.15; margin-bottom: 15px;">
         Luxury Islamic<br/><span class="gold-text">Metal Wall Art</span>
       </h1>
       
-      <p style="color: #D4C5B2; font-size: 17px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+      <p class="hero-desc" style="color: #D4C5B2; font-size: 15px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; padding: 0 5px;">
         Transform your home with handcrafted stainless steel Islamic calligraphy. 
-        Precision laser-cut with luxurious golden finishes. Each piece is a masterpiece of faith and artistry.
+        Precision laser-cut with luxurious golden finishes.
       </p>
       
       <div class="fomo-bar" style="margin-bottom: 20px;">
         ⚡ Order within <span class="time" id="fomoTimer">02:15:30</span> for <strong>FREE Shipping</strong>
       </div>
       
-      <div style="display: flex; gap: 18px; justify-content: center; flex-wrap: wrap;">
+      <div class="hero-buttons" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
         <a href="#shop" class="btn-gold">🛍️ Explore Collection</a>
-        <a href="https://wa.me/923099915777" target="_blank" class="btn-whatsapp" style="padding: 14px 35px; font-size: 15px;">
+        <a href="https://wa.me/923099915777" target="_blank" class="btn-whatsapp" style="padding: 14px 30px; font-size: 14px;">
           💬 WhatsApp Order
         </a>
       </div>
       
-      <div style="display: flex; gap: 40px; justify-content: center; margin-top: 60px; flex-wrap: wrap;">
+      <div class="hero-badges" style="display: flex; gap: 30px; justify-content: center; margin-top: 50px; flex-wrap: wrap;">
         <div style="text-align: center; color: #D4C5B2;">
-          <div style="font-size: 35px;">⭐</div>
-          <p style="font-size: 11px; margin-top: 5px;">Premium Quality</p>
+          <div class="hero-badge-icon" style="font-size: 30px;">⭐</div>
+          <p class="hero-badge-text" style="font-size: 10px; margin-top: 3px;">Premium Quality</p>
         </div>
         <div style="text-align: center; color: #D4C5B2;">
-          <div style="font-size: 35px;">🚚</div>
-          <p style="font-size: 11px; margin-top: 5px;">Fast Delivery</p>
+          <div class="hero-badge-icon" style="font-size: 30px;">🚚</div>
+          <p class="hero-badge-text" style="font-size: 10px; margin-top: 3px;">Fast Delivery</p>
         </div>
         <div style="text-align: center; color: #D4C5B2;">
-          <div style="font-size: 35px;">🛡️</div>
-          <p style="font-size: 11px; margin-top: 5px;">Rust Resistant</p>
+          <div class="hero-badge-icon" style="font-size: 30px;">🛡️</div>
+          <p class="hero-badge-text" style="font-size: 10px; margin-top: 3px;">Rust Resistant</p>
         </div>
         <div style="text-align: center; color: #D4C5B2;">
-          <div style="font-size: 35px;">🇵🇰</div>
-          <p style="font-size: 11px; margin-top: 5px;">Made in Pakistan</p>
+          <div class="hero-badge-icon" style="font-size: 30px;">🇵🇰</div>
+          <p class="hero-badge-text" style="font-size: 10px; margin-top: 3px;">Made in Pakistan</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ BRAND STORY ============ -->
-  <section id="brand-story" style="padding: 100px 25px; max-width: 1200px; margin: 0 auto;">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+  <section id="brand-story" style="padding: 80px 20px; max-width: 1200px; margin: 0 auto;">
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
       <div class="hero-img-container islamic-border">
         <img src="images/about.jpg" alt="Metal Art Sialkot Workshop" onerror="this.classList.add('error');">
-        <div class="img-fallback" style="font-size: 6rem;">🕌</div>
+        <div class="img-fallback" style="font-size: 5rem;">🕌</div>
       </div>
       <div>
-        <p style="color: #C4A265; letter-spacing: 4px; font-size: 11px; text-transform: uppercase;">Our Brand Story</p>
-        <h2 style="font-size: 48px; font-family: 'Cormorant Garamond', serif; color: #1A1815; margin: 15px 0; line-height: 1.2;">About Metal Art Sialkot</h2>
-        <div style="width: 60px; height: 3px; background: linear-gradient(90deg, #C4A265, #D4B87A); margin-bottom: 25px;"></div>
+        <p class="section-subtitle" style="color: #C4A265; letter-spacing: 4px; font-size: 10px; text-transform: uppercase;">Our Brand Story</p>
+        <h2 class="section-title" style="font-size: 40px; font-family: 'Cormorant Garamond', serif; color: #1A1815; margin: 12px 0; line-height: 1.2;">About Metal Art Sialkot</h2>
+        <div style="width: 50px; height: 2px; background: linear-gradient(90deg, #C4A265, #D4B87A); margin-bottom: 20px;"></div>
         
-        <p style="color: #4A4743; line-height: 1.9; font-size: 15px; margin-bottom: 15px;">
+        <p style="color: #4A4743; line-height: 1.8; font-size: 14px; margin-bottom: 12px;">
           Welcome to <strong>Metal Art Sialkot</strong>, your destination for premium Islamic wall art crafted with precision metal laser cutting technology.
         </p>
-        <p style="color: #4A4743; line-height: 1.9; font-size: 15px; margin-bottom: 15px;">
-          Our journey began with a simple vision: to bring the timeless beauty of Islamic calligraphy into modern homes through high-quality stainless steel craftsmanship. Every piece we create is designed to inspire faith, elegance, and sophistication.
+        <p style="color: #4A4743; line-height: 1.8; font-size: 14px; margin-bottom: 12px;">
+          Our journey began with a simple vision: to bring the timeless beauty of Islamic calligraphy into modern homes through high-quality stainless steel craftsmanship.
         </p>
-        <p style="color: #4A4743; line-height: 1.9; font-size: 15px; margin-bottom: 25px;">
-          We specialize in luxury Islamic wall décor made from <strong>premium 0.8 mm stainless steel</strong> with an exclusive golden finish. Using advanced laser cutting technology, we transform meaningful Islamic verses into stunning works of art.
+        <p style="color: #4A4743; line-height: 1.8; font-size: 14px; margin-bottom: 20px;">
+          We specialize in luxury Islamic wall décor made from <strong>premium 0.8 mm stainless steel</strong> with an exclusive golden finish.
         </p>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 13px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">
           <div>✅ Premium Stainless Steel</div>
           <div>✅ Precision Laser Cut</div>
           <div>✅ Golden Mirror Finish</div>
@@ -417,164 +413,164 @@
   </section>
 
   <!-- ============ WHY CHOOSE US ============ -->
-  <section style="padding: 80px 25px; background: #F5F0E8;">
+  <section style="padding: 60px 20px; background: #F5F0E8;">
     <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-      <p style="color: #C4A265; letter-spacing: 4px; font-size: 11px; text-transform: uppercase;">Why Choose Us</p>
-      <h2 style="font-size: 45px; font-family: 'Cormorant Garamond', serif; color: #1A1815; margin-bottom: 50px;">The Metal Art Difference</h2>
+      <p class="section-subtitle" style="color: #C4A265; letter-spacing: 4px; font-size: 10px; text-transform: uppercase;">Why Choose Us</p>
+      <h2 class="section-title" style="font-size: 38px; font-family: 'Cormorant Garamond', serif; color: #1A1815; margin-bottom: 40px;">The Metal Art Difference</h2>
       
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px;">
-        <div class="card-luxury" style="padding: 35px 20px; text-align: center;">
-          <div style="font-size: 50px; margin-bottom: 15px;">⭐</div>
-          <h3 style="font-size: 18px; margin-bottom: 10px;">Premium Quality</h3>
-          <p style="color: #4A4743; font-size: 13px;">High-grade 0.8mm stainless steel for lasting beauty and durability</p>
+      <div class="features-grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+        <div class="card-luxury" style="padding: 30px 15px; text-align: center;">
+          <div style="font-size: 40px; margin-bottom: 10px;">⭐</div>
+          <h3 style="font-size: 16px; margin-bottom: 8px;">Premium Quality</h3>
+          <p style="color: #4A4743; font-size: 12px;">High-grade 0.8mm stainless steel for lasting beauty</p>
         </div>
-        <div class="card-luxury" style="padding: 35px 20px; text-align: center;">
-          <div style="font-size: 50px; margin-bottom: 15px;">🔬</div>
-          <h3 style="font-size: 18px; margin-bottom: 10px;">Laser Precision</h3>
-          <p style="color: #4A4743; font-size: 13px;">Advanced cutting technology delivers intricate details with perfection</p>
+        <div class="card-luxury" style="padding: 30px 15px; text-align: center;">
+          <div style="font-size: 40px; margin-bottom: 10px;">🔬</div>
+          <h3 style="font-size: 16px; margin-bottom: 8px;">Laser Precision</h3>
+          <p style="color: #4A4743; font-size: 12px;">Advanced cutting for intricate details</p>
         </div>
-        <div class="card-luxury" style="padding: 35px 20px; text-align: center;">
-          <div style="font-size: 50px; margin-bottom: 15px;">💧</div>
-          <h3 style="font-size: 18px; margin-bottom: 10px;">Rust Resistant</h3>
-          <p style="color: #4A4743; font-size: 13px;">Luxury golden mirror finish protected against corrosion forever</p>
+        <div class="card-luxury" style="padding: 30px 15px; text-align: center;">
+          <div style="font-size: 40px; margin-bottom: 10px;">💧</div>
+          <h3 style="font-size: 16px; margin-bottom: 8px;">Rust Resistant</h3>
+          <p style="color: #4A4743; font-size: 12px;">Luxury golden finish protected forever</p>
         </div>
-        <div class="card-luxury" style="padding: 35px 20px; text-align: center;">
-          <div style="font-size: 50px; margin-bottom: 15px;">🔧</div>
-          <h3 style="font-size: 18px; margin-bottom: 10px;">Easy Installation</h3>
-          <p style="color: #4A4743; font-size: 13px;">Ready to mount with included brackets for hassle-free setup</p>
+        <div class="card-luxury" style="padding: 30px 15px; text-align: center;">
+          <div style="font-size: 40px; margin-bottom: 10px;">🔧</div>
+          <h3 style="font-size: 16px; margin-bottom: 8px;">Easy Installation</h3>
+          <p style="color: #4A4743; font-size: 12px;">Ready to mount with included brackets</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ SHOP SECTION ============ -->
-  <section id="shop" style="padding: 100px 25px; max-width: 1300px; margin: 0 auto;">
-    <div style="text-align: center; margin-bottom: 50px;">
-      <p style="color: #C4A265; letter-spacing: 4px; font-size: 11px; text-transform: uppercase;">Our Collection</p>
-      <h2 style="font-size: 48px; font-family: 'Cormorant Garamond', serif; color: #1A1815;">Sacred Islamic Calligraphy</h2>
-      <p style="color: #4A4743; margin-top: 10px;">Each piece precision laser-cut from premium stainless steel with golden finish</p>
+  <section id="shop" style="padding: 80px 20px; max-width: 1300px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <p class="section-subtitle" style="color: #C4A265; letter-spacing: 4px; font-size: 10px; text-transform: uppercase;">Our Collection</p>
+      <h2 class="section-title" style="font-size: 40px; font-family: 'Cormorant Garamond', serif; color: #1A1815;">Sacred Islamic Calligraphy</h2>
+      <p style="color: #4A4743; margin-top: 8px; font-size: 13px;">Precision laser-cut from premium stainless steel with golden finish</p>
     </div>
     
-    <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap;">
-      <button class="tab-btn active" data-filter="all">All Designs</button>
+    <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 35px; flex-wrap: wrap;">
+      <button class="tab-btn active" data-filter="all">All</button>
       <button class="tab-btn" data-filter="calligraphy">Calligraphy</button>
       <button class="tab-btn" data-filter="ayat">Ayat ul Kursi</button>
       <button class="tab-btn" data-filter="kalima">Kalima</button>
       <button class="tab-btn" data-filter="bismillah">Bismillah</button>
     </div>
     
-    <div id="productGrid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px;">
+    <div id="productGrid" class="product-grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
       <!-- JS renders -->
     </div>
   </section>
 
   <!-- ============ BEST SELLERS ============ -->
-  <section id="bestsellers" style="padding: 80px 25px; background: #F5F0E8;">
+  <section id="bestsellers" style="padding: 60px 20px; background: #F5F0E8;">
     <div style="max-width: 1300px; margin: 0 auto;">
-      <div style="text-align: center; margin-bottom: 50px;">
-        <p style="color: #C4A265; letter-spacing: 4px; font-size: 11px;">Best Sellers</p>
-        <h2 style="font-size: 45px; font-family: 'Cormorant Garamond', serif; color: #1A1815;">Most Popular Designs</h2>
+      <div style="text-align: center; margin-bottom: 40px;">
+        <p class="section-subtitle" style="color: #C4A265; letter-spacing: 4px; font-size: 10px;">Best Sellers</p>
+        <h2 class="section-title" style="font-size: 38px; font-family: 'Cormorant Garamond', serif; color: #1A1815;">Most Popular Designs</h2>
       </div>
-      <div id="bestSellersGrid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+      <div id="bestSellersGrid" class="bestseller-grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
         <!-- JS renders -->
       </div>
     </div>
   </section>
 
   <!-- ============ CUSTOMER REVIEWS ============ -->
-  <section id="reviews" style="padding: 80px 25px; max-width: 1200px; margin: 0 auto;">
-    <div style="text-align: center; margin-bottom: 50px;">
-      <p style="color: #C4A265; letter-spacing: 4px; font-size: 11px;">Testimonials</p>
-      <h2 style="font-size: 45px; font-family: 'Cormorant Garamond', serif; color: #1A1815;">What Our Customers Say</h2>
-      <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 10px;">
+  <section id="reviews" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <p class="section-subtitle" style="color: #C4A265; letter-spacing: 4px; font-size: 10px;">Testimonials</p>
+      <h2 class="section-title" style="font-size: 38px; font-family: 'Cormorant Garamond', serif; color: #1A1815;">What Our Customers Say</h2>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 8px;">
         <span class="review-star">★★★★★</span>
-        <span style="font-weight: 700; font-size: 18px;">4.9/5</span>
-        <span style="color: #4A4743;">(200+ Reviews)</span>
+        <span style="font-weight: 700; font-size: 16px;">4.9/5</span>
+        <span style="color: #4A4743; font-size: 12px;">(200+ Reviews)</span>
         <span class="verified-tag">✅ Verified</span>
       </div>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;" id="reviewsGrid">
+    <div id="reviewsGrid" class="review-grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
       <!-- JS renders -->
     </div>
   </section>
 
   <!-- ============ PRODUCT DESCRIPTION ============ -->
-  <section style="padding: 80px 25px; max-width: 1000px; margin: 0 auto; text-align: center;">
-    <h2 style="font-size: 40px; font-family: 'Cormorant Garamond', serif; color: #1A1815; margin-bottom: 30px;">Premium Islamic Metal Wall Art</h2>
-    <p style="color: #4A4743; line-height: 2; font-size: 15px; max-width: 800px; margin: 0 auto;">
+  <section style="padding: 60px 20px; max-width: 1000px; margin: 0 auto; text-align: center;">
+    <h2 class="section-title" style="font-size: 35px; font-family: 'Cormorant Garamond', serif; color: #1A1815; margin-bottom: 25px;">Premium Islamic Metal Wall Art</h2>
+    <p style="color: #4A4743; line-height: 1.9; font-size: 14px; max-width: 800px; margin: 0 auto;">
       Our <strong>Golden Stainless Steel Calligraphy</strong> collection features timeless Islamic verses including 
-      <strong>Ayat ul Kursi, First Kalma, Bismillah Hir Rehman Ir Raheem, Hasbunallah, Masha Allah</strong>, and many more. 
+      <strong>Ayat ul Kursi, First Kalma, Bismillah, Hasbunallah, Masha Allah</strong>, and many more. 
       Each piece crafted from <strong>premium 0.8 mm stainless steel</strong> with an <strong>exclusive golden mirror finish</strong>. 
       <strong>Rust resistant, easy to install, and made with care in Sialkot, Pakistan.</strong>
     </p>
   </section>
 
   <!-- ============ SHIPPING & POLICIES ============ -->
-  <section style="padding: 80px 25px; background: #F5F0E8;">
+  <section style="padding: 60px 20px; background: #F5F0E8;">
     <div style="max-width: 1200px; margin: 0 auto;">
-      <div style="text-align: center; margin-bottom: 50px;">
-        <h2 style="font-size: 40px; font-family: 'Cormorant Garamond', serif; color: #1A1815;">Shipping & Policies</h2>
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 class="section-title" style="font-size: 35px; font-family: 'Cormorant Garamond', serif; color: #1A1815;">Shipping & Policies</h2>
       </div>
       
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-        <div class="card-luxury" style="padding: 30px; text-align: center; cursor: pointer;" onclick="openPolicyModal('shipping')">
-          <div style="font-size: 45px;">🚚</div>
-          <h3 style="margin: 15px 0;">Shipping Policy</h3>
-          <p style="font-size: 11px; color: #C4A265;">Click to read</p>
+      <div class="policies-grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
+        <div class="card-luxury policy-card" style="padding: 25px; text-align: center; cursor: pointer;" onclick="openPolicyModal('shipping')">
+          <div class="policy-icon" style="font-size: 35px;">🚚</div>
+          <h3 style="margin: 10px 0; font-size: 15px;">Shipping Policy</h3>
+          <p style="font-size: 10px; color: #C4A265;">Click to read</p>
         </div>
-        <div class="card-luxury" style="padding: 30px; text-align: center; cursor: pointer;" onclick="openPolicyModal('returns')">
-          <div style="font-size: 45px;">🔄</div>
-          <h3 style="margin: 15px 0;">Return & Refund</h3>
-          <p style="font-size: 11px; color: #C4A265;">Click to read</p>
+        <div class="card-luxury policy-card" style="padding: 25px; text-align: center; cursor: pointer;" onclick="openPolicyModal('returns')">
+          <div class="policy-icon" style="font-size: 35px;">🔄</div>
+          <h3 style="margin: 10px 0; font-size: 15px;">Return & Refund</h3>
+          <p style="font-size: 10px; color: #C4A265;">Click to read</p>
         </div>
-        <div class="card-luxury" style="padding: 30px; text-align: center; cursor: pointer;" onclick="openPolicyModal('privacy')">
-          <div style="font-size: 45px;">🔒</div>
-          <h3 style="margin: 15px 0;">Privacy Policy</h3>
-          <p style="font-size: 11px; color: #C4A265;">Click to read</p>
+        <div class="card-luxury policy-card" style="padding: 25px; text-align: center; cursor: pointer;" onclick="openPolicyModal('privacy')">
+          <div class="policy-icon" style="font-size: 35px;">🔒</div>
+          <h3 style="margin: 10px 0; font-size: 15px;">Privacy Policy</h3>
+          <p style="font-size: 10px; color: #C4A265;">Click to read</p>
         </div>
-        <div class="card-luxury" style="padding: 30px; text-align: center; cursor: pointer;" onclick="openPolicyModal('terms')">
-          <div style="font-size: 45px;">📋</div>
-          <h3 style="margin: 15px 0;">Terms & Conditions</h3>
-          <p style="font-size: 11px; color: #C4A265;">Click to read</p>
+        <div class="card-luxury policy-card" style="padding: 25px; text-align: center; cursor: pointer;" onclick="openPolicyModal('terms')">
+          <div class="policy-icon" style="font-size: 35px;">📋</div>
+          <h3 style="margin: 10px 0; font-size: 15px;">Terms & Conditions</h3>
+          <p style="font-size: 10px; color: #C4A265;">Click to read</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" style="padding: 80px 25px; text-align: center;">
-    <h2 style="font-size: 45px; font-family: 'Cormorant Garamond', serif; color: #1A1815; margin-bottom: 40px;">Contact Us</h2>
-    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 40px;">
-      <a href="https://wa.me/923099915777" target="_blank" class="btn-whatsapp" style="padding: 25px 40px; font-size: 16px; flex-direction: column; text-align: center;">
-        <span style="font-size: 40px;">💬</span>
+  <section id="contact" style="padding: 60px 20px; text-align: center;">
+    <h2 class="section-title" style="font-size: 38px; font-family: 'Cormorant Garamond', serif; color: #1A1815; margin-bottom: 30px;">Contact Us</h2>
+    <div class="contact-grid" style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+      <a href="https://wa.me/923099915777" target="_blank" class="btn-whatsapp" style="padding: 20px 30px; font-size: 14px; flex-direction: column; text-align: center;">
+        <span style="font-size: 35px;">💬</span>
         <strong>WhatsApp</strong>
         <span>+92 309 9915777</span>
       </a>
-      <a href="mailto:metalartsialkot@gmail.com" class="card-luxury" style="padding: 25px 40px; text-decoration: none; color: #2C2824; text-align: center;">
-        <div style="font-size: 40px;">📧</div>
+      <a href="mailto:metalartsialkot@gmail.com" class="card-luxury" style="padding: 20px 30px; text-decoration: none; color: #2C2824; text-align: center;">
+        <div style="font-size: 35px;">📧</div>
         <strong>Email</strong>
-        <p style="font-size: 13px;">metalartsialkot@gmail.com</p>
+        <p style="font-size: 12px;">metalartsialkot@gmail.com</p>
       </a>
-      <div class="card-luxury" style="padding: 25px 40px; text-align: center;">
-        <div style="font-size: 40px;">📍</div>
+      <div class="card-luxury" style="padding: 20px 30px; text-align: center;">
+        <div style="font-size: 35px;">📍</div>
         <strong>Location</strong>
-        <p style="font-size: 13px;">Sialkot, Pakistan</p>
+        <p style="font-size: 12px;">Sialkot, Pakistan</p>
       </div>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
-  <footer style="background: #1A1815; color: #D4C5B2; padding: 60px 25px 30px;">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;">
+  <footer style="background: #1A1815; color: #D4C5B2; padding: 50px 20px 25px;">
+    <div class="footer-grid-3" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px;">
       <div>
-        <h3 class="gold-text" style="font-size: 24px; font-family: 'Cormorant Garamond', serif; margin-bottom: 15px;">Metal Art Sialkot</h3>
-        <p style="font-size: 13px;">Crafted in Steel, Inspired by Faith</p>
-        <p style="font-size: 13px; margin-top: 10px;">Premium Islamic Wall Art from Pakistan</p>
+        <h3 class="gold-text" style="font-size: 22px; font-family: 'Cormorant Garamond', serif; margin-bottom: 12px;">Metal Art Sialkot</h3>
+        <p style="font-size: 12px;">Crafted in Steel, Inspired by Faith</p>
+        <p style="font-size: 12px; margin-top: 8px;">Premium Islamic Wall Art from Pakistan</p>
       </div>
       <div>
-        <h4 style="color: white; margin-bottom: 15px;">Quick Links</h4>
-        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+        <h4 style="color: white; margin-bottom: 12px; font-size: 14px;">Quick Links</h4>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px;">
           <a href="#" onclick="openPolicyModal('privacy')" style="color: #D4C5B2;">Privacy Policy</a>
           <a href="#" onclick="openPolicyModal('terms')" style="color: #D4C5B2;">Terms & Conditions</a>
           <a href="#" onclick="openPolicyModal('returns')" style="color: #D4C5B2;">Return & Refund</a>
@@ -582,45 +578,44 @@
         </div>
       </div>
       <div>
-        <h4 style="color: white; margin-bottom: 15px;">Contact</h4>
-        <p style="font-size: 13px;">📞 +92 309 9915777</p>
-        <p style="font-size: 13px;">✉️ metalartsialkot@gmail.com</p>
-        <p style="font-size: 13px;">📍 Sialkot, Pakistan</p>
+        <h4 style="color: white; margin-bottom: 12px; font-size: 14px;">Contact</h4>
+        <p style="font-size: 12px;">📞 +92 309 9915777</p>
+        <p style="font-size: 12px;">✉️ metalartsialkot@gmail.com</p>
+        <p style="font-size: 12px;">📍 Sialkot, Pakistan</p>
       </div>
     </div>
-    <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(196, 162, 101, 0.2); font-size: 12px; color: #8B7355;">
-      © 2025 Metal Art Sialkot. All Rights Reserved. | Product Codes: MAS Series
+    <div style="text-align: center; margin-top: 35px; padding-top: 18px; border-top: 1px solid rgba(196, 162, 101, 0.2); font-size: 11px; color: #8B7355;">
+      © 2025 Metal Art Sialkot. All Rights Reserved.
     </div>
   </footer>
 
-  <!-- ============ LIVE NOTIFICATION WITH PRODUCT CODE ============ -->
+  <!-- ============ LIVE NOTIFICATION ============ -->
   <div class="live-notification" id="liveNotification">
     <span class="green-dot"></span>
     <div>
-      <p style="font-size: 11px; color: #8B7355;">Someone just purchased</p>
-      <p style="font-weight: 600; font-size: 12px;" id="liveProduct">Ayat ul Kursi Round</p>
-      <p style="font-size: 10px; color: #8B7355;" id="liveProductCode">MAS-AYT-001</p>
-      <p style="font-size: 10px; color: #4CAF50;" id="liveTime">2 min ago</p>
+      <p style="font-size: 10px; color: #8B7355;">Someone just purchased</p>
+      <p style="font-weight: 600; font-size: 11px;" id="liveProduct">Ayat ul Kursi</p>
+      <p style="font-size: 9px; color: #4CAF50;" id="liveTime">2 min ago</p>
     </div>
-    <span onclick="document.getElementById('liveNotification').style.display='none'" style="position: absolute; top: 6px; right: 8px; cursor: pointer;">✕</span>
+    <span onclick="document.getElementById('liveNotification').style.display='none'" style="position: absolute; top: 3px; right: 6px; cursor: pointer; font-size: 10px;">✕</span>
   </div>
 
-  <!-- Floating Buttons -->
-  <div style="position: fixed; bottom: 25px; right: 25px; z-index: 998; display: flex; flex-direction: column; gap: 12px;">
-    <a href="https://wa.me/923099915777" target="_blank" class="btn-whatsapp" style="width: 55px; height: 55px; border-radius: 50%; justify-content: center; padding: 0; font-size: 24px;" title="Chat on WhatsApp">💬</a>
+  <!-- Floating WhatsApp -->
+  <div style="position: fixed; bottom: 20px; right: 20px; z-index: 998;">
+    <a href="https://wa.me/923099915777" target="_blank" class="btn-whatsapp" style="width: 50px; height: 50px; border-radius: 50%; justify-content: center; padding: 0; font-size: 22px;" title="Chat on WhatsApp">💬</a>
   </div>
 
   <!-- Product Modal -->
   <div id="productModal" class="modal">
-    <div style="background: white; border-radius: 20px; padding: 30px; max-width: 800px; width: 95%; position: relative; max-height: 90vh; overflow-y: auto;">
-      <span onclick="closeProductModal()" style="position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #C4A265;">✕</span>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-        <div id="modalImgContainer" class="img-container" style="border-radius: 15px; min-height: 350px;"></div>
+    <div style="background: white; border-radius: 20px; padding: 25px; max-width: 800px; width: 95%; position: relative; max-height: 90vh; overflow-y: auto;">
+      <span onclick="closeProductModal()" style="position: absolute; top: 12px; right: 18px; font-size: 24px; cursor: pointer; color: #C4A265;">✕</span>
+      <div class="modal-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+        <div id="modalImgContainer" class="img-container" style="border-radius: 15px; min-height: 300px;"></div>
         <div>
-          <span id="modalProductCode" class="product-code" style="margin-bottom: 10px; display: inline-block;">MAS-CLG-001</span>
-          <h3 id="modalTitle" style="font-size: 28px; font-family: 'Cormorant Garamond', serif;"></h3>
-          <p id="modalPrice" style="font-size: 28px; font-weight: bold; color: #C4A265;"></p>
-          <button onclick="buyNowWhatsApp()" class="btn-whatsapp" style="width: 100%; justify-content: center; padding: 14px; margin-top: 20px;">💬 Buy via WhatsApp</button>
+          <span id="modalProductCode" class="product-code" style="margin-bottom: 8px;">MAS-CLG-001</span>
+          <h3 id="modalTitle" style="font-size: 24px; font-family: 'Cormorant Garamond', serif;"></h3>
+          <p id="modalPrice" style="font-size: 24px; font-weight: bold; color: #C4A265;"></p>
+          <button onclick="buyNowWhatsApp()" class="btn-whatsapp" style="width: 100%; justify-content: center; padding: 12px; margin-top: 15px;">💬 Buy via WhatsApp</button>
         </div>
       </div>
     </div>
@@ -628,15 +623,19 @@
 
   <!-- Policy Modal -->
   <div id="policyModal" class="modal">
-    <div style="background: white; border-radius: 20px; padding: 35px; max-width: 700px; width: 95%; position: relative; max-height: 80vh; overflow-y: auto;">
-      <span onclick="closePolicyModal()" style="position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #C4A265;">✕</span>
+    <div style="background: white; border-radius: 20px; padding: 30px; max-width: 700px; width: 95%; position: relative; max-height: 80vh; overflow-y: auto;">
+      <span onclick="closePolicyModal()" style="position: absolute; top: 12px; right: 18px; font-size: 24px; cursor: pointer; color: #C4A265;">✕</span>
       <div id="policyContent"></div>
     </div>
   </div>
 
   <script>
-    // ========== PRODUCTS WITH UNIQUE CODES ==========
-    // Format: MAS-XXX-YYY (MAS = Metal Art Sialkot, XXX = Category, YYY = Number)
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
+    // Products data
     const products = [
       { id: 1, code: "MAS-CLG-001", name: "Masha Allah", category: "calligraphy", price: 6000, rating: 5, image: "images/mashaallah.jpg", bestseller: true, stock: 4, sold: 234 },
       { id: 2, code: "MAS-CLG-002", name: "Hasbunallah", category: "calligraphy", price: 6000, rating: 5, image: "images/hasbunallah.jpg", bestseller: true, stock: 2, sold: 189 },
@@ -649,12 +648,12 @@
     ];
 
     const reviews = [
-      { name: "Ahmed Khan", location: "Lahore", product: "Ayat ul Kursi Round", code: "MAS-AYT-001", rating: 5, text: "Masha Allah! Beautiful craftsmanship. The Ayat ul Kursi round design looks stunning on my living room wall.", days: 2 },
-      { name: "Fatima Hassan", location: "Karachi", product: "Masha Allah", code: "MAS-CLG-001", rating: 5, text: "Received my Masha Allah wall art today. Subhan Allah the golden finish is gorgeous! Highly recommended!", days: 5 },
-      { name: "Usman Siddiqui", location: "Islamabad", product: "First Kalma", code: "MAS-KLM-001", rating: 5, text: "Excellent quality! The laser cutting is precise and the golden shine is beautiful. Jazak Allah khair!", days: 7 },
-      { name: "Ayesha Ali", location: "Faisalabad", product: "Hasbunallah", code: "MAS-CLG-002", rating: 5, text: "Gifted Hasbunallah to my parents. They loved it! Best Islamic décor shop!", days: 3 },
-      { name: "Muhammad Rashid", location: "Multan", product: "Bismillah", code: "MAS-BSM-001", rating: 5, text: "Ordered for my office. Perfect finishing, very professional look. Got many compliments.", days: 6 },
-      { name: "Zainab Khalid", location: "Rawalpindi", product: "La Ilaha Illa Anta", code: "MAS-KLM-002", rating: 5, text: "Amazing service! Fast delivery and product exactly as shown. 100% recommended!", days: 4 }
+      { name: "Ahmed Khan", location: "Lahore", product: "Ayat ul Kursi Round", code: "MAS-AYT-001", rating: 5, text: "Masha Allah! Beautiful craftsmanship. Stunning on my living room wall.", days: 2 },
+      { name: "Fatima Hassan", location: "Karachi", product: "Masha Allah", code: "MAS-CLG-001", rating: 5, text: "Subhan Allah the golden finish is gorgeous! Highly recommended!", days: 5 },
+      { name: "Usman Siddiqui", location: "Islamabad", product: "First Kalma", code: "MAS-KLM-001", rating: 5, text: "Excellent quality! Precise laser cutting. Jazak Allah khair!", days: 7 },
+      { name: "Ayesha Ali", location: "Faisalabad", product: "Hasbunallah", code: "MAS-CLG-002", rating: 5, text: "Gifted to my parents. They loved it! Best Islamic décor shop!", days: 3 },
+      { name: "Muhammad Rashid", location: "Multan", product: "Bismillah", code: "MAS-BSM-001", rating: 5, text: "Perfect finishing. Got many compliments at my office.", days: 6 },
+      { name: "Zainab Khalid", location: "Rawalpindi", product: "La Ilaha Illa Anta", code: "MAS-KLM-002", rating: 5, text: "Amazing service! Fast delivery. 100% recommended!", days: 4 }
     ];
 
     let currentProduct = null;
@@ -668,26 +667,22 @@
           <div class="img-container">
             <img src="${p.image}" alt="${p.name} - ${p.code}" loading="lazy" onerror="this.classList.add('error');">
             <div class="img-fallback">🕌</div>
-            ${p.bestseller ? '<div style="position: absolute; top: 10px; left: 10px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 4px 10px; border-radius: 50px; font-size: 9px; font-weight: 700; z-index: 1;">BEST SELLER</div>' : ''}
+            ${p.bestseller ? '<div style="position: absolute; top: 8px; left: 8px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 3px 8px; border-radius: 50px; font-size: 8px; font-weight: 700; z-index: 1;">BEST</div>' : ''}
           </div>
-          <div style="padding: 18px;">
+          <div style="padding: 14px;">
             <span class="product-code">${p.code}</span>
-            <h3 style="font-size: 18px; font-family: 'Cormorant Garamond', serif; margin-top: 6px;">${p.name}</h3>
-            <div style="color: #C4A265; font-size: 13px;">${'★'.repeat(p.rating)} <span class="sold-count">(${p.sold}+ sold)</span></div>
-            <p style="font-size: 20px; font-weight: bold; color: #C4A265; margin-bottom: 4px;">Rs. ${p.price.toLocaleString()}</p>
+            <h3 style="font-size: 16px; font-family: 'Cormorant Garamond', serif; margin-top: 4px;">${p.name}</h3>
+            <div style="color: #C4A265; font-size: 12px;">${'★'.repeat(p.rating)} <span class="sold-count">(${p.sold}+ sold)</span></div>
+            <p style="font-size: 18px; font-weight: bold; color: #C4A265; margin: 4px 0;">Rs. ${p.price.toLocaleString()}</p>
             ${stockLow ? `
               <div class="stock-indicator" style="color: ${stockVeryLow ? '#E53935' : '#FF6D00'};">
-                <span class="stock-dot" style="background: ${stockVeryLow ? '#E53935' : '#FF6D00'};"></span>
+                <span class="stock-dot"></span>
                 ${stockVeryLow ? `Only ${p.stock} left` : `${p.stock} remaining`}
               </div>
-              <div class="stock-bar">
-                <div class="stock-bar-fill" style="width: ${(p.stock/20)*100}%;"></div>
-              </div>
             ` : ''}
-            ${stockVeryLow ? `<p class="viewer-count" style="margin-top: 4px;">⚡ ${Math.floor(Math.random() * 4) + 2} people viewing now</p>` : ''}
-            <div style="display: flex; gap: 6px; margin-top: 12px;">
-              <button class="quick-view-btn btn-outline" style="flex: 1; padding: 8px; font-size: 11px;" data-id="${p.id}">Quick View</button>
-              <button class="buy-now-btn btn-gold" style="flex: 1; padding: 8px; font-size: 11px;" data-id="${p.id}">Buy Now</button>
+            <div style="display: flex; gap: 5px; margin-top: 10px;">
+              <button class="quick-view-btn btn-outline" style="flex: 1; padding: 7px; font-size: 10px;" data-id="${p.id}">View</button>
+              <button class="buy-now-btn btn-gold" style="flex: 1; padding: 7px; font-size: 10px;" data-id="${p.id}">Buy</button>
             </div>
           </div>
         </div>
@@ -701,36 +696,35 @@
 
     function renderBestSellers() {
       document.getElementById("bestSellersGrid").innerHTML = products.filter(p => p.bestseller).map(p => `
-        <div class="card-luxury" style="position: relative; padding: 20px;">
-          <span style="position: absolute; top: 15px; left: 15px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 5px 15px; border-radius: 50px; font-size: 10px; font-weight: bold; z-index: 1;">BEST SELLER</span>
-          ${p.sold > 200 ? '<span class="hot-badge" style="position: absolute; top: 15px; right: 15px;">🔥 Trending</span>' : ''}
-          <div class="img-container" style="border-radius: 10px; margin-bottom: 15px;">
+        <div class="card-luxury" style="position: relative; padding: 18px;">
+          <span style="position: absolute; top: 12px; left: 12px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 4px 12px; border-radius: 50px; font-size: 9px; font-weight: bold; z-index: 1;">BEST SELLER</span>
+          <div class="img-container" style="border-radius: 10px; margin-bottom: 12px;">
             <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.classList.add('error');">
             <div class="img-fallback" style="font-size: 3rem;">🕌</div>
           </div>
           <span class="product-code">${p.code}</span>
-          <h4 style="font-size: 18px; font-family: 'Cormorant Garamond', serif; margin-top: 4px;">${p.name}</h4>
-          <div style="color: #C4A265;">★★★★★ <span class="sold-count">(${p.sold} reviews)</span></div>
-          <p style="font-weight: bold; color: #C4A265;">Rs. ${p.price.toLocaleString()}</p>
-          <button class="view-detail-btn btn-outline" style="width: 100%; padding: 10px; font-size: 12px; margin-top: 8px;" data-id="${p.id}">View Details</button>
+          <h4 style="font-size: 16px; font-family: 'Cormorant Garamond', serif; margin-top: 4px;">${p.name}</h4>
+          <div style="color: #C4A265; font-size: 12px;">★★★★★ <span class="sold-count">(${p.sold} reviews)</span></div>
+          <p style="font-weight: bold; color: #C4A265; font-size: 17px;">Rs. ${p.price.toLocaleString()}</p>
+          <button class="view-detail-btn btn-outline" style="width: 100%; padding: 9px; font-size: 11px; margin-top: 8px;" data-id="${p.id}">View Details</button>
         </div>
       `).join('');
     }
 
     function renderReviews() {
       document.getElementById("reviewsGrid").innerHTML = reviews.map(r => `
-        <div class="card-luxury" style="padding: 25px;">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-            <div style="width: 45px; height: 45px; border-radius: 50%; background: linear-gradient(135deg, #C4A265, #D4B87A); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">${r.name.split(' ')[0][0]}${r.name.split(' ')[1][0]}</div>
+        <div class="card-luxury" style="padding: 20px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #C4A265, #D4B87A); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">${r.name.split(' ')[0][0]}${r.name.split(' ')[1][0]}</div>
             <div>
-              <strong>${r.name}</strong>
+              <strong style="font-size: 13px;">${r.name}</strong>
               <span class="verified-tag">✅ Verified</span>
-              <p style="font-size: 11px; color: #8B7355;">${r.location} • ${r.days}d ago</p>
+              <p style="font-size: 10px; color: #8B7355;">${r.location} • ${r.days}d ago</p>
             </div>
           </div>
           <span class="review-star">★★★★★</span>
-          <p style="font-size: 11px; color: #C4A265; margin: 4px 0;">${r.product} <span class="product-code" style="font-size: 9px;">${r.code}</span></p>
-          <p style="color: #4A4743; font-size: 13px; margin-top: 8px; line-height: 1.7; font-style: italic;">"${r.text}"</p>
+          <p style="font-size: 11px; color: #C4A265; margin: 4px 0;">${r.product} <span class="product-code" style="font-size: 8px;">${r.code}</span></p>
+          <p style="color: #4A4743; font-size: 12px; margin-top: 6px; line-height: 1.6; font-style: italic;">"${r.text}"</p>
         </div>
       `).join('');
     }
@@ -740,7 +734,6 @@
       const p = products[Math.floor(Math.random() * products.length)];
       const city = cities[Math.floor(Math.random() * cities.length)];
       document.getElementById('liveProduct').textContent = p.name;
-      document.getElementById('liveProductCode').textContent = p.code;
       document.getElementById('liveTime').textContent = `${Math.floor(Math.random() * 12) + 1} min ago`;
       document.getElementById('liveNotification').style.display = 'flex';
       setTimeout(() => document.getElementById('liveNotification').style.display = 'none', 5000);
@@ -767,19 +760,18 @@
     function closeProductModal() { document.getElementById('productModal').classList.remove('active'); }
     function buyNowWhatsApp() {
       if (!currentProduct) return;
-      const msg = `Assalam O Alaikum! I want to order:%0A%0A🏷️ Code: ${currentProduct.code}%0A🕌 Product: ${currentProduct.name}%0A💰 Price: Rs.${currentProduct.price}%0A%0APlease share details.`;
-      window.open(`https://wa.me/923099915777?text=${msg}`, '_blank');
+      window.open(`https://wa.me/923099915777?text=Order:%20${currentProduct.code}%20-%20${encodeURIComponent(currentProduct.name)}%20Rs.${currentProduct.price}`, '_blank');
     }
 
     const policies = {
-      shipping: { title: '🚚 Shipping Policy', content: '<h3>Shipping Information</h3><p>We deliver across Pakistan with fast and secure shipping.</p><ul><li>Processing: 2-3 business days</li><li>Delivery: 3-7 business days</li><li>Free shipping on all orders</li><li>WhatsApp tracking updates</li></ul>' },
+      shipping: { title: '🚚 Shipping Policy', content: '<h3>Shipping Information</h3><p>We deliver across Pakistan with fast and secure shipping.</p><ul><li>Processing: 2-3 business days</li><li>Delivery: 3-7 business days</li><li>Free shipping on all orders</li></ul>' },
       returns: { title: '🔄 Return & Refund', content: '<h3>Returns & Refunds</h3><p>7-day return for damaged items. Full refund or replacement.</p>' },
       privacy: { title: '🔒 Privacy Policy', content: '<h3>Privacy Policy</h3><p>Your data is safe. No third-party sharing.</p>' },
       terms: { title: '📋 Terms & Conditions', content: '<h3>Terms & Conditions</h3><p>By ordering you agree to our terms.</p>' }
     };
     function openPolicyModal(type) {
       const p = policies[type];
-      document.getElementById('policyContent').innerHTML = `<h2 style="font-size:28px;font-family:'Cormorant Garamond',serif;">${p.title}</h2><div style="line-height:2;">${p.content}</div>`;
+      document.getElementById('policyContent').innerHTML = `<h2 style="font-size:24px;">${p.title}</h2><div style="line-height:2;">${p.content}</div>`;
       document.getElementById('policyModal').classList.add('active');
     }
     function closePolicyModal() { document.getElementById('policyModal').classList.remove('active'); }
@@ -801,7 +793,7 @@
 
     window.addEventListener('click', function(e) { if (e.target.classList.contains('modal')) { e.target.classList.remove('active'); } });
 
-    // Initialize
+    // Init
     renderProducts();
     renderBestSellers();
     renderReviews();
@@ -809,8 +801,6 @@
     setInterval(updateFOMOTimer, 1000);
     showLiveNotification();
     setInterval(() => setTimeout(showLiveNotification, Math.random()*15000+10000), 25000);
-    
-    console.log('✅ Metal Art Sialkot - Complete with Product Codes!');
   </script>
 </body>
 </html>
