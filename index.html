@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Metal Art Sialkot | Premium Islamic Metal Wall Art</title>
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23C4A265'/><text x='50' y='72' font-size='55' text-anchor='middle' fill='white' font-family='Georgia,serif' font-weight='bold'>M</text></svg>">
+  <meta name="theme-color" content="#C4A265">
+  
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- SEO Meta Tags -->
   <meta name="description" content="Premium Islamic wall art by Metal Art Sialkot. Handcrafted stainless steel calligraphy with golden finish.">
   <meta name="keywords" content="Islamic Wall Art Pakistan, Islamic Calligraphy, Metal Wall Art, Ayat ul Kursi, Kalima, Bismillah">
   <meta name="author" content="Metal Art Sialkot">
@@ -24,117 +27,57 @@
   <meta property="og:title" content="Metal Art Sialkot | Premium Islamic Metal Wall Art Pakistan">
   <meta property="og:description" content="Premium Islamic wall art. Handcrafted stainless steel calligraphy with golden finish.">
   <meta property="og:image" content="https://metalartsialkot.com/images/hero-bg.jpg">
-  <meta property="og:url" content="https://metalartsialkot.com">
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <meta name="theme-color" content="#C4A265">
   
   <style>
-    :root { 
-      --gold: #C4A265; --gold-light: #D4B87A; --dark: #1A1815; --cream: #FAF7F2;
-      --green: #1B5E20; --red: #E53935;
-    }
+    :root { --gold: #C4A265; --gold-light: #D4B87A; --dark: #1A1815; --cream: #FAF7F2; --green: #1B5E20; --red: #E53935; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', sans-serif; background: #FAF7F2; color: #2C2824; overflow-x: hidden; }
     
-    /* ===== GOLDEN PARTICLES ===== */
-    #particles-container {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none; z-index: 0;
-    }
-    .golden-particle {
-      position: absolute; pointer-events: none;
-      animation: floatUp linear infinite;
-      opacity: 0;
-      font-size: 20px;
-    }
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) rotate(0deg) scale(0); opacity: 0; }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.6; }
-      100% { transform: translateY(-10vh) rotate(360deg) scale(1.5); opacity: 0; }
-    }
+    #particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .golden-particle { position: absolute; pointer-events: none; animation: floatUp linear infinite; opacity: 0; font-size: 20px; }
+    @keyframes floatUp { 0% { transform: translateY(100vh) rotate(0deg) scale(0); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.6; } 100% { transform: translateY(-10vh) rotate(360deg) scale(1.5); opacity: 0; } }
     
-    /* ===== IMAGE FALLBACK ===== */
-    .img-wrapper {
-      position: relative; overflow: hidden; background: #F5F0E8;
-      width: 100%; aspect-ratio: 1/1;
-    }
+    .img-wrapper { position: relative; overflow: hidden; background: #F5F0E8; width: 100%; aspect-ratio: 1/1; }
     .img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .img-fallback {
-      display: none; position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, #F5F0E8, #E8E0D5);
-      font-size: 3rem; flex-direction: column; gap: 8px;
-    }
+    .img-fallback { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; align-items: center; justify-content: center; background: linear-gradient(135deg, #F5F0E8, #E8E0D5); font-size: 3rem; flex-direction: column; gap: 8px; }
     .img-fallback .icon { font-size: 3rem; }
     .img-fallback .text { font-size: 11px; color: #8B7355; }
     
-    /* ===== ZOOM ===== */
     .zoom-container { cursor: crosshair; }
     .zoom-container:hover img { transform: scale(1.4); }
     .zoom-container img { transition: transform 0.5s ease; }
     
-    /* ===== BUTTONS ===== */
-    .btn-gold {
-      background: linear-gradient(135deg, #C4A265, #D4B87A);
-      color: white; padding: 12px 28px; border-radius: 50px; border: none;
-      cursor: pointer; font-weight: 600; transition: 0.3s; text-align: center;
-    }
+    .btn-gold { background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; text-align: center; }
     .btn-gold:hover { box-shadow: 0 10px 30px rgba(196,162,101,0.4); transform: translateY(-2px); }
-    .btn-dark {
-      background: #1A1815; color: white; padding: 12px 28px; border-radius: 50px;
-      border: none; cursor: pointer; font-weight: 600; transition: 0.3s; text-align: center;
-    }
+    .btn-outline { background: transparent; color: #C4A265; border: 2px solid #C4A265; padding: 12px 28px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: 0.3s; text-align: center; }
+    .btn-outline:hover { background: #C4A265; color: white; }
+    .btn-dark { background: #1A1815; color: white; padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; text-align: center; }
     .btn-dark:hover { background: #333; }
-    .btn-wa {
-      background: #1B5E20; color: white; padding: 10px 20px; border-radius: 50px;
-      border: none; cursor: pointer; font-weight: 500; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 6px; transition: 0.3s;
-    }
+    .btn-wa { background: #1B5E20; color: white; padding: 10px 20px; border-radius: 50px; border: none; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: 0.3s; }
     .btn-wa:hover { background: #145218; }
     
-    /* ===== NAV ===== */
-    .glass-nav {
-      background: rgba(250,247,242,0.97); backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(196,162,101,0.2);
-      position: fixed; top: 0; width: 100%; z-index: 1000;
-    }
+    .glass-nav { background: rgba(250,247,242,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(196,162,101,0.2); position: fixed; top: 0; width: 100%; z-index: 1000; }
     
-    /* ===== CARD ===== */
-    .card-luxury {
-      background: white; border: 1px solid rgba(196,162,101,0.1);
-      border-radius: 16px; overflow: hidden; transition: 0.4s;
-    }
+    .card-luxury { background: white; border: 1px solid rgba(196,162,101,0.1); border-radius: 16px; overflow: hidden; transition: 0.4s; }
     .card-luxury:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
     
-    .gold-text {
-      background: linear-gradient(135deg, #C4A265, #D4B87A, #B8944A);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
+    .gold-text { background: linear-gradient(135deg, #C4A265, #D4B87A, #B8944A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     
-    /* ===== MODAL ===== */
-    .modal {
-      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
-      z-index: 2000; align-items: center; justify-content: center;
-    }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 2000; align-items: center; justify-content: center; }
     .modal.active { display: flex; }
     
-    /* ===== PRODUCT CODE ===== */
     .code-badge { font-size: 10px; color: #8B7355; background: #F5F0E8; padding: 3px 10px; border-radius: 4px; font-family: monospace; }
-    
-    /* ===== CART BADGE ===== */
-    .cart-count {
-      position: absolute; top: -6px; right: -6px; background: #E53935; color: white;
-      font-size: 9px; width: 18px; height: 18px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; font-weight: 700;
-    }
-    
-    /* ===== STOCK ===== */
+    .cart-count { position: absolute; top: -6px; right: -6px; background: #E53935; color: white; font-size: 9px; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
     .stock-dot { width: 6px; height: 6px; border-radius: 50%; background: #E53935; animation: pulse 2s infinite; display: inline-block; }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
     
-    /* ===== MOBILE ===== */
+    /* ===== POLICIES SECTION ===== */
+    .policy-card { background: white; border: 1px solid rgba(196,162,101,0.1); border-radius: 16px; padding: 30px; text-align: center; cursor: pointer; transition: all 0.4s; }
+    .policy-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(196,162,101,0.2); border-color: #C4A265; }
+    .policy-icon { font-size: 45px; margin-bottom: 15px; }
+    .policy-card h3 { font-size: 16px; margin-bottom: 8px; color: #1A1815; }
+    .policy-card p { font-size: 11px; color: #C4A265; }
+    
     .mobile-menu { display: none; position: fixed; top: 58px; left: 0; width: 100%; background: rgba(250,247,242,0.99); padding: 20px; z-index: 999; border-bottom: 1px solid rgba(196,162,101,0.2); }
     .mobile-menu.active { display: block; }
     .mobile-menu a { display: block; padding: 12px 0; color: #2C2824; text-decoration: none; font-size: 14px; letter-spacing: 2px; border-bottom: 1px solid #E8E0D5; }
@@ -143,18 +86,19 @@
       .desk-only { display: none !important; }
       .mob-show { display: block !important; }
       .prod-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .policy-grid { grid-template-columns: repeat(2, 1fr) !important; }
       .hero-title { font-size: 32px !important; }
       section { padding: 50px 15px !important; }
     }
     @media (max-width: 480px) {
       .hero-title { font-size: 26px !important; }
       .prod-grid { gap: 8px !important; }
+      .policy-grid { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== GOLDEN PARTICLES ===== -->
   <div id="particles-container"></div>
 
   <!-- ===== NAVIGATION ===== -->
@@ -169,6 +113,7 @@
         <a href="#shop" style="color:#2C2824;text-decoration:none;">Shop</a>
         <a href="#bestsellers" style="color:#2C2824;text-decoration:none;">Best Sellers</a>
         <a href="#reviews" style="color:#2C2824;text-decoration:none;">Reviews</a>
+        <a href="#policies" style="color:#2C2824;text-decoration:none;">Policies</a>
         <a href="#contact" style="color:#2C2824;text-decoration:none;">Contact</a>
       </nav>
       <div style="display:flex;align-items:center;gap:10px;">
@@ -181,6 +126,7 @@
       <a href="#shop" onclick="toggleMenu()">🛍️ Shop</a>
       <a href="#bestsellers" onclick="toggleMenu()">⭐ Best Sellers</a>
       <a href="#reviews" onclick="toggleMenu()">💬 Reviews</a>
+      <a href="#policies" onclick="toggleMenu()">📋 Policies</a>
       <a href="#contact" onclick="toggleMenu()">📞 Contact</a>
       <a href="https://wa.me/923099915777" target="_blank" style="color:#1B5E20;font-weight:600;">💬 WhatsApp</a>
     </div>
@@ -188,7 +134,7 @@
 
   <!-- ===== HERO ===== -->
   <section id="home" style="min-height:100vh;background:linear-gradient(135deg,#1A1815,#2C2824,#1A1815);display:flex;align-items:center;justify-content:center;position:relative;padding:80px 15px 40px;">
-    <div style="position:absolute;inset:0;opacity:0.2;background-image:url('images/hero-bg.jpg');background-size:cover;background-position:center;" id="heroBg"></div>
+    <div style="position:absolute;inset:0;opacity:0.2;background-image:url('images/hero-bg.jpg');background-size:cover;background-position:center;"></div>
     <div style="position:relative;z-index:2;text-align:center;max-width:800px;">
       <p style="color:#D4B87A;letter-spacing:5px;font-size:10px;text-transform:uppercase;">Premium Islamic Décor • Made in Pakistan</p>
       <h1 class="hero-title" style="font-size:58px;color:#F5F0E8;font-family:'Cormorant Garamond',serif;">Luxury Islamic<br><span class="gold-text">Metal Wall Art</span></h1>
@@ -219,9 +165,7 @@
   <!-- ===== BEST SELLERS ===== -->
   <section id="bestsellers" style="padding:60px 20px;background:#F5F0E8;position:relative;z-index:1;">
     <div style="max-width:1300px;margin:0 auto;">
-      <div style="text-align:center;margin-bottom:40px;">
-        <h2 style="font-size:36px;font-family:'Cormorant Garamond',serif;">Best Sellers</h2>
-      </div>
+      <div style="text-align:center;margin-bottom:40px;"><h2 style="font-size:36px;font-family:'Cormorant Garamond',serif;">Best Sellers</h2></div>
       <div id="bestGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;"></div>
     </div>
   </section>
@@ -235,8 +179,49 @@
     <div id="reviewGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;"></div>
   </section>
 
+  <!-- ===== SHIPPING & POLICIES SECTION ===== -->
+  <section id="policies" style="padding:80px 20px;background:#F5F0E8;position:relative;z-index:1;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:50px;">
+        <p style="color:#C4A265;letter-spacing:4px;font-size:10px;text-transform:uppercase;">Important Information</p>
+        <h2 style="font-size:42px;font-family:'Cormorant Garamond',serif;color:#1A1815;">Shipping & Policies</h2>
+        <p style="color:#4A4743;margin-top:8px;">Everything you need to know about ordering with us</p>
+      </div>
+      
+      <div class="policy-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+        <!-- Shipping Policy -->
+        <div class="policy-card" onclick="openPolicyModal('shipping')">
+          <div class="policy-icon">🚚</div>
+          <h3>Shipping Policy</h3>
+          <p>Click to read more</p>
+        </div>
+        
+        <!-- Return & Refund -->
+        <div class="policy-card" onclick="openPolicyModal('returns')">
+          <div class="policy-icon">🔄</div>
+          <h3>Return & Refund</h3>
+          <p>Click to read more</p>
+        </div>
+        
+        <!-- Privacy Policy -->
+        <div class="policy-card" onclick="openPolicyModal('privacy')">
+          <div class="policy-icon">🔒</div>
+          <h3>Privacy Policy</h3>
+          <p>Click to read more</p>
+        </div>
+        
+        <!-- Terms & Conditions -->
+        <div class="policy-card" onclick="openPolicyModal('terms')">
+          <div class="policy-icon">📋</div>
+          <h3>Terms & Conditions</h3>
+          <p>Click to read more</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== CONTACT ===== -->
-  <section id="contact" style="padding:60px 20px;text-align:center;background:#F5F0E8;position:relative;z-index:1;">
+  <section id="contact" style="padding:60px 20px;text-align:center;position:relative;z-index:1;">
     <h2 style="font-size:36px;font-family:'Cormorant Garamond',serif;">Contact Us</h2>
     <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:30px;">
       <a href="https://wa.me/923099915777" target="_blank" class="btn-wa" style="padding:18px 30px;flex-direction:column;">💬<br>WhatsApp<br>+92 309 9915777</a>
@@ -248,7 +233,13 @@
   <footer style="background:#1A1815;color:#D4C5B2;padding:40px 20px;text-align:center;position:relative;z-index:1;">
     <h3 class="gold-text" style="font-size:20px;">Metal Art Sialkot</h3>
     <p style="font-size:11px;">Crafted in Steel • Inspired by Faith</p>
-    <p style="font-size:10px;margin-top:8px;">📞 +92 309 9915777 | info@metalartsialkot.com | metalartsialkot@gmail.com</p>
+    <div style="margin-top:15px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;font-size:11px;">
+      <a href="#" onclick="openPolicyModal('shipping')" style="color:#D4C5B2;text-decoration:none;">Shipping Policy</a>
+      <a href="#" onclick="openPolicyModal('returns')" style="color:#D4C5B2;text-decoration:none;">Return & Refund</a>
+      <a href="#" onclick="openPolicyModal('privacy')" style="color:#D4C5B2;text-decoration:none;">Privacy Policy</a>
+      <a href="#" onclick="openPolicyModal('terms')" style="color:#D4C5B2;text-decoration:none;">Terms & Conditions</a>
+    </div>
+    <p style="font-size:10px;margin-top:15px;">📞 +92 309 9915777 | info@metalartsialkot.com | metalartsialkot@gmail.com</p>
     <p style="font-size:9px;color:#8B7355;margin-top:10px;">© 2025 Metal Art Sialkot. All Rights Reserved.</p>
   </footer>
 
@@ -313,11 +304,18 @@
     </div>
   </div>
 
+  <!-- ===== POLICY MODAL ===== -->
+  <div id="policyModal" class="modal">
+    <div style="background:white;border-radius:20px;padding:35px;max-width:700px;width:95%;position:relative;max-height:80vh;overflow-y:auto;">
+      <span onclick="closeModal('policyModal')" style="position:absolute;top:15px;right:20px;font-size:28px;cursor:pointer;color:#C4A265;">✕</span>
+      <div id="policyContent"></div>
+    </div>
+  </div>
+
   <script>
     // ===== GOLDEN PARTICLES =====
     const particles = ['✦', '✧', '★', '☆', '•', '◆', '◈', '⬡', '⁕'];
     const container = document.getElementById('particles-container');
-    
     function createParticle() {
       const p = document.createElement('span');
       p.className = 'golden-particle';
@@ -328,10 +326,8 @@
       p.style.animationDuration = (Math.random() * 8 + 6) + 's';
       p.style.animationDelay = Math.random() * 5 + 's';
       container.appendChild(p);
-      
       setTimeout(() => p.remove(), 14000);
     }
-    
     setInterval(createParticle, 600);
     for (let i = 0; i < 15; i++) setTimeout(createParticle, i * 400);
 
@@ -364,6 +360,116 @@
     let currentProduct = null;
     let qty = 1;
 
+    // ===== ALL POLICIES CONTENT =====
+    const policies = {
+      shipping: {
+        title: '🚚 Shipping Policy',
+        content: `
+          <h3 style="color:#C4A265;margin-bottom:15px;">Shipping Information</h3>
+          <p style="margin-bottom:15px;">We deliver across Pakistan with fast, reliable, and secure shipping services. Your order is carefully packed to ensure it arrives in perfect condition.</p>
+          
+          <div style="background:#F5F0E8;padding:18px;border-radius:10px;margin-bottom:15px;">
+            <h4 style="margin-bottom:10px;">📦 Processing & Delivery</h4>
+            <ul style="list-style:none;padding:0;line-height:2.2;">
+              <li>✅ <strong>Processing Time:</strong> 2-3 business days</li>
+              <li>✅ <strong>Delivery Time:</strong> 3-7 business days</li>
+              <li>✅ <strong>Free Shipping:</strong> All orders across Pakistan</li>
+              <li>✅ <strong>Tracking:</strong> WhatsApp tracking updates provided</li>
+              <li>✅ <strong>Packaging:</strong> Secure bubble wrap + cardboard boxing</li>
+            </ul>
+          </div>
+          
+          <h4 style="margin-bottom:10px;">📍 Delivery Areas</h4>
+          <p style="margin-bottom:15px;">We deliver to all major cities including Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta, Sialkot, and all other cities across Pakistan.</p>
+          
+          <h4 style="margin-bottom:10px;">⏰ Delivery Timeline</h4>
+          <p>Standard delivery takes 3-7 business days depending on your location. Remote areas may take up to 10 business days.</p>
+        `
+      },
+      returns: {
+        title: '🔄 Return & Refund Policy',
+        content: `
+          <h3 style="color:#C4A265;margin-bottom:15px;">Returns & Refunds</h3>
+          <p style="margin-bottom:15px;">Customer satisfaction is our top priority. If you receive a damaged or defective product, we offer a hassle-free return and refund process.</p>
+          
+          <div style="background:#F5F0E8;padding:18px;border-radius:10px;margin-bottom:15px;">
+            <h4 style="margin-bottom:10px;">📋 Return Conditions</h4>
+            <ul style="list-style:none;padding:0;line-height:2.2;">
+              <li>✅ <strong>Return Window:</strong> 7 days from delivery date</li>
+              <li>✅ <strong>Condition:</strong> Product must be unused and in original packaging</li>
+              <li>✅ <strong>Damaged Items:</strong> Full refund or free replacement</li>
+              <li>✅ <strong>Wrong Item:</strong> Free exchange with correct product</li>
+              <li>✅ <strong>Refund Method:</strong> Bank transfer or JazzCash/EasyPaisa</li>
+            </ul>
+          </div>
+          
+          <h4 style="margin-bottom:10px;">💰 Refund Process</h4>
+          <p style="margin-bottom:10px;">Once we receive and inspect the returned item, refund will be processed within 5-7 business days.</p>
+          
+          <h4 style="margin-bottom:10px;">📞 How to Initiate Return</h4>
+          <p>Contact us on WhatsApp at <strong>+92 309 9915777</strong> with your order ID and photos of the issue. Our team will guide you through the process.</p>
+        `
+      },
+      privacy: {
+        title: '🔒 Privacy Policy',
+        content: `
+          <h3 style="color:#C4A265;margin-bottom:15px;">Privacy Policy</h3>
+          <p style="margin-bottom:15px;">Metal Art Sialkot is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your personal information.</p>
+          
+          <div style="background:#F5F0E8;padding:18px;border-radius:10px;margin-bottom:15px;">
+            <h4 style="margin-bottom:10px;">📊 Information We Collect</h4>
+            <ul style="list-style:none;padding:0;line-height:2.2;">
+              <li>📝 <strong>Name & Contact:</strong> For order processing and delivery</li>
+              <li>📍 <strong>Address:</strong> For shipping purposes only</li>
+              <li>📞 <strong>Phone Number:</strong> For order updates via WhatsApp</li>
+              <li>📧 <strong>Email:</strong> For order confirmation</li>
+            </ul>
+          </div>
+          
+          <div style="background:#FFF8E1;padding:18px;border-radius:10px;margin-bottom:15px;border:1px solid #FFE082;">
+            <h4 style="margin-bottom:10px;">🛡️ How We Protect Your Data</h4>
+            <ul style="list-style:none;padding:0;line-height:2.2;">
+              <li>🔐 Your data is stored securely and never shared with third parties</li>
+              <li>🔐 Payment information is not stored on our servers</li>
+              <li>🔐 All communications are encrypted</li>
+            </ul>
+          </div>
+          
+          <h4 style="margin-bottom:10px;">❌ No Third-Party Sharing</h4>
+          <p>We do not sell, trade, or share your personal information with any third parties. Your data is used solely for order processing and customer support.</p>
+        `
+      },
+      terms: {
+        title: '📋 Terms & Conditions',
+        content: `
+          <h3 style="color:#C4A265;margin-bottom:15px;">Terms & Conditions</h3>
+          <p style="margin-bottom:15px;">By placing an order with Metal Art Sialkot, you agree to the following terms and conditions.</p>
+          
+          <div style="background:#F5F0E8;padding:18px;border-radius:10px;margin-bottom:15px;">
+            <h4 style="margin-bottom:10px;">📝 Order Terms</h4>
+            <ul style="list-style:none;padding:0;line-height:2.2;">
+              <li>✅ Orders are confirmed via WhatsApp/Email</li>
+              <li>✅ Prices are subject to change without notice</li>
+              <li>✅ Product colors may slightly vary due to screen settings</li>
+              <li>✅ Custom orders require 50% advance payment</li>
+            </ul>
+          </div>
+          
+          <h4 style="margin-bottom:10px;">💰 Payment Terms</h4>
+          <p style="margin-bottom:10px;">We accept Cash on Delivery (COD), Bank Transfer, JazzCash, and EasyPaisa. Full payment is required before dispatch for bank transfers.</p>
+          
+          <h4 style="margin-bottom:10px;">🎨 Custom Orders</h4>
+          <p style="margin-bottom:10px;">Custom designs require 5-7 additional business days. Design approval is required before production begins.</p>
+          
+          <h4 style="margin-bottom:10px;">⚖️ Liability</h4>
+          <p>Metal Art Sialkot is not liable for damages caused by improper installation or misuse of products.</p>
+          
+          <h4 style="margin-bottom:10px;">📞 Contact</h4>
+          <p>For any questions about these terms, contact us at <strong>info@metalartsialkot.com</strong> or WhatsApp <strong>+92 309 9915777</strong>.</p>
+        `
+      }
+    };
+
     function saveCart() { localStorage.setItem('metalCart', JSON.stringify(cart)); updateCartBadge(); }
     function updateCartBadge() {
       const total = cart.reduce((s,i) => s + i.qty, 0);
@@ -381,44 +487,17 @@
     }
 
     function cardHTML(p) {
-      return `
-      <div class="card-luxury">
-        <div class="img-wrapper zoom-container">
-          <img src="${p.img}" alt="${p.name}" loading="lazy">
-          <div class="img-fallback"><span class="icon">🕌</span><span class="text">${p.name}</span></div>
-          ${p.best ? '<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:8px;">BEST</span>' : ''}
-        </div>
-        <div style="padding:12px;">
-          <span class="code-badge">${p.code}</span>
-          <h3 style="font-size:14px;font-family:'Cormorant Garamond',serif;">${p.name}</h3>
-          <p style="color:#C4A265;font-weight:bold;">Rs. ${p.price.toLocaleString()}</p>
-          ${p.stock <=5 ? `<span style="color:#E53935;font-size:10px;"><span class="stock-dot"></span> Only ${p.stock} left</span>` : ''}
-          <div style="display:flex;gap:5px;margin-top:8px;">
-            <button class="add-btn btn-dark" data-id="${p.id}" style="flex:1;padding:8px;font-size:10px;">🛒 Cart</button>
-            <button class="buy-btn btn-gold" data-id="${p.id}" style="flex:1;padding:8px;font-size:10px;">⚡ Buy</button>
-          </div>
-          <button class="view-btn" data-id="${p.id}" style="width:100%;margin-top:5px;padding:6px;background:none;border:1px solid #E8E0D5;border-radius:50px;font-size:10px;cursor:pointer;">🔍 View</button>
-        </div>
-      </div>`;
+      return `<div class="card-luxury"><div class="img-wrapper zoom-container"><img src="${p.img}" alt="${p.name}" loading="lazy"><div class="img-fallback"><span class="icon">🕌</span><span class="text">${p.name}</span></div>${p.best ? '<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:8px;">BEST</span>' : ''}</div><div style="padding:12px;"><span class="code-badge">${p.code}</span><h3 style="font-size:14px;font-family:'Cormorant Garamond',serif;">${p.name}</h3><p style="color:#C4A265;font-weight:bold;">Rs. ${p.price.toLocaleString()}</p>${p.stock <=5 ? `<span style="color:#E53935;font-size:10px;"><span class="stock-dot"></span> Only ${p.stock} left</span>` : ''}<div style="display:flex;gap:5px;margin-top:8px;"><button class="add-btn btn-dark" data-id="${p.id}" style="flex:1;padding:8px;font-size:10px;">🛒 Cart</button><button class="buy-btn btn-gold" data-id="${p.id}" style="flex:1;padding:8px;font-size:10px;">⚡ Buy</button></div><button class="view-btn" data-id="${p.id}" style="width:100%;margin-top:5px;padding:6px;background:none;border:1px solid #E8E0D5;border-radius:50px;font-size:10px;cursor:pointer;">🔍 View</button></div></div>`;
     }
 
     function renderProducts(filter = 'all') {
       const list = filter === 'all' ? products : products.filter(p => p.cat === filter);
       document.getElementById('productGrid').innerHTML = list.map(cardHTML).join('');
     }
-    function renderBest() {
-      document.getElementById('bestGrid').innerHTML = products.filter(p => p.best).map(cardHTML).join('');
-    }
+    function renderBest() { document.getElementById('bestGrid').innerHTML = products.filter(p => p.best).map(cardHTML).join(''); }
 
-    // ===== MODALS =====
-    function openModal(id) {
-      document.getElementById(id).classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal(id) {
-      document.getElementById(id).classList.remove('active');
-      document.body.style.overflow = '';
-    }
+    function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = ''; }
 
     function viewProduct(id) {
       currentProduct = products.find(p => p.id === id);
@@ -428,107 +507,70 @@
       document.getElementById('modTitle').textContent = currentProduct.name;
       document.getElementById('modPrice').textContent = 'Rs. ' + currentProduct.price.toLocaleString();
       document.getElementById('modDesc').textContent = currentProduct.desc;
-      document.getElementById('modStock').innerHTML = currentProduct.stock <= 5 ? 
-        `<span style="color:#E53935;"><span class="stock-dot"></span> Only ${currentProduct.stock} left</span>` : '';
-      qty = 1;
-      document.getElementById('modQty').textContent = qty;
+      document.getElementById('modStock').innerHTML = currentProduct.stock <= 5 ? `<span style="color:#E53935;"><span class="stock-dot"></span> Only ${currentProduct.stock} left</span>` : '';
+      qty = 1; document.getElementById('modQty').textContent = qty;
       openModal('productModal');
     }
 
     function changeQty(c) { qty = Math.max(1, qty + c); document.getElementById('modQty').textContent = qty; }
     function addToCartFromModal() { if(currentProduct) { addToCart(currentProduct.id, qty); closeModal('productModal'); } }
-    function buyNow() {
-      if(!currentProduct) return;
-      window.open(`https://wa.me/923099915777?text=Order:%20${currentProduct.code}%20${currentProduct.name}%20x${qty}%20Rs.${currentProduct.price*qty}`, '_blank');
-    }
+    function buyNow() { if(!currentProduct) return; window.open(`https://wa.me/923099915777?text=Order:%20${currentProduct.code}%20${currentProduct.name}%20x${qty}%20Rs.${currentProduct.price*qty}`, '_blank'); }
 
-    // ===== CART =====
     function openCart() { renderCart(); openModal('cartModal'); }
     function renderCart() {
-      const items = document.getElementById('cartItems');
-      const empty = document.getElementById('cartEmpty');
-      const footer = document.getElementById('cartFooter');
+      const items = document.getElementById('cartItems'), empty = document.getElementById('cartEmpty'), footer = document.getElementById('cartFooter');
       if (cart.length === 0) { items.innerHTML=''; empty.style.display='block'; footer.style.display='none'; return; }
       empty.style.display='none'; footer.style.display='block';
       let total = 0;
-      items.innerHTML = cart.map((item, i) => {
-        total += item.price * item.qty;
-        return `<div style="display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #E8E0D5;border-radius:10px;margin-bottom:8px;">
-          <span class="code-badge">${item.code}</span>
-          <span style="flex:1;font-size:12px;">${item.name} x${item.qty}</span>
-          <span style="color:#C4A265;">Rs. ${(item.price*item.qty).toLocaleString()}</span>
-          <button onclick="removeCart(${i})" style="background:none;border:none;color:#E53935;cursor:pointer;">🗑️</button>
-        </div>`;
+      items.innerHTML = cart.map((item, i) => { total += item.price * item.qty;
+        return `<div style="display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #E8E0D5;border-radius:10px;margin-bottom:8px;"><span class="code-badge">${item.code}</span><span style="flex:1;font-size:12px;">${item.name} x${item.qty}</span><span style="color:#C4A265;">Rs. ${(item.price*item.qty).toLocaleString()}</span><button onclick="removeCart(${i})" style="background:none;border:none;color:#E53935;cursor:pointer;">🗑️</button></div>`;
       }).join('');
       document.getElementById('cartTotal').textContent = 'Rs. ' + total.toLocaleString();
     }
     function removeCart(i) { cart.splice(i,1); saveCart(); renderCart(); }
-    function checkout() {
-      if(cart.length===0) return;
-      closeModal('cartModal');
-      openModal('checkoutModal');
+    function checkout() { if(cart.length===0) return; closeModal('cartModal'); openModal('checkoutModal'); }
+
+    // ===== POLICY MODAL =====
+    function openPolicyModal(type) {
+      const p = policies[type];
+      document.getElementById('policyContent').innerHTML = `<h2 style="font-size:28px;font-family:'Cormorant Garamond',serif;color:#1A1815;">${p.title}</h2><div style="line-height:2;color:#4A4743;font-size:14px;">${p.content}</div>`;
+      openModal('policyModal');
     }
 
-    // ===== EMAILJS INIT - UPDATED =====
-    (function(){ 
-      emailjs.init("83rU9bB3YfsN2tZlh"); 
-    })();
+    // ===== EMAILJS =====
+    (function(){ emailjs.init("83rU9bB3YfsN2tZlh"); })();
 
-    // ===== PLACE ORDER - UPDATED =====
     function placeOrder() {
       const name = document.getElementById('coName').value.trim();
       const phone = document.getElementById('coPhone').value.trim();
       const email = document.getElementById('coEmail').value.trim();
       const address = document.getElementById('coAddress').value.trim();
-      
       if(!name || !phone || !address) return alert('Please fill Name, Phone, and Address!');
       
       const total = cart.reduce((s,i) => s + i.price*i.qty, 0);
       const orderId = 'MAS' + Date.now().toString().slice(-6);
       const orderDetails = cart.map(i => `${i.name} (${i.code}) x${i.qty}`).join(', ');
       
-      // WhatsApp Message
-      let msg = `🕌 *New Order!*%0A%0A📦 Order ID: ${orderId}%0A👤 ${name}%0A📞 ${phone}%0A📧 ${email}%0A📍 ${address}%0A%0A*Items:*%0A`;
-      cart.forEach(i => msg += `• ${i.name} (${i.code}) x${i.qty} = Rs.${(i.price*i.qty).toLocaleString()}%0A`);
-      msg += `%0A💰 *Total: Rs.${total.toLocaleString()}*`;
+      let msg = `🕌 *New Order!*%0A%0A📦 ${orderId}%0A👤 ${name}%0A📞 ${phone}%0A📍 ${address}%0A%0A`;
+      cart.forEach(i => msg += `• ${i.name} x${i.qty} = Rs.${(i.price*i.qty).toLocaleString()}%0A`);
+      msg += `%0A💰 Total: Rs.${total.toLocaleString()}`;
       window.open(`https://wa.me/923099915777?text=${msg}`, '_blank');
       
-      // Email Confirmation to Customer + CC to both emails
       if(email) {
         emailjs.send("service_yjg46ao", "template_6kk6hkw", {
-          to_email: email,
-          customer_name: name,
-          order_id: orderId,
-          order_details: orderDetails,
-          total: 'Rs. ' + total.toLocaleString(),
-          phone: phone,
-          address: address,
-          order_date: new Date().toLocaleString()
-        })
-        .then(function(response) {
-          console.log('✅ Email sent successfully!', response.status);
-          alert('✅ Order Placed Successfully!\n\n📧 Confirmation sent to: ' + email + '\n💬 WhatsApp message also sent');
-        })
-        .catch(function(error) {
-          console.log('❌ Email failed:', error);
-          alert('✅ Order Placed!\n\n⚠️ Email could not be sent, but WhatsApp message is delivered.\n\nError: ' + error.text);
-        });
-      } else {
-        alert('✅ Order Placed!\n\n💬 WhatsApp message sent');
-      }
+          to_email: email, customer_name: name, order_id: orderId,
+          order_details: orderDetails, total: 'Rs. ' + total.toLocaleString(),
+          phone: phone, address: address, order_date: new Date().toLocaleString()
+        }).then(r => { console.log('✅ Email sent!'); alert('✅ Order Placed!\n\n📧 Email: ' + email + '\n💬 WhatsApp sent'); })
+        .catch(e => { console.log('❌', e); alert('✅ Order Placed!\n\n⚠️ Email failed but WhatsApp sent'); });
+      } else { alert('✅ Order Placed via WhatsApp!'); }
       
-      cart = []; 
-      saveCart();
-      closeModal('checkoutModal');
+      cart = []; saveCart(); closeModal('checkoutModal');
     }
 
-    // ===== EVENTS =====
     document.addEventListener('click', e => {
       if(e.target.classList.contains('add-btn')) addToCart(parseInt(e.target.dataset.id));
-      if(e.target.classList.contains('buy-btn')) {
-        const p = products.find(x => x.id === parseInt(e.target.dataset.id));
-        if(p) window.open(`https://wa.me/923099915777?text=Order:%20${p.code}%20${p.name}%20Rs.${p.price}`, '_blank');
-      }
+      if(e.target.classList.contains('buy-btn')) { const p = products.find(x => x.id === parseInt(e.target.dataset.id)); if(p) window.open(`https://wa.me/923099915777?text=Order:%20${p.code}%20${p.name}%20Rs.${p.price}`, '_blank'); }
       if(e.target.classList.contains('view-btn')) viewProduct(parseInt(e.target.dataset.id));
       if(e.target.classList.contains('modal')) { e.target.classList.remove('active'); document.body.style.overflow = ''; }
     });
@@ -543,12 +585,7 @@
 
     function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
 
-    // Init
-    renderProducts();
-    renderBest();
-    updateCartBadge();
-    
-    // Reviews
+    renderProducts(); renderBest(); updateCartBadge();
     document.getElementById('reviewGrid').innerHTML = [
       {n:'Ahmed K.',t:'Masha Allah! Stunning craftsmanship. The golden finish is gorgeous!'},
       {n:'Fatima H.',t:'Perfect gift! Quality exceeded expectations. Fast delivery.'},
