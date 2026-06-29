@@ -18,8 +18,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Premium Islamic wall art by Metal Art Sialkot. Handcrafted stainless steel calligraphy with golden finish. Ayat ul Kursi, Kalima, Bismillah designs.">
+  <meta name="description" content="Premium Islamic wall art by Metal Art Sialkot. Handcrafted stainless steel calligraphy with golden finish.">
   <meta name="keywords" content="Islamic Wall Art Pakistan, Islamic Calligraphy, Metal Wall Art, Ayat ul Kursi, Kalima, Bismillah">
   <meta name="author" content="Metal Art Sialkot">
   <meta name="robots" content="index, follow">
@@ -28,7 +27,6 @@
   <meta property="og:title" content="Metal Art Sialkot | Premium Islamic Metal Wall Art Pakistan">
   <meta property="og:description" content="Premium Islamic wall art. Handcrafted stainless steel calligraphy with golden finish.">
   <meta property="og:image" content="https://metalartsialkot.com/images/hero-bg.jpg">
-  <meta property="og:url" content="https://metalartsialkot.com">
   
   <style>
     :root { --gold: #C4A265; --gold-light: #D4B87A; --dark: #1A1815; --cream: #FAF7F2; --green: #1B5E20; --red: #E53935; }
@@ -42,17 +40,13 @@
     .img-wrapper { position: relative; overflow: hidden; background: #F5F0E8; width: 100%; aspect-ratio: 1/1; }
     .img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .img-fallback { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; align-items: center; justify-content: center; background: linear-gradient(135deg, #F5F0E8, #E8E0D5); font-size: 3rem; flex-direction: column; gap: 8px; }
-    .img-fallback .icon { font-size: 3rem; }
-    .img-fallback .text { font-size: 11px; color: #8B7355; }
     
     .zoom-container { cursor: crosshair; }
     .zoom-container:hover img { transform: scale(1.4); }
     .zoom-container img { transition: transform 0.5s ease; }
     
-    .btn-gold { background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; text-align: center; }
+    .btn-gold { background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; text-align: center; text-decoration: none; display: inline-block; }
     .btn-gold:hover { box-shadow: 0 10px 30px rgba(196,162,101,0.4); transform: translateY(-2px); }
-    .btn-outline { background: transparent; color: #C4A265; border: 2px solid #C4A265; padding: 12px 28px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: 0.3s; text-align: center; }
-    .btn-outline:hover { background: #C4A265; color: white; }
     .btn-dark { background: #1A1815; color: white; padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; text-align: center; }
     .btn-dark:hover { background: #333; }
     .btn-wa { background: #1B5E20; color: white; padding: 10px 20px; border-radius: 50px; border: none; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: 0.3s; }
@@ -79,6 +73,10 @@
     .policy-card { background: white; border: 1px solid rgba(196,162,101,0.1); border-radius: 16px; padding: 30px; text-align: center; cursor: pointer; transition: all 0.4s; }
     .policy-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(196,162,101,0.2); border-color: #C4A265; }
     
+    /* Curator Feed Styles */
+    #curator-feed-default-feed-layout { max-width: 1300px; margin: 0 auto; }
+    .crt-logo { display: none !important; }
+    
     .mobile-menu { display: none; position: fixed; top: 72px; left: 0; width: 100%; background: rgba(250,247,242,0.99); padding: 20px; z-index: 999; border-bottom: 1px solid rgba(196,162,101,0.2); }
     .mobile-menu.active { display: block; }
     .mobile-menu a { display: block; padding: 12px 0; color: #2C2824; text-decoration: none; font-size: 14px; letter-spacing: 2px; border-bottom: 1px solid #E8E0D5; }
@@ -100,15 +98,12 @@
 
   <div id="particles-container"></div>
 
-  <!-- ===== NAVIGATION WITH LOGO ===== -->
+  <!-- ===== NAVIGATION ===== -->
   <header class="glass-nav">
     <div style="max-width:1300px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;">
-      
-      <!-- LOGO + BRAND NAME -->
       <a href="#home" style="text-decoration:none;display:flex;align-items:center;gap:15px;">
         <div class="logo-container">
-          <img src="images/logo.png" alt="Metal Art Sialkot Logo" 
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="images/logo.png" alt="Metal Art Sialkot Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:linear-gradient(135deg,#C4A265,#D4B87A);color:white;font-size:22px;font-weight:bold;">M</div>
         </div>
         <div>
@@ -116,29 +111,25 @@
           <p class="desk-only" style="font-size:9px;color:#8B7355;letter-spacing:2px;text-transform:uppercase;">Crafted in Steel • Inspired by Faith</p>
         </div>
       </a>
-      
-      <!-- Desktop Nav -->
-      <nav class="desk-only" style="display:flex;gap:20px;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;">
+      <nav class="desk-only" style="display:flex;gap:18px;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;">
         <a href="#home" style="color:#2C2824;text-decoration:none;">Home</a>
         <a href="#shop" style="color:#2C2824;text-decoration:none;">Shop</a>
         <a href="#bestsellers" style="color:#2C2824;text-decoration:none;">Best Sellers</a>
+        <a href="#gallery" style="color:#2C2824;text-decoration:none;">Gallery</a>
         <a href="#policies" style="color:#2C2824;text-decoration:none;">Policies</a>
         <a href="#contact" style="color:#2C2824;text-decoration:none;">Contact</a>
       </nav>
-      
-      <!-- Right Side -->
       <div style="display:flex;align-items:center;gap:10px;">
         <button onclick="openAccountModal()" style="background:none;border:none;font-size:13px;cursor:pointer;color:#2C2824;font-weight:500;" id="accountBtn">👤 Account</button>
         <button onclick="openCart()" style="background:none;border:none;font-size:20px;cursor:pointer;position:relative;">🛒<span class="cart-count" id="cartBadge" style="display:none;">0</span></button>
         <button class="mob-show" style="display:none;background:none;border:none;font-size:24px;" onclick="toggleMenu()">☰</button>
       </div>
     </div>
-    
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="#home" onclick="toggleMenu()">🏠 Home</a>
       <a href="#shop" onclick="toggleMenu()">🛍️ Shop</a>
       <a href="#bestsellers" onclick="toggleMenu()">⭐ Best Sellers</a>
+      <a href="#gallery" onclick="toggleMenu()">📸 Gallery</a>
       <a href="#policies" onclick="toggleMenu()">📋 Policies</a>
       <a href="#contact" onclick="toggleMenu()">📞 Contact</a>
       <a href="#" onclick="openAccountModal();toggleMenu();">👤 My Account</a>
@@ -149,27 +140,13 @@
   <!-- ===== HERO ===== -->
   <section id="home" style="min-height:100vh;background:linear-gradient(135deg,#1A1815,#2C2824,#1A1815);display:flex;align-items:center;justify-content:center;position:relative;padding:80px 15px 40px;">
     <div style="position:absolute;inset:0;opacity:0.25;background-image:url('images/hero-bg.jpg');background-size:cover;background-position:center;"></div>
-    <div style="position:absolute;inset:0;opacity:0.04;background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>★</text></svg>') repeat;background-size:150px;"></div>
-    
     <div style="position:relative;z-index:2;text-align:center;max-width:800px;">
       <p style="color:#D4B87A;letter-spacing:6px;font-size:10px;text-transform:uppercase;">Premium Islamic Décor • Made in Pakistan</p>
       <h1 class="hero-title" style="font-size:60px;color:#F5F0E8;font-family:'Cormorant Garamond',serif;line-height:1.1;">Luxury Islamic<br><span class="gold-text">Metal Wall Art</span></h1>
-      <p style="color:#D4C5B2;font-size:15px;margin:20px auto;max-width:500px;">Handcrafted stainless steel calligraphy with golden finish. Precision laser-cut for timeless elegance.</p>
-      
-      <div class="fomo-bar" style="background:#FFF8E1;border:1px solid #FFE082;border-radius:8px;padding:10px 20px;font-size:13px;color:#BF360C;display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;">
-        ⚡ Order within <span style="font-weight:700;background:white;padding:2px 8px;border-radius:4px;" id="fomoTimer">02:15:30</span> for <strong>FREE Shipping</strong>
-      </div>
-      
+      <p style="color:#D4C5B2;font-size:15px;margin:20px auto;max-width:500px;">Handcrafted stainless steel calligraphy with golden finish</p>
       <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
         <a href="#shop" class="btn-gold">🛍️ Explore Collection</a>
-        <a href="https://wa.me/923099915777" class="btn-wa" style="padding:12px 28px;">💬 WhatsApp Order</a>
-      </div>
-      
-      <div style="display:flex;gap:40px;justify-content:center;margin-top:60px;flex-wrap:wrap;">
-        <div style="text-align:center;color:#D4C5B2;"><div style="font-size:30px;">⭐</div><p style="font-size:10px;">Premium Quality</p></div>
-        <div style="text-align:center;color:#D4C5B2;"><div style="font-size:30px;">🚚</div><p style="font-size:10px;">Fast Delivery</p></div>
-        <div style="text-align:center;color:#D4C5B2;"><div style="font-size:30px;">🛡️</div><p style="font-size:10px;">Rust Resistant</p></div>
-        <div style="text-align:center;color:#D4C5B2;"><div style="font-size:30px;">🇵🇰</div><p style="font-size:10px;">Made in Pakistan</p></div>
+        <a href="https://wa.me/923099915777" class="btn-wa" style="padding:12px 28px;">💬 WhatsApp</a>
       </div>
     </div>
   </section>
@@ -177,12 +154,11 @@
   <!-- ===== SHOP ===== -->
   <section id="shop" style="padding:80px 20px;max-width:1300px;margin:0 auto;position:relative;z-index:1;">
     <div style="text-align:center;margin-bottom:40px;">
-      <p style="color:#C4A265;letter-spacing:4px;font-size:10px;text-transform:uppercase;">Our Collection</p>
+      <p style="color:#C4A265;letter-spacing:4px;font-size:10px;">Our Collection</p>
       <h2 style="font-size:42px;font-family:'Cormorant Garamond',serif;">Sacred Islamic Calligraphy</h2>
-      <p style="color:#4A4743;font-size:13px;margin-top:8px;">Precision laser-cut from premium stainless steel with golden finish</p>
     </div>
     <div style="display:flex;justify-content:center;gap:8px;margin-bottom:30px;flex-wrap:wrap;">
-      <button class="tab-btn active" data-filter="all" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:#C4A265;color:white;cursor:pointer;font-size:11px;">All Designs</button>
+      <button class="tab-btn active" data-filter="all" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:#C4A265;color:white;cursor:pointer;font-size:11px;">All</button>
       <button class="tab-btn" data-filter="calligraphy" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:11px;">Calligraphy</button>
       <button class="tab-btn" data-filter="ayat" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:11px;">Ayat ul Kursi</button>
       <button class="tab-btn" data-filter="kalima" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:11px;">Kalima</button>
@@ -194,10 +170,7 @@
   <!-- ===== BEST SELLERS ===== -->
   <section id="bestsellers" style="padding:80px 20px;background:#F5F0E8;position:relative;z-index:1;">
     <div style="max-width:1300px;margin:0 auto;">
-      <div style="text-align:center;margin-bottom:40px;">
-        <p style="color:#C4A265;letter-spacing:4px;font-size:10px;">Most Popular</p>
-        <h2 style="font-size:38px;font-family:'Cormorant Garamond',serif;">Best Sellers</h2>
-      </div>
+      <div style="text-align:center;margin-bottom:40px;"><h2 style="font-size:38px;font-family:'Cormorant Garamond',serif;">Best Sellers</h2></div>
       <div id="bestGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px;"></div>
     </div>
   </section>
@@ -205,460 +178,199 @@
   <!-- ===== REVIEWS ===== -->
   <section id="reviews" style="padding:60px 20px;max-width:1200px;margin:0 auto;position:relative;z-index:1;">
     <div style="text-align:center;margin-bottom:40px;">
-      <p style="color:#C4A265;letter-spacing:4px;font-size:10px;">Testimonials</p>
-      <h2 style="font-size:38px;font-family:'Cormorant Garamond',serif;">What Our Customers Say</h2>
-      <span style="color:#FFB300;font-size:14px;">★★★★★</span> <strong>4.9/5</strong> (200+ Reviews)
+      <h2 style="font-size:38px;font-family:'Cormorant Garamond',serif;">Customer Reviews</h2>
+      <span style="color:#FFB300;">★★★★★</span> 4.9/5
     </div>
     <div id="reviewGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;"></div>
   </section>
 
-  <!-- ===== POLICIES ===== -->
-  <section id="policies" style="padding:80px 20px;background:#F5F0E8;position:relative;z-index:1;">
-    <div style="max-width:1200px;margin:0 auto;">
+  <!-- ===== INSTAGRAM GALLERY (Curator.io - AUTO UPDATE) ===== -->
+  <section id="gallery" style="padding:80px 20px;background:#F5F0E8;position:relative;z-index:1;">
+    <div style="max-width:1300px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:50px;">
-        <h2 style="font-size:38px;font-family:'Cormorant Garamond',serif;">Shipping & Policies</h2>
+        <p style="color:#C4A265;letter-spacing:4px;font-size:10px;text-transform:uppercase;">Follow @metalartsialkot</p>
+        <h2 style="font-size:42px;font-family:'Cormorant Garamond',serif;color:#1A1815;">Instagram Gallery</h2>
+        <p style="color:#4A4743;margin-top:8px;">See our latest creations & customer setups</p>
       </div>
+      
+      <!-- Curator.io Feed (Auto-updates from Instagram) -->
+      <div id="curator-feed-default-feed-layout">
+        <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
+      </div>
+      
+      <!-- Follow Button -->
+      <div style="text-align:center;margin-top:30px;">
+        <a href="https://instagram.com/metalartsialkot" target="_blank" class="btn-gold" style="display:inline-flex;align-items:center;gap:10px;">
+          <i class="fab fa-instagram"></i> Follow @metalartsialkot
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POLICIES ===== -->
+  <section id="policies" style="padding:80px 20px;position:relative;z-index:1;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:50px;"><h2 style="font-size:38px;">Shipping & Policies</h2></div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
-        <div class="policy-card" onclick="openPolicyModal('shipping')"><div style="font-size:45px;">🚚</div><h3>Shipping Policy</h3><p style="font-size:11px;color:#C4A265;">Click to read</p></div>
-        <div class="policy-card" onclick="openPolicyModal('returns')"><div style="font-size:45px;">🔄</div><h3>Return & Refund</h3><p style="font-size:11px;color:#C4A265;">Click to read</p></div>
-        <div class="policy-card" onclick="openPolicyModal('privacy')"><div style="font-size:45px;">🔒</div><h3>Privacy Policy</h3><p style="font-size:11px;color:#C4A265;">Click to read</p></div>
-        <div class="policy-card" onclick="openPolicyModal('terms')"><div style="font-size:45px;">📋</div><h3>Terms & Conditions</h3><p style="font-size:11px;color:#C4A265;">Click to read</p></div>
+        <div class="policy-card" onclick="openPolicyModal('shipping')"><div style="font-size:45px;">🚚</div><h3>Shipping</h3></div>
+        <div class="policy-card" onclick="openPolicyModal('returns')"><div style="font-size:45px;">🔄</div><h3>Returns</h3></div>
+        <div class="policy-card" onclick="openPolicyModal('privacy')"><div style="font-size:45px;">🔒</div><h3>Privacy</h3></div>
+        <div class="policy-card" onclick="openPolicyModal('terms')"><div style="font-size:45px;">📋</div><h3>Terms</h3></div>
       </div>
     </div>
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact" style="padding:80px 20px;text-align:center;position:relative;z-index:1;">
+  <section id="contact" style="padding:80px 20px;text-align:center;background:#F5F0E8;position:relative;z-index:1;">
     <h2 style="font-size:38px;font-family:'Cormorant Garamond',serif;">Contact Us</h2>
     <div style="display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-top:35px;">
-      <a href="https://wa.me/923099915777" target="_blank" class="btn-wa" style="padding:22px 35px;flex-direction:column;text-align:center;">
-        <span style="font-size:40px;">💬</span><strong>WhatsApp</strong><span>+92 309 9915777</span>
-      </a>
-      <a href="mailto:info@metalartsialkot.com" style="background:white;padding:22px 35px;border-radius:16px;text-decoration:none;color:#2C2824;text-align:center;border:1px solid rgba(196,162,101,0.1);">
-        <div style="font-size:40px;">📧</div><strong>Email</strong><p style="font-size:13px;">info@metalartsialkot.com</p>
-      </a>
-      <div style="background:white;padding:22px 35px;border-radius:16px;text-align:center;border:1px solid rgba(196,162,101,0.1);">
-        <div style="font-size:40px;">📍</div><strong>Location</strong><p style="font-size:13px;">Sialkot, Pakistan</p>
-      </div>
+      <a href="https://wa.me/923099915777" target="_blank" class="btn-wa" style="padding:22px 35px;flex-direction:column;">💬<br>WhatsApp<br>+92 309 9915777</a>
+      <a href="mailto:info@metalartsialkot.com" style="background:white;padding:22px 35px;border-radius:16px;text-decoration:none;color:#2C2824;">📧<br>Email<br>info@metalartsialkot.com</a>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer style="background:#1A1815;color:#D4C5B2;padding:50px 20px 30px;text-align:center;position:relative;z-index:1;">
-    <h3 class="gold-text" style="font-size:24px;font-family:'Cormorant Garamond',serif;">Metal Art Sialkot</h3>
-    <p style="font-size:12px;margin-top:5px;">Crafted in Steel • Inspired by Faith</p>
+    <h3 class="gold-text" style="font-size:24px;">Metal Art Sialkot</h3>
+    <p style="font-size:12px;">Crafted in Steel • Inspired by Faith</p>
     <div style="margin-top:18px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-size:11px;">
-      <a href="#" onclick="openPolicyModal('shipping')" style="color:#D4C5B2;text-decoration:none;">Shipping Policy</a>
-      <a href="#" onclick="openPolicyModal('returns')" style="color:#D4C5B2;text-decoration:none;">Return & Refund</a>
-      <a href="#" onclick="openPolicyModal('privacy')" style="color:#D4C5B2;text-decoration:none;">Privacy Policy</a>
-      <a href="#" onclick="openPolicyModal('terms')" style="color:#D4C5B2;text-decoration:none;">Terms & Conditions</a>
+      <a href="#" onclick="openPolicyModal('shipping')" style="color:#D4C5B2;">Shipping</a>
+      <a href="#" onclick="openPolicyModal('returns')" style="color:#D4C5B2;">Returns</a>
+      <a href="#" onclick="openPolicyModal('privacy')" style="color:#D4C5B2;">Privacy</a>
+      <a href="#" onclick="openPolicyModal('terms')" style="color:#D4C5B2;">Terms</a>
     </div>
-    <p style="font-size:10px;margin-top:15px;">📞 +92 309 9915777 | info@metalartsialkot.com | metalartsialkot@gmail.com</p>
+    <div style="margin-top:15px;display:flex;justify-content:center;gap:15px;">
+      <a href="https://instagram.com/metalartsialkot" target="_blank" style="color:#D4C5B2;font-size:20px;"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/metalartsialkot" target="_blank" style="color:#D4C5B2;font-size:20px;"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/923099915777" target="_blank" style="color:#D4C5B2;font-size:20px;"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p style="font-size:10px;margin-top:15px;">📞 +92 309 9915777 | info@metalartsialkot.com</p>
     <p style="font-size:9px;color:#8B7355;margin-top:10px;">© 2025 Metal Art Sialkot. All Rights Reserved.</p>
   </footer>
 
-  <!-- ===== ACCOUNT MODAL ===== -->
+  <!-- Modals same as before -->
   <div id="accountModal" class="modal">
     <div style="background:white;border-radius:20px;padding:35px;max-width:450px;width:95%;position:relative;">
       <span onclick="closeModal('accountModal')" style="position:absolute;top:15px;right:20px;font-size:24px;cursor:pointer;color:#C4A265;">✕</span>
-      
       <div id="loginForm">
-        <h3 style="font-size:24px;font-family:'Cormorant Garamond',serif;text-align:center;margin-bottom:25px;">👤 Welcome Back</h3>
+        <h3 style="font-size:24px;text-align:center;margin-bottom:25px;">👤 Welcome Back</h3>
         <input type="email" id="loginEmail" placeholder="Email" style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:10px;">
         <input type="password" id="loginPassword" placeholder="Password" style="width:100%;padding:12px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
         <button onclick="login()" class="btn-gold" style="width:100%;">Login</button>
-        <p style="text-align:center;margin-top:15px;font-size:13px;">Don't have account? <a href="#" onclick="toggleAuth('signup')" style="color:#C4A265;font-weight:600;">Sign Up</a></p>
+        <p style="text-align:center;margin-top:15px;font-size:13px;">Don't have account? <a href="#" onclick="toggleAuth('signup')" style="color:#C4A265;">Sign Up</a></p>
       </div>
-      
       <div id="signupForm" style="display:none;">
-        <h3 style="font-size:24px;font-family:'Cormorant Garamond',serif;text-align:center;margin-bottom:25px;">✨ Create Account</h3>
+        <h3 style="font-size:24px;text-align:center;margin-bottom:25px;">✨ Create Account</h3>
         <input type="text" id="signupName" placeholder="Full Name *" style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:10px;">
         <input type="email" id="signupEmail" placeholder="Email *" style="width:100%;padding:12px;margin-bottom:10px;border:2px solid #C4A265;border-radius:10px;">
-        <input type="tel" id="signupPhone" placeholder="Phone Number *" style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:10px;">
-        <input type="password" id="signupPassword" placeholder="Password *" style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:10px;">
-        <input type="text" id="signupCity" placeholder="City" style="width:100%;padding:12px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+        <input type="tel" id="signupPhone" placeholder="Phone *" style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:10px;">
+        <input type="password" id="signupPassword" placeholder="Password *" style="width:100%;padding:12px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
         <button onclick="signup()" class="btn-gold" style="width:100%;">Create Account</button>
-        <p style="text-align:center;margin-top:15px;font-size:13px;">Already have account? <a href="#" onclick="toggleAuth('login')" style="color:#C4A265;">Login</a></p>
+        <p style="text-align:center;margin-top:15px;">Already have account? <a href="#" onclick="toggleAuth('login')" style="color:#C4A265;">Login</a></p>
       </div>
-      
       <div id="profileView" style="display:none;text-align:center;">
         <div style="font-size:60px;">👤</div>
-        <h3 id="profileName" style="font-size:22px;">---</h3>
-        <p id="profileEmail" style="color:#8B7355;">---</p>
-        <p id="profilePhone" style="color:#8B7355;">---</p>
-        <div style="background:#F5F0E8;padding:15px;border-radius:10px;margin:15px 0;text-align:left;">
-          <strong>Order History:</strong>
-          <div id="profileOrders" style="font-size:11px;color:#8B7355;">No orders yet</div>
-        </div>
-        <button onclick="logout()" class="btn-dark" style="width:100%;">Logout</button>
+        <h3 id="profileName">---</h3><p id="profileEmail">---</p>
+        <button onclick="logout()" class="btn-dark" style="width:100%;margin-top:15px;">Logout</button>
       </div>
     </div>
   </div>
 
-  <!-- ===== PRODUCT MODAL ===== -->
   <div id="productModal" class="modal">
     <div style="background:white;border-radius:20px;padding:30px;max-width:850px;width:95%;max-height:90vh;overflow-y:auto;position:relative;">
       <span onclick="closeModal('productModal')" style="position:absolute;top:15px;right:20px;font-size:24px;cursor:pointer;color:#C4A265;">✕</span>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;" class="mod-grid">
-        <div class="zoom-container img-wrapper" style="border-radius:15px;height:380px;">
-          <img src="" id="modImg" style="width:100%;height:100%;object-fit:cover;">
-          <div class="img-fallback"><span class="icon">🕌</span></div>
-        </div>
-        <div>
-          <span class="code-badge" id="modCode">---</span>
-          <h3 id="modTitle" style="font-size:26px;font-family:'Cormorant Garamond',serif;margin:8px 0;"></h3>
-          <span style="color:#FFB300;">★★★★★</span>
-          <p id="modPrice" style="font-size:24px;font-weight:bold;color:#C4A265;margin:8px 0;"></p>
-          <div id="modStock" style="margin:10px 0;"></div>
-          <div style="background:#FAF7F2;padding:18px;border-radius:12px;margin:15px 0;">
-            <h4 style="font-size:14px;margin-bottom:8px;">📋 Product Details</h4>
-            <p id="modDesc" style="font-size:13px;color:#4A4743;line-height:1.8;"></p>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:15px;">
-            <span style="font-size:12px;">Quantity:</span>
-            <button onclick="changeQty(-1)" style="width:32px;height:32px;border-radius:50%;border:1px solid #C4A265;background:white;cursor:pointer;">−</button>
-            <span id="modQty" style="font-weight:600;font-size:16px;">1</span>
-            <button onclick="changeQty(1)" style="width:32px;height:32px;border-radius:50%;border:1px solid #C4A265;background:white;cursor:pointer;">+</button>
-          </div>
-          <button onclick="addToCartFromModal()" class="btn-dark" style="width:100%;padding:14px;margin-bottom:10px;">🛒 Add to Cart</button>
-          <button onclick="buyNow()" class="btn-gold" style="width:100%;padding:14px;">⚡ Buy Now</button>
-        </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+        <div class="zoom-container img-wrapper" style="border-radius:15px;height:380px;"><img src="" id="modImg"><div class="img-fallback"><span class="icon">🕌</span></div></div>
+        <div><span class="code-badge" id="modCode">---</span><h3 id="modTitle" style="font-size:26px;"></h3><span style="color:#FFB300;">★★★★★</span><p id="modPrice" style="font-size:24px;font-weight:bold;color:#C4A265;"></p><div id="modStock"></div><div style="background:#FAF7F2;padding:18px;border-radius:12px;margin:15px 0;"><p id="modDesc" style="font-size:13px;line-height:1.8;"></p></div><div style="display:flex;align-items:center;gap:12px;margin-bottom:15px;"><button onclick="changeQty(-1)" style="width:32px;height:32px;border-radius:50%;border:1px solid #C4A265;background:white;">−</button><span id="modQty">1</span><button onclick="changeQty(1)" style="width:32px;height:32px;border-radius:50%;border:1px solid #C4A265;background:white;">+</button></div><button onclick="addToCartFromModal()" class="btn-dark" style="width:100%;padding:14px;margin-bottom:10px;">🛒 Add to Cart</button><button onclick="buyNow()" class="btn-gold" style="width:100%;padding:14px;">⚡ Buy Now</button></div>
       </div>
     </div>
   </div>
 
-  <!-- ===== CART MODAL ===== -->
   <div id="cartModal" class="modal">
     <div style="background:white;border-radius:20px;padding:25px;max-width:550px;width:95%;max-height:85vh;overflow-y:auto;">
-      <span onclick="closeModal('cartModal')" style="float:right;font-size:24px;cursor:pointer;">✕</span>
-      <h3 style="font-size:24px;text-align:center;">🛒 Your Cart</h3>
-      <div id="cartItems"></div>
-      <div id="cartEmpty" style="text-align:center;padding:40px;">Cart is empty</div>
-      <div id="cartFooter" style="display:none;">
-        <div style="background:#F5F0E8;padding:15px;border-radius:10px;margin:15px 0;">
-          <p>Total: <strong style="color:#C4A265;" id="cartTotal">Rs. 0</strong></p>
-        </div>
-        <button onclick="checkout()" class="btn-gold" style="width:100%;">💬 Checkout WhatsApp</button>
-      </div>
+      <span onclick="closeModal('cartModal')" style="float:right;font-size:24px;">✕</span><h3 style="text-align:center;">🛒 Your Cart</h3>
+      <div id="cartItems"></div><div id="cartEmpty" style="text-align:center;padding:40px;">Cart is empty</div>
+      <div id="cartFooter" style="display:none;"><div style="background:#F5F0E8;padding:15px;border-radius:10px;margin:15px 0;"><p>Total: <strong style="color:#C4A265;" id="cartTotal">Rs. 0</strong></p></div><button onclick="checkout()" class="btn-gold" style="width:100%;">💬 Checkout WhatsApp</button></div>
     </div>
   </div>
 
-  <!-- ===== CHECKOUT MODAL ===== -->
   <div id="checkoutModal" class="modal">
     <div style="background:white;border-radius:20px;padding:25px;max-width:480px;width:95%;">
-      <span onclick="closeModal('checkoutModal')" style="float:right;font-size:24px;cursor:pointer;">✕</span>
-      <h3 style="text-align:center;">📦 Complete Order</h3>
+      <span onclick="closeModal('checkoutModal')" style="float:right;font-size:24px;">✕</span><h3 style="text-align:center;">📦 Complete Order</h3>
       <input id="coName" placeholder="Full Name *" style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:10px;">
       <input id="coPhone" placeholder="Phone *" style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:10px;">
-      <input id="coEmail" placeholder="Email (confirmation sent here)" style="width:100%;padding:12px;margin:8px 0;border:2px solid #C4A265;border-radius:10px;">
+      <input id="coEmail" placeholder="Email" style="width:100%;padding:12px;margin:8px 0;border:2px solid #C4A265;border-radius:10px;">
       <textarea id="coAddress" placeholder="Address *" rows="2" style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:10px;"></textarea>
-      <button onclick="placeOrder()" class="btn-gold" style="width:100%;padding:16px;">✅ Place Order (Email + WhatsApp)</button>
+      <button onclick="placeOrder()" class="btn-gold" style="width:100%;padding:16px;">✅ Place Order</button>
     </div>
   </div>
 
-  <!-- ===== POLICY MODAL ===== -->
   <div id="policyModal" class="modal">
     <div style="background:white;border-radius:20px;padding:35px;max-width:700px;width:95%;max-height:80vh;overflow-y:auto;">
-      <span onclick="closeModal('policyModal')" style="float:right;font-size:24px;cursor:pointer;">✕</span>
-      <div id="policyContent"></div>
+      <span onclick="closeModal('policyModal')" style="float:right;font-size:24px;">✕</span><div id="policyContent"></div>
     </div>
   </div>
 
+  <!-- Curator.io Script -->
+  <script type="text/javascript">
+  (function(){
+  var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+  i.src="https://cdn.curator.io/published/98c0175d-6f0e-4965-a291-5ea3ed38e2f4.js";
+  e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+  })();
+  </script>
+
   <script>
-    // ===== PARTICLES =====
-    const particles = ['✦','✧','★','☆','•','◆','◈','⬡','⁕'];
-    const pContainer = document.getElementById('particles-container');
-    function createParticle() {
-      const p = document.createElement('span');
-      p.className='golden-particle';
-      p.textContent=particles[Math.floor(Math.random()*particles.length)];
-      p.style.left=Math.random()*100+'%';
-      p.style.fontSize=(Math.random()*20+10)+'px';
-      p.style.color=Math.random()>0.5?'#C4A265':'#D4B87A';
-      p.style.animationDuration=(Math.random()*8+6)+'s';
-      pContainer.appendChild(p);
-      setTimeout(()=>p.remove(),14000);
-    }
-    setInterval(createParticle,600);
-    for(let i=0;i<15;i++) setTimeout(createParticle,i*400);
+    // Particles
+    const particles=['✦','✧','★','☆','•','◆','◈'];const pc=document.getElementById('particles-container');
+    function cp(){const p=document.createElement('span');p.className='golden-particle';p.textContent=particles[Math.floor(Math.random()*particles.length)];p.style.left=Math.random()*100+'%';p.style.fontSize=(Math.random()*20+10)+'px';p.style.color=Math.random()>0.5?'#C4A265':'#D4B87A';p.style.animationDuration=(Math.random()*8+6)+'s';pc.appendChild(p);setTimeout(()=>p.remove(),14000);}
+    setInterval(cp,600);for(let i=0;i<15;i++)setTimeout(cp,i*400);
 
-    // ===== IMAGE FALLBACK =====
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.img-wrapper img, .logo-container img').forEach(img => {
-        img.addEventListener('error', function() {
-          this.style.display = 'none';
-          const fallback = this.nextElementSibling;
-          if (fallback) fallback.style.display = 'flex';
-        });
-      });
-    });
+    // User
+    let currentUser=JSON.parse(localStorage.getItem('metalArtUser')||'null');
+    function updateAccountButton(){const b=document.getElementById('accountBtn');if(currentUser){b.textContent='👤 '+currentUser.name.split(' ')[0];b.style.color='#C4A265';}else{b.textContent='👤 Account';b.style.color='#2C2824';}}
+    function openAccountModal(){if(currentUser){document.getElementById('loginForm').style.display='none';document.getElementById('signupForm').style.display='none';document.getElementById('profileView').style.display='block';document.getElementById('profileName').textContent=currentUser.name;document.getElementById('profileEmail').textContent='📧 '+currentUser.email;}else{document.getElementById('loginForm').style.display='block';document.getElementById('signupForm').style.display='none';document.getElementById('profileView').style.display='none';}openModal('accountModal');}
+    function toggleAuth(t){document.getElementById('loginForm').style.display=t==='signup'?'none':'block';document.getElementById('signupForm').style.display=t==='signup'?'block':'none';}
+    function signup(){const n=document.getElementById('signupName').value.trim(),e=document.getElementById('signupEmail').value.trim(),p=document.getElementById('signupPhone').value.trim(),pw=document.getElementById('signupPassword').value.trim();if(!n||!e||!p||!pw)return alert('Fill all fields!');currentUser={name:n,email:e,phone:p,password:pw};localStorage.setItem('metalArtUser',JSON.stringify(currentUser));updateAccountButton();closeModal('accountModal');alert('✅ Account Created! Welcome, '+n+'!');}
+    function login(){const e=document.getElementById('loginEmail').value.trim(),pw=document.getElementById('loginPassword').value.trim();const u=JSON.parse(localStorage.getItem('metalArtUser')||'null');if(u&&u.email===e&&u.password===pw){currentUser=u;updateAccountButton();closeModal('accountModal');alert('✅ Welcome back, '+u.name+'!');}else{alert('❌ Invalid credentials!');}}
+    function logout(){currentUser=null;localStorage.removeItem('metalArtUser');updateAccountButton();closeModal('accountModal');}
 
-    // ===== USER SYSTEM =====
-    let currentUser = JSON.parse(localStorage.getItem('metalArtUser') || 'null');
-    
-    function updateAccountButton() {
-      const btn = document.getElementById('accountBtn');
-      if (currentUser) {
-        btn.textContent = '👤 ' + currentUser.name.split(' ')[0];
-        btn.style.color = '#C4A265';
-      } else {
-        btn.textContent = '👤 Account';
-        btn.style.color = '#2C2824';
-      }
-    }
-
-    function openAccountModal() {
-      if (currentUser) {
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('signupForm').style.display = 'none';
-        document.getElementById('profileView').style.display = 'block';
-        document.getElementById('profileName').textContent = currentUser.name;
-        document.getElementById('profileEmail').textContent = '📧 ' + currentUser.email;
-        document.getElementById('profilePhone').textContent = '📞 ' + currentUser.phone;
-        const orders = JSON.parse(localStorage.getItem('metalArtOrders') || '[]');
-        const userOrders = orders.filter(o => o.email === currentUser.email);
-        document.getElementById('profileOrders').innerHTML = userOrders.length > 0 ? 
-          userOrders.map(o => `<p>📦 ${o.orderId} - ${o.product} - ${o.date}</p>`).join('') : 'No orders yet';
-      } else {
-        document.getElementById('loginForm').style.display = 'block';
-        document.getElementById('signupForm').style.display = 'none';
-        document.getElementById('profileView').style.display = 'none';
-      }
-      openModal('accountModal');
-    }
-
-    function toggleAuth(type) {
-      document.getElementById('loginForm').style.display = type === 'signup' ? 'none' : 'block';
-      document.getElementById('signupForm').style.display = type === 'signup' ? 'block' : 'none';
-    }
-
-    function signup() {
-      const name = document.getElementById('signupName').value.trim();
-      const email = document.getElementById('signupEmail').value.trim();
-      const phone = document.getElementById('signupPhone').value.trim();
-      const password = document.getElementById('signupPassword').value.trim();
-      const city = document.getElementById('signupCity').value.trim();
-      if (!name || !email || !phone || !password) return alert('Please fill all required fields!');
-      
-      currentUser = { name, email, phone, password, city, createdAt: new Date().toLocaleString() };
-      localStorage.setItem('metalArtUser', JSON.stringify(currentUser));
-      
-      emailjs.send("service_yjg46ao", "template_6kk6hkw", {
-        to_email: "info@metalartsialkot.com",
-        customer_name: "New User Registration",
-        order_id: "USER-" + Date.now().toString().slice(-6),
-        order_details: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCity: ${city}\nPassword: ${password}`,
-        total: 'N/A', phone: phone, address: city, order_date: new Date().toLocaleString()
-      }).catch(e => console.log('User email not sent:', e));
-      
-      updateAccountButton();
-      closeModal('accountModal');
-      alert('✅ Account Created! Welcome, ' + name + '!');
-    }
-
-    function login() {
-      const email = document.getElementById('loginEmail').value.trim();
-      const password = document.getElementById('loginPassword').value.trim();
-      const savedUser = JSON.parse(localStorage.getItem('metalArtUser') || 'null');
-      if (savedUser && savedUser.email === email && savedUser.password === password) {
-        currentUser = savedUser;
-        updateAccountButton();
-        closeModal('accountModal');
-        alert('✅ Welcome back, ' + savedUser.name + '!');
-      } else {
-        alert('❌ Invalid email or password!');
-      }
-    }
-
-    function logout() {
-      currentUser = null;
-      localStorage.removeItem('metalArtUser');
-      updateAccountButton();
-      closeModal('accountModal');
-      alert('👋 Logged out!');
-    }
-
-    function autoFillCheckout() {
-      if (currentUser) {
-        document.getElementById('coName').value = currentUser.name || '';
-        document.getElementById('coPhone').value = currentUser.phone || '';
-        document.getElementById('coEmail').value = currentUser.email || '';
-      }
-    }
-
-    // ===== PRODUCTS =====
-    const products = [
-      { id:1, code:"MAS-CLG-001", name:"Masha Allah", cat:"calligraphy", price:6000, img:"images/mashaallah.jpg", best:true, stock:4, sold:234, desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish. 18x18 inches. Wall brackets included. 5-year rust-free guarantee." },
-      { id:2, code:"MAS-CLG-002", name:"Hasbunallah", cat:"calligraphy", price:6000, img:"images/hasbunallah.jpg", best:true, stock:2, sold:189, desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut. Premium 0.8mm stainless steel, golden finish. 18x18 inches." },
-      { id:3, code:"MAS-KLM-001", name:"First Kalma", cat:"kalima", price:6000, img:"images/firstkalma.jpg", best:false, stock:8, sold:156, desc:"La Ilaha Illallah. Circular design. Premium 0.8mm stainless steel, golden mirror polish. 20x20 inches." },
-      { id:4, code:"MAS-CLG-003", name:"Fabi Ayyi Ala", cat:"calligraphy", price:6000, img:"images/fabi.jpg", best:false, stock:12, sold:98, desc:"Surah Ar-Rahman verse. Premium 0.8mm stainless steel, golden finish. 18x18 inches." },
-      { id:5, code:"MAS-KLM-002", name:"La Ilaha Illa Anta", cat:"kalima", price:6000, img:"images/laillaha.jpg", best:false, stock:3, sold:145, desc:"Ayat-e-Karima. Premium 0.8mm stainless steel, golden finish. 18x18 inches." },
-      { id:6, code:"MAS-BSM-001", name:"Bismillah", cat:"bismillah", price:6000, img:"images/bismillah.jpg", best:false, stock:6, sold:178, desc:"Bismillah Hir Rahman Ir Raheem. Teardrop shape. Premium 0.8mm stainless steel. 20x20 inches." },
-      { id:7, code:"MAS-CLG-004", name:"Fabi Translation", cat:"calligraphy", price:6000, img:"images/fabitr.jpg", best:false, stock:15, sold:67, desc:"With Urdu translation. Premium 0.8mm stainless steel. 18x24 inches." },
-      { id:8, code:"MAS-AYT-001", name:"Ayat ul Kursi Round", cat:"ayat", price:7000, img:"images/ayatround.jpg", best:true, stock:3, sold:312, desc:"Bestseller! Full Ayat ul Kursi in circular design. 24x24 inches. Premium stainless steel, golden finish." }
-    ];
-
-    let cart = JSON.parse(localStorage.getItem('metalCart') || '[]');
-    let currentProduct = null;
-    let qty = 1;
-
-    function saveCart() { localStorage.setItem('metalCart', JSON.stringify(cart)); updateCartBadge(); }
-    function updateCartBadge() {
-      const total = cart.reduce((s,i)=>s+i.qty,0);
-      const badge = document.getElementById('cartBadge');
-      badge.style.display = total>0?'flex':'none';
-      badge.textContent = total;
-    }
-
-    function addToCart(id, q=1) {
-      const exist = cart.find(x=>x.id===id);
-      if(exist) exist.qty+=q; else cart.push({...products.find(x=>x.id===id), qty:q});
-      saveCart();
-      alert('✅ Added to cart!');
-    }
-
-    function cardHTML(p) {
-      return `<div class="card-luxury"><div class="img-wrapper zoom-container"><img src="${p.img}" alt="${p.name}" loading="lazy"><div class="img-fallback"><span class="icon">🕌</span><span class="text">${p.name}</span></div>${p.best?'<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:8px;">BEST</span>':''}</div><div style="padding:14px;"><span class="code-badge">${p.code}</span><h3 style="font-size:15px;font-family:\'Cormorant Garamond\',serif;">${p.name}</h3><p style="color:#C4A265;font-weight:bold;">Rs. ${p.price.toLocaleString()}</p>${p.stock<=5?`<span style="color:#E53935;font-size:10px;"><span class="stock-dot"></span> Only ${p.stock} left</span>`:''}<div style="display:flex;gap:5px;margin-top:8px;"><button class="add-btn btn-dark" data-id="${p.id}" style="flex:1;padding:8px;font-size:10px;">🛒 Cart</button><button class="buy-btn btn-gold" data-id="${p.id}" style="flex:1;padding:8px;font-size:10px;">⚡ Buy</button></div><button class="view-btn" data-id="${p.id}" style="width:100%;margin-top:5px;padding:6px;background:none;border:1px solid #E8E0D5;border-radius:50px;font-size:10px;cursor:pointer;">🔍 View Details</button></div></div>`;
-    }
-
-    function renderProducts(filter='all') {
-      const list = filter==='all'?products:products.filter(p=>p.cat===filter);
-      document.getElementById('productGrid').innerHTML = list.map(cardHTML).join('');
-    }
-    function renderBest() { document.getElementById('bestGrid').innerHTML = products.filter(p=>p.best).map(cardHTML).join(''); }
-
-    function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow='hidden'; }
-    function closeModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow=''; }
-
-    function viewProduct(id) {
-      currentProduct = products.find(p=>p.id===id);
-      if(!currentProduct) return;
-      document.getElementById('modImg').src=currentProduct.img;
-      document.getElementById('modCode').textContent=currentProduct.code;
-      document.getElementById('modTitle').textContent=currentProduct.name;
-      document.getElementById('modPrice').textContent='Rs. '+currentProduct.price.toLocaleString();
-      document.getElementById('modDesc').textContent=currentProduct.desc;
-      document.getElementById('modStock').innerHTML=currentProduct.stock<=5?`<span style="color:#E53935;"><span class="stock-dot"></span> Only ${currentProduct.stock} left</span>`:'';
-      qty=1; document.getElementById('modQty').textContent=qty;
-      openModal('productModal');
-    }
-
-    function changeQty(c) { qty=Math.max(1,qty+c); document.getElementById('modQty').textContent=qty; }
-    function addToCartFromModal() { if(currentProduct){addToCart(currentProduct.id,qty);closeModal('productModal');} }
-    function buyNow() { if(!currentProduct)return; window.open(`https://wa.me/923099915777?text=Order:%20${currentProduct.code}%20${currentProduct.name}%20x${qty}%20Rs.${currentProduct.price*qty}`,'_blank'); }
-
-    function openCart() { renderCart(); openModal('cartModal'); }
-    function renderCart() {
-      const items=document.getElementById('cartItems'),empty=document.getElementById('cartEmpty'),footer=document.getElementById('cartFooter');
-      if(cart.length===0){items.innerHTML='';empty.style.display='block';footer.style.display='none';return;}
-      empty.style.display='none';footer.style.display='block';
-      let total=0;
-      items.innerHTML=cart.map((item,i)=>{total+=item.price*item.qty;
-        return `<div style="display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #E8E0D5;border-radius:10px;margin-bottom:8px;"><span class="code-badge">${item.code}</span><span style="flex:1;font-size:12px;">${item.name} x${item.qty}</span><span style="color:#C4A265;">Rs. ${(item.price*item.qty).toLocaleString()}</span><button onclick="removeCart(${i})" style="background:none;border:none;color:#E53935;cursor:pointer;">🗑️</button></div>`;
-      }).join('');
-      document.getElementById('cartTotal').textContent='Rs. '+total.toLocaleString();
-    }
+    // Products
+    const products=[{id:1,code:"MAS-CLG-001",name:"Masha Allah",cat:"calligraphy",price:6000,img:"images/mashaallah.jpg",best:true,stock:4,sold:234,desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish. 18x18 inches."},{id:2,code:"MAS-CLG-002",name:"Hasbunallah",cat:"calligraphy",price:6000,img:"images/hasbunallah.jpg",best:true,stock:2,sold:189,desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut. 18x18 inches."},{id:3,code:"MAS-KLM-001",name:"First Kalma",cat:"kalima",price:6000,img:"images/firstkalma.jpg",best:false,stock:8,sold:156,desc:"La Ilaha Illallah. Circular design. 20x20 inches."},{id:4,code:"MAS-CLG-003",name:"Fabi Ayyi Ala",cat:"calligraphy",price:6000,img:"images/fabi.jpg",best:false,stock:12,sold:98,desc:"Surah Ar-Rahman verse. 18x18 inches."},{id:5,code:"MAS-KLM-002",name:"La Ilaha Illa Anta",cat:"kalima",price:6000,img:"images/laillaha.jpg",best:false,stock:3,sold:145,desc:"Ayat-e-Karima. 18x18 inches."},{id:6,code:"MAS-BSM-001",name:"Bismillah",cat:"bismillah",price:6000,img:"images/bismillah.jpg",best:false,stock:6,sold:178,desc:"Bismillah. Teardrop shape. 20x20 inches."},{id:7,code:"MAS-CLG-004",name:"Fabi Translation",cat:"calligraphy",price:6000,img:"images/fabitr.jpg",best:false,stock:15,sold:67,desc:"With Urdu translation. 18x24 inches."},{id:8,code:"MAS-AYT-001",name:"Ayat ul Kursi Round",cat:"ayat",price:7000,img:"images/ayatround.jpg",best:true,stock:3,sold:312,desc:"Bestseller! Full Ayat ul Kursi. 24x24 inches."}];
+    let cart=JSON.parse(localStorage.getItem('metalCart')||'[]'),cp2=null,qty=1;
+    function saveCart(){localStorage.setItem('metalCart',JSON.stringify(cart));updateCartBadge();}
+    function updateCartBadge(){const t=cart.reduce((s,i)=>s+i.qty,0),b=document.getElementById('cartBadge');b.style.display=t>0?'flex':'none';b.textContent=t;}
+    function addToCart(id,q=1){const e=cart.find(x=>x.id===id);if(e)e.qty+=q;else cart.push({...products.find(x=>x.id===id),qty:q});saveCart();alert('✅ Added to cart!');}
+    function cardHTML(p){return `<div class="card-luxury"><div class="img-wrapper zoom-container"><img src="${p.img}" alt="${p.name}" loading="lazy"><div class="img-fallback"><span class="icon">🕌</span></div>${p.best?'<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:8px;">BEST</span>':''}</div><div style="padding:14px;"><span class="code-badge">${p.code}</span><h3 style="font-size:15px;">${p.name}</h3><p style="color:#C4A265;font-weight:bold;">Rs. ${p.price.toLocaleString()}</p>${p.stock<=5?`<span style="color:#E53935;font-size:10px;"><span class="stock-dot"></span> Only ${p.stock} left</span>`:''}<div style="display:flex;gap:5px;margin-top:8px;"><button class="add-btn btn-dark" data-id="${p.id}" style="flex:1;padding:8px;font-size:10px;">🛒 Cart</button><button class="buy-btn btn-gold" data-id="${p.id}" style="flex:1;padding:8px;font-size:10px;">⚡ Buy</button></div><button class="view-btn" data-id="${p.id}" style="width:100%;margin-top:5px;padding:6px;background:none;border:1px solid #E8E0D5;border-radius:50px;font-size:10px;">🔍 View</button></div></div>`;}
+    function renderProducts(f='all'){document.getElementById('productGrid').innerHTML=(f==='all'?products:products.filter(p=>p.cat===f)).map(cardHTML).join('');}
+    function renderBest(){document.getElementById('bestGrid').innerHTML=products.filter(p=>p.best).map(cardHTML).join('');}
+    function openModal(id){document.getElementById(id).classList.add('active');document.body.style.overflow='hidden';}
+    function closeModal(id){document.getElementById(id).classList.remove('active');document.body.style.overflow='';}
+    function viewProduct(id){cp2=products.find(p=>p.id===id);if(!cp2)return;document.getElementById('modImg').src=cp2.img;document.getElementById('modCode').textContent=cp2.code;document.getElementById('modTitle').textContent=cp2.name;document.getElementById('modPrice').textContent='Rs. '+cp2.price.toLocaleString();document.getElementById('modDesc').textContent=cp2.desc;document.getElementById('modStock').innerHTML=cp2.stock<=5?`<span style="color:#E53935;"><span class="stock-dot"></span> Only ${cp2.stock} left</span>`:'';qty=1;document.getElementById('modQty').textContent=qty;openModal('productModal');}
+    function changeQty(c){qty=Math.max(1,qty+c);document.getElementById('modQty').textContent=qty;}
+    function addToCartFromModal(){if(cp2){addToCart(cp2.id,qty);closeModal('productModal');}}
+    function buyNow(){if(!cp2)return;window.open(`https://wa.me/923099915777?text=Order:%20${cp2.code}%20${cp2.name}%20x${qty}%20Rs.${cp2.price*qty}`,'_blank');}
+    function openCart(){renderCart();openModal('cartModal');}
+    function renderCart(){const items=document.getElementById('cartItems'),empty=document.getElementById('cartEmpty'),footer=document.getElementById('cartFooter');if(cart.length===0){items.innerHTML='';empty.style.display='block';footer.style.display='none';return;}empty.style.display='none';footer.style.display='block';let t=0;items.innerHTML=cart.map((i,x)=>{t+=i.price*i.qty;return`<div style="display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #E8E0D5;border-radius:10px;margin-bottom:8px;"><span class="code-badge">${i.code}</span><span style="flex:1;font-size:12px;">${i.name} x${i.qty}</span><span style="color:#C4A265;">Rs. ${(i.price*i.qty).toLocaleString()}</span><button onclick="removeCart(${x})" style="background:none;border:none;color:#E53935;">🗑️</button></div>`;}).join('');document.getElementById('cartTotal').textContent='Rs. '+t.toLocaleString();}
     function removeCart(i){cart.splice(i,1);saveCart();renderCart();}
-    function checkout() { if(cart.length===0)return; autoFillCheckout(); closeModal('cartModal'); openModal('checkoutModal'); }
+    function checkout(){if(cart.length===0)return;if(currentUser){document.getElementById('coName').value=currentUser.name||'';document.getElementById('coPhone').value=currentUser.phone||'';document.getElementById('coEmail').value=currentUser.email||'';}closeModal('cartModal');openModal('checkoutModal');}
 
-    // ===== POLICIES =====
-    const policies = {
-      shipping: { title:'🚚 Shipping Policy', content:'<h3 style="color:#C4A265;">Shipping Information</h3><p>We deliver across Pakistan with fast and secure shipping.</p><div style="background:#F5F0E8;padding:15px;border-radius:10px;margin:15px 0;"><ul style="line-height:2.2;"><li>✅ Processing: 2-3 business days</li><li>✅ Delivery: 3-7 business days</li><li>✅ Free shipping on all orders</li><li>✅ WhatsApp tracking updates</li></ul></div>' },
-      returns: { title:'🔄 Return & Refund', content:'<h3 style="color:#C4A265;">Returns & Refunds</h3><p>7-day return window for damaged items. Full refund or replacement. Contact WhatsApp for return process.</p>' },
-      privacy: { title:'🔒 Privacy Policy', content:'<h3 style="color:#C4A265;">Privacy Policy</h3><p>Your data is safe with us. We do not share your personal information with any third parties. All data is encrypted and stored securely.</p>' },
-      terms: { title:'📋 Terms & Conditions', content:'<h3 style="color:#C4A265;">Terms & Conditions</h3><p>By placing an order you agree to our terms. COD available. Custom orders require 50% advance payment.</p>' }
-    };
-    function openPolicyModal(type) {
-      const p = policies[type];
-      document.getElementById('policyContent').innerHTML=`<h2 style="font-size:28px;font-family:'Cormorant Garamond',serif;">${p.title}</h2><div style="line-height:2;font-size:14px;">${p.content}</div>`;
-      openModal('policyModal');
-    }
+    // Policies
+    const policies={shipping:{title:'🚚 Shipping',content:'<h3>Shipping</h3><p>Processing: 2-3 days. Delivery: 3-7 days. Free shipping Pakistan.</p>'},returns:{title:'🔄 Returns',content:'<h3>Returns</h3><p>7-day return. Full refund.</p>'},privacy:{title:'🔒 Privacy',content:'<h3>Privacy</h3><p>Your data is safe.</p>'},terms:{title:'📋 Terms',content:'<h3>Terms</h3><p>By ordering you agree.</p>'}};
+    function openPolicyModal(t){document.getElementById('policyContent').innerHTML=`<h2>${policies[t].title}</h2><div style="line-height:2;">${policies[t].content}</div>`;openModal('policyModal');}
 
-    // ===== EMAILJS =====
-    (function(){ emailjs.init("83rU9bB3YfsN2tZlh"); })();
+    // EmailJS
+    (function(){emailjs.init("83rU9bB3YfsN2tZlh");})();
+    function placeOrder(){const n=document.getElementById('coName').value.trim(),p=document.getElementById('coPhone').value.trim(),e=document.getElementById('coEmail').value.trim(),a=document.getElementById('coAddress').value.trim();if(!n||!p||!a)return alert('Fill required fields!');const t=cart.reduce((s,i)=>s+i.price*i.qty,0),oid='MAS'+Date.now().toString().slice(-6),d=cart.map(i=>`${i.name} (${i.code}) x${i.qty}`).join(', ');let m=`🕌 *New Order!*%0A📦 ${oid}%0A👤 ${n}%0A📞 ${p}%0A📍 ${a}%0A%0A`;cart.forEach(i=>m+=`• ${i.name} x${i.qty}=Rs.${(i.price*i.qty).toLocaleString()}%0A`);m+=`%0A💰 Total: Rs.${t.toLocaleString()}`;window.open(`https://wa.me/923099915777?text=${m}`,'_blank');if(e){emailjs.send("service_yjg46ao","template_6kk6hkw",{to_email:e,customer_name:n,order_id:oid,order_details:d,total:'Rs. '+t.toLocaleString(),phone:p,address:a}).catch(err=>console.log(err));}cart=[];saveCart();closeModal('checkoutModal');alert('✅ Order Placed!');}
 
-    function placeOrder() {
-      const name = document.getElementById('coName').value.trim();
-      const phone = document.getElementById('coPhone').value.trim();
-      const email = document.getElementById('coEmail').value.trim();
-      const address = document.getElementById('coAddress').value.trim();
-      if(!name||!phone||!address) return alert('Fill required fields!');
-      
-      const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
-      const orderId = 'MAS'+Date.now().toString().slice(-6);
-      const details = cart.map(i=>`${i.name} (${i.code}) x${i.qty}`).join(', ');
-      
-      let msg = `🕌 *New Order!*%0A%0A📦 ${orderId}%0A👤 ${name}%0A📞 ${phone}%0A📍 ${address}%0A%0A`;
-      cart.forEach(i=>msg+=`• ${i.name} x${i.qty}=Rs.${(i.price*i.qty).toLocaleString()}%0A`);
-      msg+=`%0A💰 Total: Rs.${total.toLocaleString()}`;
-      window.open(`https://wa.me/923099915777?text=${msg}`,'_blank');
-      
-      let orders = JSON.parse(localStorage.getItem('metalArtOrders')||'[]');
-      orders.unshift({orderId,product:details,total,date:new Date().toLocaleString(),email});
-      localStorage.setItem('metalArtOrders',JSON.stringify(orders));
-      
-      if(email) {
-        emailjs.send("service_yjg46ao","template_6kk6hkw",{
-          to_email:email,customer_name:name,order_id:orderId,
-          order_details:details,total:'Rs. '+total.toLocaleString(),
-          phone:phone,address:address,order_date:new Date().toLocaleString()
-        }).catch(e=>console.log('Email:',e));
-      }
-      
-      cart=[];saveCart();closeModal('checkoutModal');
-      alert('✅ Order Placed!\n📧 '+email+'\n💬 WhatsApp sent');
-    }
-
-    // ===== FOMO TIMER =====
-    function updateFOMOTimer() {
-      const now = new Date(), end = new Date(); end.setHours(23,59,59,999);
-      const diff = end - now;
-      if(diff<=0){document.getElementById('fomoTimer').textContent='00:00:00';return;}
-      const h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
-      document.getElementById('fomoTimer').textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-    }
-
-    // ===== LIVE NOTIFICATION =====
-    const cities = ['Lahore','Karachi','Islamabad','Faisalabad','Multan','Rawalpindi'];
-    const notifDiv = document.createElement('div');
-    notifDiv.className='live-notification';
-    notifDiv.style.cssText='position:fixed;bottom:100px;left:10px;z-index:999;background:white;border-radius:12px;padding:10px 14px;box-shadow:0 5px 25px rgba(0,0,0,0.1);border:1px solid #E8E0D5;font-size:11px;display:none;align-items:center;gap:8px;max-width:250px;';
-    document.body.appendChild(notifDiv);
-    function showLiveNotification() {
-      const p = products[Math.floor(Math.random()*products.length)];
-      const city = cities[Math.floor(Math.random()*cities.length)];
-      notifDiv.innerHTML=`<span style="width:7px;height:7px;background:#4CAF50;border-radius:50%;animation:pulse 2s infinite;"></span><div><p style="font-size:10px;color:#8B7355;">Someone in ${city} purchased</p><p style="font-weight:600;font-size:11px;">${p.name}</p><p style="font-size:9px;color:#4CAF50;">${Math.floor(Math.random()*12)+1} min ago</p></div>`;
-      notifDiv.style.display='flex';
-      setTimeout(()=>notifDiv.style.display='none',5000);
-    }
-
-    document.addEventListener('click',e=>{
-      if(e.target.classList.contains('add-btn')) addToCart(parseInt(e.target.dataset.id));
-      if(e.target.classList.contains('buy-btn')){const p=products.find(x=>x.id===parseInt(e.target.dataset.id));if(p)window.open(`https://wa.me/923099915777?text=Order:%20${p.code}%20${p.name}%20Rs.${p.price}`,'_blank');}
-      if(e.target.classList.contains('view-btn')) viewProduct(parseInt(e.target.dataset.id));
-      if(e.target.classList.contains('modal')){e.target.classList.remove('active');document.body.style.overflow='';}
-    });
-
-    document.querySelectorAll('.tab-btn').forEach(b=>{
-      b.addEventListener('click',function(){
-        document.querySelectorAll('.tab-btn').forEach(x=>{x.style.background='white';x.style.color='#C4A265';});
-        this.style.background='#C4A265';this.style.color='white';
-        renderProducts(this.dataset.filter);
-      });
-    });
-
+    // Events
+    document.addEventListener('click',e=>{if(e.target.classList.contains('add-btn'))addToCart(parseInt(e.target.dataset.id));if(e.target.classList.contains('buy-btn')){const p=products.find(x=>x.id===parseInt(e.target.dataset.id));if(p)window.open(`https://wa.me/923099915777?text=Order:%20${p.code}%20${p.name}%20Rs.${p.price}`,'_blank');}if(e.target.classList.contains('view-btn'))viewProduct(parseInt(e.target.dataset.id));if(e.target.classList.contains('modal')){e.target.classList.remove('active');document.body.style.overflow='';}});
+    document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',function(){document.querySelectorAll('.tab-btn').forEach(x=>{x.style.background='white';x.style.color='#C4A265';});this.style.background='#C4A265';this.style.color='white';renderProducts(this.dataset.filter);});});
     function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active');}
 
     // Init
     renderProducts();renderBest();updateCartBadge();updateAccountButton();
-    updateFOMOTimer();setInterval(updateFOMOTimer,1000);
-    showLiveNotification();setInterval(()=>setTimeout(showLiveNotification,Math.random()*15000+10000),25000);
-    
-    document.getElementById('reviewGrid').innerHTML=[
-      {n:'Ahmed Khan',l:'Lahore',t:'Masha Allah! Beautiful craftsmanship. The golden finish is stunning!'},
-      {n:'Fatima Hassan',l:'Karachi',t:'Perfect gift! Quality exceeded expectations. Fast delivery.'},
-      {n:'Usman Siddiqui',l:'Islamabad',t:'Excellent laser cutting detail. Jazak Allah khair!'}
-    ].map(r=>`<div class="card-luxury" style="padding:22px;"><strong>${r.n}</strong><span style="color:#8B7355;font-size:11px;"> • ${r.l}</span><br><span style="color:#FFB300;">★★★★★</span><p style="font-size:12px;margin-top:6px;font-style:italic;">"${r.t}"</p></div>`).join('');
+    document.getElementById('reviewGrid').innerHTML=[{n:'Ahmed K.',t:'Masha Allah! Stunning craftsmanship!'},{n:'Fatima H.',t:'Perfect gift! Fast delivery.'},{n:'Usman S.',t:'Excellent quality! Beautiful design.'}].map(r=>`<div class="card-luxury" style="padding:18px;"><strong>${r.n}</strong><br><span style="color:#FFB300;">★★★★★</span><p style="font-size:12px;">"${r.t}"</p></div>`).join('');
   </script>
 </body>
 </html>
