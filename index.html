@@ -198,16 +198,22 @@
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
+  <!-- ===== CONTACT (WITH ADDRESS) ===== -->
   <section id="contact" style="padding:80px 20px;text-align:center;background:#F5F0E8;position:relative;z-index:1;">
     <h2 style="font-size:38px;font-family:'Cormorant Garamond',serif;">Contact Us</h2>
     <div style="display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-top:35px;">
       <a href="https://wa.me/923099915777" target="_blank" class="btn-wa" style="padding:22px 35px;flex-direction:column;">💬<br>WhatsApp<br>+92 309 9915777</a>
-      <a href="mailto:info@metalartsialkot.com" style="background:white;padding:22px 35px;border-radius:16px;text-decoration:none;color:#2C2824;">📧<br>Email<br>info@metalartsialkot.com</a>
+      <a href="mailto:info@metalartsialkot.com" style="background:white;padding:22px 35px;border-radius:16px;text-decoration:none;color:#2C2824;text-align:center;">📧<br>Email<br>info@metalartsialkot.com</a>
+      <!-- 📍 ADDRESS ADDED HERE -->
+      <div style="background:white;padding:22px 35px;border-radius:16px;text-align:center;border:1px solid rgba(196,162,101,0.1);">
+        <div style="font-size:35px;">📍</div>
+        <strong>Visit Us</strong>
+        <p style="font-size:12px;line-height:1.6;margin-top:5px;">Shop # 6, Ground Floor,<br>Ikraam Plaza, Kashmir Road,<br>Sialkot, Pakistan</p>
+      </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ===== FOOTER (WITH ADDRESS) ===== -->
   <footer style="background:#1A1815;color:#D4C5B2;padding:50px 20px 30px;text-align:center;position:relative;z-index:1;">
     <h3 class="gold-text" style="font-size:24px;">Metal Art Sialkot</h3>
     <p style="font-size:12px;">Crafted in Steel • Inspired by Faith</p>
@@ -223,6 +229,8 @@
       <a href="https://wa.me/923099915777" target="_blank" style="color:#D4C5B2;font-size:20px;"><i class="fab fa-whatsapp"></i></a>
     </div>
     <p style="font-size:10px;margin-top:15px;">📞 +92 309 9915777 | info@metalartsialkot.com</p>
+    <!-- 📍 ADDRESS ADDED HERE -->
+    <p style="font-size:10px;margin-top:5px;">📍 Shop # 6, Ground Floor, Ikraam Plaza, Kashmir Road, Sialkot, Pakistan</p>
     <p style="font-size:9px;color:#8B7355;margin-top:10px;">© 2025 Metal Art Sialkot. All Rights Reserved.</p>
   </footer>
 
@@ -292,7 +300,7 @@
       <input id="coName" placeholder="Full Name *" style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:10px;">
       <input id="coPhone" placeholder="Phone *" style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:10px;">
       <input id="coEmail" placeholder="Email" style="width:100%;padding:12px;margin:8px 0;border:2px solid #C4A265;border-radius:10px;">
-      <textarea id="coAddress" placeholder="Address *" rows="2" style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:10px;"></textarea>
+      <textarea id="coAddress" placeholder="Delivery Address *" rows="2" style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:10px;"></textarea>
       <button onclick="placeOrder()" class="btn-gold" style="width:100%;padding:16px;">✅ Place Order</button>
     </div>
   </div>
@@ -327,7 +335,7 @@
     function login(){const e=document.getElementById('loginEmail').value.trim(),pw=document.getElementById('loginPassword').value.trim();const u=JSON.parse(localStorage.getItem('metalArtUser')||'null');if(u&&u.email===e&&u.password===pw){currentUser=u;updateAccountButton();closeModal('accountModal');alert('✅ Welcome back, '+u.name+'!');}else{alert('❌ Invalid credentials!');}}
     function logout(){currentUser=null;localStorage.removeItem('metalArtUser');updateAccountButton();closeModal('accountModal');}
 
-    // ===== PRODUCTS (UPDATED SIZES) =====
+    // ===== PRODUCTS =====
     const products=[
       {id:1,code:"MAS-CLG-001",name:"Masha Allah",cat:"calligraphy",price:6000,img:"images/mashaallah.jpg",best:true,stock:4,sold:234,size:'40"W × 10"H',desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish. Wall brackets included. 5-year rust-free guarantee."},
       {id:2,code:"MAS-CLG-002",name:"Hasbunallah",cat:"calligraphy",price:6000,img:"images/hasbunallah.jpg",best:true,stock:2,sold:189,size:'40"W × 10"H',desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut. Premium 0.8mm stainless steel, golden finish."},
@@ -387,14 +395,14 @@
 
     function changeQty(c){qty=Math.max(1,qty+c);document.getElementById('modQty').textContent=qty;}
     function addToCartFromModal(){if(cp2){addToCart(cp2.id,qty);closeModal('productModal');}}
-    function buyNow(){if(!cp2)return;window.open(`https://wa.me/923099915777?text=Order:%20${cp2.code}%20${cp2.name}%20x${qty}%20Rs.${cp2.price*qty}`,'_blank');}
+    function buyNow(){if(!cp2)return;window.open(`https://wa.me/923099915777?text=Order:%20${cp2.code}%20${cp2.name}%20${cp2.size}%20x${qty}%20Rs.${cp2.price*qty}`,'_blank');}
     function openCart(){renderCart();openModal('cartModal');}
     function renderCart(){
       const items=document.getElementById('cartItems'),empty=document.getElementById('cartEmpty'),footer=document.getElementById('cartFooter');
       if(cart.length===0){items.innerHTML='';empty.style.display='block';footer.style.display='none';return;}
       empty.style.display='none';footer.style.display='block';
       let t=0;
-      items.innerHTML=cart.map((i,x)=>{t+=i.price*i.qty;return`<div style="display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #E8E0D5;border-radius:10px;margin-bottom:8px;"><span class="code-badge">${i.code}</span><span style="flex:1;font-size:12px;">${i.name} x${i.qty}</span><span style="color:#C4A265;">Rs. ${(i.price*i.qty).toLocaleString()}</span><button onclick="removeCart(${x})" style="background:none;border:none;color:#E53935;">🗑️</button></div>`;}).join('');
+      items.innerHTML=cart.map((i,x)=>{t+=i.price*i.qty;return`<div style="display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #E8E0D5;border-radius:10px;margin-bottom:8px;"><span class="code-badge">${i.code}</span><span style="flex:1;font-size:12px;">${i.name} (${i.size}) x${i.qty}</span><span style="color:#C4A265;">Rs. ${(i.price*i.qty).toLocaleString()}</span><button onclick="removeCart(${x})" style="background:none;border:none;color:#E53935;">🗑️</button></div>`;}).join('');
       document.getElementById('cartTotal').textContent='Rs. '+t.toLocaleString();
     }
     function removeCart(i){cart.splice(i,1);saveCart();renderCart();}
