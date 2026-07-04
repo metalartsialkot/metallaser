@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail - Metal Art Sialkot</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23C4A265'/><text x='50' y='72' font-size='55' text-anchor='middle' fill='white' font-family='Georgia,serif' font-weight='bold'>M</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root { --gold: #C4A265; --gold-light: #D4B87A; --dark: #1A1815; --cream: #FAF7F2; }
+    body { font-family: 'Inter', sans-serif; background: #FAF7F2; color: #2C2824; }
+    .img-wrapper { position: relative; overflow: hidden; background: #F5F0E8; width: 100%; aspect-ratio: 1/1; }
+    .img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .btn-gold { background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; text-decoration: none; display: inline-block; }
+    .btn-gold:hover { box-shadow: 0 10px 30px rgba(196,162,101,0.4); transform: translateY(-2px); }
+    .btn-dark { background: #1A1815; color: white; padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
+    .btn-dark:hover { background: #333; }
+    .gold-text { background: linear-gradient(135deg, #C4A265, #D4B87A, #B8944A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .code-badge { font-size: 10px; color: #8B7355; background: #F5F0E8; padding: 3px 10px; border-radius: 4px; font-family: monospace; }
+    .size-badge { font-size: 11px; color: #1B5E20; background: #E8F5E9; padding: 3px 10px; border-radius: 4px; display: inline-block; margin-top: 4px; font-weight: 500; }
+    .stock-dot { width: 6px; height: 6px; border-radius: 50%; background: #E53935; animation: pulse 2s infinite; display: inline-block; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION (Same as main) ===== -->
+  <header style="background:rgba(250,247,242,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(196,162,101,0.2);position:fixed;top:0;width:100%;z-index:1000;">
+    <div style="max-width:1300px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:15px;">
+        <div style="width:55px;height:55px;border-radius:12px;overflow:hidden;background:#F5F0E8;flex-shrink:0;">
+          <img src="images/logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;display:block;">
+        </div>
+        <div>
+          <span class="gold-text" style="font-size:24px;font-family:'Cormorant Garamond',serif;font-weight:700;">Metal Art Sialkot</span>
+        </div>
+      </a>
+      <nav style="display:flex;gap:18px;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;">
+        <a href="index.html#home" style="color:#2C2824;text-decoration:none;">Home</a>
+        <a href="index.html#shop" style="color:#2C2824;text-decoration:none;">Shop</a>
+        <a href="index.html#contact" style="color:#2C2824;text-decoration:none;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== PRODUCT DETAIL ===== -->
+  <section style="min-height:100vh;padding:120px 20px 60px;max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;background:white;border-radius:20px;padding:30px;box-shadow:0 10px 40px rgba(0,0,0,0.05);">
+      
+      <!-- Left: Image -->
+      <div class="img-wrapper" style="border-radius:15px;height:500px;">
+        <img src="" id="detailImg" alt="Product" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      
+      <!-- Right: Details -->
+      <div>
+        <span class="code-badge" id="detailCode">---</span>
+        <h2 id="detailName" style="font-size:32px;font-family:'Cormorant Garamond',serif;margin-top:10px;"></h2>
+        <span style="color:#FFB300;font-size:20px;">★★★★★</span>
+        <p id="detailPrice" style="font-size:28px;font-weight:bold;color:#C4A265;margin:12px 0;"></p>
+        
+        <div style="background:#FAF7F2;padding:18px;border-radius:12px;margin:15px 0;">
+          <p id="detailDesc" style="font-size:14px;line-height:1.8;"></p>
+        </div>
+        
+        <div style="margin:15px 0;">
+          <span class="size-badge" id="detailSize" style="font-size:14px;">📏 Size: </span>
+        </div>
+        
+        <div id="detailStock" style="margin:10px 0;"></div>
+        
+        <!-- Action Buttons -->
+        <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+          <button onclick="buyNow()" class="btn-gold" style="flex:1;text-align:center;padding:14px;">⚡ Buy Now on WhatsApp</button>
+          <a href="index.html#shop" class="btn-dark" style="flex:1;text-align:center;padding:14px;text-decoration:none;">← Back to Shop</a>
+        </div>
+        
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid #E8E0D5;font-size:12px;color:#8B7355;">
+          <p>✅ 5-year rust-free guarantee</p>
+          <p>🚚 Free shipping across Pakistan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:#1A1815;color:#D4C5B2;padding:30px 20px;text-align:center;">
+    <p style="font-size:11px;">© 2025 Metal Art Sialkot. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // ===== SAME PRODUCT DATA AS MAIN WEBSITE =====
+    const products = [
+      {id:1, code:"MAS-CLG-001", name:"Masha Allah", cat:"calligraphy", price:6000, img:"images/mashaallah.jpg", best:true, stock:4, size:'40"W × 10"H', desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish. Wall brackets included. 5-year rust-free guarantee."},
+      {id:2, code:"MAS-CLG-002", name:"Hasbunallah", cat:"calligraphy", price:6000, img:"images/hasbunallah.jpg", best:true, stock:2, size:'40"W × 10"H', desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut. Premium 0.8mm stainless steel, golden finish."},
+      {id:3, code:"MAS-KLM-001", name:"First Kalma", cat:"kalima", price:6000, img:"images/firstkalma.jpg", best:false, stock:8, size:'40"W × 10"H', desc:"La Ilaha Illallah. Circular design. Premium 0.8mm stainless steel, golden mirror polish."},
+      {id:4, code:"MAS-CLG-003", name:"Fabi Ayyi Ala", cat:"calligraphy", price:6000, img:"images/fabi.jpg", best:false, stock:12, size:'40"W × 10"H', desc:"Surah Ar-Rahman verse. Premium 0.8mm stainless steel, golden finish."},
+      {id:5, code:"MAS-KLM-002", name:"La Ilaha Illa Anta", cat:"kalima", price:6000, img:"images/laillaha.jpg", best:false, stock:3, size:'40"W × 10"H', desc:"Ayat-e-Karima. Premium 0.8mm stainless steel, golden finish."},
+      {id:6, code:"MAS-BSM-001", name:"Bismillah", cat:"bismillah", price:6000, img:"images/bismillah.jpg", best:false, stock:6, size:'40"W × 10"H', desc:"Bismillah Hir Rahman Ir Raheem. Teardrop shape. Premium 0.8mm stainless steel."},
+      {id:7, code:"MAS-CLG-004", name:"Fabi Translation", cat:"calligraphy", price:6000, img:"images/fabitr.jpg", best:false, stock:15, size:'40"W × 10"H', desc:"With Urdu translation. Premium 0.8mm stainless steel."},
+      {id:8, code:"MAS-AYT-001", name:"Ayat ul Kursi Round", cat:"ayat", price:7000, img:"images/ayatround.jpg", best:true, stock:3, size:'19"W × 25"H', desc:"⭐ BESTSELLER! Full Ayat ul Kursi in circular design. Premium 0.8mm stainless steel, golden mirror finish. Wall brackets included. 5-year rust-free guarantee."}
+    ];
+
+    // ===== URL SE PRODUCT NAME READ KAREIN =====
+    const params = new URLSearchParams(window.location.search);
+    const productName = params.get('name');
+    
+    // ===== PRODUCT DHAUNDHEIN =====
+    const product = products.find(p => p.name === productName || p.id == productName);
+
+    // ===== PRODUCT SHOW KAREIN =====
+    if (product) {
+      document.getElementById('detailImg').src = product.img;
+      document.getElementById('detailCode').textContent = product.code;
+      document.getElementById('detailName').textContent = product.name;
+      document.getElementById('detailPrice').textContent = 'Rs. ' + product.price.toLocaleString();
+      document.getElementById('detailDesc').textContent = product.desc;
+      document.getElementById('detailSize').textContent = '📏 Size: ' + product.size;
+      
+      if (product.stock <= 5) {
+        document.getElementById('detailStock').innerHTML = `<span style="color:#E53935;"><span class="stock-dot"></span> Only ${product.stock} left in stock!</span>`;
+      } else {
+        document.getElementById('detailStock').innerHTML = `<span style="color:#1B5E20;">✅ In Stock</span>`;
+      }
+    } else {
+      document.getElementById('detailName').textContent = 'Product Not Found';
+      document.getElementById('detailDesc').textContent = 'Sorry, we couldn\'t find this product. Please go back to the shop.';
+      document.getElementById('detailImg').src = '';
+      document.querySelector('.img-wrapper').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:40px;color:#C4A265;">🕌</div>';
+    }
+
+    // ===== BUY NOW FUNCTION =====
+    function buyNow() {
+      if (!product) return;
+      window.open(`https://wa.me/923099915777?text=Order:%20${product.code}%20${product.name}%20${product.size}%20Rs.${product.price}`, '_blank');
+    }
+  </script>
+</body>
+</html>
