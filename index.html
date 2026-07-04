@@ -352,6 +352,7 @@
     function updateCartBadge(){const t=cart.reduce((s,i)=>s+i.qty,0),b=document.getElementById('cartBadge');b.style.display=t>0?'flex':'none';b.textContent=t;}
     function addToCart(id,q=1){const e=cart.find(x=>x.id===id);if(e)e.qty+=q;else cart.push({...products.find(x=>x.id===id),qty:q});saveCart();alert('✅ Added to cart!');}
 
+    // ===== CARD HTML WITH VIEW LINK (CHANGE YAHAN HUA HAI) =====
     function cardHTML(p){
       return `<div class="card-luxury">
         <div class="img-wrapper zoom-container">
@@ -369,7 +370,8 @@
             <button class="add-btn btn-dark" data-id="${p.id}" style="flex:1;padding:8px;font-size:10px;">🛒 Cart</button>
             <button class="buy-btn btn-gold" data-id="${p.id}" style="flex:1;padding:8px;font-size:10px;">⚡ Buy</button>
           </div>
-          <button class="view-btn" data-id="${p.id}" style="width:100%;margin-top:5px;padding:6px;background:none;border:1px solid #E8E0D5;border-radius:50px;font-size:10px;">🔍 View</button>
+          <!-- 🔥 YAHAN VIEW BUTTON KO LINK MEIN CHANGE KAR DIYA HAI 🔥 -->
+          <a href="product.html?name=${encodeURIComponent(p.name)}" style="display:block;width:100%;margin-top:5px;padding:6px;background:none;border:1px solid #E8E0D5;border-radius:50px;font-size:10px;text-align:center;text-decoration:none;color:#2C2824;">🔍 View</a>
         </div>
       </div>`;
     }
@@ -417,7 +419,7 @@
     function placeOrder(){const n=document.getElementById('coName').value.trim(),p=document.getElementById('coPhone').value.trim(),e=document.getElementById('coEmail').value.trim(),a=document.getElementById('coAddress').value.trim();if(!n||!p||!a)return alert('Fill required fields!');const t=cart.reduce((s,i)=>s+i.price*i.qty,0),oid='MAS'+Date.now().toString().slice(-6),d=cart.map(i=>`${i.name} (${i.code}) x${i.qty} - ${i.size}`).join(', ');let m=`🕌 *New Order!*%0A📦 ${oid}%0A👤 ${n}%0A📞 ${p}%0A📍 ${a}%0A%0A`;cart.forEach(i=>m+=`• ${i.name} (${i.size}) x${i.qty}=Rs.${(i.price*i.qty).toLocaleString()}%0A`);m+=`%0A💰 Total: Rs.${t.toLocaleString()}`;window.open(`https://wa.me/923099915777?text=${m}`,'_blank');if(e){emailjs.send("service_yjg46ao","template_6kk6hkw",{to_email:e,customer_name:n,order_id:oid,order_details:d,total:'Rs. '+t.toLocaleString(),phone:p,address:a}).catch(err=>console.log(err));}cart=[];saveCart();closeModal('checkoutModal');alert('✅ Order Placed!');}
 
     // ===== EVENTS =====
-    document.addEventListener('click',e=>{if(e.target.classList.contains('add-btn'))addToCart(parseInt(e.target.dataset.id));if(e.target.classList.contains('buy-btn')){const p=products.find(x=>x.id===parseInt(e.target.dataset.id));if(p)window.open(`https://wa.me/923099915777?text=Order:%20${p.code}%20${p.name}%20${p.size}%20Rs.${p.price}`,'_blank');}if(e.target.classList.contains('view-btn'))viewProduct(parseInt(e.target.dataset.id));if(e.target.classList.contains('modal')){e.target.classList.remove('active');document.body.style.overflow='';}});
+    document.addEventListener('click',e=>{if(e.target.classList.contains('add-btn'))addToCart(parseInt(e.target.dataset.id));if(e.target.classList.contains('buy-btn')){const p=products.find(x=>x.id===parseInt(e.target.dataset.id));if(p)window.open(`https://wa.me/923099915777?text=Order:%20${p.code}%20${p.name}%20${p.size}%20Rs.${p.price}`,'_blank');}if(e.target.classList.contains('modal')){e.target.classList.remove('active');document.body.style.overflow='';}});
     document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',function(){document.querySelectorAll('.tab-btn').forEach(x=>{x.style.background='white';x.style.color='#C4A265';});this.style.background='#C4A265';this.style.color='white';renderProducts(this.dataset.filter);});});
     function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active');}
 
