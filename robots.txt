@@ -1,15 +1,29 @@
-# Robots.txt for Metal Art Sialkot
-# https://metalartsialkot.com
+# Metal Art Sialkot - Robots.txt
+# Website: https://metalartsialkot.com
+# GitHub: github.com/metalartsialkot/metallaser
+# Last Updated: 2025
 
+# Allow all search engines
 User-agent: *
 Allow: /
 
-# Sitemap Location
+# Disallow GitHub files
+Disallow: /README.md
+Disallow: /.github/
+
+# Crawl delay
+Crawl-delay: 5
+
+# Sitemap location
 Sitemap: https://metalartsialkot.com/sitemap.xml
 
-# Crawl Delay
-Crawl-delay: 10
+# Specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 2
 
-# Disallow admin areas (if any)
-Disallow: /admin/
-Disallow: /cgi-bin/
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
