@@ -23,24 +23,38 @@
   </url>
   
   <url>
-    <loc>https://metalartsialkot.com/#reviews</loc>
+    <loc>https://metalartsialkot.com/#gallery</loc>
     <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://metalartsialkot.com/#blog</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://metalartsialkot.com/#brand-story</loc>
+    <loc>https://metalartsialkot.com/#reviews</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://metalartsialkot.com/#policies</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://metalartsialkot.com/#contact</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
-
+  
 </urlset>
