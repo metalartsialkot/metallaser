@@ -256,32 +256,33 @@
     ];
 
     function cardHTML(p){
-      return `<div class="card-luxury">
-        <div class="img-wrapper" onclick="openProductZoom(${p.id})">
-          <img src="${p.img}" alt="${p.name}" loading="lazy">
-          ${p.best?'<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:9px;">⭐ BEST</span>':''}
-        </div>
-        <div style="padding:12px;">
-          <span style="font-size:9px;color:#8B7355;">${p.code}</span>
-          <h3 style="font-size:14px;font-family:Cormorant Garamond,serif;font-weight:600;">${p.name}</h3>
-          <p style="color:#C4A265;font-weight:700;font-size:18px;">Rs. ${p.price.toLocaleString()}</p>
-          <span style="font-size:10px;color:#1B5E20;background:#E8F5E9;padding:3px 8px;border-radius:4px;">📏 ${p.size}</span>
+  return `<div class="card-luxury">
+    <div class="img-wrapper" onclick="openProductZoom(${p.id})">
+      <img src="${p.img}" alt="${p.name}" loading="lazy">
+      ${p.best?'<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:9px;">⭐ BEST</span>':''}
+    </div>
+    <div style="padding:12px;">
+      <span style="font-size:9px;color:#8B7355;">${p.code}</span>
+      <h3 style="font-size:14px;font-family:Cormorant Garamond,serif;font-weight:600;">${p.name}</h3>
+      <p style="color:#C4A265;font-weight:700;font-size:18px;">Rs. ${p.price.toLocaleString()}</p>
+      <span style="font-size:10px;color:#1B5E20;background:#E8F5E9;padding:3px 8px;border-radius:4px;">📏 ${p.size}</span>
+      
+      <!-- VIEW DETAILS → Products Page -->
+      <a href="products.html?name=${encodeURIComponent(p.name)}" 
+         style="display:block;width:100%;margin-top:8px;padding:10px;background:white;color:#C4A265;border:2px solid #C4A265;border-radius:50px;font-size:11px;font-weight:600;text-align:center;text-decoration:none;">
+        🔍 View Details
+      </a>
+      
+      <div style="display:flex;gap:5px;margin-top:5px;">
+        <button onclick="event.stopPropagation();addToCart(${p.id})" 
+                style="flex:1;padding:10px;background:#1A1815;color:white;border:none;border-radius:50px;font-size:10px;font-weight:600;cursor:pointer;">🛒 Cart</button>
+        <button onclick="event.stopPropagation();buyNowProduct(${p.id})" 
+                style="flex:1;padding:10px;background:linear-gradient(135deg,#C4A265,#D4B87A);color:white;border:none;border-radius:50px;font-size:10px;font-weight:600;cursor:pointer;">⚡ Buy Now</button>
+      </div>
+    </div>
+  </div>`;}
           
-         <a href="products.html?name=${encodeURIComponent(p.name)}" 
-   onclick="event.stopPropagation()"
-   style="display:block;width:100%;margin-top:8px;padding:10px;background:white;color:#C4A265;border:2px solid #C4A265;border-radius:50px;font-size:11px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;">
-  🔍 View Details
-</a>
           
-          <div style="display:flex;gap:5px;margin-top:5px;">
-            <button onclick="event.stopPropagation();addToCart(${p.id})" 
-                    style="flex:1;padding:10px;background:#1A1815;color:white;border:none;border-radius:50px;font-size:10px;font-weight:600;cursor:pointer;">🛒 Cart</button>
-            <button onclick="event.stopPropagation();buyNowProduct(${p.id})" 
-                    style="flex:1;padding:10px;background:linear-gradient(135deg,#C4A265,#D4B87A);color:white;border:none;border-radius:50px;font-size:10px;font-weight:600;cursor:pointer;">⚡ Buy Now</button>
-          </div>
-        </div>
-      </div>`;}
-
     function renderProducts(f='all'){document.getElementById('productGrid').innerHTML=(f==='all'?products:products.filter(p=>p.cat===f)).map(cardHTML).join('');}
     function openProductZoom(id){const p=products.find(x=>x.id===id);if(!p)return;document.getElementById('zoomImg').src=p.img;document.getElementById('zoomCode').textContent=p.code;document.getElementById('zoomName').textContent=p.name;document.getElementById('zoomPrice').textContent='Rs. '+p.price.toLocaleString();document.getElementById('zoomSize').textContent='📏 '+p.size;document.getElementById('zoomDesc').innerHTML=`<p>${p.desc}</p><p style="margin-top:8px;"><strong>Material:</strong> 0.8mm Stainless Steel</p><p><strong>Sold:</strong> ${p.sold}+ pieces</p>`;document.getElementById('zoomWhatsApp').href=`https://wa.me/923099915777?text=Order:%20${encodeURIComponent(p.code)}%20${encodeURIComponent(p.name)}%20Rs.${p.price}`;document.getElementById('zoomModal').classList.add('active');document.body.style.overflow='hidden';if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:p.name,value:p.price,currency:'PKR'});}
     function closeProductZoom(){document.getElementById('zoomModal').classList.remove('active');document.body.style.overflow='';}
