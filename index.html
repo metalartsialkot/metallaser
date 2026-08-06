@@ -389,37 +389,76 @@
   <!-- ALL SCRIPTS AT BOTTOM -->
   
   <!-- Visitor Alert -->
-  <script>
-  (function() {
+  <!-- ===== VISITOR ALERT: WHATSAPP + EMAIL ===== -->
+<script>
+(function() {
+    // Sirf ek baar notify per session
     if (sessionStorage.getItem('visitor_notified')) return;
     sessionStorage.setItem('visitor_notified', 'true');
     
+    // Visitor count
     let count = parseInt(localStorage.getItem('visitorCount') || '0');
     count++;
     localStorage.setItem('visitorCount', count);
     
+    // 6 second baad notify
     setTimeout(async () => {
-        let location = 'Unknown';
+        
+        // Get visitor location
+        let city = 'Unknown', country = 'Unknown';
         try {
             const res = await fetch('https://ipapi.co/json/');
             const data = await res.json();
-            location = data.city + ', ' + data.country_name;
+            city = data.city || 'Unknown';
+            country = data.country_name || 'Unknown';
         } catch(e) {}
         
+        // Device & browser info
         const device = /Mobile/i.test(navigator.userAgent) ? '📱 Mobile' : '💻 Desktop';
+        const browser = navigator.userAgent.includes('Chrome') ? 'Chrome' : 
+                       navigator.userAgent.includes('Firefox') ? 'Firefox' : 
+                       navigator.userAgent.includes('Safari') ? 'Safari' : 'Other';
         const time = new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' });
+        const location = `${city}, ${country}`;
+        const referrer = document.referrer || 'Direct Visit';
         
-        const msg = `🟢 *New Website Visitor!* %0A%0A` +
-                    `⏰ Time: ${time} %0A` +
-                    `📍 Location: ${location} %0A` +
-                    `📱 Device: ${device} %0A` +
-                    `👥 Visitor #: ${count} %0A` +
-                    `🌐 metalartsialkot.com`;
+        // ===== 1. WHATSAPP NOTIFICATION =====
+        const waMsg = `🟢 *New Website Visitor!* %0A%0A` +
+                      `⏰ Time: ${time} %0A` +
+                      `📍 Location: ${location} %0A` +
+                      `📱 Device: ${device} %0A` +
+                      `🌐 Browser: ${browser} %0A` +
+                      `🔗 From: ${referrer} %0A` +
+                      `👥 Visitor #: ${count} %0A` +
+                      `🌐 metalartsialkot.com`;
         
-        window.open(`https://wa.me/923099915777?text=${msg}`, '_blank');
-    }, 6000);
-  })();
-  </script>
+        window.open(`https://wa.me/923099915777?text=${waMsg}`, '_blank');
+        
+        // ===== 2. EMAIL NOTIFICATION =====
+        if (typeof emailjs !== 'undefined') {
+            emailjs.send('service_yjg46ao', 'template_6kk6kwh', {
+                to_email: 'info@metalartsialkot.com',
+                customer_name: 'New Visitor Alert',
+                order_id: 'VISITOR-' + count,
+                order_details: `Time: ${time} | Location: ${location} | Device: ${device} | Browser: ${browser} | Referrer: ${referrer}`,
+                total: 'Visitor #' + count,
+                phone: 'N/A',
+                address: location
+            }).then(() => {
+                console.log('✅ Email sent!');
+            }).catch(err => {
+                console.log('Email notification logged');
+            });
+        }
+        
+        console.log('🔔 Visitor Alert Sent!', {
+            time, location, device, browser, referrer, count
+        });
+        
+    }, 6000); // 6 seconds delay
+    
+})();
+</script>
 
   <!-- Main App Script -->
   <script>
