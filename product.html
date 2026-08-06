@@ -2,140 +2,543 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Detail - Metal Art Sialkot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!-- ============ DYNAMIC SEO TITLE ============ -->
+  <title id="pageTitle">Islamic Metal Wall Art | Metal Art Sialkot</title>
+  
+  <!-- ============ META DESCRIPTION ============ -->
+  <meta name="description" id="pageDescription" content="Buy premium Islamic metal wall art online. Handcrafted stainless steel calligraphy with golden finish. Free delivery across Pakistan. COD available.">
+  
+  <meta name="keywords" content="Islamic wall art, metal calligraphy, Islamic decor, Sialkot handicrafts, stainless steel Islamic art, Pakistan Islamic gifts">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Metal Art Sialkot">
+  
+  <link rel="canonical" href="https://metalartsialkot.com/products.html">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23C4A265'/><text x='50' y='72' font-size='55' text-anchor='middle' fill='white' font-family='Georgia,serif' font-weight='bold'>M</text></svg>">
+  <meta name="theme-color" content="#C4A265">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" id="ogTitle" content="Islamic Metal Wall Art | Metal Art Sialkot">
+  <meta property="og:description" id="ogDescription" content="Premium Islamic metal wall art. Handcrafted stainless steel with golden finish.">
+  <meta property="og:url" content="https://metalartsialkot.com/products.html">
+  <meta property="og:image" id="ogImage" content="https://metalartsialkot.com/images/logo.png">
+  <meta property="og:site_name" content="Metal Art Sialkot">
+  <meta property="fb:app_id" content="1365676085771513">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="twitterTitle" content="Islamic Metal Wall Art">
+  <meta name="twitter:description" id="twitterDescription" content="Premium Islamic metal wall art from Sialkot, Pakistan.">
+  
+  <meta name="facebook-domain-verification" content="hwv41djjdn25f1ejh0dh2teczk6355">
+  <meta name="google-site-verification" content="jbQAs-JZnPqRKbp5_mY_4yamKdPdAxRf7ec6_amD8wQ">
+  
+  <!-- Product Schema -->
+  <script type="application/ld+json" id="productSchema">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Islamic Metal Wall Art",
+    "image": "https://metalartsialkot.com/images/logo.png",
+    "description": "Premium Islamic metal wall art. Handcrafted stainless steel with golden finish.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Metal Art Sialkot"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "6000",
+      "priceCurrency": "PKR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Metal Art Sialkot"
+      }
+    }
+  }
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2117035032544637');fbq('track','PageView');
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
-    :root { --gold: #C4A265; --gold-light: #D4B87A; --dark: #1A1815; --cream: #FAF7F2; }
-    body { font-family: 'Inter', sans-serif; background: #FAF7F2; color: #2C2824; }
-    .img-wrapper { position: relative; overflow: hidden; background: #F5F0E8; width: 100%; aspect-ratio: 1/1; }
-    .img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .btn-gold { background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; text-decoration: none; display: inline-block; }
-    .btn-gold:hover { box-shadow: 0 10px 30px rgba(196,162,101,0.4); transform: translateY(-2px); }
-    .btn-dark { background: #1A1815; color: white; padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
-    .btn-dark:hover { background: #333; }
-    .gold-text { background: linear-gradient(135deg, #C4A265, #D4B87A, #B8944A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .code-badge { font-size: 10px; color: #8B7355; background: #F5F0E8; padding: 3px 10px; border-radius: 4px; font-family: monospace; }
-    .size-badge { font-size: 11px; color: #1B5E20; background: #E8F5E9; padding: 3px 10px; border-radius: 4px; display: inline-block; margin-top: 4px; font-weight: 500; }
-    .stock-dot { width: 6px; height: 6px; border-radius: 50%; background: #E53935; animation: pulse 2s infinite; display: inline-block; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    :root { --gold: #C4A265; --dark: #1A1815; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #FAF7F2; }
+    
+    .gold-text { background: linear-gradient(135deg, #C4A265, #D4B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    .product-img { 
+      width: 100%; cursor: zoom-in; transition: transform 0.4s ease; 
+      border-radius: 16px; background: #F5F0E8;
+    }
+    .product-img.zoomed { transform: scale(2.5); cursor: zoom-out; }
+    
+    .img-container { overflow: hidden; border-radius: 16px; background: #F5F0E8; }
+    
+    .btn { 
+      display: block; width: 100%; padding: 16px; border-radius: 50px; 
+      font-weight: 700; font-size: 15px; text-align: center; text-decoration: none; 
+      cursor: pointer; border: none; margin: 8px 0; transition: all 0.3s ease;
+    }
+    .btn:active { transform: scale(0.98); }
+    
+    .btn-wa { background: #25D366; color: white; }
+    .btn-call { background: linear-gradient(135deg, #C4A265, #D4B87A); color: #1A1815; }
+    .btn-fb { background: #1877F2; color: white; }
+    .btn-insta { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); color: white; }
+    
+    .wa-float {
+      position: fixed; bottom: 25px; right: 20px; z-index: 9999;
+      background: #25D366; color: white; width: 55px; height: 55px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+      animation: waPulse 2s infinite; text-decoration: none;
+    }
+    @keyframes waPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+    
+    .breadcrumb { font-size: 12px; color: #8B7355; padding: 15px 0; }
+    .breadcrumb a { color: #C4A265; text-decoration: none; }
+    
+    .feature-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: white; padding: 8px 15px; border-radius: 50px;
+      font-size: 11px; font-weight: 600; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    @media (max-width: 768px) {
+      .product-img.zoomed { transform: scale(2); }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ===== NAVIGATION (Same as main) ===== -->
-  <header style="background:rgba(250,247,242,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(196,162,101,0.2);position:fixed;top:0;width:100%;z-index:1000;">
-    <div style="max-width:1300px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;">
-      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:15px;">
-        <div style="width:55px;height:55px;border-radius:12px;overflow:hidden;background:#F5F0E8;flex-shrink:0;">
-          <img src="images/logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain;display:block;">
-        </div>
-        <div>
-          <span class="gold-text" style="font-size:24px;font-family:'Cormorant Garamond',serif;font-weight:700;">Metal Art Sialkot</span>
-        </div>
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923099915777" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Order">💬</a>
+
+  <!-- Header -->
+  <header style="background:white;padding:12px 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.05);" role="banner">
+    <div style="display:flex;align-items:center;justify-content:space-between;max-width:900px;margin:0 auto;">
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:8px;color:#C4A265;font-weight:600;font-size:14px;">
+        ← Back to Shop
       </a>
-      <nav style="display:flex;gap:18px;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;">
-        <a href="index.html#home" style="color:#2C2824;text-decoration:none;">Home</a>
-        <a href="index.html#shop" style="color:#2C2824;text-decoration:none;">Shop</a>
-        <a href="index.html#contact" style="color:#2C2824;text-decoration:none;">Contact</a>
-      </nav>
+      <span class="gold-text" style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:18px;">Product Details</span>
+      <a href="tel:+923099915777" style="background:#1A1815;color:white;padding:8px 15px;border-radius:50px;text-decoration:none;font-size:11px;font-weight:600;">📞 Call</a>
     </div>
   </header>
 
-  <!-- ===== PRODUCT DETAIL ===== -->
-  <section style="min-height:100vh;padding:120px 20px 60px;max-width:1200px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;background:white;border-radius:20px;padding:30px;box-shadow:0 10px 40px rgba(0,0,0,0.05);">
+  <!-- Product Content -->
+  <main style="max-width:700px;margin:0 auto;padding:15px;">
+    
+    <!-- Breadcrumb for SEO -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> → 
+      <a href="index.html#shop">Islamic Wall Art</a> → 
+      <span id="breadcrumbName">Product</span>
+    </nav>
+    
+    <div style="background:white;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
       
-      <!-- Left: Image -->
-      <div class="img-wrapper" style="border-radius:15px;height:500px;">
-        <img src="" id="detailImg" alt="Product" style="width:100%;height:100%;object-fit:cover;">
+      <!-- Product Image with Pinch Zoom -->
+      <div class="img-container" style="position:relative;">
+        <img src="" alt="" id="productImg" class="product-img" onclick="this.classList.toggle('zoomed')" loading="eager">
+        <span id="bestBadge" style="display:none;position:absolute;top:10px;left:10px;background:#C4A265;color:white;padding:5px 15px;border-radius:50px;font-size:11px;font-weight:700;">⭐ BESTSELLER</span>
       </div>
       
-      <!-- Right: Details -->
-      <div>
-        <span class="code-badge" id="detailCode">---</span>
-        <h2 id="detailName" style="font-size:32px;font-family:'Cormorant Garamond',serif;margin-top:10px;"></h2>
-        <span style="color:#FFB300;font-size:20px;">★★★★★</span>
-        <p id="detailPrice" style="font-size:28px;font-weight:bold;color:#C4A265;margin:12px 0;"></p>
+      <!-- Product Details -->
+      <div style="padding:25px;">
         
-        <div style="background:#FAF7F2;padding:18px;border-radius:12px;margin:15px 0;">
-          <p id="detailDesc" style="font-size:14px;line-height:1.8;"></p>
+        <!-- Code & Rating -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+          <span style="font-size:10px;color:#8B7355;background:#F5F0E8;padding:3px 10px;border-radius:4px;font-family:monospace;" id="productCode"></span>
+          <span style="color:#FFB300;font-size:14px;">★★★★★ <span style="color:#666;font-size:12px;">4.9/5 (300+ reviews)</span></span>
         </div>
         
-        <div style="margin:15px 0;">
-          <span class="size-badge" id="detailSize" style="font-size:14px;">📏 Size: </span>
+        <!-- Product Name (H1 for SEO) -->
+        <h1 style="font-family:'Cormorant Garamond',serif;font-size:32px;color:#1A1815;margin:10px 0;" id="productName"></h1>
+        
+        <!-- Price -->
+        <p style="font-size:34px;font-weight:700;color:#C4A265;margin:10px 0;" id="productPrice"></p>
+        
+        <!-- Size -->
+        <span style="display:inline-block;background:#E8F5E9;color:#1B5E20;padding:8px 18px;border-radius:50px;font-size:14px;font-weight:600;" id="productSize"></span>
+        
+        <!-- Stock Status -->
+        <span id="stockStatus" style="display:inline-block;margin-left:10px;font-size:12px;font-weight:600;"></span>
+        
+        <!-- Features Badges -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:15px 0;">
+          <span class="feature-badge">✅ Stainless Steel</span>
+          <span class="feature-badge">✨ Golden Finish</span>
+          <span class="feature-badge">📦 Free Delivery</span>
+          <span class="feature-badge">💵 COD Available</span>
         </div>
         
-        <div id="detailStock" style="margin:10px 0;"></div>
+        <!-- Description -->
+        <div style="background:#FAF7F2;padding:18px;border-radius:12px;margin:15px 0;line-height:1.8;font-size:14px;color:#555;" id="productDesc"></div>
+        
+        <!-- Specifications Table -->
+        <div style="background:#FAF7F2;border-radius:12px;overflow:hidden;margin:15px 0;">
+          <table style="width:100%;font-size:13px;">
+            <tr style="border-bottom:1px solid #E8E0D5;">
+              <td style="padding:10px 15px;font-weight:600;color:#1A1815;">Material</td>
+              <td style="padding:10px 15px;">0.8mm Stainless Steel</td>
+            </tr>
+            <tr style="border-bottom:1px solid #E8E0D5;">
+              <td style="padding:10px 15px;font-weight:600;color:#1A1815;">Finish</td>
+              <td style="padding:10px 15px;">Golden Mirror Polish</td>
+            </tr>
+            <tr style="border-bottom:1px solid #E8E0D5;">
+              <td style="padding:10px 15px;font-weight:600;color:#1A1815;">Guarantee</td>
+              <td style="padding:10px 15px;">5 Years Rust-Free</td>
+            </tr>
+            <tr style="border-bottom:1px solid #E8E0D5;">
+              <td style="padding:10px 15px;font-weight:600;color:#1A1815;">Made In</td>
+              <td style="padding:10px 15px;">Sialkot, Pakistan</td>
+            </tr>
+            <tr style="border-bottom:1px solid #E8E0D5;">
+              <td style="padding:10px 15px;font-weight:600;color:#1A1815;">Mounting</td>
+              <td style="padding:10px 15px;">Wall Brackets Included</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 15px;font-weight:600;color:#1A1815;">Delivery</td>
+              <td style="padding:10px 15px;">3-7 Days (Free)</td>
+            </tr>
+          </table>
+        </div>
         
         <!-- Action Buttons -->
-        <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
-          <button onclick="buyNow()" class="btn-gold" style="flex:1;text-align:center;padding:14px;">⚡ Buy Now on WhatsApp</button>
-          <a href="index.html#shop" class="btn-dark" style="flex:1;text-align:center;padding:14px;text-decoration:none;">← Back to Shop</a>
-        </div>
+        <a id="whatsappBtn" href="#" target="_blank" rel="noopener" class="btn btn-wa">
+          💬 Order via WhatsApp - Fast Reply
+        </a>
+        <a href="tel:+923099915777" class="btn btn-call">
+          ✨ Call Now: +92 309 9915777
+        </a>
+        <a href="https://www.facebook.com/metalartsialkot" target="_blank" rel="noopener" class="btn btn-fb">
+          📘 Message on Facebook
+        </a>
+        <a href="https://instagram.com/metalartsialkot" target="_blank" rel="noopener" class="btn btn-insta">
+          📸 DM on Instagram
+        </a>
         
-        <div style="margin-top:20px;padding-top:20px;border-top:1px solid #E8E0D5;font-size:12px;color:#8B7355;">
-          <p>✅ 5-year rust-free guarantee</p>
-          <p>🚚 Free shipping across Pakistan</p>
-        </div>
       </div>
     </div>
-  </section>
+    
+    <!-- Related Products -->
+    <div style="margin:30px 0;">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:24px;text-align:center;margin-bottom:15px;">You May Also Like</h2>
+      <div id="relatedProducts" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;"></div>
+    </div>
+    
+    <!-- SEO Content -->
+    <div style="background:white;border-radius:16px;padding:25px;margin:20px 0;line-height:2;font-size:13px;color:#555;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#1A1815;">About This Islamic Metal Wall Art</h3>
+      <p>This exquisite <strong>Islamic metal wall art</strong> is handcrafted by skilled artisans in <strong>Sialkot, Pakistan</strong>. Made from premium 0.8mm stainless steel with a luxurious <strong>golden mirror finish</strong>, it adds spiritual elegance to any space. Perfect for homes, offices, mosques, or as an <strong>Islamic gift</strong> for weddings, housewarming, Eid, and Ramadan.</p>
+      <p>Each piece comes with a <strong>5-year rust-free guarantee</strong> and includes wall mounting brackets for easy installation. We offer <strong>free delivery across Pakistan</strong> with <strong>cash on delivery</strong> available.</p>
+    </div>
+    
+    <!-- Back Button -->
+    <a href="index.html" style="display:block;text-align:center;margin:20px 0;color:#C4A265;text-decoration:none;font-weight:600;font-size:15px;">
+      ← Back to All Islamic Wall Art Designs
+    </a>
+    
+  </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer style="background:#1A1815;color:#D4C5B2;padding:30px 20px;text-align:center;">
-    <p style="font-size:11px;">© 2025 Metal Art Sialkot. All Rights Reserved.</p>
+  <!-- Footer -->
+  <footer style="background:#1A1815;color:#D4C5B2;text-align:center;padding:25px 15px;font-size:11px;margin-top:20px;">
+    <p style="font-weight:700;color:#C4A265;font-size:14px;">Metal Art Sialkot</p>
+    <p>Crafted in Steel • Inspired by Faith</p>
+    <p style="margin-top:10px;">📞 +92 309 9915777 | 📧 info@metalartsialkot.com</p>
+    <p>📍 Shop # 6, Ikraam Plaza, Kashmir Road, Sialkot, Pakistan</p>
   </footer>
 
   <script>
-    // ===== SAME PRODUCT DATA AS MAIN WEBSITE =====
+    // ===== PRODUCT DATA =====
     const products = [
-      {id:1, code:"MAS-CLG-001", name:"Masha Allah", cat:"calligraphy", price:6000, img:"images/mashaallah.jpg", best:true, stock:4, size:'40"W × 10"H', desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish. Wall brackets included. 5-year rust-free guarantee."},
-      {id:2, code:"MAS-CLG-002", name:"Hasbunallah", cat:"calligraphy", price:6000, img:"images/hasbunallah.jpg", best:true, stock:2, size:'40"W × 10"H', desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut. Premium 0.8mm stainless steel, golden finish."},
-      {id:3, code:"MAS-KLM-001", name:"First Kalma", cat:"kalima", price:6000, img:"images/firstkalma.jpg", best:false, stock:8, size:'40"W × 10"H', desc:"La Ilaha Illallah. Circular design. Premium 0.8mm stainless steel, golden mirror polish."},
-      {id:4, code:"MAS-CLG-003", name:"Fabi Ayyi Ala", cat:"calligraphy", price:6000, img:"images/fabi.jpg", best:false, stock:12, size:'40"W × 10"H', desc:"Surah Ar-Rahman verse. Premium 0.8mm stainless steel, golden finish."},
-      {id:5, code:"MAS-KLM-002", name:"La Ilaha Illa Anta", cat:"kalima", price:6000, img:"images/laillaha.jpg", best:false, stock:3, size:'40"W × 10"H', desc:"Ayat-e-Karima. Premium 0.8mm stainless steel, golden finish."},
-      {id:6, code:"MAS-BSM-001", name:"Bismillah", cat:"bismillah", price:6000, img:"images/bismillah.jpg", best:false, stock:6, size:'40"W × 10"H', desc:"Bismillah Hir Rahman Ir Raheem. Teardrop shape. Premium 0.8mm stainless steel."},
-      {id:7, code:"MAS-CLG-004", name:"Fabi Translation", cat:"calligraphy", price:6000, img:"images/fabitr.jpg", best:false, stock:15, size:'40"W × 10"H', desc:"With Urdu translation. Premium 0.8mm stainless steel."},
-      {id:8, code:"MAS-AYT-001", name:"Ayat ul Kursi Round", cat:"ayat", price:7000, img:"images/ayatround.jpg", best:true, stock:3, size:'19"W × 25"H', desc:"⭐ BESTSELLER! Full Ayat ul Kursi in circular design. Premium 0.8mm stainless steel, golden mirror finish. Wall brackets included. 5-year rust-free guarantee."}
-    ];
-
-    // ===== URL SE PRODUCT NAME READ KAREIN =====
-    const params = new URLSearchParams(window.location.search);
-    const productName = params.get('name');
-    
-    // ===== PRODUCT DHAUNDHEIN =====
-    const product = products.find(p => p.name === productName || p.id == productName);
-
-    // ===== PRODUCT SHOW KAREIN =====
-    if (product) {
-      document.getElementById('detailImg').src = product.img;
-      document.getElementById('detailCode').textContent = product.code;
-      document.getElementById('detailName').textContent = product.name;
-      document.getElementById('detailPrice').textContent = 'Rs. ' + product.price.toLocaleString();
-      document.getElementById('detailDesc').textContent = product.desc;
-      document.getElementById('detailSize').textContent = '📏 Size: ' + product.size;
-      
-      if (product.stock <= 5) {
-        document.getElementById('detailStock').innerHTML = `<span style="color:#E53935;"><span class="stock-dot"></span> Only ${product.stock} left in stock!</span>`;
-      } else {
-        document.getElementById('detailStock').innerHTML = `<span style="color:#1B5E20;">✅ In Stock</span>`;
+      {
+        id: 1,
+        code: "MAS-CLG-001",
+        name: "Masha Allah",
+        cat: "calligraphy",
+        price: 6000,
+        img: "images/mashaallah.jpg",
+        best: true,
+        stock: 4,
+        sold: 234,
+        size: '40"W × 10"H',
+        desc: "Elegant Masha Allah calligraphy in premium 0.8mm stainless steel with golden mirror finish. Perfect for living rooms, drawing rooms, and entryways. The golden shine reflects light beautifully and creates a warm spiritual ambiance.",
+        keywords: "masha allah wall art, masha allah metal decor, islamic calligraphy sialkot, masha allah gift",
+        seoTitle: "Masha Allah Islamic Metal Wall Art | Stainless Steel Golden Finish | Metal Art Sialkot",
+        seoDesc: "Buy Masha Allah Islamic metal wall art online. Premium stainless steel with golden finish. Free delivery Pakistan. COD available. Handcrafted in Sialkot."
+      },
+      {
+        id: 2,
+        code: "MAS-CLG-002",
+        name: "Hasbunallah",
+        cat: "calligraphy",
+        price: 6000,
+        img: "images/hasbunallah.jpg",
+        best: true,
+        stock: 2,
+        sold: 189,
+        size: '40"W × 10"H',
+        desc: "Hasbunallah Wa Ni'mal Wakeel in precision laser-cut design. Premium 0.8mm stainless steel with brilliant golden finish. A powerful reminder of faith for your home or office.",
+        keywords: "hasbunallah wall art, islamic metal art pakistan, hasbunallah calligraphy, islamic wall decor",
+        seoTitle: "Hasbunallah Islamic Metal Wall Art | Golden Stainless Steel | Metal Art Sialkot",
+        seoDesc: "Premium Hasbunallah Wa Ni'mal Wakeel Islamic wall art. Laser-cut stainless steel with golden finish. Free delivery across Pakistan."
+      },
+      {
+        id: 3,
+        code: "MAS-KLM-001",
+        name: "First Kalma",
+        cat: "kalima",
+        price: 6000,
+        img: "images/firstkalma.jpg",
+        best: false,
+        stock: 8,
+        sold: 156,
+        size: '40"W × 10"H',
+        desc: "La Ilaha Illallah - First Kalma in elegant circular design. Premium stainless steel with golden mirror polish. A beautiful expression of faith for your wall.",
+        keywords: "first kalma wall art, kalma metal decor, la ilaha illallah calligraphy, islamic kalma art",
+        seoTitle: "First Kalma Islamic Metal Wall Art | La Ilaha Illallah | Metal Art Sialkot",
+        seoDesc: "Beautiful First Kalma (La Ilaha Illallah) Islamic metal wall art. Stainless steel golden finish. Free delivery Pakistan."
+      },
+      {
+        id: 4,
+        code: "MAS-CLG-003",
+        name: "Fabi Ayyi Ala",
+        cat: "calligraphy",
+        price: 6000,
+        img: "images/fabi.jpg",
+        best: false,
+        stock: 12,
+        sold: 98,
+        size: '40"W × 10"H',
+        desc: "Fabi Ayyi Ala - Surah Ar-Rahman verse. Premium 0.8mm stainless steel with golden mirror finish. A beautiful Quranic verse for daily reflection.",
+        keywords: "fabi ayyi ala wall art, surah ar rahman calligraphy, islamic wall decor pakistan",
+        seoTitle: "Fabi Ayyi Ala Islamic Metal Wall Art | Surah Ar-Rahman | Metal Art Sialkot",
+        seoDesc: "Buy Fabi Ayyi Ala Surah Ar-Rahman Islamic wall art. Premium stainless steel golden finish. Free delivery Pakistan."
+      },
+      {
+        id: 5,
+        code: "MAS-KLM-002",
+        name: "La Ilaha Illa Anta",
+        cat: "kalima",
+        price: 6000,
+        img: "images/laillaha.jpg",
+        best: false,
+        stock: 3,
+        sold: 145,
+        size: '40"W × 10"H',
+        desc: "La Ilaha Illa Anta Subhanaka - Ayat-e-Karima. Beautiful Islamic calligraphy in golden finish on premium stainless steel. A meaningful spiritual gift.",
+        keywords: "la ilaha illa anta wall art, ayat e karima, islamic calligraphy pakistan, islamic gift",
+        seoTitle: "La Ilaha Illa Anta Islamic Wall Art | Ayat-e-Karima | Metal Art Sialkot",
+        seoDesc: "Premium La Ilaha Illa Anta (Ayat-e-Karima) Islamic metal wall art. Golden stainless steel finish. Free delivery Pakistan."
+      },
+      {
+        id: 6,
+        code: "MAS-BSM-001",
+        name: "Bismillah",
+        cat: "bismillah",
+        price: 6000,
+        img: "images/bismillah.jpg",
+        best: false,
+        stock: 6,
+        sold: 178,
+        size: '40"W × 10"H',
+        desc: "Bismillah Hir Rahman Ir Raheem in elegant teardrop design. Premium stainless steel with luxurious golden finish. Perfect for blessing your home or as a housewarming gift.",
+        keywords: "bismillah wall hanging, bismillah metal art, islamic wall decor pakistan, bismillah gift",
+        seoTitle: "Bismillah Islamic Metal Wall Hanging | Golden Stainless Steel | Metal Art Sialkot",
+        seoDesc: "Beautiful Bismillah metal wall hanging. Premium stainless steel golden finish. Perfect Islamic gift. Free delivery Pakistan."
+      },
+      {
+        id: 7,
+        code: "MAS-CLG-004",
+        name: "Fabi Translation",
+        cat: "calligraphy",
+        price: 6000,
+        img: "images/fabitr.jpg",
+        best: false,
+        stock: 15,
+        sold: 67,
+        size: '40"W × 10"H',
+        desc: "Fabi Ayyi Ala with Urdu translation. Premium 0.8mm stainless steel with golden mirror finish. Beautiful design with translation for better understanding.",
+        keywords: "fabi ayyi ala urdu, islamic wall art with translation, quranic calligraphy pakistan",
+        seoTitle: "Fabi Ayyi Ala with Urdu Translation | Islamic Metal Wall Art | Metal Art Sialkot",
+        seoDesc: "Fabi Ayyi Ala with Urdu translation Islamic wall art. Premium stainless steel golden finish. Free delivery Pakistan."
+      },
+      {
+        id: 8,
+        code: "MAS-AYT-001",
+        name: "Ayat ul Kursi Round",
+        cat: "ayat",
+        price: 7000,
+        img: "images/ayatround.jpg",
+        best: true,
+        stock: 3,
+        sold: 312,
+        size: '19"W × 25"H',
+        desc: "⭐ BESTSELLER! Complete Ayat ul Kursi in stunning circular design. Premium 0.8mm stainless steel with luxurious golden mirror finish. Our most popular product with 300+ happy customers. 5-year rust-free guarantee included.",
+        keywords: "ayat ul kursi wall art, ayatul kursi metal decor, quranic wall art pakistan, ayat ul kursi gift, islamic wall decor lahore, islamic wall art karachi",
+        seoTitle: "Ayat ul Kursi Islamic Metal Wall Art | Best Seller | Metal Art Sialkot",
+        seoDesc: "Buy best-selling Ayat ul Kursi Islamic metal wall art. Circular design in premium stainless steel golden finish. 300+ sold. Free delivery Pakistan."
       }
+    ];
+    
+    // ===== GET PRODUCT FROM URL =====
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('name');
+    const product = products.find(p => p.name === decodeURIComponent(productName || '')) || products[7]; // Default to Ayat ul Kursi
+    
+    // ===== UPDATE PAGE CONTENT =====
+    document.getElementById('productImg').src = product.img;
+    document.getElementById('productImg').alt = product.name + ' - Islamic Metal Wall Art by Metal Art Sialkot';
+    document.getElementById('productCode').textContent = product.code;
+    document.getElementById('productName').textContent = product.name;
+    document.getElementById('productPrice').textContent = 'Rs. ' + product.price.toLocaleString();
+    document.getElementById('productSize').textContent = '📏 ' + product.size;
+    document.getElementById('productDesc').innerHTML = `<p style="margin-bottom:10px;">${product.desc}</p><p><strong>🎁 Perfect Gift For:</strong> Housewarming, Wedding, Eid, Ramadan, Mosque Decoration</p>`;
+    document.getElementById('breadcrumbName').textContent = product.name;
+    
+    // Stock Status
+    const stockEl = document.getElementById('stockStatus');
+    if (product.stock <= 3) {
+      stockEl.innerHTML = '<span style="color:#E53935;">⚠️ Only ' + product.stock + ' left in stock!</span>';
+    } else if (product.stock <= 8) {
+      stockEl.innerHTML = '<span style="color:#FF9800;">📦 Limited Stock Available</span>';
     } else {
-      document.getElementById('detailName').textContent = 'Product Not Found';
-      document.getElementById('detailDesc').textContent = 'Sorry, we couldn\'t find this product. Please go back to the shop.';
-      document.getElementById('detailImg').src = '';
-      document.querySelector('.img-wrapper').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:40px;color:#C4A265;">🕌</div>';
+      stockEl.innerHTML = '<span style="color:#4CAF50;">✅ In Stock</span>';
     }
-
-    // ===== BUY NOW FUNCTION =====
-    function buyNow() {
-      if (!product) return;
-      window.open(`https://wa.me/923099915777?text=Order:%20${product.code}%20${product.name}%20${product.size}%20Rs.${product.price}`, '_blank');
+    
+    // BESTSELLER Badge
+    if (product.best) {
+      document.getElementById('bestBadge').style.display = 'block';
+    }
+    
+    // WhatsApp Link
+    document.getElementById('whatsappBtn').href = `https://wa.me/923099915777?text=Order:%20${encodeURIComponent(product.code)}%20-%20${encodeURIComponent(product.name)}%20-%20${encodeURIComponent(product.size)}%20-%20Rs.${product.price}`;
+    
+    // ===== UPDATE SEO META TAGS =====
+    document.title = product.seoTitle;
+    document.getElementById('pageTitle').textContent = product.seoTitle;
+    
+    // Meta Description
+    const metaDesc = document.getElementById('pageDescription');
+    metaDesc.setAttribute('content', product.seoDesc);
+    
+    // Meta Keywords
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    metaKeywords.setAttribute('content', product.keywords + ', islamic wall art pakistan, metal calligraphy sialkot, islamic gifts pakistan');
+    
+    // Open Graph
+    document.getElementById('ogTitle').setAttribute('content', product.seoTitle);
+    document.getElementById('ogDescription').setAttribute('content', product.seoDesc);
+    document.getElementById('ogImage').setAttribute('content', 'https://metalartsialkot.com/' + product.img);
+    
+    // Twitter
+    document.getElementById('twitterTitle').setAttribute('content', product.seoTitle);
+    document.getElementById('twitterDescription').setAttribute('content', product.seoDesc);
+    
+    // Canonical
+    document.querySelector('link[rel="canonical"]').setAttribute('href', 'https://metalartsialkot.com/products.html?name=' + encodeURIComponent(product.name));
+    
+    // ===== UPDATE PRODUCT SCHEMA =====
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": product.name + ' - Islamic Metal Wall Art',
+      "image": 'https://metalartsialkot.com/' + product.img,
+      "description": product.desc,
+      "sku": product.code,
+      "brand": {
+        "@type": "Brand",
+        "name": "Metal Art Sialkot"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Metal Art Sialkot",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sialkot",
+          "addressCountry": "PK"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": 'https://metalartsialkot.com/products.html?name=' + encodeURIComponent(product.name),
+        "price": product.price.toString(),
+        "priceCurrency": "PKR",
+        "priceValidUntil": "2026-12-31",
+        "availability": product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "PKR"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "businessDays": {
+              "@type": "OpeningHoursSpecification",
+              "minValue": 3,
+              "maxValue": 7
+            }
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "PK"
+          }
+        },
+        "seller": {
+          "@type": "Organization",
+          "name": "Metal Art Sialkot",
+          "telephone": "+923099915777",
+          "email": "info@metalartsialkot.com"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "312",
+        "bestRating": "5"
+      }
+    };
+    document.getElementById('productSchema').textContent = JSON.stringify(schema);
+    
+    // ===== RELATED PRODUCTS =====
+    const related = products.filter(p => p.id !== product.id && (p.cat === product.cat || p.best)).slice(0, 4);
+    document.getElementById('relatedProducts').innerHTML = related.map(p => `
+      <a href="products.html?name=${encodeURIComponent(p.name)}" style="text-decoration:none;color:inherit;">
+        <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+          <img src="${p.img}" alt="${p.name}" style="width:100%;aspect-ratio:1/1;object-fit:cover;" loading="lazy">
+          <div style="padding:10px;">
+            <h4 style="font-size:13px;font-weight:600;">${p.name}</h4>
+            <p style="color:#C4A265;font-weight:700;">Rs. ${p.price.toLocaleString()}</p>
+          </div>
+        </div>
+      </a>
+    `).join('');
+    
+    // ===== FACEBOOK PIXEL - VIEW CONTENT =====
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'ViewContent', {
+        content_name: product.name,
+        content_category: product.cat,
+        content_ids: [product.code],
+        content_type: 'product',
+        value: product.price,
+        currency: 'PKR'
+      });
     }
   </script>
 </body>
