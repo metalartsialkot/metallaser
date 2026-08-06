@@ -267,10 +267,11 @@
           <p style="color:#C4A265;font-weight:700;font-size:18px;">Rs. ${p.price.toLocaleString()}</p>
           <span style="font-size:10px;color:#1B5E20;background:#E8F5E9;padding:3px 8px;border-radius:4px;">📏 ${p.size}</span>
           
-          <button onclick="openProductZoom(${p.id})" 
-                  style="display:block;width:100%;margin-top:8px;padding:10px;background:white;color:#C4A265;border:2px solid #C4A265;border-radius:50px;font-size:11px;font-weight:600;cursor:pointer;">
-            🔍 View Details
-          </button>
+         <a href="products.html?name=${encodeURIComponent(p.name)}" 
+   onclick="event.stopPropagation()"
+   style="display:block;width:100%;margin-top:8px;padding:10px;background:white;color:#C4A265;border:2px solid #C4A265;border-radius:50px;font-size:11px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;">
+  🔍 View Details
+</a>
           
           <div style="display:flex;gap:5px;margin-top:5px;">
             <button onclick="event.stopPropagation();addToCart(${p.id})" 
