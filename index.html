@@ -208,6 +208,48 @@ src="https://www.facebook.com/tr?id=2117035032544637&ev=PageView&noscript=1"
   </style>
  <meta name="facebook-domain-verification" content="hwv41djjdn25f1ejh0dh2teczk6355" />
   </head>
+  <!-- Live Visitor WhatsApp Alert -->
+<script>
+(function() {
+    // Sirf ek baar notify karo per session
+    if (sessionStorage.getItem('visitor_notified')) return;
+    sessionStorage.setItem('visitor_notified', 'true');
+    
+    // Visitor count
+    let count = parseInt(localStorage.getItem('visitorCount') || '0');
+    count++;
+    localStorage.setItem('visitorCount', count);
+    
+    // 6 second baad notify
+    setTimeout(async () => {
+        
+        // Location info
+        let location = 'Unknown';
+        try {
+            const res = await fetch('https://ipapi.co/json/');
+            const data = await res.json();
+            location = data.city + ', ' + data.country_name;
+        } catch(e) {}
+        
+        // Device info
+        const device = /Mobile/i.test(navigator.userAgent) ? '📱 Mobile' : '💻 Desktop';
+        const time = new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' });
+        
+        // WhatsApp message
+        const msg = `🟢 *New Website Visitor!* %0A%0A` +
+                    `⏰ Time: ${time} %0A` +
+                    `📍 Location: ${location} %0A` +
+                    `📱 Device: ${device} %0A` +
+                    `👥 Visitor #: ${count} %0A` +
+                    `🌐 metalartsialkot.com`;
+        
+        // Open WhatsApp
+        window.open(`https://wa.me/923099915777?text=${msg}`, '_blank');
+        
+    }, 6000); // 6 seconds
+    
+})();
+</script>
 <body>
 
   <div id="particles-container"></div>
