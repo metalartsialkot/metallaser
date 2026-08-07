@@ -5,9 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">Islamic Metal Wall Art | Metal Art Sialkot</title>
   <meta name="description" id="pageDesc" content="Premium Islamic metal wall art in Pakistan. Handcrafted calligraphy with golden finish.">
-  <meta name="keywords" content="Islamic wall art Pakistan, metal wall art, Ayat ul Kursi, Masha Allah, Bismillah, Sialkot handicrafts">
+  <meta name="keywords" content="Islamic wall art Pakistan, metal wall art, Ayat ul Kursi, Masha Allah, Bismillah, Sialkot handicrafts, stainless steel art, golden calligraphy">
   <link rel="canonical" id="pageCanonical" href="https://metalartsialkot.com/product.html">
   
+  <!-- ===== FACEBOOK PIXEL ===== -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2117035032544637');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2117035032544637&ev=PageView&noscript=1"/></noscript>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,7 +23,7 @@
   <style>
     :root { --gold: #C4A265; --dark: #1A1815; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: #FAF7F2; color: #2C2824; }
+    body { font-family: 'Inter', sans-serif; background: #FAF7F2; color: #2C2824; overflow-x: hidden; }
     .gold-text { background: linear-gradient(135deg, #C4A265, #D4B87A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .card-luxury { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s ease; }
     .card-luxury:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
@@ -40,77 +48,63 @@
     .detail-info .color-badge { display: inline-block; background: #FFF3E0; color: #E65100; padding: 6px 16px; border-radius: 50px; font-size: 14px; margin: 10px 5px; }
     .detail-info .desc { font-size: 15px; line-height: 1.8; color: #555; margin: 15px 0; padding: 15px; background: #FAF7F2; border-radius: 10px; }
     
+    .urgency-stock { background: #FF6B6B; color: white; padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 700; display: inline-block; animation: pulse-urgency 1s infinite; }
+    @keyframes pulse-urgency { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    
     .detail-buttons { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
     .detail-buttons button { padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; text-align: center; flex: 1; min-width: 180px; border: none; cursor: pointer; font-size: 15px; }
     .btn-order { background: #25D366; color: white; }
     .btn-call { background: linear-gradient(135deg, #C4A265, #D4B87A); color: #1A1815; }
     
-    .related-section { margin-top: 40px; }
-    .related-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; text-align: center; margin-bottom: 20px; }
-    
-    /* ===== ORDER FORM MODAL ===== */
-    .order-modal {
-      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center;
-      padding: 20px; backdrop-filter: blur(5px);
-    }
+    .order-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
     .order-modal.active { display: flex; }
-    
-    .order-form-box {
-      background: white; border-radius: 24px; max-width: 520px; width: 100%;
-      padding: 30px; position: relative; animation: slideUp 0.4s ease; max-height: 95vh; overflow-y: auto;
-    }
+    .order-form-box { background: white; border-radius: 24px; max-width: 520px; width: 100%; padding: 30px; position: relative; animation: slideUp 0.4s ease; max-height: 95vh; overflow-y: auto; }
     @keyframes slideUp { 0% { transform: translateY(30px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
-    
-    .order-form-box .close-btn {
-      position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #999; background: none; border: none;
-    }
+    .order-form-box .close-btn { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #999; background: none; border: none; }
     .order-form-box .close-btn:hover { color: #333; }
     .order-form-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 5px; }
     .order-form-box .sub-text { color: #666; font-size: 13px; margin-bottom: 20px; }
-    
     .form-group { margin-bottom: 16px; }
     .form-group label { display: block; font-weight: 600; font-size: 13px; color: #333; margin-bottom: 4px; }
     .form-group label .required { color: #e53935; }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 12px 16px; border: 2px solid #eee; border-radius: 12px;
-      font-size: 14px; transition: border 0.3s ease; font-family: 'Inter', sans-serif;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color: #C4A265; outline: none; box-shadow: 0 0 0 3px rgba(196, 162, 101, 0.2);
-    }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; border: 2px solid #eee; border-radius: 12px; font-size: 14px; transition: border 0.3s ease; font-family: 'Inter', sans-serif; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #C4A265; outline: none; box-shadow: 0 0 0 3px rgba(196, 162, 101, 0.2); }
     .form-group textarea { resize: vertical; min-height: 70px; }
     
-    .order-summary-box {
-      background: #FAF7F2; padding: 14px; border-radius: 12px; margin-bottom: 16px;
-      display: flex; gap: 14px; align-items: center;
-    }
+    .order-summary-box { background: #FAF7F2; padding: 14px; border-radius: 12px; margin-bottom: 16px; display: flex; gap: 14px; align-items: center; }
     .order-summary-box img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
     .order-summary-box .info { flex: 1; }
     .order-summary-box .info .name { font-weight: 700; font-size: 15px; }
     .order-summary-box .info .price { color: #C4A265; font-weight: 700; }
     
-    .form-submit-btn {
-      width: 100%; padding: 16px; background: linear-gradient(135deg, #C4A265, #D4B87A);
-      color: white; border: none; border-radius: 50px; font-size: 16px; font-weight: 700;
-      cursor: pointer; transition: transform 0.2s ease;
-    }
+    .form-submit-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; border: none; border-radius: 50px; font-size: 16px; font-weight: 700; cursor: pointer; transition: transform 0.2s ease; }
     .form-submit-btn:hover { transform: scale(1.02); }
-    .form-submit-btn:active { transform: scale(0.98); }
     .form-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     
-    /* Success Message */
-    .success-msg {
-      display: none; text-align: center; padding: 20px 0;
-    }
+    .success-msg { display: none; text-align: center; padding: 20px 0; }
     .success-msg .icon { font-size: 60px; }
     .success-msg h3 { font-size: 24px; color: #1B5E20; margin: 10px 0; }
-    .success-msg p { color: #666; font-size: 14px; }
     
-    .user-badge {
-      display: inline-block; background: #E8F5E9; color: #1B5E20;
-      padding: 5px 14px; border-radius: 50px; font-size: 11px; font-weight: 600;
-    }
+    .user-badge { display: inline-block; background: #E8F5E9; color: #1B5E20; padding: 5px 14px; border-radius: 50px; font-size: 11px; font-weight: 600; }
+    
+    /* ===== LIVE ACTIVITY ===== */
+    .live-activity { position: fixed; bottom: 100px; left: 20px; z-index: 9998; max-width: 340px; width: 100%; }
+    .live-activity-item { background: white; border-radius: 12px; padding: 12px 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); margin-bottom: 8px; animation: slideInLeft 0.5s ease; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #333; }
+    .live-activity-item .icon { font-size: 18px; }
+    .live-activity-item .user-name { font-weight: 600; color: #C4A265; }
+    .live-activity-item .product-name { font-weight: 600; }
+    .live-activity-item .time { font-size: 10px; color: #999; margin-left: auto; white-space: nowrap; }
+    
+    @keyframes slideInLeft { 0% { transform: translateX(-100px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+    @keyframes fadeOut { 0% { opacity: 1; transform: translateX(0); } 100% { opacity: 0; transform: translateX(-50px); } }
+    .live-activity-item.fade-out { animation: fadeOut 0.5s ease forwards; }
+    
+    .live-viewers-badge { display: inline-block; background: #FF6B6B; color: white; padding: 4px 14px; border-radius: 50px; font-size: 12px; font-weight: 600; animation: pulse-urgency 1.5s infinite; }
+    
+    .floating-live { position: fixed; top: 80px; right: 20px; z-index: 9997; background: white; border-radius: 12px; padding: 8px 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 8px; font-size: 13px; color: #333; }
+    .floating-live .dot { width: 10px; height: 10px; background: #4CAF50; border-radius: 50%; display: inline-block; animation: pulse-dot 1.5s infinite; }
+    @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+    .floating-live .count { font-weight: 700; color: #C4A265; font-size: 16px; }
     
     @media (max-width: 768px) {
       .detail-main { flex-direction: column; padding: 15px; }
@@ -121,14 +115,15 @@
       .detail-buttons button { min-width: unset; }
       .prod-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
       .order-form-box { padding: 20px; margin: 10px; }
+      .live-activity { left: 10px; right: 10px; max-width: unset; }
+      .floating-live { top: 70px; right: 10px; font-size: 11px; padding: 6px 12px; }
     }
   </style>
 
-  <!-- ====== TRACKING + SIGN-IN ====== -->
+  <!-- ===== TRACKING + SIGN-IN ===== -->
   <script>
   const CONFIG = { whatsapp: '923099915777', email: 'metalartsialkot@gmail.com' };
 
-  // User Sign-In
   (function() {
     if (sessionStorage.getItem('user_signed_in')) {
       showUserBadge(sessionStorage.getItem('user_name'));
@@ -170,7 +165,6 @@
     window.open(`mailto:${CONFIG.email}?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(msg.replace(/%0A/g, '\n').replace(/[📢👤🕐📌]/g, ''))}`, '_blank', 'width=1,height=1');
   }
 
-  // Visitor Tracking
   (function() {
     const user = sessionStorage.getItem('user_name') || 'Guest';
     setTimeout(function() {
@@ -180,13 +174,22 @@
   })();
 
   console.log('✅ Product Page Loaded');
-  console.log('👤 User:', sessionStorage.getItem('user_name') || 'Guest');
   </script>
 </head>
 <body>
 
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/923099915777" class="wa-float" target="_blank">💬</a>
+
+  <!-- ===== LIVE ACTIVITY NOTIFICATIONS ===== -->
+  <div class="live-activity" id="liveActivity"></div>
+
+  <!-- Floating Live Visitors -->
+  <div class="floating-live" id="floatingLive">
+    <span class="dot"></span>
+    <span class="count" id="liveCount">128</span>
+    <span>live visitors</span>
+  </div>
 
   <!-- Header -->
   <header style="background:white;padding:12px 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.05);">
@@ -201,7 +204,7 @@
     </div>
   </header>
 
-  <!-- Product Detail -->
+  <!-- ===== PRODUCT DETAIL ===== -->
   <div class="detail-container" id="productDetail">
     <div class="detail-main">
       <div class="detail-image">
@@ -216,7 +219,24 @@
           <span class="size" id="detailSize">📏 40"W × 10"H</span>
           <span class="color-badge" id="detailColor">🎨 Golden</span>
         </div>
-        <div class="desc" id="detailDesc">Description here</div>
+        
+        <!-- ===== LIVE VIEWERS BADGE ===== -->
+        <div style="margin: 8px 0;">
+          <span class="live-viewers-badge" id="liveViewersBadge">👁️ 12 people viewing now</span>
+        </div>
+        
+        <!-- ===== URGENCY: STOCK BADGE ===== -->
+        <div style="margin: 8px 0;">
+          <span class="urgency-stock" id="stockUrgency">🔥 Only 3 left!</span>
+        </div>
+        
+        <div class="desc" id="detailDesc">Loading description...</div>
+        
+        <!-- ===== SOCIAL PROOF ===== -->
+        <div style="display:flex;gap:15px;flex-wrap:wrap;margin:10px 0;font-size:13px;color:#666;">
+          <span>⭐ 4.9/5 (312 reviews)</span>
+          <span>🛒 <span id="detailSold">234</span>+ sold</span>
+        </div>
         
         <div class="detail-buttons">
           <button class="btn-order" onclick="openOrderForm()">📝 Order Now</button>
@@ -230,41 +250,50 @@
     </div>
   </div>
 
-  <!-- Related / All Products -->
-  <section class="related-section" style="padding:30px 15px;max-width:1300px;margin:0 auto;">
-    <h2>🛍️ All Islamic Metal Wall Art</h2>
+  <!-- ===== ALL PRODUCTS ===== -->
+  <section style="padding:30px 15px;max-width:1300px;margin:0 auto;">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:28px;text-align:center;margin-bottom:20px;">🛍️ All Islamic Metal Wall Art</h2>
     <p style="text-align:center;color:#666;font-size:13px;margin-bottom:20px;">Explore our complete collection</p>
     <div id="allProductsGrid" class="prod-grid"></div>
   </section>
 
-  <!-- Footer -->
-  <footer style="background:#1A1815;color:#D4C5B2;text-align:center;padding:30px 15px;font-size:11px;margin-top:30px;">
-    <p style="font-weight:700;color:#C4A265;font-size:16px;">Metal Art Sialkot</p>
-    <p>Crafted in Steel • Inspired by Faith</p>
-    <p style="margin-top:10px;">📞 +92 309 9915777 | 📧 metalartsialkot@gmail.com</p>
-    <p>📍 Shop # 6, Ikraam Plaza, Kashmir Road, Sialkot</p>
-    <p style="color:#8B7355;margin-top:5px;">© 2025 Metal Art Sialkot. All Rights Reserved.</p>
-  </footer>
-
-  <!-- ======================================== -->
-  <!-- ====== ORDER FORM MODAL ====== -->
-  <!-- ======================================== -->
+  <!-- ===== ORDER FORM MODAL ===== -->
   <div id="orderModal" class="order-modal">
     <div class="order-form-box">
       <button class="close-btn" onclick="closeOrderForm()">✕</button>
       
-      <!-- Form -->
       <div id="orderFormContent">
         <h2>📝 Place Your Order</h2>
         <p class="sub-text">Fill in the details below and we'll confirm your order.</p>
         
-        <!-- Product Summary -->
         <div class="order-summary-box" id="orderSummary">
           <img src="" alt="" id="summaryImg">
           <div class="info">
             <div class="name" id="summaryName">Product Name</div>
             <div class="price" id="summaryPrice">Rs. 0</div>
             <div style="font-size:12px;color:#666;" id="summaryCode">Code: XXX</div>
+          </div>
+        </div>
+        
+        <!-- ===== COUPON SECTION ===== -->
+        <div style="background:#FFF8E1;padding:12px;border-radius:12px;border:2px dashed #C4A265;margin-bottom:15px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span style="font-size:20px;">🎫</span>
+            <div style="flex:1;">
+              <label style="font-weight:600;font-size:13px;">Have a Coupon Code?</label>
+              <div style="display:flex;gap:8px;margin-top:4px;">
+                <input type="text" id="couponInput" placeholder="Enter coupon code" 
+                       style="flex:1;padding:10px 14px;border:2px solid #eee;border-radius:10px;font-size:13px;">
+                <button type="button" onclick="applyCoupon()" 
+                        style="padding:10px 18px;background:#C4A265;color:white;border:none;border-radius:10px;font-weight:600;cursor:pointer;font-size:13px;">
+                  Apply
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="couponMessage" style="font-size:13px;margin-top:6px;min-height:20px;"></div>
+          <div id="discountDisplay" style="display:none;background:#E8F5E9;padding:8px 14px;border-radius:8px;margin-top:6px;font-weight:600;color:#1B5E20;font-size:13px;">
+            💸 Discount Applied: <span id="discountAmount">0</span>%
           </div>
         </div>
         
@@ -287,7 +316,7 @@
           <div class="form-group" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
             <div>
               <label>Quantity <span class="required">*</span></label>
-              <select id="custQty" required>
+              <select id="custQty" required onchange="updateOrderTotal()">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -311,7 +340,6 @@
         </form>
       </div>
       
-      <!-- Success Message -->
       <div id="successMsg" class="success-msg">
         <div class="icon">🎉</div>
         <h3>Order Placed Successfully!</h3>
@@ -322,22 +350,40 @@
     </div>
   </div>
 
-  <!-- ====== PRODUCT DATA ====== -->
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:#1A1815;color:#D4C5B2;text-align:center;padding:30px 15px;font-size:11px;margin-top:30px;">
+    <p style="font-weight:700;color:#C4A265;font-size:16px;">Metal Art Sialkot</p>
+    <p>Crafted in Steel • Inspired by Faith</p>
+    <p style="margin-top:10px;">📞 +92 309 9915777 | 📧 metalartsialkot@gmail.com</p>
+    <p>📍 Shop # 6, Ikraam Plaza, Kashmir Road, Sialkot</p>
+    <p style="color:#8B7355;margin-top:5px;">© 2025 Metal Art Sialkot. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ======================================== -->
+  <!-- ====== SCRIPTS ====== -->
+  <!-- ======================================== -->
   <script>
+    // ========================================
+    // PRODUCT DATA
+    // ========================================
     const products = [
-      {id:1,code:"MAS-CLG-001",name:"Masha Allah",cat:"calligraphy",price:6000,img:"images/mashaallah.jpg",best:true,stock:4,sold:234,size:'40"W × 10"H',color:"Golden",desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish. Wall brackets included. 5-year rust-free guarantee."},
-      {id:2,code:"MAS-CLG-002",name:"Hasbunallah",cat:"calligraphy",price:6000,img:"images/hasbunallah.jpg",best:true,stock:2,sold:189,size:'40"W × 10"H',color:"Golden",desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut stainless steel, golden finish."},
-      {id:3,code:"MAS-KLM-001",name:"First Kalma",cat:"kalima",price:6000,img:"images/firstkalma.jpg",best:false,stock:8,sold:156,size:'40"W × 10"H',color:"Golden",desc:"La Ilaha Illallah. Circular design with golden mirror polish."},
-      {id:4,code:"MAS-CLG-003",name:"Fabi Ayyi Ala",cat:"calligraphy",price:6000,img:"images/fabi.jpg",best:false,stock:12,sold:98,size:'40"W × 10"H',color:"Golden",desc:"Surah Ar-Rahman verse. Premium stainless steel."},
-      {id:5,code:"MAS-KLM-002",name:"La Ilaha Illa Anta",cat:"kalima",price:6000,img:"images/laillaha.jpg",best:false,stock:3,sold:145,size:'40"W × 10"H',color:"Golden",desc:"Ayat-e-Karima. Golden finish."},
-      {id:6,code:"MAS-BSM-001",name:"Bismillah",cat:"bismillah",price:6000,img:"images/bismillah.jpg",best:false,stock:6,sold:178,size:'40"W × 10"H',color:"Golden",desc:"Bismillah Hir Rahman Ir Raheem. Teardrop shape."},
-      {id:7,code:"MAS-CLG-004",name:"Fabi Translation",cat:"calligraphy",price:6000,img:"images/fabitr.jpg",best:false,stock:15,sold:67,size:'40"W × 10"H',color:"Golden",desc:"With Urdu translation."},
-      {id:8,code:"MAS-AYT-001",name:"Ayat ul Kursi Round",cat:"ayat",price:7000,img:"images/ayatround.jpg",best:true,stock:3,sold:312,size:'19"W × 25"H',color:"Golden",desc:"⭐ BESTSELLER! Full Ayat ul Kursi in circular design. Premium stainless steel golden finish."}
+      {id:1,code:"MAS-CLG-001",name:"Masha Allah",cat:"calligraphy",price:6000,img:"images/mashaallah.jpg",best:true,stock:4,sold:234,size:'40"W × 10"H',color:"Golden",desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish."},
+      {id:2,code:"MAS-CLG-002",name:"Hasbunallah",cat:"calligraphy",price:6000,img:"images/hasbunallah.jpg",best:true,stock:2,sold:189,size:'40"W × 10"H",color:"Golden",desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut stainless steel."},
+      {id:3,code:"MAS-KLM-001",name:"First Kalma",cat:"kalima",price:6000,img:"images/firstkalma.jpg",best:false,stock:8,sold:156,size:'40"W × 10"H",color:"Golden",desc:"La Ilaha Illallah. Circular design with golden mirror polish."},
+      {id:4,code:"MAS-CLG-003",name:"Fabi Ayyi Ala",cat:"calligraphy",price:6000,img:"images/fabi.jpg",best:false,stock:12,sold:98,size:'40"W × 10"H",color:"Golden",desc:"Surah Ar-Rahman verse."},
+      {id:5,code:"MAS-KLM-002",name:"La Ilaha Illa Anta",cat:"kalima",price:6000,img:"images/laillaha.jpg",best:false,stock:3,sold:145,size:'40"W × 10"H",color:"Golden",desc:"Ayat-e-Karima. Golden finish."},
+      {id:6,code:"MAS-BSM-001",name:"Bismillah",cat:"bismillah",price:6000,img:"images/bismillah.jpg",best:false,stock:6,sold:178,size:'40"W × 10"H",color:"Golden",desc:"Bismillah Hir Rahman Ir Raheem."},
+      {id:7,code:"MAS-CLG-004",name:"Fabi Translation",cat:"calligraphy",price:6000,img:"images/fabitr.jpg",best:false,stock:15,sold:67,size:'40"W × 10"H",color:"Golden",desc:"With Urdu translation."},
+      {id:8,code:"MAS-AYT-001",name:"Ayat ul Kursi Round",cat:"ayat",price:7000,img:"images/ayatround.jpg",best:true,stock:3,sold:312,size:'19"W × 25"H",color:"Golden",desc:"⭐ BESTSELLER! Full Ayat ul Kursi in circular design."}
     ];
 
     let currentProduct = null;
+    let appliedCoupon = null;
+    let discountPercent = 0;
 
-    // ====== GET PRODUCT FROM URL ======
+    // ========================================
+    // GET PRODUCT FROM URL
+    // ========================================
     function getProductFromURL() {
       const params = new URLSearchParams(window.location.search);
       const id = parseInt(params.get('id'));
@@ -348,7 +394,9 @@
       return products[0];
     }
 
-    // ====== RENDER PRODUCT DETAIL ======
+    // ========================================
+    // RENDER PRODUCT DETAIL
+    // ========================================
     function renderProductDetail(p) {
       if (!p) return;
       currentProduct = p;
@@ -364,13 +412,81 @@
       document.getElementById('detailPrice').textContent = 'Rs. ' + p.price.toLocaleString();
       document.getElementById('detailSize').textContent = '📏 ' + p.size;
       document.getElementById('detailColor').textContent = '🎨 ' + p.color;
-      document.getElementById('detailDesc').innerHTML = `<p>${p.desc}</p><p style="margin-top:8px;"><strong>Material:</strong> 0.8mm Stainless Steel</p><p><strong>Color:</strong> ${p.color}</p>`;
+      document.getElementById('detailSold').textContent = p.sold;
       
-      // Track product view
+      // ===== COMPLETE PRODUCT DESCRIPTION =====
+      const fullDescription = `
+        <div style="font-size:14px;line-height:1.8;color:#444;">
+          <p style="font-weight:600;font-size:15px;color:#1A1815;">${p.name} – Premium Islamic Metal Wall Art</p>
+          <p style="margin:8px 0;">${p.desc}</p>
+          
+          <div style="background:#FAF7F2;padding:15px;border-radius:12px;margin:12px 0;">
+            <p style="font-weight:600;color:#1A1815;margin-bottom:6px;">✨ Premium Islamic Metal Wall Art – Golden Stainless Steel Wall Decor</p>
+            <p style="font-size:13px;color:#555;">Transform your home with premium Islamic Metal Wall Art by Metal Art Sialkot. Our collection is crafted from <strong>0.8mm premium stainless steel</strong> with a luxurious <strong>mirror gold finish</strong>, delivering timeless elegance and exceptional durability.</p>
+            <p style="font-size:13px;color:#555;margin-top:6px;">Every piece is <strong>precision laser cut</strong> to preserve every intricate detail of the original Islamic calligraphy. Designed with a modern floating wall installation using premium spacers, each artwork creates a sophisticated <strong>3D effect</strong> that enhances any interior.</p>
+            <p style="font-size:13px;color:#555;margin-top:6px;">Perfect for living rooms, prayer areas, entrances, offices, bedrooms, and gifting, our Islamic wall décor combines faith, craftsmanship, and contemporary design to complement every home.</p>
+          </div>
+          
+          <div style="background:#E8F5E9;padding:15px;border-radius:12px;margin:12px 0;">
+            <p style="font-weight:700;color:#1B5E20;margin-bottom:8px;">✓ Why Choose Metal Art Sialkot?</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;font-size:13px;color:#333;">
+              <span>✔ Premium 0.8mm Stainless Steel</span>
+              <span>✔ Luxury Mirror Gold Finish</span>
+              <span>✔ Precision Laser Cutting</span>
+              <span>✔ Rust Resistant & Durable</span>
+              <span>✔ Lightweight & Easy Installation</span>
+              <span>✔ Modern Floating Wall Mount Design</span>
+              <span>✔ Elegant Islamic Home Décor</span>
+              <span>✔ Premium Quality Craftsmanship</span>
+              <span>✔ Delivery Across Pakistan</span>
+            </div>
+          </div>
+          
+          <div style="background:#FFF8E1;padding:12px;border-radius:8px;margin:12px 0;font-size:13px;color:#666;">
+            <strong style="color:#E65100;">📦 Product Details:</strong>
+            <span style="display:block;margin-top:4px;">
+              • Material: 0.8mm Stainless Steel<br>
+              • Finish: Mirror Gold Polish<br>
+              • Size: ${p.size}<br>
+              • Color: ${p.color}<br>
+              • Installation: Floating wall mount with spacers<br>
+              • Warranty: 5-Year Rust-Free Guarantee
+            </span>
+          </div>
+        </div>
+      `;
+      
+      document.getElementById('detailDesc').innerHTML = fullDescription;
+      
+      // Stock Urgency
+      const stockBadge = document.getElementById('stockUrgency');
+      if (p.stock <= 3) {
+        stockBadge.textContent = '🔥 Only ' + p.stock + ' left! Order now!';
+        stockBadge.style.display = 'inline-block';
+        stockBadge.style.background = '#FF6B6B';
+        stockBadge.style.animation = 'pulse-urgency 1s infinite';
+      } else {
+        stockBadge.textContent = '✅ ' + p.stock + ' in stock';
+        stockBadge.style.background = '#4CAF50';
+        stockBadge.style.animation = 'none';
+      }
+      
+      // FB Pixel
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'ViewContent', {
+          content_name: p.name,
+          content_id: p.code,
+          value: p.price,
+          currency: 'PKR'
+        });
+      }
+      
       sendNotification('👀 *Product Viewed*', { 'Product': p.name, 'Price': 'Rs.' + p.price });
     }
 
-    // ====== RENDER ALL PRODUCTS ======
+    // ========================================
+    // RENDER ALL PRODUCTS
+    // ========================================
     function renderAllProducts() {
       const grid = document.getElementById('allProductsGrid');
       grid.innerHTML = products.map(p => `
@@ -392,29 +508,111 @@
     }
 
     // ========================================
-    // ====== ORDER FORM FUNCTIONS ======
+    // COUPON SYSTEM
+    // ========================================
+    function applyCoupon() {
+      const code = document.getElementById('couponInput').value.trim().toUpperCase();
+      const msg = document.getElementById('couponMessage');
+      const discountDisplay = document.getElementById('discountDisplay');
+      
+      if (!code) {
+        msg.innerHTML = '⚠️ Please enter a coupon code.';
+        msg.style.color = '#e53935';
+        return;
+      }
+      
+      const coupons = JSON.parse(localStorage.getItem('coupons') || '[]');
+      const coupon = coupons.find(c => c.code === code);
+      
+      if (!coupon) {
+        msg.innerHTML = '❌ Invalid coupon code.';
+        msg.style.color = '#e53935';
+        return;
+      }
+      
+      if (coupon.used) {
+        msg.innerHTML = '❌ This coupon has already been used.';
+        msg.style.color = '#e53935';
+        return;
+      }
+      
+      const expiry = new Date(coupon.expiry);
+      if (expiry < new Date()) {
+        msg.innerHTML = '❌ Coupon has expired.';
+        msg.style.color = '#e53935';
+        return;
+      }
+      
+      appliedCoupon = coupon;
+      discountPercent = coupon.discount;
+      
+      msg.innerHTML = '✅ Coupon applied! You get <strong>' + coupon.discount + '% OFF</strong> on this order!';
+      msg.style.color = '#1B5E20';
+      discountDisplay.style.display = 'block';
+      document.getElementById('discountAmount').textContent = coupon.discount;
+      
+      coupon.used = true;
+      coupon.usedAt = new Date().toISOString();
+      localStorage.setItem('coupons', JSON.stringify(coupons));
+      
+      updateOrderTotal();
+      
+      sendNotification('🎫 *Coupon Used*', {
+        'Coupon': coupon.code,
+        'Customer': coupon.customerName,
+        'Discount': coupon.discount + '%'
+      });
+    }
+
+    function updateOrderTotal() {
+      if (!currentProduct) return;
+      const qty = parseInt(document.getElementById('custQty').value) || 1;
+      const baseTotal = currentProduct.price * qty;
+      const discount = (baseTotal * discountPercent) / 100;
+      const finalTotal = baseTotal - discount;
+      
+      const totalDisplay = document.querySelector('.order-summary-box .price');
+      if (totalDisplay) {
+        if (discountPercent > 0) {
+          totalDisplay.innerHTML = `
+            <span style="text-decoration:line-through;color:#999;font-size:14px;">Rs. ${baseTotal.toLocaleString()}</span>
+            <span style="color:#C4A265;font-size:20px;">Rs. ${finalTotal.toLocaleString()}</span>
+            <span style="color:#1B5E20;font-size:12px;display:block;">💸 ${discountPercent}% OFF applied!</span>
+          `;
+        } else {
+          totalDisplay.textContent = 'Rs. ' + baseTotal.toLocaleString();
+        }
+      }
+    }
+
+    // ========================================
+    // ORDER FORM
     // ========================================
     function openOrderForm() {
       if (!currentProduct) return;
       
-      // Fill summary
       document.getElementById('summaryImg').src = currentProduct.img;
       document.getElementById('summaryName').textContent = currentProduct.name;
       document.getElementById('summaryPrice').textContent = 'Rs. ' + currentProduct.price.toLocaleString();
       document.getElementById('summaryCode').textContent = 'Code: ' + currentProduct.code;
       
-      // Pre-fill user name if available
       const userName = sessionStorage.getItem('user_name') || '';
       document.getElementById('custName').value = userName;
       
       document.getElementById('orderModal').classList.add('active');
       document.body.style.overflow = 'hidden';
       
-      // Reset form
       document.getElementById('orderForm').style.display = 'block';
       document.getElementById('successMsg').style.display = 'none';
       document.getElementById('submitBtn').disabled = false;
       document.getElementById('submitBtn').textContent = '✅ Confirm Order';
+      
+      discountPercent = 0;
+      appliedCoupon = null;
+      document.getElementById('couponInput').value = '';
+      document.getElementById('couponMessage').innerHTML = '';
+      document.getElementById('discountDisplay').style.display = 'none';
+      updateOrderTotal();
     }
 
     function closeOrderForm() {
@@ -433,128 +631,253 @@
       const notes = document.getElementById('custNotes').value.trim() || 'None';
       
       if (!name || !phone || !address) {
-        alert('⚠️ Please fill in all required fields (Name, Phone, Address)');
+        alert('⚠️ Please fill in all required fields');
         return;
       }
       
-      // Disable button
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true;
-      btn.textContent = '⏳ Sending...';
+      const baseTotal = currentProduct.price * parseInt(qty);
+      const discount = (baseTotal * discountPercent) / 100;
+      const finalTotal = baseTotal - discount;
+      const orderId = 'MAS-' + Date.now().toString().slice(-6);
+      const timestamp = new Date().toISOString();
       
-      const totalPrice = currentProduct.price * parseInt(qty);
-      const user = sessionStorage.getItem('user_name') || 'Guest';
-      const timestamp = new Date().toLocaleString('en-PK', {timeZone: 'Asia/Karachi'});
+      // Generate coupon
+      const couponCode = 'NEXT5-' + Date.now().toString().slice(-6);
+      const couponExpiry = new Date();
+      couponExpiry.setDate(couponExpiry.getDate() + 30);
       
-      // ========================================
-      // WHATSAPP MESSAGE
-      // ========================================
+      const coupon = {
+        code: couponCode,
+        discount: 5,
+        type: 'percentage',
+        customerName: name,
+        customerPhone: phone,
+        orderId: orderId,
+        used: false,
+        usedAt: null,
+        expiry: couponExpiry.toISOString(),
+        createdAt: timestamp
+      };
+      
+      const coupons = JSON.parse(localStorage.getItem('coupons') || '[]');
+      coupons.push(coupon);
+      localStorage.setItem('coupons', JSON.stringify(coupons));
+      
+      // Save order
+      const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+      orders.push({
+        orderId: orderId,
+        name: name,
+        phone: phone,
+        address: address,
+        city: city,
+        product: currentProduct.name,
+        code: currentProduct.code,
+        price: currentProduct.price,
+        qty: qty,
+        baseTotal: 'Rs. ' + baseTotal.toLocaleString(),
+        discount: discountPercent > 0 ? discountPercent + '%' : '0%',
+        discountAmount: 'Rs. ' + discount.toLocaleString(),
+        total: 'Rs. ' + finalTotal.toLocaleString(),
+        notes: notes,
+        status: 'new',
+        couponUsed: appliedCoupon ? appliedCoupon.code : null,
+        couponGenerated: couponCode,
+        date: timestamp
+      });
+      localStorage.setItem('orders', JSON.stringify(orders));
+      
+      // WhatsApp
       let waMsg = `🛍️ *NEW ORDER RECEIVED!*%0A%0A`;
+      waMsg += `🆔 *Order ID:* ${orderId}%0A`;
       waMsg += `👤 *Customer:* ${name}%0A`;
       waMsg += `📱 *Phone:* ${phone}%0A`;
       waMsg += `📍 *Address:* ${address}%0A`;
       waMsg += `🏙️ *City:* ${city}%0A%0A`;
-      waMsg += `📦 *Product Details*%0A`;
-      waMsg += `━━━━━━━━━━━━%0A`;
-      waMsg += `📌 *Name:* ${currentProduct.name}%0A`;
-      waMsg += `🔢 *Code:* ${currentProduct.code}%0A`;
-      waMsg += `💰 *Price:* Rs. ${currentProduct.price.toLocaleString()}%0A`;
-      waMsg += `📏 *Size:* ${currentProduct.size}%0A`;
-      waMsg += `🎨 *Color:* ${currentProduct.color}%0A`;
+      waMsg += `📦 *Product:* ${currentProduct.name} (${currentProduct.code})%0A`;
       waMsg += `🔢 *Quantity:* ${qty}%0A`;
-      waMsg += `💵 *Total:* Rs. ${totalPrice.toLocaleString()}%0A%0A`;
-      waMsg += `📝 *Notes:* ${notes}%0A%0A`;
-      waMsg += `🕐 *Order Time:* ${timestamp}%0A`;
-      waMsg += `🌐 *Website User:* ${user}%0A`;
-      waMsg += `%0A`;
-      waMsg += `📌 *ACTION REQUIRED:* Contact customer now!`;
+      waMsg += `💰 *Base Total:* Rs. ${baseTotal.toLocaleString()}%0A`;
+      if (discountPercent > 0) {
+        waMsg += `💸 *Discount:* ${discountPercent}% (-Rs. ${discount.toLocaleString()})%0A`;
+        waMsg += `💵 *Final Total:* Rs. ${finalTotal.toLocaleString()}%0A`;
+      } else {
+        waMsg += `💵 *Total:* Rs. ${baseTotal.toLocaleString()}%0A`;
+      }
+      waMsg += `%0A🎉 *NEXT ORDER COUPON:* ${couponCode}%0A`;
+      waMsg += `💸 *Discount:* 5% OFF on next order%0A`;
+      waMsg += `📅 *Expiry:* ${couponExpiry.toLocaleDateString()}%0A`;
+      waMsg += `📌 *Status:* Active (1-time use)%0A%0A`;
+      waMsg += `📝 *Notes:* ${notes}`;
       
-      // ========================================
-      // EMAIL BODY
-      // ========================================
-      let emailBody = `🛍️ NEW ORDER RECEIVED!
+      window.open(`https://wa.me/923099915777?text=${encodeURIComponent(waMsg)}`, '_blank', 'width=1,height=1');
       
-      Customer Details:
-      -----------------
-      Name: ${name}
-      Phone: ${phone}
-      Address: ${address}
-      City: ${city}
+      // Email
+      let customerEmail = `Dear ${name},
+
+Thank you for your order! 🎉
+
+Order Details:
+------------------
+Order ID: ${orderId}
+Product: ${currentProduct.name} (${currentProduct.code})
+Quantity: ${qty}
+${discountPercent > 0 ? 'Discount: ' + discountPercent + '% OFF (-Rs. ' + discount.toLocaleString() + ')' : ''}
+Total: Rs. ${finalTotal.toLocaleString()}
+Delivery Address: ${address}
+
+🎉 SPECIAL DISCOUNT FOR YOUR NEXT ORDER! (1-TIME USE ONLY)
+----------------------------------------------------------------
+🎫 Coupon Code: ${couponCode}
+💸 Discount: 5% OFF on your next order
+📅 Valid until: ${couponExpiry.toLocaleDateString()}
+
+📹 IMPORTANT: Please record an unboxing video when you receive your parcel.
+
+🕐 Delivery Time: 3-5 business days
+💵 Payment: Cash on Delivery
+
+Thank you for shopping with Metal Art Sialkot! ✨
+
+Best regards,
+Metal Art Sialkot Team`;
+
+      window.open(`mailto:metalartsialkot@gmail.com?subject=${encodeURIComponent('🛍️ NEW ORDER: ' + orderId)}&body=${encodeURIComponent(customerEmail)}`, '_blank', 'width=1,height=1');
       
-      Product Details:
-      -----------------
-      Name: ${currentProduct.name}
-      Code: ${currentProduct.code}
-      Price: Rs. ${currentProduct.price.toLocaleString()}
-      Size: ${currentProduct.size}
-      Color: ${currentProduct.color}
-      Quantity: ${qty}
-      Total: Rs. ${totalPrice.toLocaleString()}
-      
-      Notes: ${notes}
-      
-      Order Time: ${timestamp}
-      Website User: ${user}
-      
-      -----------------
-      ACTION REQUIRED: Contact customer now!`;
-      
-      // Send WhatsApp
-      window.open(`https://wa.me/${CONFIG.whatsapp}?text=${waMsg}`, '_blank', 'width=1,height=1');
-      
-      // Send Email
-      const subject = encodeURIComponent('🛍️ NEW ORDER: ' + currentProduct.name + ' - ' + name);
-      window.open(`mailto:${CONFIG.email}?subject=${subject}&body=${encodeURIComponent(emailBody)}`, '_blank', 'width=1,height=1');
-      
-      // Facebook Pixel
+      // FB Pixel
       if (typeof fbq !== 'undefined') {
         fbq('track', 'Purchase', {
           content_name: currentProduct.name,
           content_id: currentProduct.code,
-          value: totalPrice,
+          value: finalTotal,
           currency: 'PKR'
         });
       }
       
-      // Show success
       document.getElementById('orderForm').style.display = 'none';
       document.getElementById('successMsg').style.display = 'block';
       
-      // 6-second tracking follow-up
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = '⏳ Processing...';
+      
+      // 6-second tracking
       setTimeout(function() {
         let trackMsg = `📦 *ORDER TRACKING STARTED*%0A`;
         trackMsg += `👤 *Customer:* ${name}%0A`;
         trackMsg += `📱 *Phone:* ${phone}%0A`;
         trackMsg += `📦 *Product:* ${currentProduct.name} (${currentProduct.code})%0A`;
-        trackMsg += `💰 *Total:* Rs. ${totalPrice.toLocaleString()}%0A`;
-        trackMsg += `🕐 *Time:* ${timestamp}%0A`;
+        trackMsg += `💰 *Total:* Rs. ${finalTotal.toLocaleString()}%0A`;
         trackMsg += `📌 *Status:* 🟢 Order Placed - Follow up now!`;
-        
-        window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(trackMsg)}`, '_blank', 'width=1,height=1');
-        
-        let trackEmail = `📦 ORDER TRACKING STARTED
-        Customer: ${name}
-        Phone: ${phone}
-        Product: ${currentProduct.name} (${currentProduct.code})
-        Total: Rs. ${totalPrice.toLocaleString()}
-        Time: ${timestamp}
-        Status: 🟢 Order Placed - Follow up now!`;
-        
-        window.open(`mailto:${CONFIG.email}?subject=${encodeURIComponent('📦 TRACKING: ' + currentProduct.name)}&body=${encodeURIComponent(trackEmail)}`, '_blank', 'width=1,height=1');
+        window.open(`https://wa.me/923099915777?text=${encodeURIComponent(trackMsg)}`, '_blank', 'width=1,height=1');
       }, 6000);
       
-      console.log('✅ Order Placed:', { name, phone, product: currentProduct.name, total: totalPrice });
+      console.log('✅ Order Placed:', { name, phone, product: currentProduct.name, total: finalTotal });
     }
 
-    // Close modal on outside click
+    // ========================================
+    // LIVE ACTIVITY SYSTEM
+    // ========================================
+    const fakeNames = ['Ahmed', 'Fatima', 'Muhammad', 'Aisha', 'Ali', 'Zainab', 'Hassan', 'Sana', 'Usman', 'Hira', 'Omar', 'Mahnoor', 'Hamza', 'Eman', 'Bilal', 'Aleena', 'Saad', 'Iman', 'Rayan', 'Huda', 'Zayan', 'Maya', 'Shahzad', 'Noor'];
+    const fakeCities = ['Lahore', 'Karachi', 'Islamabad', 'Rawalpindi', 'Sialkot', 'Faisalabad', 'Multan', 'Peshawar', 'Quetta', 'Gujranwala'];
+
+    function generateRandomActivity() {
+      const activities = [
+        { icon: '👁️', action: 'viewing', product: getRandomProduct() },
+        { icon: '🛒', action: 'added to cart', product: getRandomProduct() },
+        { icon: '❤️', action: 'liked', product: getRandomProduct() },
+        { icon: '📦', action: 'purchased', product: getRandomProduct() }
+      ];
+      const activity = activities[Math.floor(Math.random() * activities.length)];
+      const name = fakeNames[Math.floor(Math.random() * fakeNames.length)];
+      const city = fakeCities[Math.floor(Math.random() * fakeCities.length)];
+      return {
+        icon: activity.icon,
+        name: name,
+        city: city,
+        action: activity.action,
+        product: activity.product,
+        time: new Date().toLocaleTimeString('en-PK', { hour: '2-digit', minute: '2-digit' })
+      };
+    }
+
+    function getRandomProduct() {
+      const names = ['Masha Allah', 'Hasbunallah', 'Ayat ul Kursi', 'Bismillah', 'First Kalma', 'Fabi Ayyi Ala'];
+      return names[Math.floor(Math.random() * names.length)];
+    }
+
+    function showLiveActivity() {
+      const container = document.getElementById('liveActivity');
+      if (!container) return;
+      const data = generateRandomActivity();
+      
+      const item = document.createElement('div');
+      item.className = 'live-activity-item';
+      
+      let message = '';
+      if (data.action === 'purchased') {
+        message = `<span class="user-name">${data.name}</span> from <strong>${data.city}</strong> just <strong>purchased</strong> <span class="product-name">${data.product}</span> 🎉`;
+      } else if (data.action === 'viewing') {
+        message = `<span class="user-name">${data.name}</span> from <strong>${data.city}</strong> is <strong>viewing</strong> <span class="product-name">${data.product}</span>`;
+      } else if (data.action === 'added to cart') {
+        message = `<span class="user-name">${data.name}</span> from <strong>${data.city}</strong> <strong>added</strong> <span class="product-name">${data.product}</span> to cart 🛒`;
+      } else {
+        message = `<span class="user-name">${data.name}</span> from <strong>${data.city}</strong> <strong>liked</strong> <span class="product-name">${data.product}</span> ❤️`;
+      }
+      
+      item.innerHTML = `
+        <span class="icon">${data.icon}</span>
+        <span>${message}</span>
+        <span class="time">${data.time}</span>
+      `;
+      
+      container.appendChild(item);
+      
+      setTimeout(() => {
+        item.classList.add('fade-out');
+        setTimeout(() => { if (item.parentNode) item.remove(); }, 500);
+      }, 5000);
+      
+      while (container.children.length > 5) {
+        container.firstChild.remove();
+      }
+    }
+
+    function updateLiveCount() {
+      const base = 128;
+      const variation = Math.floor(Math.random() * 40) - 20;
+      const count = Math.max(50, base + variation);
+      const el = document.getElementById('liveCount');
+      if (el) el.textContent = count;
+    }
+
+    function updateProductViewers() {
+      const viewers = Math.floor(Math.random() * 15) + 3;
+      const badge = document.getElementById('liveViewersBadge');
+      if (badge) {
+        badge.textContent = '👁️ ' + viewers + ' people viewing now';
+      }
+    }
+
+    // Start live activity
+    setTimeout(showLiveActivity, 2000);
+    setInterval(showLiveActivity, Math.floor(Math.random() * 4000) + 8000);
+    setInterval(updateLiveCount, 10000);
+    setInterval(updateProductViewers, 15000);
+    updateLiveCount();
+    setTimeout(updateProductViewers, 3000);
+
+    // ========================================
+    // INIT
+    // ========================================
+    currentProduct = getProductFromURL();
+    renderProductDetail(currentProduct);
+    renderAllProducts();
+
     document.getElementById('orderModal').addEventListener('click', function(e) {
       if (e.target === this) closeOrderForm();
     });
 
-    // ====== INIT ======
-    currentProduct = getProductFromURL();
-    renderProductDetail(currentProduct);
-    renderAllProducts();
+    console.log('✅ Product Page Loaded with Complete Description & Live Activity!');
   </script>
 
 </body>
