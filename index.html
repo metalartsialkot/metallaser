@@ -103,91 +103,29 @@
     .auth-btn-header.logout { background: #e53935; color: white; }
     .user-name-header { font-size: 13px; font-weight: 600; color: #1A1815; background: #E8F5E9; padding: 6px 14px; border-radius: 50px; }
     
-    /* ===== CART ICON ===== */
-    .cart-icon {
-      position: relative;
-      cursor: pointer;
-      font-size: 22px;
-      color: #1A1815;
-      padding: 5px 8px;
-      transition: all 0.3s ease;
-    }
+    .cart-icon { position: relative; cursor: pointer; font-size: 22px; color: #1A1815; padding: 5px 8px; transition: all 0.3s ease; }
     .cart-icon:hover { color: #C4A265; }
-    .cart-icon .cart-count {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background: #e53935;
-      color: white;
-      font-size: 10px;
-      font-weight: 700;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: pulse-urgency 1s infinite;
-    }
+    .cart-icon .cart-count { position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulse-urgency 1s infinite; }
     .cart-icon .cart-count.zero { display: none; }
     
-    /* ===== CART SIDEBAR ===== */
-    .cart-sidebar {
-      position: fixed;
-      top: 0;
-      right: -420px;
-      width: 400px;
-      height: 100%;
-      background: white;
-      z-index: 99999;
-      box-shadow: -8px 0 30px rgba(0,0,0,0.15);
-      transition: right 0.4s ease;
-      overflow-y: auto;
-      padding: 20px;
-    }
+    .cart-sidebar { position: fixed; top: 0; right: -420px; width: 400px; height: 100%; background: white; z-index: 99999; box-shadow: -8px 0 30px rgba(0,0,0,0.15); transition: right 0.4s ease; overflow-y: auto; padding: 20px; }
     .cart-sidebar.open { right: 0; }
-    .cart-sidebar .cart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 15px;
-      border-bottom: 2px solid #eee;
-      margin-bottom: 15px;
-    }
+    .cart-sidebar .cart-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 2px solid #eee; margin-bottom: 15px; }
     .cart-sidebar .cart-header h3 { font-size: 20px; font-weight: 700; }
-    .cart-sidebar .cart-header .close-cart {
-      font-size: 28px; cursor: pointer; color: #999; background: none; border: none;
-    }
+    .cart-sidebar .cart-header .close-cart { font-size: 28px; cursor: pointer; color: #999; background: none; border: none; }
     .cart-sidebar .cart-header .close-cart:hover { color: #333; }
     
-    .cart-item {
-      display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;
-      align-items: center;
-    }
+    .cart-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f0f0f0; align-items: center; }
     .cart-item img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
     .cart-item .info { flex: 1; }
     .cart-item .info .name { font-weight: 600; font-size: 14px; }
     .cart-item .info .price { color: #C4A265; font-weight: 700; font-size: 14px; }
-    .cart-item .remove-btn {
-      background: #e53935; color: white; border: none;
-      width: 28px; height: 28px; border-radius: 50%;
-      cursor: pointer; font-size: 14px;
-      display: flex; align-items: center; justify-content: center;
-    }
+    .cart-item .remove-btn { background: #e53935; color: white; border: none; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; }
     .cart-item .remove-btn:hover { background: #c62828; }
     
-    .cart-total {
-      padding: 15px 0; border-top: 2px solid #eee; margin-top: 10px;
-      display: flex; justify-content: space-between; font-size: 18px; font-weight: 700;
-    }
+    .cart-total { padding: 15px 0; border-top: 2px solid #eee; margin-top: 10px; display: flex; justify-content: space-between; font-size: 18px; font-weight: 700; }
     .cart-total .total-price { color: #C4A265; }
-    .cart-checkout {
-      display: block; width: 100%; padding: 14px;
-      background: linear-gradient(135deg, #C4A265, #D4B87A);
-      color: white; border: none; border-radius: 50px;
-      font-size: 16px; font-weight: 700; cursor: pointer;
-      text-align: center; text-decoration: none;
-    }
+    .cart-checkout { display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; border: none; border-radius: 50px; font-size: 16px; font-weight: 700; cursor: pointer; text-align: center; text-decoration: none; }
     .cart-checkout:hover { transform: scale(1.02); }
     .cart-empty { text-align: center; padding: 40px 0; color: #999; }
     .cart-empty .icon { font-size: 60px; margin-bottom: 10px; }
@@ -257,9 +195,7 @@
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/923099915777" class="wa-float" target="_blank">💬</a>
 
-  <!-- ======================================== -->
-  <!-- ====== HEADER ====== -->
-  <!-- ======================================== -->
+  <!-- ===== HEADER ===== -->
   <header style="background:white;padding:12px 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.05);">
     <div style="display:flex;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto;flex-wrap:wrap;">
       
@@ -287,7 +223,6 @@
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;" class="header-right">
         <a href="tel:+923099915777" style="background:#1A1815;color:white;padding:8px 18px;border-radius:50px;text-decoration:none;font-size:12px;font-weight:600;">📞 Call</a>
         
-        <!-- ===== CART ICON ===== -->
         <span class="cart-icon" onclick="toggleCart()">
           🛒
           <span class="cart-count zero" id="cartCount">0</span>
@@ -306,9 +241,7 @@
     </div>
   </header>
 
-  <!-- ======================================== -->
-  <!-- ====== CART SIDEBAR ====== -->
-  <!-- ======================================== -->
+  <!-- ===== CART SIDEBAR ===== -->
   <div class="cart-sidebar" id="cartSidebar">
     <div class="cart-header">
       <h3>🛒 Your Cart</h3>
@@ -526,17 +459,17 @@
   <!-- ======================================== -->
   <script>
     // ========================================
-    // PRODUCT DATA
+    // PRODUCT DATA — WITH PLACEHOLDER IMAGES
     // ========================================
     var products = [
-      {id:1,code:"MAS-CLG-001",name:"Masha Allah",cat:"calligraphy",price:6000,img:"images/mashaallah.jpg",best:true,stock:4,sold:234,size:'40"W × 10"H',color:"Golden",desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish."},
-      {id:2,code:"MAS-CLG-002",name:"Hasbunallah",cat:"calligraphy",price:6000,img:"images/hasbunallah.jpg",best:true,stock:2,sold:189,size:'40"W × 10"H",color:"Golden",desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut stainless steel."},
-      {id:3,code:"MAS-KLM-001",name:"First Kalma",cat:"kalima",price:6000,img:"images/firstkalma.jpg",best:false,stock:8,sold:156,size:'40"W × 10"H",color:"Golden",desc:"La Ilaha Illallah. Circular design with golden mirror polish."},
-      {id:4,code:"MAS-CLG-003",name:"Fabi Ayyi Ala",cat:"calligraphy",price:6000,img:"images/fabi.jpg",best:false,stock:12,sold:98,size:'40"W × 10"H",color:"Golden",desc:"Surah Ar-Rahman verse."},
-      {id:5,code:"MAS-KLM-002",name:"La Ilaha Illa Anta",cat:"kalima",price:6000,img:"images/laillaha.jpg",best:false,stock:3,sold:145,size:'40"W × 10"H",color:"Golden",desc:"Ayat-e-Karima. Golden finish."},
-      {id:6,code:"MAS-BSM-001",name:"Bismillah",cat:"bismillah",price:6000,img:"images/bismillah.jpg",best:false,stock:6,sold:178,size:'40"W × 10"H",color:"Golden",desc:"Bismillah Hir Rahman Ir Raheem."},
-      {id:7,code:"MAS-CLG-004",name:"Fabi Translation",cat:"calligraphy",price:6000,img:"images/fabitr.jpg",best:false,stock:15,sold:67,size:'40"W × 10"H",color:"Golden",desc:"With Urdu translation."},
-      {id:8,code:"MAS-AYT-001",name:"Ayat ul Kursi Round",cat:"ayat",price:7000,img:"images/ayatround.jpg",best:true,stock:3,sold:312,size:'19"W × 25"H",color:"Golden",desc:"⭐ BESTSELLER! Full Ayat ul Kursi in circular design."}
+      {id:1,code:"MAS-CLG-001",name:"Masha Allah",cat:"calligraphy",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Masha+Allah",best:true,stock:4,sold:234,size:'40"W × 10"H',color:"Golden",desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish."},
+      {id:2,code:"MAS-CLG-002",name:"Hasbunallah",cat:"calligraphy",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Hasbunallah",best:true,stock:2,sold:189,size:'40"W × 10"H",color:"Golden",desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut stainless steel."},
+      {id:3,code:"MAS-KLM-001",name:"First Kalma",cat:"kalima",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=First+Kalma",best:false,stock:8,sold:156,size:'40"W × 10"H",color:"Golden",desc:"La Ilaha Illallah. Circular design with golden mirror polish."},
+      {id:4,code:"MAS-CLG-003",name:"Fabi Ayyi Ala",cat:"calligraphy",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Fabi+Ayyi+Ala",best:false,stock:12,sold:98,size:'40"W × 10"H",color:"Golden",desc:"Surah Ar-Rahman verse."},
+      {id:5,code:"MAS-KLM-002",name:"La Ilaha Illa Anta",cat:"kalima",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=La+Ilaha+Illa+Anta",best:false,stock:3,sold:145,size:'40"W × 10"H",color:"Golden",desc:"Ayat-e-Karima. Golden finish."},
+      {id:6,code:"MAS-BSM-001",name:"Bismillah",cat:"bismillah",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Bismillah",best:false,stock:6,sold:178,size:'40"W × 10"H",color:"Golden",desc:"Bismillah Hir Rahman Ir Raheem."},
+      {id:7,code:"MAS-CLG-004",name:"Fabi Translation",cat:"calligraphy",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Fabi+Translation",best:false,stock:15,sold:67,size:'40"W × 10"H",color:"Golden",desc:"With Urdu translation."},
+      {id:8,code:"MAS-AYT-001",name:"Ayat ul Kursi Round",cat:"ayat",price:7000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Ayat+ul+Kursi",best:true,stock:3,sold:312,size:'19"W × 25"H",color:"Golden",desc:"⭐ BESTSELLER! Full Ayat ul Kursi in circular design."}
     ];
 
     // ========================================
@@ -559,7 +492,6 @@
       }
       if (!p) return;
       
-      // Check if already in cart
       for (var j = 0; j < cart.length; j++) {
         if (cart[j].id === productId) {
           cart[j].qty += 1;
@@ -573,7 +505,6 @@
       saveCart();
       showToast('✅ ' + p.name + ' added to cart!');
       
-      // Tracking
       console.log('🛒 Added to cart:', p.name);
       sendNotification('🛒 *Add to Cart*', { 'Product': p.name, 'Price': 'Rs.' + p.price });
       if (typeof fbq !== 'undefined') {
@@ -952,7 +883,7 @@
         html += '<div class="card-luxury">';
         html += '<a href="product.html?id=' + p.id + '" style="text-decoration:none;color:inherit;">';
         html += '<div class="img-wrapper">';
-        html += '<img src="' + p.img + '" alt="' + p.name + ' - Islamic Metal Wall Art" loading="lazy" onerror="this.src=\'https://via.placeholder.com/400x400/C4A265/FFFFFF?text=' + encodeURIComponent(p.name) + '\'">';
+        html += '<img src="' + p.img + '" alt="' + p.name + ' - Islamic Metal Wall Art" loading="lazy">';
         if (p.best) {
           html += '<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:9px;">⭐ BEST</span>';
         }
