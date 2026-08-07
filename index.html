@@ -79,14 +79,12 @@
     
     .prod-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     
-    /* Live Counter Dot */
     .live-dot { width: 8px; height: 8px; background: #4CAF50; border-radius: 50%; display: inline-block; animation: pulse-dot 1.5s infinite; }
     @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
     
     .urgency-badge { background: #FF6B6B; color: white; padding: 4px 12px; border-radius: 50px; font-size: 10px; font-weight: 700; animation: pulse-urgency 1s infinite; }
     @keyframes pulse-urgency { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
     
-    /* Navigation */
     .nav-menu { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
     .nav-menu a { color: #2C2824; text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 50px; transition: all 0.3s ease; }
     .nav-menu a:hover { background: #C4A265; color: white; }
@@ -104,7 +102,6 @@
     .auth-btn-header.logout { background: #e53935; color: white; }
     .user-name-header { font-size: 13px; font-weight: 600; color: #1A1815; background: #E8F5E9; padding: 6px 14px; border-radius: 50px; }
     
-    /* Auth Modal */
     .auth-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 99999; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
     .auth-modal.active { display: flex; }
     .auth-box { background: white; border-radius: 24px; max-width: 420px; width: 100%; padding: 30px; position: relative; animation: slideUp 0.4s ease; }
@@ -123,7 +120,6 @@
     .auth-box .switch-link a { color: #C4A265; font-weight: 600; cursor: pointer; text-decoration: underline; }
     .auth-box .error-msg { color: #e53935; font-size: 13px; text-align: center; margin-top: 10px; display: none; }
     
-    /* Policy Modal */
     .policy-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99998; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
     .policy-modal.active { display: flex; }
     .policy-box { background: white; border-radius: 24px; max-width: 700px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 35px; position: relative; animation: slideUp 0.4s ease; }
@@ -147,7 +143,6 @@
     .hero-premium { position: relative; overflow: hidden; }
     .hero-premium::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C4A265' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
     
-    /* Mobile */
     @media (max-width: 992px) {
       .hamburger { display: flex; }
       .nav-menu { display: none; flex-direction: column; width: 100%; padding: 15px 0; gap: 4px; border-top: 1px solid #eee; margin-top: 10px; }
@@ -157,7 +152,8 @@
     
     @media (max-width: 768px) {
       .prod-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
-      .hero-title { font-size: 28px !important; }
+      .hero-premium { padding: 60px 15px !important; }
+      .hero-premium h1 { font-size: 32px !important; }
       .auth-box { padding: 20px; margin: 10px; }
       .policy-box { padding: 20px; margin: 10px; }
       .policy-tabs button { font-size: 11px; padding: 6px 14px; }
@@ -169,9 +165,7 @@
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/923099915777" class="wa-float" target="_blank">💬</a>
 
-  <!-- ======================================== -->
-  <!-- ====== HEADER ====== -->
-  <!-- ======================================== -->
+  <!-- ===== HEADER ===== -->
   <header style="background:white;padding:12px 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.05);">
     <div style="display:flex;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto;flex-wrap:wrap;">
       
@@ -211,9 +205,7 @@
     </div>
   </header>
 
-  <!-- ======================================== -->
-  <!-- ====== HERO BANNER (Premium) ====== -->
-  <!-- ======================================== -->
+  <!-- ===== HERO BANNER (Medium Size) ===== -->
   <section class="hero-premium" style="background:linear-gradient(135deg,#1A1815 0%,#2C2824 50%,#1A1815 100%);color:white;text-align:center;padding:80px 20px;position:relative;">
     <div style="max-width:900px;margin:0 auto;position:relative;z-index:2;">
       <p style="color:#D4B87A;letter-spacing:4px;font-size:11px;text-transform:uppercase;font-weight:600;">Premium Islamic Décor • Handcrafted in Pakistan</p>
@@ -246,9 +238,7 @@
     </div>
   </section>
 
-  <!-- ======================================== -->
-  <!-- ====== PRODUCTS ====== -->
-  <!-- ======================================== -->
+  <!-- ===== PRODUCTS ===== -->
   <section id="shop" style="padding:50px 15px;max-width:1300px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:30px;">
       <p style="color:#C4A265;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;">Collection</p>
@@ -267,9 +257,7 @@
     <div id="productGrid" class="prod-grid"></div>
   </section>
 
-  <!-- ======================================== -->
-  <!-- ====== LIVE COUNTERS (Footer ke paas) ====== -->
-  <!-- ======================================== -->
+  <!-- ===== LIVE COUNTERS (Footer ke paas) ===== -->
   <div style="background:#FAF7F2;padding:15px 20px;border-top:1px solid #eee;border-bottom:1px solid #eee;">
     <div style="max-width:1200px;margin:0 auto;">
       <div style="display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;">
@@ -295,9 +283,7 @@
     </div>
   </div>
 
-  <!-- ======================================== -->
-  <!-- ====== FOOTER ====== -->
-  <!-- ======================================== -->
+  <!-- ===== FOOTER ===== -->
   <footer style="background:#1A1815;color:#D4C5B2;text-align:center;padding:35px 15px;font-size:12px;">
     <p style="font-weight:700;color:#C4A265;font-size:18px;font-family:'Playfair Display',serif;">Metal Art Sialkot</p>
     <p style="font-size:13px;color:#8B7355;">Crafted in Steel • Inspired by Faith</p>
@@ -319,9 +305,7 @@
     </p>
   </footer>
 
-  <!-- ======================================== -->
-  <!-- ====== AUTH MODAL ====== -->
-  <!-- ======================================== -->
+  <!-- ===== AUTH MODAL ===== -->
   <div id="authModal" class="auth-modal">
     <div class="auth-box">
       <button class="close-btn" onclick="closeAuthModal()">✕</button>
@@ -361,9 +345,7 @@
     </div>
   </div>
 
-  <!-- ======================================== -->
-  <!-- ====== POLICY MODAL ====== -->
-  <!-- ======================================== -->
+  <!-- ===== POLICY MODAL ===== -->
   <div id="policyModal" class="policy-modal">
     <div class="policy-box">
       <button class="close-btn" onclick="closePolicyModal()">✕</button>
@@ -416,9 +398,7 @@
     </div>
   </div>
 
-  <!-- ======================================== -->
-  <!-- ====== SCRIPTS ====== -->
-  <!-- ======================================== -->
+  <!-- ===== SCRIPTS ===== -->
   <script>
     // ========================================
     // PRODUCT DATA
@@ -435,7 +415,7 @@
     ];
 
     // ========================================
-    // LIVE COUNTERS (Footer Version)
+    // LIVE COUNTERS
     // ========================================
     function updateLiveCounters() {
       const visitors = Math.floor(Math.random() * 50) + 100;
