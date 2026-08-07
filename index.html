@@ -40,6 +40,7 @@
   }
   </script>
 
+  <!-- Facebook Pixel -->
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2117035032544637');fbq('track','PageView');
   </script>
@@ -102,7 +103,96 @@
     .auth-btn-header.logout { background: #e53935; color: white; }
     .user-name-header { font-size: 13px; font-weight: 600; color: #1A1815; background: #E8F5E9; padding: 6px 14px; border-radius: 50px; }
     
-    .auth-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 99999; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
+    /* ===== CART ICON ===== */
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+      font-size: 22px;
+      color: #1A1815;
+      padding: 5px 8px;
+      transition: all 0.3s ease;
+    }
+    .cart-icon:hover { color: #C4A265; }
+    .cart-icon .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: #e53935;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse-urgency 1s infinite;
+    }
+    .cart-icon .cart-count.zero { display: none; }
+    
+    /* ===== CART SIDEBAR ===== */
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 400px;
+      height: 100%;
+      background: white;
+      z-index: 99999;
+      box-shadow: -8px 0 30px rgba(0,0,0,0.15);
+      transition: right 0.4s ease;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    .cart-sidebar.open { right: 0; }
+    .cart-sidebar .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #eee;
+      margin-bottom: 15px;
+    }
+    .cart-sidebar .cart-header h3 { font-size: 20px; font-weight: 700; }
+    .cart-sidebar .cart-header .close-cart {
+      font-size: 28px; cursor: pointer; color: #999; background: none; border: none;
+    }
+    .cart-sidebar .cart-header .close-cart:hover { color: #333; }
+    
+    .cart-item {
+      display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f0f0f0;
+      align-items: center;
+    }
+    .cart-item img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
+    .cart-item .info { flex: 1; }
+    .cart-item .info .name { font-weight: 600; font-size: 14px; }
+    .cart-item .info .price { color: #C4A265; font-weight: 700; font-size: 14px; }
+    .cart-item .remove-btn {
+      background: #e53935; color: white; border: none;
+      width: 28px; height: 28px; border-radius: 50%;
+      cursor: pointer; font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cart-item .remove-btn:hover { background: #c62828; }
+    
+    .cart-total {
+      padding: 15px 0; border-top: 2px solid #eee; margin-top: 10px;
+      display: flex; justify-content: space-between; font-size: 18px; font-weight: 700;
+    }
+    .cart-total .total-price { color: #C4A265; }
+    .cart-checkout {
+      display: block; width: 100%; padding: 14px;
+      background: linear-gradient(135deg, #C4A265, #D4B87A);
+      color: white; border: none; border-radius: 50px;
+      font-size: 16px; font-weight: 700; cursor: pointer;
+      text-align: center; text-decoration: none;
+    }
+    .cart-checkout:hover { transform: scale(1.02); }
+    .cart-empty { text-align: center; padding: 40px 0; color: #999; }
+    .cart-empty .icon { font-size: 60px; margin-bottom: 10px; }
+    
+    .auth-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 99998; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
     .auth-modal.active { display: flex; }
     .auth-box { background: white; border-radius: 24px; max-width: 420px; width: 100%; padding: 30px; position: relative; animation: slideUp 0.4s ease; }
     @keyframes slideUp { 0% { transform: translateY(30px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
@@ -120,7 +210,7 @@
     .auth-box .switch-link a { color: #C4A265; font-weight: 600; cursor: pointer; text-decoration: underline; }
     .auth-box .error-msg { color: #e53935; font-size: 13px; text-align: center; margin-top: 10px; display: none; }
     
-    .policy-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99998; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
+    .policy-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99997; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
     .policy-modal.active { display: flex; }
     .policy-box { background: white; border-radius: 24px; max-width: 700px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 35px; position: relative; animation: slideUp 0.4s ease; }
     .policy-box .close-btn { position: sticky; top: 0; float: right; font-size: 28px; cursor: pointer; color: #999; background: white; border: none; z-index: 10; padding: 0 5px; }
@@ -148,6 +238,7 @@
       .nav-menu { display: none; flex-direction: column; width: 100%; padding: 15px 0; gap: 4px; border-top: 1px solid #eee; margin-top: 10px; }
       .nav-menu.open { display: flex; }
       .nav-menu a { width: 100%; text-align: center; padding: 10px; font-size: 14px; }
+      .cart-sidebar { width: 100%; right: -100%; }
     }
     
     @media (max-width: 768px) {
@@ -157,6 +248,7 @@
       .auth-box { padding: 20px; margin: 10px; }
       .policy-box { padding: 20px; margin: 10px; }
       .policy-tabs button { font-size: 11px; padding: 6px 14px; }
+      .cart-sidebar { width: 100%; right: -100%; }
     }
   </style>
 </head>
@@ -165,7 +257,9 @@
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/923099915777" class="wa-float" target="_blank">💬</a>
 
-  <!-- ===== HEADER ===== -->
+  <!-- ======================================== -->
+  <!-- ====== HEADER ====== -->
+  <!-- ======================================== -->
   <header style="background:white;padding:12px 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.05);">
     <div style="display:flex;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto;flex-wrap:wrap;">
       
@@ -186,11 +280,18 @@
         <a href="javascript:void(0)" onclick="openPolicyModal('return')">📦 Returns</a>
         <a href="javascript:void(0)" onclick="openPolicyModal('terms')">📜 Terms</a>
         <a href="javascript:void(0)" onclick="openPolicyModal('privacy')">🔒 Privacy</a>
-        <a href="product.html?id=1">📦 Track Order</a>
+        <a href="admin-dashboard.html">🔐 Admin</a>
+        <a href="product.html?id=1">📦 Track</a>
       </nav>
       
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;" class="header-right">
         <a href="tel:+923099915777" style="background:#1A1815;color:white;padding:8px 18px;border-radius:50px;text-decoration:none;font-size:12px;font-weight:600;">📞 Call</a>
+        
+        <!-- ===== CART ICON ===== -->
+        <span class="cart-icon" onclick="toggleCart()">
+          🛒
+          <span class="cart-count zero" id="cartCount">0</span>
+        </span>
         
         <div id="authButtons">
           <button class="auth-btn-header login" onclick="openAuthModal('login')">Log In</button>
@@ -204,6 +305,30 @@
       </div>
     </div>
   </header>
+
+  <!-- ======================================== -->
+  <!-- ====== CART SIDEBAR ====== -->
+  <!-- ======================================== -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>🛒 Your Cart</h3>
+      <button class="close-cart" onclick="toggleCart()">✕</button>
+    </div>
+    <div id="cartItems">
+      <div class="cart-empty">
+        <div class="icon">🛒</div>
+        <p>Your cart is empty</p>
+        <p style="font-size:13px;color:#ccc;">Start shopping now!</p>
+      </div>
+    </div>
+    <div id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="total-price" id="cartTotalPrice">Rs. 0</span>
+      </div>
+      <a href="product.html?id=1" class="cart-checkout" onclick="sendCartOrder()">✅ Proceed to Checkout</a>
+    </div>
+  </div>
 
   <!-- ===== LIVE COUNTERS ===== -->
   <div style="background:#FAF7F2;padding:10px 15px;border-bottom:1px solid #eee;">
@@ -273,7 +398,7 @@
     </div>
     
     <div style="display:flex;justify-content:center;gap:8px;margin-bottom:25px;flex-wrap:wrap;">
-      <button class="tab-btn active" data-filter="all" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:#C4A265;color:white;cursor:pointer;font-size:12px;font-weight:600;transition:all 0.3s ease;">All</button>
+      <button class="tab-btn" data-filter="all" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:#C4A265;color:white;cursor:pointer;font-size:12px;font-weight:600;transition:all 0.3s ease;">All</button>
       <button class="tab-btn" data-filter="ayat" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;font-weight:600;transition:all 0.3s ease;">Ayat ul Kursi</button>
       <button class="tab-btn" data-filter="calligraphy" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;font-weight:600;transition:all 0.3s ease;">Calligraphy</button>
       <button class="tab-btn" data-filter="kalima" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;font-weight:600;transition:all 0.3s ease;">Kalima</button>
@@ -294,15 +419,13 @@
       <a href="javascript:void(0)" onclick="openPolicyModal('return')" style="color:#D4C5B2;text-decoration:none;">Returns</a>
       <a href="javascript:void(0)" onclick="openPolicyModal('terms')" style="color:#D4C5B2;text-decoration:none;">Terms</a>
       <a href="javascript:void(0)" onclick="openPolicyModal('privacy')" style="color:#D4C5B2;text-decoration:none;">Privacy</a>
-      <a href="product.html?id=1" style="color:#D4C5B2;text-decoration:none;">Track Order</a>
+      <a href="admin-dashboard.html" style="color:#D4C5B2;text-decoration:none;">🔐 Admin</a>
+      <a href="product.html?id=1" style="color:#D4C5B2;text-decoration:none;">📦 Track</a>
     </div>
     
     <p style="margin-top:10px;">📞 +92 309 9915777 | 📧 metalartsialkot@gmail.com</p>
     <p style="font-size:11px;color:#8B7355;">📍 Shop # 6, Ikraam Plaza, Kashmir Road, Sialkot</p>
     <p style="color:#5A4A3A;margin-top:8px;font-size:10px;">© 2025 Metal Art Sialkot. All Rights Reserved.</p>
-    <p style="margin-top:5px;">
-      <a href="admin-dashboard.html" style="color:#5A4A3A;text-decoration:none;font-size:10px;">🔐 Admin</a>
-    </p>
   </footer>
 
   <!-- ===== AUTH MODAL ===== -->
@@ -403,9 +526,9 @@
   <!-- ======================================== -->
   <script>
     // ========================================
-    // PRODUCT DATA — PEHLE WALI IMAGES
+    // PRODUCT DATA
     // ========================================
-    const products = [
+    var products = [
       {id:1,code:"MAS-CLG-001",name:"Masha Allah",cat:"calligraphy",price:6000,img:"images/mashaallah.jpg",best:true,stock:4,sold:234,size:'40"W × 10"H',color:"Golden",desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish."},
       {id:2,code:"MAS-CLG-002",name:"Hasbunallah",cat:"calligraphy",price:6000,img:"images/hasbunallah.jpg",best:true,stock:2,sold:189,size:'40"W × 10"H",color:"Golden",desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut stainless steel."},
       {id:3,code:"MAS-KLM-001",name:"First Kalma",cat:"kalima",price:6000,img:"images/firstkalma.jpg",best:false,stock:8,sold:156,size:'40"W × 10"H",color:"Golden",desc:"La Ilaha Illallah. Circular design with golden mirror polish."},
@@ -417,19 +540,158 @@
     ];
 
     // ========================================
+    // CART SYSTEM
+    // ========================================
+    var cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function addToCart(productId) {
+      var p = null;
+      for (var i = 0; i < products.length; i++) {
+        if (products[i].id === productId) {
+          p = products[i];
+          break;
+        }
+      }
+      if (!p) return;
+      
+      // Check if already in cart
+      for (var j = 0; j < cart.length; j++) {
+        if (cart[j].id === productId) {
+          cart[j].qty += 1;
+          saveCart();
+          showToast('✅ ' + p.name + ' quantity increased!');
+          return;
+        }
+      }
+      
+      cart.push({ id: p.id, name: p.name, price: p.price, img: p.img, qty: 1 });
+      saveCart();
+      showToast('✅ ' + p.name + ' added to cart!');
+      
+      // Tracking
+      console.log('🛒 Added to cart:', p.name);
+      sendNotification('🛒 *Add to Cart*', { 'Product': p.name, 'Price': 'Rs.' + p.price });
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'AddToCart', { content_name: p.name, value: p.price, currency: 'PKR' });
+      }
+    }
+
+    function removeFromCart(productId) {
+      for (var i = 0; i < cart.length; i++) {
+        if (cart[i].id === productId) {
+          cart.splice(i, 1);
+          saveCart();
+          showToast('🗑️ Item removed from cart');
+          return;
+        }
+      }
+    }
+
+    function getCartTotal() {
+      var total = 0;
+      for (var i = 0; i < cart.length; i++) {
+        total += cart[i].price * cart[i].qty;
+      }
+      return total;
+    }
+
+    function getCartCount() {
+      var count = 0;
+      for (var i = 0; i < cart.length; i++) {
+        count += cart[i].qty;
+      }
+      return count;
+    }
+
+    function updateCartUI() {
+      var count = getCartCount();
+      var countEl = document.getElementById('cartCount');
+      if (count > 0) {
+        countEl.textContent = count;
+        countEl.classList.remove('zero');
+      } else {
+        countEl.classList.add('zero');
+      }
+      
+      renderCartItems();
+    }
+
+    function renderCartItems() {
+      var container = document.getElementById('cartItems');
+      var footer = document.getElementById('cartFooter');
+      
+      if (cart.length === 0) {
+        container.innerHTML = '<div class="cart-empty"><div class="icon">🛒</div><p>Your cart is empty</p><p style="font-size:13px;color:#ccc;">Start shopping now!</p></div>';
+        footer.style.display = 'none';
+        return;
+      }
+      
+      var html = '';
+      for (var i = 0; i < cart.length; i++) {
+        var item = cart[i];
+        html += '<div class="cart-item">';
+        html += '<img src="' + item.img + '" alt="' + item.name + '" onerror="this.src=\'https://via.placeholder.com/60x60/C4A265/FFFFFF?text=' + encodeURIComponent(item.name) + '\'">';
+        html += '<div class="info"><div class="name">' + item.name + '</div>';
+        html += '<div class="price">Rs. ' + item.price.toLocaleString() + ' x ' + item.qty + '</div></div>';
+        html += '<button class="remove-btn" onclick="removeFromCart(' + item.id + ')">✕</button>';
+        html += '</div>';
+      }
+      
+      container.innerHTML = html;
+      footer.style.display = 'block';
+      document.getElementById('cartTotalPrice').textContent = 'Rs. ' + getCartTotal().toLocaleString();
+    }
+
+    function toggleCart() {
+      var sidebar = document.getElementById('cartSidebar');
+      sidebar.classList.toggle('open');
+      if (sidebar.classList.contains('open')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+
+    function sendCartOrder() {
+      if (cart.length === 0) {
+        showToast('⚠️ Your cart is empty!');
+        return;
+      }
+      
+      var msg = '🛍️ *New Order from Cart!*%0A%0A';
+      var total = 0;
+      for (var i = 0; i < cart.length; i++) {
+        var item = cart[i];
+        var subtotal = item.price * item.qty;
+        total += subtotal;
+        msg += '📦 ' + item.name + ' x ' + item.qty + ' = Rs. ' + subtotal.toLocaleString() + '%0A';
+      }
+      msg += '%0A💵 *Total: Rs. ' + total.toLocaleString() + '*%0A';
+      msg += '%0A📌 *Action Required:* Contact customer now!';
+      
+      window.open('https://wa.me/923099915777?text=' + encodeURIComponent(msg), '_blank');
+      showToast('✅ Order sent to WhatsApp!');
+    }
+
+    // ========================================
     // LIVE COUNTERS
     // ========================================
     function updateLiveCounters() {
-      const visitors = Math.floor(Math.random() * 50) + 100;
-      const orders = Math.floor(Math.random() * 20) + 35;
-      const total = 2847 + Math.floor(Math.random() * 10);
+      var visitors = Math.floor(Math.random() * 50) + 100;
+      var orders = Math.floor(Math.random() * 20) + 35;
+      var total = 2847 + Math.floor(Math.random() * 10);
       
       document.getElementById('liveVisitorsHeader').textContent = visitors;
       document.getElementById('todayOrdersHeader').textContent = orders;
       document.getElementById('totalSoldHeader').textContent = total.toLocaleString();
       
-      const now = new Date();
-      const timeStr = now.toLocaleTimeString('en-PK', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      var now = new Date();
+      var timeStr = now.toLocaleTimeString('en-PK', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
       document.getElementById('liveTimeHeader').textContent = timeStr;
     }
 
@@ -440,8 +702,8 @@
     // MOBILE MENU
     // ========================================
     function toggleMobileMenu() {
-      const nav = document.getElementById('mainNav');
-      const hamburger = document.querySelector('.hamburger');
+      var nav = document.getElementById('mainNav');
+      var hamburger = document.querySelector('.hamburger');
       nav.classList.toggle('open');
       hamburger.classList.toggle('active');
     }
@@ -461,15 +723,16 @@
     }
 
     function switchPolicyTab(tab) {
-      document.querySelectorAll('.policy-tabs button').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.tab === tab);
-      });
-      document.querySelectorAll('.policy-content').forEach(content => {
-        content.classList.toggle('active', content.id === 'policy-' + tab);
-      });
+      var tabs = document.querySelectorAll('.policy-tabs button');
+      for (var i = 0; i < tabs.length; i++) {
+        tabs[i].classList.toggle('active', tabs[i].dataset.tab === tab);
+      }
+      var contents = document.querySelectorAll('.policy-content');
+      for (var j = 0; j < contents.length; j++) {
+        contents[j].classList.toggle('active', contents[j].id === 'policy-' + tab);
+      }
     }
 
-    // Close policy modal on outside click
     document.getElementById('policyModal').addEventListener('click', function(e) {
       if (e.target === this) closePolicyModal();
     });
@@ -477,18 +740,18 @@
     // ========================================
     // AUTH SYSTEM
     // ========================================
-    let currentAuthMode = 'login';
+    var currentAuthMode = 'login';
 
     function openAuthModal(mode) {
       currentAuthMode = mode || 'login';
-      const modal = document.getElementById('authModal');
-      const title = document.getElementById('authTitle');
-      const subText = document.getElementById('authSubText');
-      const submitBtn = document.getElementById('authSubmitBtn');
-      const switchText = document.getElementById('switchText');
-      const switchLink = document.getElementById('switchLink');
-      const nameField = document.getElementById('signupNameField');
-      const errorMsg = document.getElementById('errorMsg');
+      var modal = document.getElementById('authModal');
+      var title = document.getElementById('authTitle');
+      var subText = document.getElementById('authSubText');
+      var submitBtn = document.getElementById('authSubmitBtn');
+      var switchText = document.getElementById('switchText');
+      var switchLink = document.getElementById('switchLink');
+      var nameField = document.getElementById('signupNameField');
+      var errorMsg = document.getElementById('errorMsg');
       
       errorMsg.style.display = 'none';
       
@@ -522,17 +785,17 @@
     }
 
     function toggleAuthMode() {
-      const newMode = currentAuthMode === 'login' ? 'signup' : 'login';
+      var newMode = currentAuthMode === 'login' ? 'signup' : 'login';
       openAuthModal(newMode);
     }
 
     function handleAuth(e) {
       e.preventDefault();
       
-      const email = document.getElementById('authEmail').value.trim();
-      const password = document.getElementById('authPassword').value.trim();
-      const name = document.getElementById('authName').value.trim();
-      const errorMsg = document.getElementById('errorMsg');
+      var email = document.getElementById('authEmail').value.trim();
+      var password = document.getElementById('authPassword').value.trim();
+      var name = document.getElementById('authName').value.trim();
+      var errorMsg = document.getElementById('errorMsg');
       
       errorMsg.style.display = 'none';
       
@@ -548,14 +811,16 @@
           return;
         }
         
-        const users = JSON.parse(localStorage.getItem('users') || '[]');
-        if (users.find(u => u.email === email)) {
-          errorMsg.textContent = '⚠️ This email is already registered. Please login.';
-          errorMsg.style.display = 'block';
-          return;
+        var users = JSON.parse(localStorage.getItem('users') || '[]');
+        for (var i = 0; i < users.length; i++) {
+          if (users[i].email === email) {
+            errorMsg.textContent = '⚠️ This email is already registered. Please login.';
+            errorMsg.style.display = 'block';
+            return;
+          }
         }
         
-        users.push({ name, email, password });
+        users.push({ name: name, email: email, password: password });
         localStorage.setItem('users', JSON.stringify(users));
         
         sessionStorage.setItem('loggedIn', 'true');
@@ -568,8 +833,14 @@
         sendNotification('🟢 *New User Signed Up!*', { 'Name': name, 'Email': email });
         
       } else {
-        const users = JSON.parse(localStorage.getItem('users') || '[]');
-        const user = users.find(u => u.email === email && u.password === password);
+        var users = JSON.parse(localStorage.getItem('users') || '[]');
+        var user = null;
+        for (var j = 0; j < users.length; j++) {
+          if (users[j].email === email && users[j].password === password) {
+            user = users[j];
+            break;
+          }
+        }
         
         if (!user) {
           errorMsg.textContent = '⚠️ Invalid email or password. Please try again.';
@@ -597,12 +868,12 @@
     }
 
     function updateHeaderUI() {
-      const isLoggedIn = sessionStorage.getItem('loggedIn') === 'true';
-      const userName = sessionStorage.getItem('userName') || '';
+      var isLoggedIn = sessionStorage.getItem('loggedIn') === 'true';
+      var userName = sessionStorage.getItem('userName') || '';
       
-      const authButtons = document.getElementById('authButtons');
-      const userInfo = document.getElementById('userInfo');
-      const userNameDisplay = document.getElementById('userNameDisplay');
+      var authButtons = document.getElementById('authButtons');
+      var userInfo = document.getElementById('userInfo');
+      var userNameDisplay = document.getElementById('userNameDisplay');
       
       if (isLoggedIn && userName) {
         authButtons.style.display = 'none';
@@ -618,103 +889,120 @@
     // TOAST
     // ========================================
     function showToast(message) {
-      const old = document.querySelector('.custom-toast');
+      var old = document.querySelector('.custom-toast');
       if (old) old.remove();
       
-      const toast = document.createElement('div');
+      var toast = document.createElement('div');
       toast.className = 'custom-toast';
-      toast.style.cssText = `
-        position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%);
-        background: #1A1815; color: white; padding: 14px 28px;
-        border-radius: 12px; font-size: 14px; font-weight: 500;
-        z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-        animation: fadeInUp 0.5s ease; max-width: 90%; text-align: center;
-      `;
+      toast.style.cssText = 'position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%); background: #1A1815; color: white; padding: 14px 28px; border-radius: 12px; font-size: 14px; font-weight: 500; z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,0.3); animation: fadeInUp 0.5s ease; max-width: 90%; text-align: center;';
       toast.textContent = message;
       document.body.appendChild(toast);
       
-      setTimeout(() => {
+      setTimeout(function() {
         toast.style.animation = 'fadeOutDown 0.5s ease';
-        setTimeout(() => toast.remove(), 500);
+        setTimeout(function() { toast.remove(); }, 500);
       }, 4000);
     }
 
-    const styleSheet = document.createElement('style');
-    styleSheet.textContent = `
-      @keyframes fadeInUp { 0% { opacity: 0; transform: translateX(-50%) translateY(20px); } 100% { opacity: 1; transform: translateX(-50%) translateY(0); } }
-      @keyframes fadeOutDown { 0% { opacity: 1; transform: translateX(-50%) translateY(0); } 100% { opacity: 0; transform: translateX(-50%) translateY(20px); } }
-    `;
+    var styleSheet = document.createElement('style');
+    styleSheet.textContent = '@keyframes fadeInUp { 0% { opacity: 0; transform: translateX(-50%) translateY(20px); } 100% { opacity: 1; transform: translateX(-50%) translateY(0); } } @keyframes fadeOutDown { 0% { opacity: 1; transform: translateX(-50%) translateY(0); } 100% { opacity: 0; transform: translateX(-50%) translateY(20px); } }';
     document.head.appendChild(styleSheet);
 
     // ========================================
     // NOTIFICATION
     // ========================================
     function sendNotification(title, data) {
-      const user = sessionStorage.getItem('userName') || 'Guest';
-      const timestamp = new Date().toLocaleString('en-PK', {timeZone: 'Asia/Karachi'});
-      let msg = `📢 *${title}*%0A👤 *User:* ${user}%0A🕐 *Time:* ${timestamp}%0A`;
-      if (data) { for (let k in data) msg += `📌 *${k}:* ${data[k]}%0A`; }
-      window.open(`https://wa.me/923099915777?text=${encodeURIComponent(msg)}`, '_blank', 'width=1,height=1');
-      window.open(`mailto:metalartsialkot@gmail.com?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(msg.replace(/%0A/g, '\n').replace(/[📢👤🕐📌]/g, ''))}`, '_blank', 'width=1,height=1');
+      var user = sessionStorage.getItem('userName') || 'Guest';
+      var timestamp = new Date().toLocaleString('en-PK', {timeZone: 'Asia/Karachi'});
+      var msg = '📢 *' + title + '*%0A👤 *User:* ' + user + '%0A🕐 *Time:* ' + timestamp + '%0A';
+      if (data) {
+        for (var k in data) {
+          msg += '📌 *' + k + ':* ' + data[k] + '%0A';
+        }
+      }
+      window.open('https://wa.me/923099915777?text=' + encodeURIComponent(msg), '_blank', 'width=1,height=1');
+      window.open('mailto:metalartsialkot@gmail.com?subject=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(msg.replace(/%0A/g, '\n').replace(/[📢👤🕐📌]/g, '')), '_blank', 'width=1,height=1');
     }
 
     // ========================================
     // RENDER PRODUCTS
     // ========================================
-    function cardHTML(p) {
-      const stockText = p.stock <= 3 ? '🔥 Only ' + p.stock + ' left!' : p.stock + ' in stock';
-      const stockColor = p.stock <= 3 ? '#FF6B6B' : '#1B5E20';
-      
-      return `<div class="card-luxury">
-        <a href="product.html?id=${p.id}" style="text-decoration:none;color:inherit;">
-          <div class="img-wrapper">
-            <img src="${p.img}" alt="${p.name} - Islamic Metal Wall Art" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400/C4A265/FFFFFF?text=${encodeURIComponent(p.name)}'">
-            ${p.best ? '<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:9px;">⭐ BEST</span>' : ''}
-            ${p.stock <= 3 ? '<span style="position:absolute;top:8px;right:8px;background:#FF6B6B;color:white;padding:3px 10px;border-radius:50px;font-size:9px;animation:pulse-urgency 1s infinite;">🔥 LOW</span>' : ''}
-          </div>
-          <div style="padding:12px;">
-            <span style="font-size:9px;color:#8B7355;">${p.code}</span>
-            <h3 style="font-size:14px;font-family:Cormorant Garamond,serif;font-weight:600;">${p.name}</h3>
-            <p style="color:#C4A265;font-weight:700;font-size:18px;">Rs. ${p.price.toLocaleString()}</p>
-            <span style="font-size:10px;color:#1B5E20;background:#E8F5E9;padding:3px 8px;border-radius:4px;">📏 ${p.size}</span>
-            <div style="margin-top:6px;font-size:11px;color:${stockColor};font-weight:600;">${stockText}</div>
-            <div style="margin-top:6px;padding:6px;background:#F5F0E8;border-radius:4px;text-align:center;font-size:11px;color:#C4A265;font-weight:600;">👆 View Details</div>
-          </div>
-        </a>
-      </div>`;
-    }
-
-    function renderProducts(filter = 'all') {
-      const grid = document.getElementById('productGrid');
+    function renderProducts(filter) {
+      filter = filter || 'all';
+      var grid = document.getElementById('productGrid');
       if (!grid) return;
       
-      const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
-      grid.innerHTML = filtered.map(cardHTML).join('');
+      var filtered = [];
+      if (filter === 'all') {
+        filtered = products;
+      } else {
+        for (var i = 0; i < products.length; i++) {
+          if (products[i].cat === filter) {
+            filtered.push(products[i]);
+          }
+        }
+      }
+      
+      var html = '';
+      for (var j = 0; j < filtered.length; j++) {
+        var p = filtered[j];
+        var stockText = p.stock <= 3 ? '🔥 Only ' + p.stock + ' left!' : p.stock + ' in stock';
+        var stockColor = p.stock <= 3 ? '#FF6B6B' : '#1B5E20';
+        
+        html += '<div class="card-luxury">';
+        html += '<a href="product.html?id=' + p.id + '" style="text-decoration:none;color:inherit;">';
+        html += '<div class="img-wrapper">';
+        html += '<img src="' + p.img + '" alt="' + p.name + ' - Islamic Metal Wall Art" loading="lazy" onerror="this.src=\'https://via.placeholder.com/400x400/C4A265/FFFFFF?text=' + encodeURIComponent(p.name) + '\'">';
+        if (p.best) {
+          html += '<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:9px;">⭐ BEST</span>';
+        }
+        if (p.stock <= 3) {
+          html += '<span style="position:absolute;top:8px;right:8px;background:#FF6B6B;color:white;padding:3px 10px;border-radius:50px;font-size:9px;animation:pulse-urgency 1s infinite;">🔥 LOW</span>';
+        }
+        html += '</div>';
+        html += '<div style="padding:12px;">';
+        html += '<span style="font-size:9px;color:#8B7355;">' + p.code + '</span>';
+        html += '<h3 style="font-size:14px;font-family:Cormorant Garamond,serif;font-weight:600;">' + p.name + '</h3>';
+        html += '<p style="color:#C4A265;font-weight:700;font-size:18px;">Rs. ' + p.price.toLocaleString() + '</p>';
+        html += '<span style="font-size:10px;color:#1B5E20;background:#E8F5E9;padding:3px 8px;border-radius:4px;">📏 ' + p.size + '</span>';
+        html += '<div style="margin-top:6px;font-size:11px;color:' + stockColor + ';font-weight:600;">' + stockText + '</div>';
+        html += '<div style="display:flex;gap:5px;margin-top:8px;">';
+        html += '<button onclick="event.stopPropagation();addToCart(' + p.id + ')" style="flex:1;padding:8px;background:#1A1815;color:white;border:none;border-radius:50px;font-size:10px;font-weight:600;cursor:pointer;">🛒 Add to Cart</button>';
+        html += '<button onclick="event.stopPropagation();window.location.href=\'product.html?id=' + p.id + '\'" style="flex:1;padding:8px;background:linear-gradient(135deg,#C4A265,#D4B87A);color:white;border:none;border-radius:50px;font-size:10px;font-weight:600;cursor:pointer;">👁️ View</button>';
+        html += '</div>';
+        html += '</div>';
+        html += '</a>';
+        html += '</div>';
+      }
+      
+      grid.innerHTML = html;
       console.log('✅ Products rendered:', filtered.length);
     }
 
     // ========================================
     // TAB FILTER
     // ========================================
-    document.querySelectorAll('.tab-btn').forEach(function(b) {
-      b.addEventListener('click', function() {
-        document.querySelectorAll('.tab-btn').forEach(function(x) {
-          x.style.background = 'white';
-          x.style.color = '#C4A265';
-        });
+    var tabBtns = document.querySelectorAll('.tab-btn');
+    for (var i = 0; i < tabBtns.length; i++) {
+      tabBtns[i].addEventListener('click', function() {
+        var btns = document.querySelectorAll('.tab-btn');
+        for (var j = 0; j < btns.length; j++) {
+          btns[j].style.background = 'white';
+          btns[j].style.color = '#C4A265';
+        }
         this.style.background = '#C4A265';
         this.style.color = 'white';
         renderProducts(this.dataset.filter);
       });
-    });
+    }
 
     // ========================================
     // INIT
     // ========================================
-    renderProducts();
+    renderProducts('all');
     updateHeaderUI();
+    updateCartUI();
 
-    // Close modals on outside click
     document.getElementById('authModal').addEventListener('click', function(e) {
       if (e.target === this) closeAuthModal();
     });
@@ -722,6 +1010,7 @@
     console.log('✅ Website Loaded Successfully!');
     console.log('👤 User:', sessionStorage.getItem('userName') || 'Guest');
     console.log('📦 Products count:', products.length);
+    console.log('🛒 Cart items:', cart.length);
   </script>
 
 </body>
