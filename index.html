@@ -205,7 +205,33 @@
     </div>
   </header>
 
-  <!-- ===== HERO BANNER (Medium Size) ===== -->
+  <!-- ===== LIVE COUNTERS ===== -->
+  <div style="background:#FAF7F2;padding:10px 15px;border-bottom:1px solid #eee;">
+    <div style="max-width:1300px;margin:0 auto;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:#666;">
+          <span class="live-dot"></span>
+          <span style="font-weight:700;color:#C4A265;font-size:15px;" id="liveVisitorsHeader">128</span>
+          <span>Live Visitors</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:#666;">
+          <span>🛒</span>
+          <span style="font-weight:700;color:#C4A265;font-size:15px;" id="todayOrdersHeader">47</span>
+          <span>Orders Today</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:#666;">
+          <span>⭐</span>
+          <span style="font-weight:700;color:#C4A265;font-size:15px;" id="totalSoldHeader">2,847</span>
+          <span>Total Sold</span>
+        </div>
+        <div style="font-size:11px;color:#999;">
+          🕐 Updated: <span id="liveTimeHeader">Just now</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
   <section class="hero-premium" style="background:linear-gradient(135deg,#1A1815 0%,#2C2824 50%,#1A1815 100%);color:white;text-align:center;padding:80px 20px;position:relative;">
     <div style="max-width:900px;margin:0 auto;position:relative;z-index:2;">
       <p style="color:#D4B87A;letter-spacing:4px;font-size:11px;text-transform:uppercase;font-weight:600;">Premium Islamic Décor • Handcrafted in Pakistan</p>
@@ -254,34 +280,14 @@
       <button class="tab-btn" data-filter="bismillah" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;font-weight:600;transition:all 0.3s ease;">Bismillah</button>
     </div>
     
+    <!-- PRODUCTS GRID -->
     <div id="productGrid" class="prod-grid"></div>
-  </section>
-
-  <!-- ===== LIVE COUNTERS (Footer ke paas) ===== -->
-  <div style="background:#FAF7F2;padding:15px 20px;border-top:1px solid #eee;border-bottom:1px solid #eee;">
-    <div style="max-width:1200px;margin:0 auto;">
-      <div style="display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;">
-        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:#666;">
-          <span class="live-dot"></span>
-          <span style="font-weight:700;color:#C4A265;font-size:16px;" id="liveVisitorsFooter">128</span>
-          <span>Live Visitors</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:#666;">
-          <span>🛒</span>
-          <span style="font-weight:700;color:#C4A265;font-size:16px;" id="todayOrdersFooter">47</span>
-          <span>Orders Today</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:#666;">
-          <span>⭐</span>
-          <span style="font-weight:700;color:#C4A265;font-size:16px;" id="totalSoldFooter">2,847</span>
-          <span>Total Sold</span>
-        </div>
-        <div style="font-size:12px;color:#999;">
-          🕐 Updated: <span id="liveTimeFooter">Just now</span>
-        </div>
-      </div>
+    
+    <!-- Debug Message -->
+    <div id="debugMsg" style="text-align:center;color:#999;font-size:13px;margin-top:20px;display:none;">
+      ⚠️ Products are loading...
     </div>
-  </div>
+  </section>
 
   <!-- ===== FOOTER ===== -->
   <footer style="background:#1A1815;color:#D4C5B2;text-align:center;padding:35px 15px;font-size:12px;">
@@ -398,10 +404,12 @@
     </div>
   </div>
 
-  <!-- ===== SCRIPTS ===== -->
+  <!-- ======================================== -->
+  <!-- ====== SCRIPTS ====== -->
+  <!-- ======================================== -->
   <script>
     // ========================================
-    // PRODUCT DATA
+    // PRODUCT DATA (WITH VALID IMAGE PATHS)
     // ========================================
     const products = [
       {id:1,code:"MAS-CLG-001",name:"Masha Allah",cat:"calligraphy",price:6000,img:"images/mashaallah.jpg",best:true,stock:4,sold:234,size:'40"W × 10"H',color:"Golden",desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish."},
@@ -422,13 +430,13 @@
       const orders = Math.floor(Math.random() * 20) + 35;
       const total = 2847 + Math.floor(Math.random() * 10);
       
-      document.getElementById('liveVisitorsFooter').textContent = visitors;
-      document.getElementById('todayOrdersFooter').textContent = orders;
-      document.getElementById('totalSoldFooter').textContent = total.toLocaleString();
+      document.getElementById('liveVisitorsHeader').textContent = visitors;
+      document.getElementById('todayOrdersHeader').textContent = orders;
+      document.getElementById('totalSoldHeader').textContent = total.toLocaleString();
       
       const now = new Date();
       const timeStr = now.toLocaleTimeString('en-PK', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      document.getElementById('liveTimeFooter').textContent = timeStr;
+      document.getElementById('liveTimeHeader').textContent = timeStr;
     }
 
     setInterval(updateLiveCounters, 10000);
@@ -670,7 +678,7 @@
     }
 
     // ========================================
-    // RENDER PRODUCTS
+    // RENDER PRODUCTS (DEBUGGED)
     // ========================================
     function cardHTML(p) {
       const stockText = p.stock <= 3 ? '🔥 Only ' + p.stock + ' left!' : p.stock + ' in stock';
@@ -679,7 +687,7 @@
       return `<div class="card-luxury">
         <a href="product.html?id=${p.id}" style="text-decoration:none;color:inherit;">
           <div class="img-wrapper">
-            <img src="${p.img}" alt="${p.name}" loading="lazy">
+            <img src="${p.img}" alt="${p.name} - Islamic Metal Wall Art" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23F5F0E8%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22 fill=%22%23999%22%3ENo Image%3C/text%3E%3C/svg%3E'">
             ${p.best ? '<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:9px;">⭐ BEST</span>' : ''}
             ${p.stock <= 3 ? '<span style="position:absolute;top:8px;right:8px;background:#FF6B6B;color:white;padding:3px 10px;border-radius:50px;font-size:9px;animation:pulse-urgency 1s infinite;">🔥 LOW</span>' : ''}
           </div>
@@ -695,11 +703,27 @@
       </div>`;
     }
 
-    function renderProducts(f = 'all') {
-      const filtered = f === 'all' ? products : products.filter(p => p.cat === f);
-      document.getElementById('productGrid').innerHTML = filtered.map(cardHTML).join('');
+    function renderProducts(filter = 'all') {
+      console.log('🔄 Rendering products... Filter:', filter);
+      const grid = document.getElementById('productGrid');
+      
+      if (!grid) {
+        console.error('❌ productGrid element not found!');
+        return;
+      }
+      
+      const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
+      
+      if (filtered.length === 0) {
+        grid.innerHTML = '<p style="text-align:center;color:#999;padding:30px;">No products found.</p>';
+        return;
+      }
+      
+      grid.innerHTML = filtered.map(cardHTML).join('');
+      console.log('✅ Products rendered:', filtered.length);
     }
 
+    // ===== TAB FILTER =====
     document.querySelectorAll('.tab-btn').forEach(b => {
       b.addEventListener('click', function() {
         document.querySelectorAll('.tab-btn').forEach(x => {
@@ -724,6 +748,7 @@
 
     console.log('✅ Website Loaded Successfully!');
     console.log('👤 User:', sessionStorage.getItem('userName') || 'Guest');
+    console.log('📦 Products count:', products.length);
   </script>
 
 </body>
