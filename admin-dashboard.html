@@ -1,0 +1,68 @@
+<!-- ===== COUPON MANAGEMENT ===== -->
+<div class="card" style="margin-top:25px;">
+  <h2 style="font-size:18px;font-weight:700;margin-bottom:10px;">🎫 Generated Coupons</h2>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px;">
+    <button onclick="renderCoupons('all')" class="coupon-filter-btn active" data-filter="all" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:#C4A265;color:white;cursor:pointer;font-size:12px;">All</button>
+    <button onclick="renderCoupons('active')" class="coupon-filter-btn" data-filter="active" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">🟢 Active</button>
+    <button onclick="renderCoupons('used')" class="coupon-filter-btn" data-filter="used" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">🔴 Used</button>
+    <button onclick="renderCoupons('expired')" class="coupon-filter-btn" data-filter="expired" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">⏰ Expired</button>
+  </div>
+  <div id="couponsList"></div>
+</div>
+
+<script>
+// ===== COUPON RENDERING =====
+let currentCouponFilter = 'all';
+
+function renderCoupons(filter = 'all') {
+  currentCouponFilter = filter;
+  const coupons = JSON.parse(localStorage.getItem('coupons') || '[]');
+  const list = document.getElementById('couponsList');
+  
+  let filtered = coupons;
+  if (filter === 'active') {
+    filtered = coupons.filter(c => !c.used && new Date(c.expiry) > new Date());
+  } else if (filter === 'used') {
+    filtered = coupons.filter(c => c.used);
+  } else if (filter === 'expired') {
+    filtered = coupons.filter(c => !c.used && new Date(c.expiry) < new Date());
+  }
+  
+  if (filtered.length === 0) {
+    list.innerHTML = '<p style="text-align:center;color:#999;padding:20px;">No coupons found.</p>';
+    return;
+  }
+  
+  list.innerHTML = filtered.map(c => {
+    const isExpired = new Date(c.expiry) < new Date();
+    const status = c.used ? '🔴 Used' : (isExpired ? '⏰ Expired' : '🟢 Active');
+    const statusColor = c.used ? '#e53935' : (isExpired ? '#FF9800' : '#4CAF50');
+    
+    return `
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee;font-size:13px;flex-wrap:wrap;gap:5px;">
+        <div><strong>${c.code}</strong></div>
+        <div>👤 ${c.customerName}</div>
+        <div>💸 ${c.discount}% OFF</div>
+        <div style="color:${statusColor};font-weight:600;">${status}</div>
+        <div style="font-size:11px;color:#999;">Exp: ${new Date(c.expiry).toLocaleDateString()}</div>
+        <div style="font-size:11px;color:#999;">Order: ${c.orderId}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Update filter buttons
+document.querySelectorAll('.coupon-filter-btn').forEach(b => {
+  b.addEventListener('click', function() {
+    document.querySelectorAll('.coupon-filter-btn').forEach(x => {
+      x.style.background = 'white';
+      x.style.color = '#C4A265';
+    });
+    this.style.background = '#C4A265';
+    this.style.color = 'white';
+  });
+});
+
+// Initial render
+renderCoupons('all');
+</script>
