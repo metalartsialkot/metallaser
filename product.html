@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">Islamic Metal Wall Art | Metal Art Sialkot</title>
   <meta name="description" id="pageDesc" content="Premium Islamic metal wall art in Pakistan. Handcrafted calligraphy with golden finish.">
-  <meta name="keywords" content="Islamic wall art Pakistan, metal wall art, Ayat ul Kursi, Masha Allah, Bismillah, Sialkot handicrafts, stainless steel art, golden calligraphy">
+  <meta name="keywords" content="Islamic wall art Pakistan, metal wall art, Ayat ul Kursi, Masha Allah, Bismillah, Sialkot handicrafts">
   <link rel="canonical" id="pageCanonical" href="https://metalartsialkot.com/product.html">
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -39,27 +39,77 @@
     .detail-info .size { display: inline-block; background: #E8F5E9; color: #1B5E20; padding: 6px 16px; border-radius: 50px; font-size: 14px; margin: 10px 0; }
     .detail-info .color-badge { display: inline-block; background: #FFF3E0; color: #E65100; padding: 6px 16px; border-radius: 50px; font-size: 14px; margin: 10px 5px; }
     .detail-info .desc { font-size: 15px; line-height: 1.8; color: #555; margin: 15px 0; padding: 15px; background: #FAF7F2; border-radius: 10px; }
-    .detail-info .stock { color: #1B5E20; font-weight: 600; }
-    .detail-info .sold { color: #666; font-size: 14px; }
     
     .detail-buttons { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
-    .detail-buttons a { padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; text-align: center; flex: 1; min-width: 180px; }
+    .detail-buttons button { padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; text-align: center; flex: 1; min-width: 180px; border: none; cursor: pointer; font-size: 15px; }
     .btn-order { background: #25D366; color: white; }
     .btn-call { background: linear-gradient(135deg, #C4A265, #D4B87A); color: #1A1815; }
-    .btn-cart { background: #1A1815; color: white; }
     
     .related-section { margin-top: 40px; }
     .related-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; text-align: center; margin-bottom: 20px; }
     
-    /* User Badge */
+    /* ===== ORDER FORM MODAL ===== */
+    .order-modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center;
+      padding: 20px; backdrop-filter: blur(5px);
+    }
+    .order-modal.active { display: flex; }
+    
+    .order-form-box {
+      background: white; border-radius: 24px; max-width: 520px; width: 100%;
+      padding: 30px; position: relative; animation: slideUp 0.4s ease; max-height: 95vh; overflow-y: auto;
+    }
+    @keyframes slideUp { 0% { transform: translateY(30px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+    
+    .order-form-box .close-btn {
+      position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #999; background: none; border: none;
+    }
+    .order-form-box .close-btn:hover { color: #333; }
+    .order-form-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 5px; }
+    .order-form-box .sub-text { color: #666; font-size: 13px; margin-bottom: 20px; }
+    
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-weight: 600; font-size: 13px; color: #333; margin-bottom: 4px; }
+    .form-group label .required { color: #e53935; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 16px; border: 2px solid #eee; border-radius: 12px;
+      font-size: 14px; transition: border 0.3s ease; font-family: 'Inter', sans-serif;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: #C4A265; outline: none; box-shadow: 0 0 0 3px rgba(196, 162, 101, 0.2);
+    }
+    .form-group textarea { resize: vertical; min-height: 70px; }
+    
+    .order-summary-box {
+      background: #FAF7F2; padding: 14px; border-radius: 12px; margin-bottom: 16px;
+      display: flex; gap: 14px; align-items: center;
+    }
+    .order-summary-box img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
+    .order-summary-box .info { flex: 1; }
+    .order-summary-box .info .name { font-weight: 700; font-size: 15px; }
+    .order-summary-box .info .price { color: #C4A265; font-weight: 700; }
+    
+    .form-submit-btn {
+      width: 100%; padding: 16px; background: linear-gradient(135deg, #C4A265, #D4B87A);
+      color: white; border: none; border-radius: 50px; font-size: 16px; font-weight: 700;
+      cursor: pointer; transition: transform 0.2s ease;
+    }
+    .form-submit-btn:hover { transform: scale(1.02); }
+    .form-submit-btn:active { transform: scale(0.98); }
+    .form-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    
+    /* Success Message */
+    .success-msg {
+      display: none; text-align: center; padding: 20px 0;
+    }
+    .success-msg .icon { font-size: 60px; }
+    .success-msg h3 { font-size: 24px; color: #1B5E20; margin: 10px 0; }
+    .success-msg p { color: #666; font-size: 14px; }
+    
     .user-badge {
-      display: inline-block;
-      background: #E8F5E9;
-      color: #1B5E20;
-      padding: 5px 14px;
-      border-radius: 50px;
-      font-size: 11px;
-      font-weight: 600;
+      display: inline-block; background: #E8F5E9; color: #1B5E20;
+      padding: 5px 14px; border-radius: 50px; font-size: 11px; font-weight: 600;
     }
     
     @media (max-width: 768px) {
@@ -68,8 +118,9 @@
       .detail-info h1 { font-size: 28px; }
       .detail-info .price { font-size: 26px; }
       .detail-buttons { flex-direction: column; }
-      .detail-buttons a { min-width: unset; }
+      .detail-buttons button { min-width: unset; }
       .prod-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+      .order-form-box { padding: 20px; margin: 10px; }
     }
   </style>
 
@@ -166,13 +217,10 @@
           <span class="color-badge" id="detailColor">🎨 Golden</span>
         </div>
         <div class="desc" id="detailDesc">Description here</div>
-        <div class="stock" id="detailStock">✅ In Stock</div>
-        <div class="sold" id="detailSold">Sold: 0+ pieces</div>
         
         <div class="detail-buttons">
-          <a href="#" class="btn-order" id="detailWhatsApp" target="_blank">💬 Order via WhatsApp</a>
-          <a href="tel:+923099915777" class="btn-call">✨ Call Now</a>
-          <a href="#" class="btn-cart" id="detailAddToCart">🛒 Add to Cart</a>
+          <button class="btn-order" onclick="openOrderForm()">📝 Order Now</button>
+          <button class="btn-call" onclick="window.location.href='tel:+923099915777'">✨ Call Now</button>
         </div>
         
         <div style="background:#FFF3E0;padding:12px;border-radius:8px;font-size:13px;text-align:center;margin-top:15px;">
@@ -198,6 +246,82 @@
     <p style="color:#8B7355;margin-top:5px;">© 2025 Metal Art Sialkot. All Rights Reserved.</p>
   </footer>
 
+  <!-- ======================================== -->
+  <!-- ====== ORDER FORM MODAL ====== -->
+  <!-- ======================================== -->
+  <div id="orderModal" class="order-modal">
+    <div class="order-form-box">
+      <button class="close-btn" onclick="closeOrderForm()">✕</button>
+      
+      <!-- Form -->
+      <div id="orderFormContent">
+        <h2>📝 Place Your Order</h2>
+        <p class="sub-text">Fill in the details below and we'll confirm your order.</p>
+        
+        <!-- Product Summary -->
+        <div class="order-summary-box" id="orderSummary">
+          <img src="" alt="" id="summaryImg">
+          <div class="info">
+            <div class="name" id="summaryName">Product Name</div>
+            <div class="price" id="summaryPrice">Rs. 0</div>
+            <div style="font-size:12px;color:#666;" id="summaryCode">Code: XXX</div>
+          </div>
+        </div>
+        
+        <form id="orderForm" onsubmit="submitOrder(event)">
+          <div class="form-group">
+            <label>Full Name <span class="required">*</span></label>
+            <input type="text" id="custName" placeholder="e.g., Ahmed Khan" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Phone Number <span class="required">*</span></label>
+            <input type="tel" id="custPhone" placeholder="e.g., 0300-1234567" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Delivery Address <span class="required">*</span></label>
+            <input type="text" id="custAddress" placeholder="e.g., House #12, Street 5, Lahore" required>
+          </div>
+          
+          <div class="form-group" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div>
+              <label>Quantity <span class="required">*</span></label>
+              <select id="custQty" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6+</option>
+              </select>
+            </div>
+            <div>
+              <label>City</label>
+              <input type="text" id="custCity" placeholder="e.g., Sialkot">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea id="custNotes" placeholder="Any special instructions..."></textarea>
+          </div>
+          
+          <button type="submit" class="form-submit-btn" id="submitBtn">✅ Confirm Order</button>
+        </form>
+      </div>
+      
+      <!-- Success Message -->
+      <div id="successMsg" class="success-msg">
+        <div class="icon">🎉</div>
+        <h3>Order Placed Successfully!</h3>
+        <p>We have received your order. Our team will contact you within 10 minutes to confirm.</p>
+        <p style="margin-top:10px;font-size:13px;color:#C4A265;">✅ Check your WhatsApp & Email for confirmation.</p>
+        <button onclick="closeOrderForm()" style="margin-top:15px;padding:12px 30px;background:#C4A265;color:white;border:none;border-radius:50px;font-weight:600;cursor:pointer;">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ====== PRODUCT DATA ====== -->
   <script>
     const products = [
@@ -210,6 +334,8 @@
       {id:7,code:"MAS-CLG-004",name:"Fabi Translation",cat:"calligraphy",price:6000,img:"images/fabitr.jpg",best:false,stock:15,sold:67,size:'40"W × 10"H',color:"Golden",desc:"With Urdu translation."},
       {id:8,code:"MAS-AYT-001",name:"Ayat ul Kursi Round",cat:"ayat",price:7000,img:"images/ayatround.jpg",best:true,stock:3,sold:312,size:'19"W × 25"H',color:"Golden",desc:"⭐ BESTSELLER! Full Ayat ul Kursi in circular design. Premium stainless steel golden finish."}
     ];
+
+    let currentProduct = null;
 
     // ====== GET PRODUCT FROM URL ======
     function getProductFromURL() {
@@ -225,13 +351,12 @@
     // ====== RENDER PRODUCT DETAIL ======
     function renderProductDetail(p) {
       if (!p) return;
+      currentProduct = p;
       
-      // SEO Updates
       document.title = p.name + ' | Premium Islamic Metal Wall Art | Buy Online Pakistan';
       document.querySelector('meta[name="description"]').content = p.name + ' - ' + p.desc.substring(0, 150) + ' Buy now with free delivery across Pakistan.';
       document.querySelector('link[rel="canonical"]').href = 'https://metalartsialkot.com/product.html?id=' + p.id;
       
-      // Detail
       document.getElementById('detailImg').src = p.img;
       document.getElementById('detailImg').alt = p.name + ' - Islamic Metal Wall Art Golden Finish';
       document.getElementById('detailCode').textContent = p.code;
@@ -240,17 +365,6 @@
       document.getElementById('detailSize').textContent = '📏 ' + p.size;
       document.getElementById('detailColor').textContent = '🎨 ' + p.color;
       document.getElementById('detailDesc').innerHTML = `<p>${p.desc}</p><p style="margin-top:8px;"><strong>Material:</strong> 0.8mm Stainless Steel</p><p><strong>Color:</strong> ${p.color}</p>`;
-      document.getElementById('detailStock').textContent = p.stock > 0 ? '✅ In Stock (' + p.stock + ' available)' : '❌ Out of Stock';
-      document.getElementById('detailSold').textContent = 'Sold: ' + p.sold + '+ pieces';
-      
-      document.getElementById('detailWhatsApp').href = 'https://wa.me/923099915777?text=Order:%20' + encodeURIComponent(p.code) + '%20' + encodeURIComponent(p.name) + '%20Rs.' + p.price;
-      
-      document.getElementById('detailAddToCart').onclick = function(e) {
-        e.preventDefault();
-        alert('✅ ' + p.name + ' added to cart!');
-        sendNotification('🛒 *Add to Cart*', { 'Product': p.name, 'Price': 'Rs.' + p.price });
-        if (typeof fbq !== 'undefined') fbq('track', 'AddToCart', { content_name: p.name, value: p.price, currency: 'PKR' });
-      };
       
       // Track product view
       sendNotification('👀 *Product Viewed*', { 'Product': p.name, 'Price': 'Rs.' + p.price });
@@ -271,15 +385,174 @@
               <h3 style="font-size:14px;font-family:Cormorant Garamond,serif;font-weight:600;">${p.name}</h3>
               <p style="color:#C4A265;font-weight:700;font-size:18px;">Rs. ${p.price.toLocaleString()}</p>
               <span style="font-size:10px;color:#1B5E20;background:#E8F5E9;padding:3px 8px;border-radius:4px;">📏 ${p.size}</span>
-              <span style="font-size:10px;color:#8B7355;display:block;margin-top:4px;">🎨 ${p.color}</span>
             </div>
           </a>
         </div>
       `).join('');
     }
 
+    // ========================================
+    // ====== ORDER FORM FUNCTIONS ======
+    // ========================================
+    function openOrderForm() {
+      if (!currentProduct) return;
+      
+      // Fill summary
+      document.getElementById('summaryImg').src = currentProduct.img;
+      document.getElementById('summaryName').textContent = currentProduct.name;
+      document.getElementById('summaryPrice').textContent = 'Rs. ' + currentProduct.price.toLocaleString();
+      document.getElementById('summaryCode').textContent = 'Code: ' + currentProduct.code;
+      
+      // Pre-fill user name if available
+      const userName = sessionStorage.getItem('user_name') || '';
+      document.getElementById('custName').value = userName;
+      
+      document.getElementById('orderModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      // Reset form
+      document.getElementById('orderForm').style.display = 'block';
+      document.getElementById('successMsg').style.display = 'none';
+      document.getElementById('submitBtn').disabled = false;
+      document.getElementById('submitBtn').textContent = '✅ Confirm Order';
+    }
+
+    function closeOrderForm() {
+      document.getElementById('orderModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function submitOrder(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const address = document.getElementById('custAddress').value.trim();
+      const qty = document.getElementById('custQty').value;
+      const city = document.getElementById('custCity').value.trim() || 'Not specified';
+      const notes = document.getElementById('custNotes').value.trim() || 'None';
+      
+      if (!name || !phone || !address) {
+        alert('⚠️ Please fill in all required fields (Name, Phone, Address)');
+        return;
+      }
+      
+      // Disable button
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = '⏳ Sending...';
+      
+      const totalPrice = currentProduct.price * parseInt(qty);
+      const user = sessionStorage.getItem('user_name') || 'Guest';
+      const timestamp = new Date().toLocaleString('en-PK', {timeZone: 'Asia/Karachi'});
+      
+      // ========================================
+      // WHATSAPP MESSAGE
+      // ========================================
+      let waMsg = `🛍️ *NEW ORDER RECEIVED!*%0A%0A`;
+      waMsg += `👤 *Customer:* ${name}%0A`;
+      waMsg += `📱 *Phone:* ${phone}%0A`;
+      waMsg += `📍 *Address:* ${address}%0A`;
+      waMsg += `🏙️ *City:* ${city}%0A%0A`;
+      waMsg += `📦 *Product Details*%0A`;
+      waMsg += `━━━━━━━━━━━━%0A`;
+      waMsg += `📌 *Name:* ${currentProduct.name}%0A`;
+      waMsg += `🔢 *Code:* ${currentProduct.code}%0A`;
+      waMsg += `💰 *Price:* Rs. ${currentProduct.price.toLocaleString()}%0A`;
+      waMsg += `📏 *Size:* ${currentProduct.size}%0A`;
+      waMsg += `🎨 *Color:* ${currentProduct.color}%0A`;
+      waMsg += `🔢 *Quantity:* ${qty}%0A`;
+      waMsg += `💵 *Total:* Rs. ${totalPrice.toLocaleString()}%0A%0A`;
+      waMsg += `📝 *Notes:* ${notes}%0A%0A`;
+      waMsg += `🕐 *Order Time:* ${timestamp}%0A`;
+      waMsg += `🌐 *Website User:* ${user}%0A`;
+      waMsg += `%0A`;
+      waMsg += `📌 *ACTION REQUIRED:* Contact customer now!`;
+      
+      // ========================================
+      // EMAIL BODY
+      // ========================================
+      let emailBody = `🛍️ NEW ORDER RECEIVED!
+      
+      Customer Details:
+      -----------------
+      Name: ${name}
+      Phone: ${phone}
+      Address: ${address}
+      City: ${city}
+      
+      Product Details:
+      -----------------
+      Name: ${currentProduct.name}
+      Code: ${currentProduct.code}
+      Price: Rs. ${currentProduct.price.toLocaleString()}
+      Size: ${currentProduct.size}
+      Color: ${currentProduct.color}
+      Quantity: ${qty}
+      Total: Rs. ${totalPrice.toLocaleString()}
+      
+      Notes: ${notes}
+      
+      Order Time: ${timestamp}
+      Website User: ${user}
+      
+      -----------------
+      ACTION REQUIRED: Contact customer now!`;
+      
+      // Send WhatsApp
+      window.open(`https://wa.me/${CONFIG.whatsapp}?text=${waMsg}`, '_blank', 'width=1,height=1');
+      
+      // Send Email
+      const subject = encodeURIComponent('🛍️ NEW ORDER: ' + currentProduct.name + ' - ' + name);
+      window.open(`mailto:${CONFIG.email}?subject=${subject}&body=${encodeURIComponent(emailBody)}`, '_blank', 'width=1,height=1');
+      
+      // Facebook Pixel
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Purchase', {
+          content_name: currentProduct.name,
+          content_id: currentProduct.code,
+          value: totalPrice,
+          currency: 'PKR'
+        });
+      }
+      
+      // Show success
+      document.getElementById('orderForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+      
+      // 6-second tracking follow-up
+      setTimeout(function() {
+        let trackMsg = `📦 *ORDER TRACKING STARTED*%0A`;
+        trackMsg += `👤 *Customer:* ${name}%0A`;
+        trackMsg += `📱 *Phone:* ${phone}%0A`;
+        trackMsg += `📦 *Product:* ${currentProduct.name} (${currentProduct.code})%0A`;
+        trackMsg += `💰 *Total:* Rs. ${totalPrice.toLocaleString()}%0A`;
+        trackMsg += `🕐 *Time:* ${timestamp}%0A`;
+        trackMsg += `📌 *Status:* 🟢 Order Placed - Follow up now!`;
+        
+        window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(trackMsg)}`, '_blank', 'width=1,height=1');
+        
+        let trackEmail = `📦 ORDER TRACKING STARTED
+        Customer: ${name}
+        Phone: ${phone}
+        Product: ${currentProduct.name} (${currentProduct.code})
+        Total: Rs. ${totalPrice.toLocaleString()}
+        Time: ${timestamp}
+        Status: 🟢 Order Placed - Follow up now!`;
+        
+        window.open(`mailto:${CONFIG.email}?subject=${encodeURIComponent('📦 TRACKING: ' + currentProduct.name)}&body=${encodeURIComponent(trackEmail)}`, '_blank', 'width=1,height=1');
+      }, 6000);
+      
+      console.log('✅ Order Placed:', { name, phone, product: currentProduct.name, total: totalPrice });
+    }
+
+    // Close modal on outside click
+    document.getElementById('orderModal').addEventListener('click', function(e) {
+      if (e.target === this) closeOrderForm();
+    });
+
     // ====== INIT ======
-    const currentProduct = getProductFromURL();
+    currentProduct = getProductFromURL();
     renderProductDetail(currentProduct);
     renderAllProducts();
   </script>
