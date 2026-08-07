@@ -1,72 +1,473 @@
-<!-- ===== COUPON MANAGEMENT ===== -->
-<div class="card" style="margin-top:25px;">
-  <h2 style="font-size:18px;font-weight:700;margin-bottom:10px;">🎫 Coupons (1 & Last Option)</h2>
-  <p style="font-size:12px;color:#666;margin-bottom:15px;">Each coupon is valid for ONE use only. After use, it expires automatically.</p>
-  
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px;">
-    <button onclick="renderCoupons('all')" class="coupon-filter-btn active" data-filter="all" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:#C4A265;color:white;cursor:pointer;font-size:12px;">📊 All</button>
-    <button onclick="renderCoupons('active')" class="coupon-filter-btn" data-filter="active" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">🟢 Active</button>
-    <button onclick="renderCoupons('used')" class="coupon-filter-btn" data-filter="used" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">🔴 Used</button>
-    <button onclick="renderCoupons('expired')" class="coupon-filter-btn" data-filter="expired" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">⏰ Expired</button>
-  </div>
-  
-  <div id="couponsList"></div>
-</div>
-
-<script>
-// ===== COUPON RENDERING =====
-let currentCouponFilter = 'all';
-
-function renderCoupons(filter = 'all') {
-  currentCouponFilter = filter;
-  const coupons = JSON.parse(localStorage.getItem('coupons') || '[]');
-  const list = document.getElementById('couponsList');
-  
-  let filtered = coupons;
-  if (filter === 'active') {
-    filtered = coupons.filter(c => !c.used && new Date(c.expiry) > new Date());
-  } else if (filter === 'used') {
-    filtered = coupons.filter(c => c.used);
-  } else if (filter === 'expired') {
-    filtered = coupons.filter(c => !c.used && new Date(c.expiry) < new Date());
-  }
-  
-  if (filtered.length === 0) {
-    list.innerHTML = '<p style="text-align:center;color:#999;padding:20px;">No coupons found.</p>';
-    return;
-  }
-  
-  list.innerHTML = filtered.map(c => {
-    const isExpired = new Date(c.expiry) < new Date();
-    const status = c.used ? '🔴 Used' : (isExpired ? '⏰ Expired' : '🟢 Active');
-    const statusColor = c.used ? '#e53935' : (isExpired ? '#FF9800' : '#4CAF50');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Metal Art Sialkot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #FAF7F2; }
+    .card { background: white; border-radius: 16px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .stat-card { background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .stat-number { font-size: 32px; font-weight: 700; color: #C4A265; }
+    .stat-label { font-size: 13px; color: #666; }
+    .order-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; font-size: 13px; flex-wrap: wrap; gap: 5px; }
+    .order-row:last-child { border-bottom: none; }
     
-    return `
-      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee;font-size:13px;flex-wrap:wrap;gap:5px;">
-        <div><strong style="color:#C4A265;">${c.code}</strong></div>
-        <div>👤 ${c.customerName}</div>
-        <div>💸 ${c.discount}% OFF</div>
-        <div style="color:${statusColor};font-weight:600;">${status}</div>
-        <div style="font-size:11px;color:#999;">Exp: ${new Date(c.expiry).toLocaleDateString()}</div>
-        <div style="font-size:11px;color:#999;">Order: ${c.orderId}</div>
-        ${c.used ? '<div style="font-size:10px;color:#999;">Used: ' + new Date(c.usedAt).toLocaleDateString() + '</div>' : ''}
+    .badge-new { background: #4CAF50; color: white; padding: 2px 10px; border-radius: 50px; font-size: 10px; }
+    .badge-processing { background: #FF9800; color: white; padding: 2px 10px; border-radius: 50px; font-size: 10px; }
+    .badge-delivered { background: #2196F3; color: white; padding: 2px 10px; border-radius: 50px; font-size: 10px; }
+    .badge-return { background: #e53935; color: white; padding: 2px 10px; border-radius: 50px; font-size: 10px; }
+    
+    /* ===== LOGIN PAGE ===== */
+    .login-container { max-width: 400px; margin: 80px auto; padding: 20px; }
+    .login-box { background: white; border-radius: 24px; padding: 40px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .login-box h1 { font-size: 28px; font-weight: 700; text-align: center; }
+    .login-box .sub-text { text-align: center; color: #666; font-size: 14px; margin-bottom: 25px; }
+    .login-box .form-group { margin-bottom: 16px; }
+    .login-box .form-group label { display: block; font-weight: 600; font-size: 13px; color: #333; margin-bottom: 4px; }
+    .login-box .form-group input { width: 100%; padding: 12px 16px; border: 2px solid #eee; border-radius: 12px; font-size: 14px; transition: border 0.3s ease; }
+    .login-box .form-group input:focus { border-color: #C4A265; outline: none; box-shadow: 0 0 0 3px rgba(196, 162, 101, 0.2); }
+    .login-box .login-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #C4A265, #D4B87A); color: white; border: none; border-radius: 50px; font-size: 16px; font-weight: 700; cursor: pointer; transition: transform 0.2s ease; }
+    .login-box .login-btn:hover { transform: scale(1.02); }
+    .login-box .error-msg { color: #e53935; font-size: 13px; text-align: center; margin-top: 10px; display: none; }
+    
+    /* Role Badge */
+    .role-badge-admin { background: #C4A265; color: white; padding: 3px 12px; border-radius: 50px; font-size: 10px; font-weight: 700; }
+    .role-badge-staff { background: #2196F3; color: white; padding: 3px 12px; border-radius: 50px; font-size: 10px; font-weight: 700; }
+    
+    /* Staff Restricted Message */
+    .restricted-msg { background: #FFF8E1; padding: 10px 15px; border-radius: 8px; border-left: 4px solid #FF9800; font-size: 13px; color: #666; margin: 10px 0; }
+    
+    .logout-btn { background: #e53935; color: white; border: none; padding: 8px 18px; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 12px; }
+  </style>
+</head>
+<body>
+
+  <!-- ======================================== -->
+  <!-- ====== LOGIN PAGE ====== -->
+  <!-- ======================================== -->
+  <div id="loginPage" class="login-container">
+    <div class="login-box">
+      <div style="text-align:center;font-size:40px;margin-bottom:10px;">🔐</div>
+      <h1>Admin Login</h1>
+      <p class="sub-text">Login to manage your store</p>
+      
+      <form id="loginForm" onsubmit="handleAdminLogin(event)">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="adminEmail" placeholder="admin@metalartsialkot.com" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="adminPassword" placeholder="Enter password" required>
+        </div>
+        <div id="loginError" class="error-msg">Invalid credentials!</div>
+        <button type="submit" class="login-btn">🔓 Login</button>
+      </form>
+      
+      <div style="text-align:center;margin-top:15px;font-size:12px;color:#999;">
+        <p>Default Admin: admin@metalartsialkot.com / admin123</p>
+        <p>Default Staff: staff@metalartsialkot.com / staff123</p>
       </div>
-    `;
-  }).join('');
-}
+    </div>
+  </div>
 
-// Update filter buttons
-document.querySelectorAll('.coupon-filter-btn').forEach(b => {
-  b.addEventListener('click', function() {
-    document.querySelectorAll('.coupon-filter-btn').forEach(x => {
-      x.style.background = 'white';
-      x.style.color = '#C4A265';
+  <!-- ======================================== -->
+  <!-- ====== DASHBOARD (Hidden by default) ====== -->
+  <!-- ======================================== -->
+  <div id="dashboardPage" style="display:none;max-width:1200px;margin:0 auto;padding:20px;">
+    
+    <!-- Header -->
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:20px;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <h1 style="font-size:24px;font-weight:700;">📊 Dashboard</h1>
+        <span id="userRoleBadge" class="role-badge-admin">Admin</span>
+        <span id="userNameDisplay" style="font-size:14px;color:#666;">👤 User</span>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="/" style="color:#C4A265;text-decoration:none;font-weight:600;padding:8px 16px;border:2px solid #C4A265;border-radius:50px;font-size:12px;">🏠 Home</a>
+        <button onclick="logoutAdmin()" class="logout-btn">🚪 Logout</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-bottom:25px;">
+      <div class="stat-card">
+        <div class="stat-number" id="totalOrders">0</div>
+        <div class="stat-label">📦 Total Orders</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="todayOrders">0</div>
+        <div class="stat-label">📅 Today</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="pendingOrders">0</div>
+        <div class="stat-label">⏳ Pending</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="totalRevenue">Rs. 0</div>
+        <div class="stat-label">💰 Revenue</div>
+      </div>
+    </div>
+
+    <!-- Orders Table -->
+    <div class="card">
+      <h2 style="font-size:18px;font-weight:700;margin-bottom:10px;">📋 All Orders</h2>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px;">
+        <button onclick="filterOrders('all')" class="filter-btn active" data-filter="all" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:#C4A265;color:white;cursor:pointer;font-size:12px;">All</button>
+        <button onclick="filterOrders('new')" class="filter-btn" data-filter="new" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">🟢 New</button>
+        <button onclick="filterOrders('processing')" class="filter-btn" data-filter="processing" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">🟠 Processing</button>
+        <button onclick="filterOrders('delivered')" class="filter-btn" data-filter="delivered" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">🔵 Delivered</button>
+        <button onclick="filterOrders('return')" class="filter-btn" data-filter="return" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">🔴 Return</button>
+      </div>
+      <div id="ordersList"></div>
+    </div>
+
+    <!-- ===== COUPON MANAGEMENT (Admin Only) ===== -->
+    <div id="couponSection" class="card" style="margin-top:25px;">
+      <h2 style="font-size:18px;font-weight:700;margin-bottom:10px;">🎫 Coupons</h2>
+      <p style="font-size:12px;color:#666;margin-bottom:15px;">Each coupon is valid for ONE use only. After use, it expires automatically.</p>
+      
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px;">
+        <button onclick="renderCoupons('all')" class="coupon-filter-btn active" data-filter="all" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:#C4A265;color:white;cursor:pointer;font-size:12px;">📊 All</button>
+        <button onclick="renderCoupons('active')" class="coupon-filter-btn" data-filter="active" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">🟢 Active</button>
+        <button onclick="renderCoupons('used')" class="coupon-filter-btn" data-filter="used" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">🔴 Used</button>
+        <button onclick="renderCoupons('expired')" class="coupon-filter-btn" data-filter="expired" style="padding:6px 16px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;">⏰ Expired</button>
+      </div>
+      <div id="couponsList"></div>
+    </div>
+
+    <!-- ===== USER MANAGEMENT (Admin Only) ===== -->
+    <div id="userSection" class="card" style="margin-top:25px;">
+      <h2 style="font-size:18px;font-weight:700;margin-bottom:10px;">👥 Users</h2>
+      <div id="usersList"></div>
+    </div>
+
+    <!-- Staff Restricted Message (for Staff) -->
+    <div id="staffRestrictedMsg" style="display:none;margin-top:15px;">
+      <div class="restricted-msg">
+        ⚠️ <strong>Staff Access:</strong> You can only view and update order status. 
+        Coupon management and user management are restricted to Admin only.
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================== -->
+  <!-- ====== SCRIPTS ====== -->
+  <!-- ======================================== -->
+  <script>
+    // ========================================
+    // DEFAULT USERS (Admin + Staff)
+    // ========================================
+    const DEFAULT_USERS = [
+      {
+        id: 1,
+        name: 'Admin User',
+        email: 'admin@metalartsialkot.com',
+        password: 'admin123',
+        role: 'admin',
+        createdAt: new Date().toISOString()
+      },
+      {
+        id: 2,
+        name: 'Staff User',
+        email: 'staff@metalartsialkot.com',
+        password: 'staff123',
+        role: 'staff',
+        createdAt: new Date().toISOString()
+      }
+    ];
+
+    // Initialize users if not exists
+    if (!localStorage.getItem('systemUsers')) {
+      localStorage.setItem('systemUsers', JSON.stringify(DEFAULT_USERS));
+    }
+
+    let currentUser = null;
+    let currentFilter = 'all';
+    let allOrders = JSON.parse(localStorage.getItem('orders') || '[]');
+    let allCoupons = JSON.parse(localStorage.getItem('coupons') || '[]');
+
+    // ========================================
+    // ADMIN LOGIN
+    // ========================================
+    function handleAdminLogin(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('adminEmail').value.trim();
+      const password = document.getElementById('adminPassword').value.trim();
+      const errorMsg = document.getElementById('loginError');
+      
+      errorMsg.style.display = 'none';
+      
+      const users = JSON.parse(localStorage.getItem('systemUsers') || '[]');
+      const user = users.find(u => u.email === email && u.password === password);
+      
+      if (!user) {
+        errorMsg.textContent = '❌ Invalid email or password!';
+        errorMsg.style.display = 'block';
+        return;
+      }
+      
+      currentUser = user;
+      sessionStorage.setItem('adminLoggedIn', 'true');
+      sessionStorage.setItem('adminUser', JSON.stringify(user));
+      
+      document.getElementById('loginPage').style.display = 'none';
+      document.getElementById('dashboardPage').style.display = 'block';
+      
+      // Update UI based on role
+      updateDashboardUI(user);
+      renderOrders('all');
+      renderCoupons('all');
+      renderUsers();
+    }
+
+    // ========================================
+    // CHECK SESSION ON LOAD
+    // ========================================
+    (function() {
+      const loggedIn = sessionStorage.getItem('adminLoggedIn');
+      if (loggedIn === 'true') {
+        const userData = sessionStorage.getItem('adminUser');
+        if (userData) {
+          currentUser = JSON.parse(userData);
+          document.getElementById('loginPage').style.display = 'none';
+          document.getElementById('dashboardPage').style.display = 'block';
+          updateDashboardUI(currentUser);
+          renderOrders('all');
+          renderCoupons('all');
+          renderUsers();
+        }
+      }
+    })();
+
+    // ========================================
+    // UPDATE DASHBOARD UI BASED ON ROLE
+    // ========================================
+    function updateDashboardUI(user) {
+      const roleBadge = document.getElementById('userRoleBadge');
+      const userNameDisplay = document.getElementById('userNameDisplay');
+      const couponSection = document.getElementById('couponSection');
+      const userSection = document.getElementById('userSection');
+      const staffMsg = document.getElementById('staffRestrictedMsg');
+      
+      userNameDisplay.textContent = '👤 ' + user.name;
+      
+      if (user.role === 'admin') {
+        roleBadge.textContent = '👑 Admin';
+        roleBadge.className = 'role-badge-admin';
+        couponSection.style.display = 'block';
+        userSection.style.display = 'block';
+        staffMsg.style.display = 'none';
+      } else {
+        roleBadge.textContent = '👤 Staff';
+        roleBadge.className = 'role-badge-staff';
+        couponSection.style.display = 'none';
+        userSection.style.display = 'none';
+        staffMsg.style.display = 'block';
+      }
+    }
+
+    // ========================================
+    // LOGOUT
+    // ========================================
+    function logoutAdmin() {
+      sessionStorage.removeItem('adminLoggedIn');
+      sessionStorage.removeItem('adminUser');
+      currentUser = null;
+      document.getElementById('loginPage').style.display = 'block';
+      document.getElementById('dashboardPage').style.display = 'none';
+    }
+
+    // ========================================
+    // RENDER ORDERS
+    // ========================================
+    function getStatusBadge(status) {
+      const map = {
+        'new': '<span class="badge-new">🟢 New</span>',
+        'processing': '<span class="badge-processing">🟠 Processing</span>',
+        'delivered': '<span class="badge-delivered">🔵 Delivered</span>',
+        'return': '<span class="badge-return">🔴 Return</span>'
+      };
+      return map[status] || map['new'];
+    }
+
+    function updateStats(orders) {
+      document.getElementById('totalOrders').textContent = orders.length;
+      const today = new Date().toDateString();
+      const todayOrders = orders.filter(o => new Date(o.date).toDateString() === today);
+      document.getElementById('todayOrders').textContent = todayOrders.length;
+      document.getElementById('pendingOrders').textContent = orders.filter(o => o.status === 'new' || o.status === 'processing').length;
+      
+      const total = orders.reduce((sum, o) => {
+        const num = parseInt((o.total || '0').replace(/[^0-9]/g, ''));
+        return sum + (isNaN(num) ? 0 : num);
+      }, 0);
+      document.getElementById('totalRevenue').textContent = 'Rs. ' + total.toLocaleString();
+    }
+
+    function renderOrders(filter = 'all') {
+      const list = document.getElementById('ordersList');
+      allOrders = JSON.parse(localStorage.getItem('orders') || '[]');
+      
+      let filtered = filter === 'all' ? allOrders : allOrders.filter(o => o.status === filter);
+      
+      if (filtered.length === 0) {
+        list.innerHTML = '<p style="text-align:center;color:#999;padding:30px;">No orders found.</p>';
+        updateStats(allOrders);
+        return;
+      }
+
+      list.innerHTML = filtered.map((order, index) => {
+        const originalIndex = allOrders.indexOf(order);
+        return `
+        <div class="order-row">
+          <div><strong>#${order.orderId}</strong></div>
+          <div>👤 ${order.name}</div>
+          <div>📱 ${order.phone}</div>
+          <div>📦 ${order.product}</div>
+          <div>💰 ${order.total}</div>
+          <div>${getStatusBadge(order.status)}</div>
+          <div>
+            <select onchange="updateStatus(${originalIndex}, this.value)" style="padding:4px 8px;border-radius:6px;border:1px solid #ddd;font-size:11px;">
+              <option value="new" ${order.status === 'new' ? 'selected' : ''}>🟢 New</option>
+              <option value="processing" ${order.status === 'processing' ? 'selected' : ''}>🟠 Processing</option>
+              <option value="delivered" ${order.status === 'delivered' ? 'selected' : ''}>🔵 Delivered</option>
+              <option value="return" ${order.status === 'return' ? 'selected' : ''}>🔴 Return</option>
+            </select>
+          </div>
+          <div style="font-size:11px;color:#999;">${new Date(order.date).toLocaleDateString()}</div>
+        </div>
+      `}).join('');
+      
+      updateStats(allOrders);
+    }
+
+    function updateStatus(index, newStatus) {
+      allOrders[index].status = newStatus;
+      localStorage.setItem('orders', JSON.stringify(allOrders));
+      renderOrders(currentFilter);
+      showToast('✅ Order status updated to: ' + newStatus);
+    }
+
+    function filterOrders(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.style.background = b.dataset.filter === filter ? '#C4A265' : 'white';
+        b.style.color = b.dataset.filter === filter ? 'white' : '#C4A265';
+      });
+      renderOrders(filter);
+    }
+
+    // ========================================
+    // RENDER COUPONS (Admin Only)
+    // ========================================
+    let currentCouponFilter = 'all';
+
+    function renderCoupons(filter = 'all') {
+      if (!currentUser || currentUser.role !== 'admin') return;
+      
+      currentCouponFilter = filter;
+      const coupons = JSON.parse(localStorage.getItem('coupons') || '[]');
+      const list = document.getElementById('couponsList');
+      
+      let filtered = coupons;
+      if (filter === 'active') {
+        filtered = coupons.filter(c => !c.used && new Date(c.expiry) > new Date());
+      } else if (filter === 'used') {
+        filtered = coupons.filter(c => c.used);
+      } else if (filter === 'expired') {
+        filtered = coupons.filter(c => !c.used && new Date(c.expiry) < new Date());
+      }
+      
+      if (filtered.length === 0) {
+        list.innerHTML = '<p style="text-align:center;color:#999;padding:20px;">No coupons found.</p>';
+        return;
+      }
+      
+      list.innerHTML = filtered.map(c => {
+        const isExpired = new Date(c.expiry) < new Date();
+        const status = c.used ? '🔴 Used' : (isExpired ? '⏰ Expired' : '🟢 Active');
+        const statusColor = c.used ? '#e53935' : (isExpired ? '#FF9800' : '#4CAF50');
+        
+        return `
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee;font-size:13px;flex-wrap:wrap;gap:5px;">
+            <div><strong style="color:#C4A265;">${c.code}</strong></div>
+            <div>👤 ${c.customerName}</div>
+            <div>💸 ${c.discount}% OFF</div>
+            <div style="color:${statusColor};font-weight:600;">${status}</div>
+            <div style="font-size:11px;color:#999;">Exp: ${new Date(c.expiry).toLocaleDateString()}</div>
+            <div style="font-size:11px;color:#999;">Order: ${c.orderId}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Coupon filter buttons
+    document.querySelectorAll('.coupon-filter-btn').forEach(b => {
+      b.addEventListener('click', function() {
+        document.querySelectorAll('.coupon-filter-btn').forEach(x => {
+          x.style.background = 'white';
+          x.style.color = '#C4A265';
+        });
+        this.style.background = '#C4A265';
+        this.style.color = 'white';
+        renderCoupons(this.dataset.filter);
+      });
     });
-    this.style.background = '#C4A265';
-    this.style.color = 'white';
-  });
-});
 
-// Initial render
-renderCoupons('all');
-</script>
+    // ========================================
+    // RENDER USERS (Admin Only)
+    // ========================================
+    function renderUsers() {
+      if (!currentUser || currentUser.role !== 'admin') return;
+      
+      const users = JSON.parse(localStorage.getItem('systemUsers') || '[]');
+      const list = document.getElementById('usersList');
+      
+      list.innerHTML = users.map(u => `
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee;font-size:13px;flex-wrap:wrap;gap:5px;">
+          <div><strong>${u.name}</strong></div>
+          <div>📧 ${u.email}</div>
+          <div>${u.role === 'admin' ? '👑 Admin' : '👤 Staff'}</div>
+          <div style="font-size:11px;color:#999;">Joined: ${new Date(u.createdAt).toLocaleDateString()}</div>
+          ${u.role !== 'admin' ? `<button onclick="deleteUser(${u.id})" style="background:#e53935;color:white;border:none;padding:4px 12px;border-radius:50px;cursor:pointer;font-size:11px;">🗑️ Remove</button>` : ''}
+        </div>
+      `).join('');
+    }
+
+    function deleteUser(id) {
+      if (!confirm('⚠️ Are you sure you want to remove this user?')) return;
+      let users = JSON.parse(localStorage.getItem('systemUsers') || '[]');
+      users = users.filter(u => u.id !== id);
+      localStorage.setItem('systemUsers', JSON.stringify(users));
+      renderUsers();
+      showToast('✅ User removed successfully!');
+    }
+
+    // ========================================
+    // TOAST NOTIFICATION
+    // ========================================
+    function showToast(message) {
+      const old = document.querySelector('.custom-toast');
+      if (old) old.remove();
+      
+      const toast = document.createElement('div');
+      toast.className = 'custom-toast';
+      toast.style.cssText = `
+        position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+        background: #1A1815; color: white; padding: 12px 24px;
+        border-radius: 12px; font-size: 14px; font-weight: 500;
+        z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        max-width: 90%; text-align: center;
+      `;
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+  </script>
+</body>
+</html>
