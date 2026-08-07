@@ -280,13 +280,7 @@
       <button class="tab-btn" data-filter="bismillah" style="padding:8px 20px;border-radius:50px;border:2px solid #C4A265;background:white;color:#C4A265;cursor:pointer;font-size:12px;font-weight:600;transition:all 0.3s ease;">Bismillah</button>
     </div>
     
-    <!-- PRODUCTS GRID -->
     <div id="productGrid" class="prod-grid"></div>
-    
-    <!-- Debug Message -->
-    <div id="debugMsg" style="text-align:center;color:#999;font-size:13px;margin-top:20px;display:none;">
-      ⚠️ Products are loading...
-    </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
@@ -409,17 +403,17 @@
   <!-- ======================================== -->
   <script>
     // ========================================
-    // PRODUCT DATA (WITH VALID IMAGE PATHS)
+    // PRODUCT DATA (WITH PLACEHOLDER IMAGES)
     // ========================================
     const products = [
-      {id:1,code:"MAS-CLG-001",name:"Masha Allah",cat:"calligraphy",price:6000,img:"images/mashaallah.jpg",best:true,stock:4,sold:234,size:'40"W × 10"H',color:"Golden",desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish."},
-      {id:2,code:"MAS-CLG-002",name:"Hasbunallah",cat:"calligraphy",price:6000,img:"images/hasbunallah.jpg",best:true,stock:2,sold:189,size:'40"W × 10"H",color:"Golden",desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut stainless steel."},
-      {id:3,code:"MAS-KLM-001",name:"First Kalma",cat:"kalima",price:6000,img:"images/firstkalma.jpg",best:false,stock:8,sold:156,size:'40"W × 10"H",color:"Golden",desc:"La Ilaha Illallah. Circular design with golden mirror polish."},
-      {id:4,code:"MAS-CLG-003",name:"Fabi Ayyi Ala",cat:"calligraphy",price:6000,img:"images/fabi.jpg",best:false,stock:12,sold:98,size:'40"W × 10"H",color:"Golden",desc:"Surah Ar-Rahman verse."},
-      {id:5,code:"MAS-KLM-002",name:"La Ilaha Illa Anta",cat:"kalima",price:6000,img:"images/laillaha.jpg",best:false,stock:3,sold:145,size:'40"W × 10"H",color:"Golden",desc:"Ayat-e-Karima. Golden finish."},
-      {id:6,code:"MAS-BSM-001",name:"Bismillah",cat:"bismillah",price:6000,img:"images/bismillah.jpg",best:false,stock:6,sold:178,size:'40"W × 10"H",color:"Golden",desc:"Bismillah Hir Rahman Ir Raheem."},
-      {id:7,code:"MAS-CLG-004",name:"Fabi Translation",cat:"calligraphy",price:6000,img:"images/fabitr.jpg",best:false,stock:15,sold:67,size:'40"W × 10"H",color:"Golden",desc:"With Urdu translation."},
-      {id:8,code:"MAS-AYT-001",name:"Ayat ul Kursi Round",cat:"ayat",price:7000,img:"images/ayatround.jpg",best:true,stock:3,sold:312,size:'19"W × 25"H",color:"Golden",desc:"⭐ BESTSELLER! Full Ayat ul Kursi in circular design."}
+      {id:1,code:"MAS-CLG-001",name:"Masha Allah",cat:"calligraphy",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Masha+Allah",best:true,stock:4,sold:234,size:'40"W × 10"H',color:"Golden",desc:"Elegant Masha Allah calligraphy. Premium 0.8mm stainless steel, golden mirror finish."},
+      {id:2,code:"MAS-CLG-002",name:"Hasbunallah",cat:"calligraphy",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Hasbunallah",best:true,stock:2,sold:189,size:'40"W × 10"H",color:"Golden",desc:"Hasbunallah Wa Ni'mal Wakeel. Precision laser-cut stainless steel."},
+      {id:3,code:"MAS-KLM-001",name:"First Kalma",cat:"kalima",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=First+Kalma",best:false,stock:8,sold:156,size:'40"W × 10"H",color:"Golden",desc:"La Ilaha Illallah. Circular design with golden mirror polish."},
+      {id:4,code:"MAS-CLG-003",name:"Fabi Ayyi Ala",cat:"calligraphy",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Fabi+Ayyi+Ala",best:false,stock:12,sold:98,size:'40"W × 10"H",color:"Golden",desc:"Surah Ar-Rahman verse."},
+      {id:5,code:"MAS-KLM-002",name:"La Ilaha Illa Anta",cat:"kalima",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=La+Ilaha+Illa+Anta",best:false,stock:3,sold:145,size:'40"W × 10"H",color:"Golden",desc:"Ayat-e-Karima. Golden finish."},
+      {id:6,code:"MAS-BSM-001",name:"Bismillah",cat:"bismillah",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Bismillah",best:false,stock:6,sold:178,size:'40"W × 10"H",color:"Golden",desc:"Bismillah Hir Rahman Ir Raheem."},
+      {id:7,code:"MAS-CLG-004",name:"Fabi Translation",cat:"calligraphy",price:6000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Fabi+Translation",best:false,stock:15,sold:67,size:'40"W × 10"H",color:"Golden",desc:"With Urdu translation."},
+      {id:8,code:"MAS-AYT-001",name:"Ayat ul Kursi Round",cat:"ayat",price:7000,img:"https://via.placeholder.com/400x400/C4A265/FFFFFF?text=Ayat+ul+Kursi",best:true,stock:3,sold:312,size:'19"W × 25"H",color:"Golden",desc:"⭐ BESTSELLER! Full Ayat ul Kursi in circular design."}
     ];
 
     // ========================================
@@ -678,7 +672,7 @@
     }
 
     // ========================================
-    // RENDER PRODUCTS (DEBUGGED)
+    // RENDER PRODUCTS
     // ========================================
     function cardHTML(p) {
       const stockText = p.stock <= 3 ? '🔥 Only ' + p.stock + ' left!' : p.stock + ' in stock';
@@ -687,7 +681,7 @@
       return `<div class="card-luxury">
         <a href="product.html?id=${p.id}" style="text-decoration:none;color:inherit;">
           <div class="img-wrapper">
-            <img src="${p.img}" alt="${p.name} - Islamic Metal Wall Art" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23F5F0E8%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22 fill=%22%23999%22%3ENo Image%3C/text%3E%3C/svg%3E'">
+            <img src="${p.img}" alt="${p.name} - Islamic Metal Wall Art" loading="lazy">
             ${p.best ? '<span style="position:absolute;top:8px;left:8px;background:#C4A265;color:white;padding:3px 10px;border-radius:50px;font-size:9px;">⭐ BEST</span>' : ''}
             ${p.stock <= 3 ? '<span style="position:absolute;top:8px;right:8px;background:#FF6B6B;color:white;padding:3px 10px;border-radius:50px;font-size:9px;animation:pulse-urgency 1s infinite;">🔥 LOW</span>' : ''}
           </div>
