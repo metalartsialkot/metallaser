@@ -1,0 +1,32 @@
+<!-- ===== COUPON SECTION ===== -->
+<div style="background:linear-gradient(135deg,#FFF8E1,#FFF3E0);padding:20px;border-radius:12px;border:2px dashed #C4A265;margin:15px 0;text-align:center;">
+  <div style="font-size:30px;">🎉</div>
+  <h3 style="font-size:18px;font-weight:700;color:#E65100;">You Got 5% OFF on Your Next Order!</h3>
+  <p style="font-size:13px;color:#666;">Use this coupon code at checkout</p>
+  <div style="background:#1A1815;color:#C4A265;padding:12px 20px;border-radius:10px;font-size:22px;font-weight:700;letter-spacing:2px;display:inline-block;margin:10px 0;" id="couponCode">WELCOME5-XXXXX</div>
+  <button onclick="copyCoupon()" style="background:#C4A265;color:white;border:none;padding:8px 20px;border-radius:50px;cursor:pointer;font-weight:600;font-size:13px;">📋 Copy Code</button>
+  <p style="font-size:12px;color:#999;margin-top:8px;">✅ Valid for 30 days • One-time use</p>
+</div>
+
+<script>
+// Get coupon from URL
+const params = new URLSearchParams(window.location.search);
+const coupon = params.get('coupon') || 'WELCOME5-XXXXX';
+document.getElementById('couponCode').textContent = coupon;
+
+function copyCoupon() {
+  const code = document.getElementById('couponCode').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    showToast('✅ Coupon copied: ' + code);
+  }).catch(() => {
+    // Fallback
+    const textarea = document.createElement('textarea');
+    textarea.value = code;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+    showToast('✅ Coupon copied: ' + code);
+  });
+}
+</script>
